@@ -7486,6 +7486,7 @@
       <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/tools/tar/.htaccess" />
       <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/tools/tcpdf/.htaccess" />
       <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/upload/.htaccess" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/.name" />
       <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/cache/smarty/compile/00/4c/a4/004ca411af19eab961c248ccf6d1d7489fce6d83.file.supplier-list.tpl.php" />
       <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/cache/smarty/compile/00/8f/e9/008fe9b311549596d2aaac43e562524960dd97a7.file.message.tpl.php" />
       <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/cache/smarty/compile/01/1a/53/011a53de6d95762f93393cc80354b690e4692a3d.file.product-compare.tpl.php" />
@@ -9403,6 +9404,7 @@
       <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/tools/tcpdf/fonts/cid0cs.php" />
       <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/tools/tcpdf/fonts/cid0jp.php" />
       <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/tools/tcpdf/fonts/cid0kr.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/citymotors.loc.iml" />
       <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/localization/cl.xml" />
       <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/cache/class_index.php" />
       <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/themes/citymotors/css/cms.css" />
@@ -12811,6 +12813,7 @@
       <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/tools/swift/dependency_maps/mime_deps.php" />
       <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/tools/swift/mime_types.php" />
       <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/tools/minify_html/minify_html.class.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/misc.xml" />
       <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/tools/tcpdf/config/lang/mkd.php" />
       <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/js/tiny_mce/langs/ml.js" />
       <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/tools/tcpdf/config/lang/mlt.php" />
@@ -12854,6 +12857,7 @@
       <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/tools/smarty/plugins/modifiercompiler.upper.php" />
       <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/tools/smarty/plugins/modifiercompiler.wordwrap.php" />
       <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/js/admin/modules-position.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/modules.xml" />
       <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/config/xml/modules_list.xml" />
       <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/config/xml/modules_native_addons.xml" />
       <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/admin557jx7p07/themes/default/js/vendor/moment-with-langs.min.js" />
@@ -13835,6 +13839,7 @@
       <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/themes/citymotors/js/tools/vatManagement.js" />
       <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/themes/default-bootstrap/js/tools/vatManagement.js" />
       <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/modules/vatnumber/vatnumber.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/vcs.xml" />
       <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/localization/ve.xml" />
       <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/modules/blocknewsletter/verification.php" />
       <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/modules/blocknewsletter/controllers/front/verification.php" />
@@ -13886,6 +13891,7 @@
       <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/modules/blockwishlist/mails/ru/wishlink.txt" />
       <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/modules/blockwishlist/mails/ru/wishlist.html" />
       <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/modules/blockwishlist/mails/ru/wishlist.txt" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/cache/smarty/compile/98/c4/67/wrt5b6d8817e0e744_17564447" />
       <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/cache/smarty/compile/2a/72/70/wrt5b6d88184f84a8_79841191" />
       <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/cache/smarty/compile/32/90/d0/wrt5b6d881854bcb6_06046971" />
@@ -13907,6 +13913,7 @@
   <component name="CreatePatchCommitExecutor">
     <option name="PATCH_PATH" value="" />
   </component>
+  <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="FavoritesManager">
     <favorites_list name="citymotors.loc" />
   </component>
@@ -13915,8 +13922,8 @@
       <file leaf-file-name=".gitignore" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/.gitignore">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.023339318">
-              <caret line="11" column="10" selection-start-line="11" selection-start-column="10" selection-end-line="11" selection-end-column="10" />
+            <state vertical-scroll-proportion="0.5421903">
+              <caret line="28" column="18" selection-start-line="28" selection-start-column="18" selection-end-line="28" selection-end-column="18" />
               <folding />
             </state>
           </provider>
@@ -14000,6 +14007,27 @@
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="HbShouldOpenHtmlAsHb" value="" />
   </component>
+  <component name="RunManager">
+    <configuration default="true" type="JavascriptDebugType" factoryName="JavaScript Debug">
+      <method />
+    </configuration>
+    <configuration default="true" type="NodeJSConfigurationType" factoryName="Node.js" working-dir="">
+      <method />
+    </configuration>
+    <configuration default="true" type="PHPUnitRunConfigurationType" factoryName="PHPUnit">
+      <TestRunner />
+      <method />
+    </configuration>
+    <configuration default="true" type="PhpLocalRunConfigurationType" factoryName="PHP Console">
+      <method />
+    </configuration>
+    <configuration default="true" type="PhpUnitRemoteRunConfigurationType" factoryName="PHPUnit on Server">
+      <method />
+    </configuration>
+    <configuration default="true" type="js.build_tools.gulp" factoryName="Gulp.js">
+      <method />
+    </configuration>
+  </component>
   <component name="ShelveChangesManager" show_recycled="false" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
@@ -14018,6 +14046,7 @@
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Get Gist" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="true" content_ui="tabs" />
+      <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -14044,8 +14073,8 @@
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/.gitignore">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.023339318">
-          <caret line="11" column="10" selection-start-line="11" selection-start-column="10" selection-end-line="11" selection-end-column="10" />
+        <state vertical-scroll-proportion="0.5421903">
+          <caret line="28" column="18" selection-start-line="28" selection-start-column="18" selection-end-line="28" selection-end-column="18" />
           <folding />
         </state>
       </provider>
