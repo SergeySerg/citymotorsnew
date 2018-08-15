@@ -1,0 +1,6 @@
+{
+    "require": {
+        "jackmartin/api3intime": "^1.1",
+        "meng-tian/async-soap-guzzle": "^0.2.4"
+    }
+}

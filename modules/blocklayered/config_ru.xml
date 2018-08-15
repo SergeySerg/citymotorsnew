@@ -2,7 +2,7 @@
 <module>
 	<name>blocklayered</name>
 	<displayName><![CDATA[Блок многоуровневой навигации]]></displayName>
-	<version><![CDATA[2.2.0]]></version>
+	<version><![CDATA[2.2.1]]></version>
 	<description><![CDATA[Показывает блок с многоуровневыми навигационными фильтрами.]]></description>
 	<author><![CDATA[PrestaShop]]></author>
 	<tab><![CDATA[front_office_features]]></tab>

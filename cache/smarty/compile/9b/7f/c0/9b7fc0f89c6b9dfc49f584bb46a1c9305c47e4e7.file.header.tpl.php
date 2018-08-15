@@ -1,17 +1,17 @@
-<?php /* Smarty version Smarty-3.1.19, created on 2018-08-10 17:25:03
+<?php /* Smarty version Smarty-3.1.19, created on 2018-08-15 18:36:25
          compiled from "E:\WebserverNew\domains\citymotors.loc\themes\citymotors\header.tpl" */ ?>
-<?php /*%%SmartyHeaderCode:242715b6da03fd7aef9-09712282%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
+<?php /*%%SmartyHeaderCode:86085b744879d81c09-01266226%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
   'file_dependency' => 
   array (
     '9b7fc0f89c6b9dfc49f584bb46a1c9305c47e4e7' => 
     array (
       0 => 'E:\\WebserverNew\\domains\\citymotors.loc\\themes\\citymotors\\header.tpl',
-      1 => 1533910980,
+      1 => 1534338844,
       2 => 'file',
     ),
   ),
-  'nocache_hash' => '242715b6da03fd7aef9-09712282',
+  'nocache_hash' => '86085b744879d81c09-01266226',
   'function' => 
   array (
   ),
@@ -58,9 +58,9 @@ $_valid = $_smarty_tpl->decodeProperties(array (
   ),
   'has_nocache_code' => false,
   'version' => 'Smarty-3.1.19',
-  'unifunc' => 'content_5b6da040209b38_54802743',
+  'unifunc' => 'content_5b744879f2b207_32823686',
 ),false); /*/%%SmartyHeaderCode%%*/?>
-<?php if ($_valid && !is_callable('content_5b6da040209b38_54802743')) {function content_5b6da040209b38_54802743($_smarty_tpl) {?><?php if (!is_callable('smarty_function_implode')) include 'E:\\WebserverNew\\domains\\citymotors.loc\\tools\\smarty\\plugins\\function.implode.php';
+<?php if ($_valid && !is_callable('content_5b744879f2b207_32823686')) {function content_5b744879f2b207_32823686($_smarty_tpl) {?><?php if (!is_callable('smarty_function_implode')) include 'E:\\WebserverNew\\domains\\citymotors.loc\\tools\\smarty\\plugins\\function.implode.php';
 ?>
 <!DOCTYPE HTML>
 <!--[if lt IE 7]> <html class="no-js lt-ie9 lt-ie8 lt-ie7"<?php if (isset($_smarty_tpl->tpl_vars['language_code']->value)&&$_smarty_tpl->tpl_vars['language_code']->value) {?> lang="<?php echo htmlspecialchars($_smarty_tpl->tpl_vars['language_code']->value, ENT_QUOTES, 'UTF-8', true);?>
@@ -139,11 +139,15 @@ $_smarty_tpl->tpl_vars['js_uri']->_loop = true;
 		<?php echo $_smarty_tpl->tpl_vars['HOOK_HEADER']->value;?>
 
 		<link rel="stylesheet" href="//fonts.googleapis.com/css?family=Open+Sans:300,600&amp;subset=latin,latin-ext" type="text/css" media="all" />
+		<link href="/select/select2.min.css" rel="stylesheet" />
+		<script src="/select/select2.min.js"></script>
+		<script type="text/javascript" src="/js/custom_order.js"></script>
+	</head>
 		<!--[if IE 8]>
 		<script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
 		<script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
 		<![endif]-->
-	</head>
+
 	<body<?php if (isset($_smarty_tpl->tpl_vars['page_name']->value)) {?> id="<?php echo htmlspecialchars($_smarty_tpl->tpl_vars['page_name']->value, ENT_QUOTES, 'UTF-8', true);?>
 "<?php }?> class="<?php if (isset($_smarty_tpl->tpl_vars['page_name']->value)) {?><?php echo htmlspecialchars($_smarty_tpl->tpl_vars['page_name']->value, ENT_QUOTES, 'UTF-8', true);?>
 <?php }?><?php if (isset($_smarty_tpl->tpl_vars['body_classes']->value)&&count($_smarty_tpl->tpl_vars['body_classes']->value)) {?> <?php echo smarty_function_implode(array('value'=>$_smarty_tpl->tpl_vars['body_classes']->value,'separator'=>' '),$_smarty_tpl);?>

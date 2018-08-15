@@ -1,0 +1,21 @@
+{
+    "name": "jackmartin/api3intime",
+    "description": "API InTime 3 version",
+    "type": "library",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Jack Martin",
+            "email": "killfess@gmail.com"
+        }
+    ],
+    "autoload": {
+    	"psr-4": {
+    		"InTime\\" : "src/"
+    	}
+    },
+    "require": {
+        "php": ">=5.6",
+    	"meng-tian/async-soap-guzzle": "^0.2.4"
+    }
+}
