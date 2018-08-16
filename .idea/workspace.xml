@@ -2,543 +2,26 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="b5c5dd4f-8a95-4499-837a-2f658b462d81" name="Default" comment="">
-      <change type="DELETED" beforePath="E:\WebserverNew\domains\citymotors.loc\cache\smarty\compile\00\4c\a4\004ca411af19eab961c248ccf6d1d7489fce6d83.file.supplier-list.tpl.php" afterPath="" />
-      <change type="DELETED" beforePath="E:\WebserverNew\domains\citymotors.loc\cache\smarty\compile\00\8f\e9\008fe9b311549596d2aaac43e562524960dd97a7.file.message.tpl.php" afterPath="" />
-      <change type="DELETED" beforePath="E:\WebserverNew\domains\citymotors.loc\cache\smarty\compile\01\1a\53\011a53de6d95762f93393cc80354b690e4692a3d.file.product-compare.tpl.php" afterPath="" />
-      <change type="DELETED" beforePath="E:\WebserverNew\domains\citymotors.loc\cache\smarty\compile\01\73\68\017368ef631e118b85e83c737b1780678dd22add.file.warning_module.tpl.php" afterPath="" />
-      <change type="DELETED" beforePath="E:\WebserverNew\domains\citymotors.loc\cache\smarty\compile\04\33\f4\0433f429dd91f002f14ba11d17f329ef3588066d.file.blockrss.tpl.php" afterPath="" />
-      <change type="DELETED" beforePath="E:\WebserverNew\domains\citymotors.loc\cache\smarty\compile\04\50\24\0450247ff1bb186566086ba809a6b361953331d0.file.blocksocial.tpl.php" afterPath="" />
-      <change type="DELETED" beforePath="E:\WebserverNew\domains\citymotors.loc\cache\smarty\compile\04\8f\57\048f57ee6168d653ab0be2d246c4f346f78e6b38.file.order-address-multishipping.tpl.php" afterPath="" />
-      <change type="DELETED" beforePath="E:\WebserverNew\domains\citymotors.loc\cache\smarty\compile\06\eb\ac\06ebacee19594500aac0ef408b4675e7a9de1e63.file.category-tree-branch.tpl.cache.php" afterPath="" />
-      <change type="DELETED" beforePath="E:\WebserverNew\domains\citymotors.loc\cache\smarty\compile\06\eb\ac\06ebacee19594500aac0ef408b4675e7a9de1e63.file.category-tree-branch.tpl.php" afterPath="" />
-      <change type="DELETED" beforePath="E:\WebserverNew\domains\citymotors.loc\cache\smarty\compile\07\0b\d6\070bd643d60e3eafa8dd53a3914bcf424ac6b892.file.view.tpl.php" afterPath="" />
-      <change type="DELETED" beforePath="E:\WebserverNew\domains\citymotors.loc\cache\smarty\compile\07\d4\75\07d475ff8b6f3b9ffeecef920bac0d31b3ed1f95.file.tab.tpl.cache.php" afterPath="" />
-      <change type="DELETED" beforePath="E:\WebserverNew\domains\citymotors.loc\cache\smarty\compile\08\c6\d3\08c6d3bf32a0390955b98fe73c2710c54d0d5030.file.shop_tree_header.tpl.php" afterPath="" />
-      <change type="DELETED" beforePath="E:\WebserverNew\domains\citymotors.loc\cache\smarty\compile\0b\18\96\0b1896f2db7330f807ac0909be87f48e88418eae.file.sitemap.tpl.php" afterPath="" />
-      <change type="DELETED" beforePath="E:\WebserverNew\domains\citymotors.loc\cache\smarty\compile\0c\32\3b\0c323b24e19d75347c307e8bff59aae9c9e58034.file.content.tpl.php" afterPath="" />
-      <change type="DELETED" beforePath="E:\WebserverNew\domains\citymotors.loc\cache\smarty\compile\0e\13\c4\0e13c45813367e29471239eb26e41c87e061f2a7.file.list.tpl.php" afterPath="" />
-      <change type="DELETED" beforePath="E:\WebserverNew\domains\citymotors.loc\cache\smarty\compile\0e\61\03\0e610344a5e546dc84b95b84462c9c5fe2a9e1c0.file.invalid_token.tpl.php" afterPath="" />
-      <change type="DELETED" beforePath="E:\WebserverNew\domains\citymotors.loc\cache\smarty\compile\0f\a0\39\0fa039f2cd0391209319c98ffcfda31a2285e0a0.file.blockmyaccountfooter.tpl.cache.php" afterPath="" />
-      <change type="DELETED" beforePath="E:\WebserverNew\domains\citymotors.loc\cache\smarty\compile\0f\a0\39\0fa039f2cd0391209319c98ffcfda31a2285e0a0.file.blockmyaccountfooter.tpl.php" afterPath="" />
-      <change type="DELETED" beforePath="E:\WebserverNew\domains\citymotors.loc\cache\smarty\compile\0f\c8\f8\0fc8f800fb2dd6940f5c941981aaaa17df34a825.file.filters.tpl.php" afterPath="" />
-      <change type="DELETED" beforePath="E:\WebserverNew\domains\citymotors.loc\cache\smarty\compile\10\ef\6c\10ef6c6327747fa5eb47720a44d8b2e7d7ecd8f6.file.content.tpl.php" afterPath="" />
-      <change type="DELETED" beforePath="E:\WebserverNew\domains\citymotors.loc\cache\smarty\compile\11\6e\be\116ebe802402e7d7bde16c904e95afdd7fa412c1.file.blockcms.tpl.php" afterPath="" />
-      <change type="DELETED" beforePath="E:\WebserverNew\domains\citymotors.loc\cache\smarty\compile\11\d1\1b\11d11b63e071865d836326a9c0f53db2b8c86a5f.file.productpaymentlogos.tpl.php" afterPath="" />
-      <change type="DELETED" beforePath="E:\WebserverNew\domains\citymotors.loc\cache\smarty\compile\12\69\81\126981a053c60a2dd8136c29d04feffeb78ce7df.file.blockcategories.tpl.php" afterPath="" />
-      <change type="DELETED" beforePath="E:\WebserverNew\domains\citymotors.loc\cache\smarty\compile\12\ea\0c\12ea0cfc7a0ae5a4475d665d79d49b0fd5eb172d.file.layout-export.tpl.php" afterPath="" />
-      <change type="DELETED" beforePath="E:\WebserverNew\domains\citymotors.loc\cache\smarty\compile\13\40\51\134051b23455df055eb73d7012dff230d944c135.file.category-count.tpl.php" afterPath="" />
-      <change type="DELETED" beforePath="E:\WebserverNew\domains\citymotors.loc\cache\smarty\compile\13\ca\fa\13cafab0582ca1c46add04491607c0558714a22b.file.tab.tpl.cache.php" afterPath="" />
-      <change type="DELETED" beforePath="E:\WebserverNew\domains\citymotors.loc\cache\smarty\compile\13\ca\fa\13cafab0582ca1c46add04491607c0558714a22b.file.tab.tpl.php" afterPath="" />
-      <change type="DELETED" beforePath="E:\WebserverNew\domains\citymotors.loc\cache\smarty\compile\14\2b\08\142b08c7b4da0df02d08efc70a6582ae24c01a83.file.form.tpl.php" afterPath="" />
-      <change type="DELETED" beforePath="E:\WebserverNew\domains\citymotors.loc\cache\smarty\compile\14\2f\98\142f98a7eb40d9358a30845922d97a4537c55137.file.quantities.tpl.php" afterPath="" />
-      <change type="DELETED" beforePath="E:\WebserverNew\domains\citymotors.loc\cache\smarty\compile\17\51\1f\17511f7a3f17ca7a5c92d9e58a7e2417c158e101.file.list_header.tpl.php" afterPath="" />
-      <change type="DELETED" beforePath="E:\WebserverNew\domains\citymotors.loc\cache\smarty\compile\17\f9\e5\17f9e5ecb0578c99961e4f776b47aa7c16393b1d.file.order-opc-new-account.tpl.php" afterPath="" />
-      <change type="DELETED" beforePath="E:\WebserverNew\domains\citymotors.loc\cache\smarty\compile\18\4f\e9\184fe975b56d16be2b9510f690d2da59f2b5f71b.file.form_date_range_picker.tpl.php" afterPath="" />
-      <change type="DELETED" beforePath="E:\WebserverNew\domains\citymotors.loc\cache\smarty\compile\18\af\ad\18afad6ebdef769a54544db7a2f23cf22f020a4f.file.supplier.tpl.php" afterPath="" />
-      <change type="DELETED" beforePath="E:\WebserverNew\domains\citymotors.loc\cache\smarty\compile\19\1f\2e\191f2eaf2fe9f3c8d50d048c92d2940a26d9da9f.file.email.tpl.php" afterPath="" />
-      <change type="DELETED" beforePath="E:\WebserverNew\domains\citymotors.loc\cache\smarty\compile\1a\20\29\1a202914747dddff941430409513e0c49fca04f0.file.product.tpl.php" afterPath="" />
-      <change type="DELETED" beforePath="E:\WebserverNew\domains\citymotors.loc\cache\smarty\compile\1a\22\e4\1a22e450903045632c66f6e6a0fb01c1b5c4a5e1.file.list_footer.tpl.php" afterPath="" />
-      <change type="DELETED" beforePath="E:\WebserverNew\domains\citymotors.loc\cache\smarty\compile\1a\ab\7d\1aab7d360da0d2b799cfd4644e90a0f8d2e682a3.file.suppliers.tpl.php" afterPath="" />
-      <change type="DELETED" beforePath="E:\WebserverNew\domains\citymotors.loc\cache\smarty\compile\1a\be\b4\1abeb4287d4fe487e4ab78f22e3089aa73e651b6.file.prices-drop.tpl.php" afterPath="" />
-      <change type="DELETED" beforePath="E:\WebserverNew\domains\citymotors.loc\cache\smarty\compile\1a\c7\2c\1ac72c6ee8b61286d962316509edf4d342357ba2.file.form_customization_feedback.tpl.php" afterPath="" />
-      <change type="DELETED" beforePath="E:\WebserverNew\domains\citymotors.loc\cache\smarty\compile\1a\c8\24\1ac824e13b2ffd130a9ee3a75d7023a427b46c0d.file.kpi.tpl.php" afterPath="" />
-      <change type="DELETED" beforePath="E:\WebserverNew\domains\citymotors.loc\cache\smarty\compile\1b\35\28\1b35283b5b8ac47278babb4293bcf2d4f8caa6a5.file.pagination.tpl.php" afterPath="" />
-      <change type="DELETED" beforePath="E:\WebserverNew\domains\citymotors.loc\cache\smarty\compile\1b\b5\36\1bb5362df179c6bb1e3a1c021406ed5426541963.file.blockstore.tpl.php" afterPath="" />
-      <change type="DELETED" beforePath="E:\WebserverNew\domains\citymotors.loc\cache\smarty\compile\1b\d2\34\1bd23431192d7df2789d0af08406998c7473abb2.file.order-follow.tpl.php" afterPath="" />
-      <change type="DELETED" beforePath="E:\WebserverNew\domains\citymotors.loc\cache\smarty\compile\1c\84\4c\1c844ce103b415b7ffa4c96196f94cb212ee4dc1.file.tree_node_folder_checkbox_shops.tpl.php" afterPath="" />
-      <change type="DELETED" beforePath="E:\WebserverNew\domains\citymotors.loc\cache\smarty\compile\1c\f6\a0\1cf6a0e3b0ccd9f2824340c6abb7edb8747b124d.file.list_content.tpl.php" afterPath="" />
-      <change type="DELETED" beforePath="E:\WebserverNew\domains\citymotors.loc\cache\smarty\compile\1d\67\4d\1d674d16525522b31255e9d2d783fd3581353b56.file.blockmanufacturer.tpl.php" afterPath="" />
-      <change type="DELETED" beforePath="E:\WebserverNew\domains\citymotors.loc\cache\smarty\compile\1d\a5\93\1da59366cebfe7d51902e0956b8e4e30a2a6963a.file.identity.tpl.php" afterPath="" />
-      <change type="DELETED" beforePath="E:\WebserverNew\domains\citymotors.loc\cache\smarty\compile\1e\80\be\1e80be8f71cf8104b080b89ab35d95e2834bf247.file.tree_toolbar_search.tpl.php" afterPath="" />
-      <change type="DELETED" beforePath="E:\WebserverNew\domains\citymotors.loc\cache\smarty\compile\1e\c4\76\1ec476058bcd33109bca2103e00ee7214a72d2bc.file.attachments.tpl.php" afterPath="" />
-      <change type="DELETED" beforePath="E:\WebserverNew\domains\citymotors.loc\cache\smarty\compile\20\1a\5a\201a5ab1c0f6dfa0519420a613d6506c4d4b3fc9.file.footer_toolbar.tpl.php" afterPath="" />
-      <change type="DELETED" beforePath="E:\WebserverNew\domains\citymotors.loc\cache\smarty\compile\20\ca\cb\20cacbcf877e8c6308c0dd12f31d53a70d052192.file.form_ranges.tpl.php" afterPath="" />
-      <change type="DELETED" beforePath="E:\WebserverNew\domains\citymotors.loc\cache\smarty\compile\20\e2\17\20e21748293829ee0e30bcb890464b8e3061fac9.file.textarea_lang.tpl.php" afterPath="" />
-      <change type="DELETED" beforePath="E:\WebserverNew\domains\citymotors.loc\cache\smarty\compile\20\e9\0c\20e90c016ce2f7364415ad481786647f9c22cc85.file.payment_execution.tpl.php" afterPath="" />
-      <change type="DELETED" beforePath="E:\WebserverNew\domains\citymotors.loc\cache\smarty\compile\20\f3\32\20f332c95c00da823312eb9ff0450b5f1f1a52c5.file.nav.tpl.cache.php" afterPath="" />
-      <change type="DELETED" beforePath="E:\WebserverNew\domains\citymotors.loc\cache\smarty\compile\20\f3\32\20f332c95c00da823312eb9ff0450b5f1f1a52c5.file.nav.tpl.php" afterPath="" />
-      <change type="DELETED" beforePath="E:\WebserverNew\domains\citymotors.loc\cache\smarty\compile\21\09\e2\2109e2da2726453af4e99b381f747eb03c74d8c3.file.validation.tpl.php" afterPath="" />
-      <change type="DELETED" beforePath="E:\WebserverNew\domains\citymotors.loc\cache\smarty\compile\21\83\63\218363613f940dc40f5a7068752a94dd81449df0.file.tree_node_item_checkbox.tpl.php" afterPath="" />
-      <change type="DELETED" beforePath="E:\WebserverNew\domains\citymotors.loc\cache\smarty\compile\23\a3\18\23a31867b9aefd97cff4e51129de64c0e3ca278d.file.product-list.tpl.cache.php" afterPath="" />
-      <change type="DELETED" beforePath="E:\WebserverNew\domains\citymotors.loc\cache\smarty\compile\23\a3\18\23a31867b9aefd97cff4e51129de64c0e3ca278d.file.product-list.tpl.php" afterPath="" />
-      <change type="DELETED" beforePath="E:\WebserverNew\domains\citymotors.loc\cache\smarty\compile\24\95\ad\2495ade5a624541d664ed1e6d14f715b8faac2cf.file.options.tpl.php" afterPath="" />
-      <change type="DELETED" beforePath="E:\WebserverNew\domains\citymotors.loc\cache\smarty\compile\24\9b\48\249b48fd722c059d973699bbfc0099fc6d805ac6.file.order-payment.tpl.php" afterPath="" />
-      <change type="DELETED" beforePath="E:\WebserverNew\domains\citymotors.loc\cache\smarty\compile\24\e7\61\24e761e8c487c588db7bf479b68b8c30cd61bb3f.file.blockstore.tpl.php" afterPath="" />
-      <change type="DELETED" beforePath="E:\WebserverNew\domains\citymotors.loc\cache\smarty\compile\25\40\e7\2540e76ccae3be3072ff3a336c4b71967f1a5843.file.product-list-colors.tpl.php" afterPath="" />
-      <change type="DELETED" beforePath="E:\WebserverNew\domains\citymotors.loc\cache\smarty\compile\25\c9\f5\25c9f58da15c009a87b00f47ad5617e9df64e911.file.assoshop.tpl.php" afterPath="" />
-      <change type="DELETED" beforePath="E:\WebserverNew\domains\citymotors.loc\cache\smarty\compile\26\5a\81\265a8107fb7100d3192512f564c8ee6d4ce40700.file.shopping-cart-product-line.tpl.php" afterPath="" />
-      <change type="DELETED" beforePath="E:\WebserverNew\domains\citymotors.loc\cache\smarty\compile\27\0b\c4\270bc4294e7fafa5ce863773e4190e33654b7e8e.file.tree_node_item_checkbox.tpl.php" afterPath="" />
-      <change type="DELETED" beforePath="E:\WebserverNew\domains\citymotors.loc\cache\smarty\compile\29\71\c2\2971c2feff6723d4b5f674a2b10c2d6b8f9c2e6c.file.product_rule_group.tpl.php" afterPath="" />
-      <change type="DELETED" beforePath="E:\WebserverNew\domains\citymotors.loc\cache\smarty\compile\29\7d\c8\297dc8bcf91ddb4655d41ee91c3da433f4676b0a.file.content.tpl.php" afterPath="" />
-      <change type="DELETED" beforePath="E:\WebserverNew\domains\citymotors.loc\cache\smarty\compile\2a\0b\5c\2a0b5c5bea7160b0265b606ebf44e6184f72bdf3.file.check_fields.tpl.php" afterPath="" />
-      <change type="DELETED" beforePath="E:\WebserverNew\domains\citymotors.loc\cache\smarty\compile\2a\72\70\2a727038b1943daa6b01b5100d1fab29a8da7051.file.tree_node_item_checkbox_shops.tpl.php" afterPath="" />
-      <change type="DELETED" beforePath="E:\WebserverNew\domains\citymotors.loc\cache\smarty\compile\2a\72\70\wrt5b6d88184f84a8_79841191" afterPath="" />
-      <change type="DELETED" beforePath="E:\WebserverNew\domains\citymotors.loc\cache\smarty\compile\2b\f6\4f\2bf64ffd4d1aebb4c99f09f2f02ed9c5a1738df7.file.virtualproduct.tpl.php" afterPath="" />
-      <change type="DELETED" beforePath="E:\WebserverNew\domains\citymotors.loc\cache\smarty\compile\2c\38\ab\2c38abd52fc167e36102e8bc0d3294383ac9556a.file.associations.tpl.php" afterPath="" />
-      <change type="DELETED" beforePath="E:\WebserverNew\domains\citymotors.loc\cache\smarty\compile\2c\72\64\2c7264580a264fac2e20587024e59490265de63b.file.productcomments_reviews.tpl.php" afterPath="" />
-      <change type="DELETED" beforePath="E:\WebserverNew\domains\citymotors.loc\cache\smarty\compile\2c\fd\a6\2cfda6c62ba5c4402dd9784907a6935029cc3a45.file.layout.tpl.php" afterPath="" />
-      <change type="DELETED" beforePath="E:\WebserverNew\domains\citymotors.loc\cache\smarty\compile\2d\19\6e\2d196e0b5df16fa154439c5ec36e5d19970e4f02.file.blockcart.tpl.php" afterPath="" />
-      <change type="DELETED" beforePath="E:\WebserverNew\domains\citymotors.loc\cache\smarty\compile\2d\53\c9\2d53c9b76a1bf6696d29c49f3cfc0b67a92e3cc7.file.order-carrier.tpl.php" afterPath="" />
-      <change type="DELETED" beforePath="E:\WebserverNew\domains\citymotors.loc\cache\smarty\compile\2d\f8\44\2df844fb504e992072f9b97eb580057609f6c928.file.list_footer.tpl.php" afterPath="" />
-      <change type="DELETED" beforePath="E:\WebserverNew\domains\citymotors.loc\cache\smarty\compile\2e\84\20\2e84201e182fd36590f1599da9d9db4476ac4ed7.file.toolbar.tpl.php" afterPath="" />
-      <change type="DELETED" beforePath="E:\WebserverNew\domains\citymotors.loc\cache\smarty\compile\30\79\4e\30794e2e1d937d0fdf1b2c4b7304c90de4b7afca.file.warehouses.tpl.php" afterPath="" />
-      <change type="DELETED" beforePath="E:\WebserverNew\domains\citymotors.loc\cache\smarty\compile\30\bd\06\30bd06bfd590d2c1241e3d0e4393a64f17b33af8.file.blocknewproducts.tpl.php" afterPath="" />
-      <change type="DELETED" beforePath="E:\WebserverNew\domains\citymotors.loc\cache\smarty\compile\31\21\74\3121742a3f0bfe922960e2fccb62332c41bd8a07.file.specific_prices_shop_update.tpl.php" afterPath="" />
-      <change type="DELETED" beforePath="E:\WebserverNew\domains\citymotors.loc\cache\smarty\compile\31\52\a0\3152a0e22b12a91576fc4cdfbfdc8d47ff955037.file.nbr-product-page.tpl.php" afterPath="" />
-      <change type="DELETED" beforePath="E:\WebserverNew\domains\citymotors.loc\cache\smarty\compile\31\b8\9d\31b89d839f5216010fdbb518260fc6827de0dc5a.file.favorites.tpl.php" afterPath="" />
-      <change type="DELETED" beforePath="E:\WebserverNew\domains\citymotors.loc\cache\smarty\compile\31\da\52\31da52b4362bfdd28c0feff30716f4512040eb46.file.order-steps.tpl.php" afterPath="" />
-      <change type="DELETED" beforePath="E:\WebserverNew\domains\citymotors.loc\cache\smarty\compile\32\90\d0\3290d0816b23b2f549a20f5c11a706f96b589eb1.file.tree_node_item_radio.tpl.php" afterPath="" />
-      <change type="DELETED" beforePath="E:\WebserverNew\domains\citymotors.loc\cache\smarty\compile\32\90\d0\wrt5b6d881854bcb6_06046971" afterPath="" />
-      <change type="DELETED" beforePath="E:\WebserverNew\domains\citymotors.loc\cache\smarty\compile\33\d9\77\33d977e00cc102a00d5b5bae4f24d80c3157d1dd.file.attachment_ajax.tpl.php" afterPath="" />
-      <change type="DELETED" beforePath="E:\WebserverNew\domains\citymotors.loc\cache\smarty\compile\34\6a\8a\346a8a94eec1b24917fbad8c684b76684d90f57b.file.page_header_toolbar.tpl.php" afterPath="" />
-      <change type="DELETED" beforePath="E:\WebserverNew\domains\citymotors.loc\cache\smarty\compile\34\b2\d6\34b2d61f2faed952fa9bfa9111f4af05b729b368.file.my-account.tpl.php" afterPath="" />
-      <change type="DELETED" beforePath="E:\WebserverNew\domains\citymotors.loc\cache\smarty\compile\34\e8\d7\34e8d7a1d572d0090ad542bf164a2caaeb964652.file.my-account.tpl.php" afterPath="" />
-      <change type="DELETED" beforePath="E:\WebserverNew\domains\citymotors.loc\cache\smarty\compile\35\4b\39\354b396a078e0b461d42f2ad264bc941acc2df4c.file._print_pdf_icon.tpl.php" afterPath="" />
-      <change type="DELETED" beforePath="E:\WebserverNew\domains\citymotors.loc\cache\smarty\compile\35\de\26\35de26c24da3d20b221c6de6b1caef195753b9f9.file.favoriteproducts-account.tpl.php" afterPath="" />
-      <change type="DELETED" beforePath="E:\WebserverNew\domains\citymotors.loc\cache\smarty\compile\36\37\b2\3637b2a2207c8d1a53e10d9dc1502b2d81f6b100.file.form_settings.tpl.php" afterPath="" />
-      <change type="DELETED" beforePath="E:\WebserverNew\domains\citymotors.loc\cache\smarty\compile\36\ed\d3\36edd3d8bf960e713cc1b47d0514da4a09d59d4e.file.blocksupplier.tpl.php" afterPath="" />
-      <change type="DELETED" beforePath="E:\WebserverNew\domains\citymotors.loc\cache\smarty\compile\37\67\a0\3767a0b4870320ddd67d8e106056be3daccddcf2.file.blocklayered.tpl.php" afterPath="" />
-      <change type="DELETED" beforePath="E:\WebserverNew\domains\citymotors.loc\cache\smarty\compile\38\02\ae\3802ae66b7660ee8e1b7e94e1f7c7a977fa31ee7.file.tree_categories.tpl.php" afterPath="" />
-      <change type="DELETED" beforePath="E:\WebserverNew\domains\citymotors.loc\cache\smarty\compile\38\ed\e4\38ede4a1ff471b71c346cca6d696ce49e870d70e.file.modal_not_trusted_country.tpl.php" afterPath="" />
-      <change type="DELETED" beforePath="E:\WebserverNew\domains\citymotors.loc\cache\smarty\compile\38\f8\7e\38f87e717f0919c4e3881d19488540213a5f6f46.file.discount.tpl.php" afterPath="" />
-      <change type="DELETED" beforePath="E:\WebserverNew\domains\citymotors.loc\cache\smarty\compile\39\29\f7\3929f7a6ad328ef99fab9065d172721f0123e87b.file.tree_associated_header.tpl.php" afterPath="" />
-      <change type="DELETED" beforePath="E:\WebserverNew\domains\citymotors.loc\cache\smarty\compile\39\4a\5c\394a5cceb9bd5dae420a714d1f9729993e660199.file.associations.tpl.php" afterPath="" />
-      <change type="DELETED" beforePath="E:\WebserverNew\domains\citymotors.loc\cache\smarty\compile\39\d3\eb\39d3ebea7c9b256ed018211cb88f50b1961523fe.file.crossselling.tpl.php" afterPath="" />
-      <change type="DELETED" beforePath="E:\WebserverNew\domains\citymotors.loc\cache\smarty\compile\3a\52\9b\3a529b98e59b59ca3cd20f12b437fbdb045aaa6f.file.product.tpl.php" afterPath="" />
-      <change type="DELETED" beforePath="E:\WebserverNew\domains\citymotors.loc\cache\smarty\compile\3c\b3\b7\3cb3b7f4ed2a276aa541527a7b4dfbabf65c5cfc.file.cms.tpl.php" afterPath="" />
-      <change type="DELETED" beforePath="E:\WebserverNew\domains\citymotors.loc\cache\smarty\compile\3c\ca\0e\3cca0e8c3c4bc510b8408b54b5b230b3e65c6299.file.modal_not_trusted.tpl.php" afterPath="" />
-      <change type="DELETED" beforePath="E:\WebserverNew\domains\citymotors.loc\cache\smarty\compile\3d\0b\39\3d0b394f7c8d357c3c93715b2ecf96a37a8ed2e6.file.blockuserinfo.tpl.php" afterPath="" />
-      <change type="DELETED" beforePath="E:\WebserverNew\domains\citymotors.loc\cache\smarty\compile\3d\b4\0d\3db40d91cbf17b53a573dc8220ff5588a05cd12d.file.manufacturer-list.tpl.php" afterPath="" />
-      <change type="DELETED" beforePath="E:\WebserverNew\domains\citymotors.loc\cache\smarty\compile\3d\fc\c9\3dfcc903cd30699ef0c89381b1b708e08fdc7da4.file.category-cms-tree-branch.tpl.php" afterPath="" />
-      <change type="DELETED" beforePath="E:\WebserverNew\domains\citymotors.loc\cache\smarty\compile\3e\95\45\3e9545048bd13058c85634b602ea290b4336fb52.file.tab_module_line.tpl.php" afterPath="" />
-      <change type="DELETED" beforePath="E:\WebserverNew\domains\citymotors.loc\cache\smarty\compile\3e\b5\1a\3eb51ad164b234c5d35ca457c8d6354d95d33f54.file.list_action_delete.tpl.php" afterPath="" />
-      <change type="DELETED" beforePath="E:\WebserverNew\domains\citymotors.loc\cache\smarty\compile\3e\dd\da\3eddda93738338b81fdbce4ed066a8862fb29eac.file.list_action_default.tpl.php" afterPath="" />
-      <change type="DELETED" beforePath="E:\WebserverNew\domains\citymotors.loc\cache\smarty\compile\40\94\94\40949417899d4f293ee26516e1452c3181a94e73.file.blockspecials-home.tpl.cache.php" afterPath="" />
-      <change type="DELETED" beforePath="E:\WebserverNew\domains\citymotors.loc\cache\smarty\compile\40\a9\96\40a996a4bd3a1b03ab073f465216b0fa31bfa2ba.file.blockcategories_footer.tpl.php" afterPath="" />
-      <change type="DELETED" beforePath="E:\WebserverNew\domains\citymotors.loc\cache\smarty\compile\41\a0\3a\41a03ad7e1683ce875d376aeaeee3d372cd13b9c.file.carriercompare.tpl.php" afterPath="" />
-      <change type="DELETED" beforePath="E:\WebserverNew\domains\citymotors.loc\cache\smarty\compile\42\1d\47\421d474c59534607242f39aba7c2b1a6106b364c.file.pack.tpl.php" afterPath="" />
-      <change type="DELETED" beforePath="E:\WebserverNew\domains\citymotors.loc\cache\smarty\compile\42\36\76\423676375977c9d0629c9072a63633e1695394a0.file.list.tpl.php" afterPath="" />
-      <change type="DELETED" beforePath="E:\WebserverNew\domains\citymotors.loc\cache\smarty\compile\42\5a\ab\425aab3f653107d062b88c9a8e015710003cb9e2.file.content.tpl.php" afterPath="" />
-      <change type="DELETED" beforePath="E:\WebserverNew\domains\citymotors.loc\cache\smarty\compile\43\07\ab\4307ab149a7bb21f3c96dee7448359ea3a91b942.file.prices.tpl.php" afterPath="" />
-      <change type="DELETED" beforePath="E:\WebserverNew\domains\citymotors.loc\cache\smarty\compile\43\56\6e\43566e99d3f5a81decf23651dd2353b34db4c692.file.order-address-multishipping-products.tpl.php" afterPath="" />
-      <change type="DELETED" beforePath="E:\WebserverNew\domains\citymotors.loc\cache\smarty\compile\43\c7\d3\43c7d3f19357bf88025ec54d641a00a81594b777.file.tree_node_item.tpl.php" afterPath="" />
-      <change type="DELETED" beforePath="E:\WebserverNew\domains\citymotors.loc\cache\smarty\compile\44\76\e8\4476e866917fa8d45aaf5feb60bddb103c5d93f2.file.view.tpl.php" afterPath="" />
-      <change type="DELETED" beforePath="E:\WebserverNew\domains\citymotors.loc\cache\smarty\compile\44\e1\28\44e128c3c9ed8df8dd862baea7cff62cad20e5bd.file.products-comparison.tpl.php" afterPath="" />
-      <change type="DELETED" beforePath="E:\WebserverNew\domains\citymotors.loc\cache\smarty\compile\46\91\3a\46913a17583e755617e499432dbba4dd6679e182.file.blockbanner.tpl.php" afterPath="" />
-      <change type="DELETED" beforePath="E:\WebserverNew\domains\citymotors.loc\cache\smarty\compile\46\a4\83\46a483bd9af3b1a5a877d4352ed8b19240541f68.file.importtheme_view.tpl.php" afterPath="" />
-      <change type="DELETED" beforePath="E:\WebserverNew\domains\citymotors.loc\cache\smarty\compile\47\0e\b7\470eb729e6a60d5087b0f08f4ed755c9b77f401c.file.my-account.tpl.php" afterPath="" />
-      <change type="DELETED" beforePath="E:\WebserverNew\domains\citymotors.loc\cache\smarty\compile\47\17\fc\4717fc31beb909e34adeafbbbcd313677b5e7e2e.file.nav.tpl.php" afterPath="" />
-      <change type="DELETED" beforePath="E:\WebserverNew\domains\citymotors.loc\cache\smarty\compile\47\38\32\47383235febb1d2f4209399d301390f22f265ceb.file.form.tpl.php" afterPath="" />
-      <change type="DELETED" beforePath="E:\WebserverNew\domains\citymotors.loc\cache\smarty\compile\48\ae\75\48ae7549ed9c6b0da9e7b1f52fd047c299fd4350.file.content.tpl.php" afterPath="" />
-      <change type="DELETED" beforePath="E:\WebserverNew\domains\citymotors.loc\cache\smarty\compile\4a\f6\09\4af6091218799c261f245d482db618ce894dd67d.file.pack.tpl.php" afterPath="" />
-      <change type="DELETED" beforePath="E:\WebserverNew\domains\citymotors.loc\cache\smarty\compile\4b\14\a2\4b14a2d932033c8fc94ddc1a543322de55d43098.file.tree_header.tpl.php" afterPath="" />
-      <change type="DELETED" beforePath="E:\WebserverNew\domains\citymotors.loc\cache\smarty\compile\4b\3e\70\4b3e70ed91be45b1495519ece6b48758b22b7f1d.file.page.tpl.php" afterPath="" />
-      <change type="DELETED" beforePath="E:\WebserverNew\domains\citymotors.loc\cache\smarty\compile\4b\84\04\4b84045262a67c990c8e99887f459e746fee0a44.file.sendtoafriend-extra.tpl.php" afterPath="" />
-      <change type="DELETED" beforePath="E:\WebserverNew\domains\citymotors.loc\cache\smarty\compile\4b\8a\85\4b8a8583041966521840bf770c120d194cf1ef04.file.authentication.tpl.php" afterPath="" />
-      <change type="DELETED" beforePath="E:\WebserverNew\domains\citymotors.loc\cache\smarty\compile\4b\dc\64\4bdc648f51a32f03456121e2ac4c4f9ab9f61d6a.file.shop_tree_node_item.tpl.php" afterPath="" />
-      <change type="DELETED" beforePath="E:\WebserverNew\domains\citymotors.loc\cache\smarty\compile\4c\f0\3d\4cf03d20b0b10c217bfbf20be1d2e5facf1acfc4.file.header.tpl.php" afterPath="" />
-      <change type="DELETED" beforePath="E:\WebserverNew\domains\citymotors.loc\cache\smarty\compile\4c\fc\fb\4cfcfb69eab46e855095821685bdbf94a805e4ea.file.combinations.tpl.php" afterPath="" />
-      <change type="DELETED" beforePath="E:\WebserverNew\domains\citymotors.loc\cache\smarty\compile\4e\1c\d4\4e1cd4751aac130cf719a488ed85c47df9987755.file.shipping.tpl.php" afterPath="" />
-      <change type="DELETED" beforePath="E:\WebserverNew\domains\citymotors.loc\cache\smarty\compile\4f\aa\e0\4faae0904ace8497d67c2169986ebdd90f2a3682.file.content.tpl.php" afterPath="" />
-      <change type="DELETED" beforePath="E:\WebserverNew\domains\citymotors.loc\cache\smarty\compile\50\40\b3\5040b35dac92c9d9ad847a95b610ceb76bacc3f4.file.tree_node_item_radio.tpl.php" afterPath="" />
-      <change type="DELETED" beforePath="E:\WebserverNew\domains\citymotors.loc\cache\smarty\compile\51\1c\6a\511c6a53bbded716185c047d7f205785787ca582.file.options.tpl.php" afterPath="" />
-      <change type="DELETED" beforePath="E:\WebserverNew\domains\citymotors.loc\cache\smarty\compile\51\87\81\518781379e752f28c5e15a96969e4fba05b7c9e7.file.blocksocial.tpl.cache.php" afterPath="" />
-      <change type="DELETED" beforePath="E:\WebserverNew\domains\citymotors.loc\cache\smarty\compile\51\87\81\518781379e752f28c5e15a96969e4fba05b7c9e7.file.blocksocial.tpl.php" afterPath="" />
-      <change type="DELETED" beforePath="E:\WebserverNew\domains\citymotors.loc\cache\smarty\compile\51\b0\95\51b095bfc067f599e0bbe33b4967ea28969da395.file.blocksearch.tpl.php" afterPath="" />
-      <change type="DELETED" beforePath="E:\WebserverNew\domains\citymotors.loc\cache\smarty\compile\52\3a\78\523a782b486a48376af3d30d29bc68cb9d73a0fb.file.manufacturer.tpl.php" afterPath="" />
-      <change type="DELETED" beforePath="E:\WebserverNew\domains\citymotors.loc\cache\smarty\compile\53\5e\c1\535ec131fa18833471da78d1211094d449ba2eab.file.configuration_bar.tpl.php" afterPath="" />
-      <change type="DELETED" beforePath="E:\WebserverNew\domains\citymotors.loc\cache\smarty\compile\54\12\8f\54128f646841da12a185aac9cc3e524fc9aae774.file.ajax.tpl.php" afterPath="" />
-      <change type="DELETED" beforePath="E:\WebserverNew\domains\citymotors.loc\cache\smarty\compile\55\37\a6\5537a67ca63032e65823c1960abc21be5a1d8a4d.file.stores.tpl.php" afterPath="" />
-      <change type="DELETED" beforePath="E:\WebserverNew\domains\citymotors.loc\cache\smarty\compile\55\4d\5a\554d5ada9676fd34c64ee998a750e662f5b14b75.file.blockcms.tpl.cache.php" afterPath="" />
-      <change type="DELETED" beforePath="E:\WebserverNew\domains\citymotors.loc\cache\smarty\compile\55\4d\5a\554d5ada9676fd34c64ee998a750e662f5b14b75.file.blockcms.tpl.php" afterPath="" />
-      <change type="DELETED" beforePath="E:\WebserverNew\domains\citymotors.loc\cache\smarty\compile\55\7f\86\557f86bba466f824a2e8a0b456deb1ab5865aadf.file.stats.tpl.php" afterPath="" />
-      <change type="DELETED" beforePath="E:\WebserverNew\domains\citymotors.loc\cache\smarty\compile\55\b7\bb\55b7bb2064146fba81e65b9b3743eed901e44a7e.file.order-opc-new-account-advanced.tpl.php" afterPath="" />
-      <change type="DELETED" beforePath="E:\WebserverNew\domains\citymotors.loc\cache\smarty\compile\56\17\1e\56171e0a3b638ed0135be2c42677a158f286eec3.file.form.tpl.php" afterPath="" />
-      <change type="DELETED" beforePath="E:\WebserverNew\domains\citymotors.loc\cache\smarty\compile\56\9d\56\569d560639ee4dfcf3efe3544c22b2d1e02af34a.file.blockcategories_footer.tpl.cache.php" afterPath="" />
-      <change type="DELETED" beforePath="E:\WebserverNew\domains\citymotors.loc\cache\smarty\compile\56\9d\56\569d560639ee4dfcf3efe3544c22b2d1e02af34a.file.blockcategories_footer.tpl.php" afterPath="" />
-      <change type="DELETED" beforePath="E:\WebserverNew\domains\citymotors.loc\cache\smarty\compile\57\21\fb\5721fbf29af189a72185a6d9a72f539edbdcd959.file.content.tpl.php" afterPath="" />
-      <change type="DELETED" beforePath="E:\WebserverNew\domains\citymotors.loc\cache\smarty\compile\59\46\7f\59467fd3352b48d9fdd27464f23ddbdcdd2e3100.file.tree_header.tpl.php" afterPath="" />
-      <change type="DELETED" beforePath="E:\WebserverNew\domains\citymotors.loc\cache\smarty\compile\5a\2b\d1\5a2bd125dc0dd0e043d2d1fc9197293db935a047.file.filters.tpl.php" afterPath="" />
-      <change type="DELETED" beforePath="E:\WebserverNew\domains\citymotors.loc\cache\smarty\compile\5a\c7\6c\5ac76c70fae849eb5242887b6176ca3bb70af620.file.content.tpl.php" afterPath="" />
-      <change type="DELETED" beforePath="E:\WebserverNew\domains\citymotors.loc\cache\smarty\compile\5b\2b\21\5b2b2122b764ff4fb28ccee4aa4f545ab20a7852.file.header.tpl.php" afterPath="" />
-      <change type="DELETED" beforePath="E:\WebserverNew\domains\citymotors.loc\cache\smarty\compile\5b\96\f3\5b96f37fc3b8c0acfc4025665c2b26bcab36e309.file.list_action_supplier_order_receipt.tpl.php" afterPath="" />
-      <change type="DELETED" beforePath="E:\WebserverNew\domains\citymotors.loc\cache\smarty\compile\5b\e7\d7\5be7d7052be9d6c6486d0b4f6a7a1e1dfa575973.file.layout-export.tpl.php" afterPath="" />
-      <change type="DELETED" beforePath="E:\WebserverNew\domains\citymotors.loc\cache\smarty\compile\5b\fc\6b\5bfc6b530d3352b113eef7546e99a58c9134af49.file.dashboard_zone_two.tpl.php" afterPath="" />
-      <change type="DELETED" beforePath="E:\WebserverNew\domains\citymotors.loc\cache\smarty\compile\5b\fe\47\5bfe478a08b0205cd7bba1d9a0abeb651f4b3f78.file.list_header.tpl.php" afterPath="" />
-      <change type="DELETED" beforePath="E:\WebserverNew\domains\citymotors.loc\cache\smarty\compile\5d\51\52\5d51523cdb04ec5d88bdec715efffd1e7955b9c6.file.layout.tpl.php" afterPath="" />
-      <change type="DELETED" beforePath="E:\WebserverNew\domains\citymotors.loc\cache\smarty\compile\5e\26\0c\5e260cbb66bbe1c0cc15931ca6651fe10c929daa.file.conditions.tpl.php" afterPath="" />
-      <change type="DELETED" beforePath="E:\WebserverNew\domains\citymotors.loc\cache\smarty\compile\5e\bc\22\5ebc2276bc29894acbfc6f7fb812b10e025401e5.file.ad_bar.tpl.php" afterPath="" />
-      <change type="DELETED" beforePath="E:\WebserverNew\domains\citymotors.loc\cache\smarty\compile\5e\e6\87\5ee687d2cd87f693beed0d010525a3e1cf30177a.file.content.tpl.php" afterPath="" />
-      <change type="DELETED" beforePath="E:\WebserverNew\domains\citymotors.loc\cache\smarty\compile\5f\6c\4b\5f6c4b9a87ffd97ab0f5963e315b108dfb60f1fb.file.timeline_item.tpl.php" afterPath="" />
-      <change type="DELETED" beforePath="E:\WebserverNew\domains\citymotors.loc\cache\smarty\compile\60\62\52\606252b5a2c1e1c4fa72563918a405f21adb26d7.file.required_fields.tpl.php" afterPath="" />
-      <change type="DELETED" beforePath="E:\WebserverNew\domains\citymotors.loc\cache\smarty\compile\60\89\f7\6089f7f433398e703e7b0625c3d145fb9b430f5e.file.form_submit_ajax.tpl.php" afterPath="" />
-      <change type="DELETED" beforePath="E:\WebserverNew\domains\citymotors.loc\cache\smarty\compile\61\59\95\615995380bab0ccd96f70d144fff419a8357b767.file.informations.tpl.php" afterPath="" />
-      <change type="DELETED" beforePath="E:\WebserverNew\domains\citymotors.loc\cache\smarty\compile\61\78\7d\61787dea2e333b55144b97aad47043d628c4ea7f.file.category-count.tpl.php" afterPath="" />
-      <change type="DELETED" beforePath="E:\WebserverNew\domains\citymotors.loc\cache\smarty\compile\62\fb\6a\62fb6ab928625ce34fdcfe1dab590a2c4f026f1b.file.blocktopmenu.tpl.php" afterPath="" />
-      <change type="DELETED" beforePath="E:\WebserverNew\domains\citymotors.loc\cache\smarty\compile\64\8b\98\648b98b59cc603e0b339eb39401fc9a2bd578366.file.view.tpl.php" afterPath="" />
-      <change type="DELETED" beforePath="E:\WebserverNew\domains\citymotors.loc\cache\smarty\compile\64\c3\38\64c338754918ab407b7a161415291f69530c013d.file.errors.tpl.php" afterPath="" />
-      <change type="DELETED" beforePath="E:\WebserverNew\domains\citymotors.loc\cache\smarty\compile\66\07\96\6607966ea421f79db5a51fed00803984ec1e6c6f.file.content.tpl.php" afterPath="" />
-      <change type="DELETED" beforePath="E:\WebserverNew\domains\citymotors.loc\cache\smarty\compile\66\40\f8\6640f88a6d17cdacf5e7a84ae1bd3fa968bd67ec.file.order-payment-classic.tpl.php" afterPath="" />
-      <change type="DELETED" beforePath="E:\WebserverNew\domains\citymotors.loc\cache\smarty\compile\66\ac\32\66ac32dd82b2eca8198fd07e9791219e7d0015ca.file.tree_node_folder_checkbox.tpl.php" afterPath="" />
-      <change type="DELETED" beforePath="E:\WebserverNew\domains\citymotors.loc\cache\smarty\compile\66\fc\b8\66fcb84b8a9bca3d64c6c2ca010c993435ba0258.file.virtualproduct.tpl.php" afterPath="" />
-      <change type="DELETED" beforePath="E:\WebserverNew\domains\citymotors.loc\cache\smarty\compile\67\b9\02\67b902c47f16d9fee5e887f3e8c2a36859000d53.file.tree_categories.tpl.php" afterPath="" />
-      <change type="DELETED" beforePath="E:\WebserverNew\domains\citymotors.loc\cache\smarty\compile\67\c1\1a\67c11a35c4f0e36b718a8019b828c490d457052b.file.layout.tpl.php" afterPath="" />
-      <change type="DELETED" beforePath="E:\WebserverNew\domains\citymotors.loc\cache\smarty\compile\69\fb\83\69fb8335f954de83f7ea7d1443a1c4a71c4d785e.file._print_pdf_icon.tpl.php" afterPath="" />
-      <change type="DELETED" beforePath="E:\WebserverNew\domains\citymotors.loc\cache\smarty\compile\6a\52\30\6a52304e300d33cc405581afa2bcb77e86cfe72c.file.homeslider.tpl.php" afterPath="" />
-      <change type="DELETED" beforePath="E:\WebserverNew\domains\citymotors.loc\cache\smarty\compile\6a\be\0a\6abe0ae4be3be8fa71b0765062eae58b340ca473.file.layout-ajax.tpl.php" afterPath="" />
-      <change type="DELETED" beforePath="E:\WebserverNew\domains\citymotors.loc\cache\smarty\compile\6b\22\c4\6b22c413b491def4220350d17c6fb0635623a9ed.file.summary.tpl.php" afterPath="" />
-      <change type="DELETED" beforePath="E:\WebserverNew\domains\citymotors.loc\cache\smarty\compile\6b\45\5f\6b455f6c25949fac30ea483fee7b3080fa096472.file.order-opc.tpl.php" afterPath="" />
-      <change type="DELETED" beforePath="E:\WebserverNew\domains\citymotors.loc\cache\smarty\compile\6b\97\be\6b97be76453de9ad3d8cc9e722a7bd33e5cba7fd.file.modal_not_trusted_blocked.tpl.php" afterPath="" />
-      <change type="DELETED" beforePath="E:\WebserverNew\domains\citymotors.loc\cache\smarty\compile\6b\fa\3b\6bfa3b5a77aaff0502f43a2408add434b2074574.file.order-confirmation.tpl.php" afterPath="" />
-      <change type="DELETED" beforePath="E:\WebserverNew\domains\citymotors.loc\cache\smarty\compile\6c\11\c3\6c11c39af3fc55b8542f2a0a74f2267aa1a699be.file.list_action_export.tpl.php" afterPath="" />
-      <change type="DELETED" beforePath="E:\WebserverNew\domains\citymotors.loc\cache\smarty\compile\6c\13\81\6c13818919ef08c28683657cac95107ca2f4a651.file.row.tpl.php" afterPath="" />
-      <change type="DELETED" beforePath="E:\WebserverNew\domains\citymotors.loc\cache\smarty\compile\6c\d0\a6\6cd0a616ac69eba6bcb3ec29d3d5bb7bdae1f07c.file.view.tpl.php" afterPath="" />
-      <change type="DELETED" beforePath="E:\WebserverNew\domains\citymotors.loc\cache\smarty\compile\6c\d7\20\6cd720ea22a513f9d4d68ac6e57b324ceae334ff.file.view.tpl.php" afterPath="" />
-      <change type="DELETED" beforePath="E:\WebserverNew\domains\citymotors.loc\cache\smarty\compile\6c\eb\92\6ceb9235345b7464d49258f3d7caa18e0329a584.file.content.tpl.php" afterPath="" />
-      <change type="DELETED" beforePath="E:\WebserverNew\domains\citymotors.loc\cache\smarty\compile\6d\11\51\6d1151c78266e742eea9b9ebe591ed598b88fda4.file.addresses.tpl.php" afterPath="" />
-      <change type="DELETED" beforePath="E:\WebserverNew\domains\citymotors.loc\cache\smarty\compile\6d\80\e3\6d80e3ab8860727b970300119fedb366d3bffca6.file.row.tpl.php" afterPath="" />
-      <change type="DELETED" beforePath="E:\WebserverNew\domains\citymotors.loc\cache\smarty\compile\6e\0c\e4\6e0ce4dec80e25d4a041ab3aab40d8558fa7783e.file.dashboard_zone_two.tpl.php" afterPath="" />
-      <change type="DELETED" beforePath="E:\WebserverNew\domains\citymotors.loc\cache\smarty\compile\6e\3c\58\6e3c58f593f00eba32e3288219896023cad9c8f3.file.blocknewproducts.tpl.php" afterPath="" />
-      <change type="DELETED" beforePath="E:\WebserverNew\domains\citymotors.loc\cache\smarty\compile\6f\95\2c\6f952c16700f5e8b5699fb2948709977317dc7e7.file.product_rule_itemlist.tpl.php" afterPath="" />
-      <change type="DELETED" beforePath="E:\WebserverNew\domains\citymotors.loc\cache\smarty\compile\70\54\74\70547467cbd0efa7374c17e1be6197f16531a41a.file._product_line.tpl.php" afterPath="" />
-      <change type="DELETED" beforePath="E:\WebserverNew\domains\citymotors.loc\cache\smarty\compile\70\89\8a\70898a8b1b4aaf86947e617672f10203a00db48e.file.view.tpl.php" afterPath="" />
-      <change type="DELETED" beforePath="E:\WebserverNew\domains\citymotors.loc\cache\smarty\compile\70\d2\f2\70d2f2baf7a0c894af97eb7992137eda8a2ad4a7.file.rules.tpl.php" afterPath="" />
-      <change type="DELETED" beforePath="E:\WebserverNew\domains\citymotors.loc\cache\smarty\compile\70\df\f7\70dff744e74066ee7c16b34991e646f0f0da8018.file.payment_execution.tpl.php" afterPath="" />
-      <change type="DELETED" beforePath="E:\WebserverNew\domains\citymotors.loc\cache\smarty\compile\70\f5\05\70f50579d0bf92b4b7ee8a161c58ff3f646a8968.file.product.tpl.php" afterPath="" />
-      <change type="DELETED" beforePath="E:\WebserverNew\domains\citymotors.loc\cache\smarty\compile\71\6b\e4\716be4ee9593ecffb889a7a9fbc6551ec3be5fba.file.checkbox.tpl.php" afterPath="" />
-      <change type="DELETED" beforePath="E:\WebserverNew\domains\citymotors.loc\cache\smarty\compile\71\a0\b0\71a0b0720a372eea2fecf2a090cc591835da720c.file._documents.tpl.php" afterPath="" />
-      <change type="DELETED" beforePath="E:\WebserverNew\domains\citymotors.loc\cache\smarty\compile\72\57\60\7257604de8081a2bc349a346c8b99901cc0e0419.file.blocknewproducts_home.tpl.cache.php" afterPath="" />
-      <change type="DELETED" beforePath="E:\WebserverNew\domains\citymotors.loc\cache\smarty\compile\72\57\60\7257604de8081a2bc349a346c8b99901cc0e0419.file.blocknewproducts_home.tpl.php" afterPath="" />
-      <change type="DELETED" beforePath="E:\WebserverNew\domains\citymotors.loc\cache\smarty\compile\72\89\70\72897033c4b77f93dab54f690ede9790a2405b1f.file.blockcurrencies.tpl.php" afterPath="" />
-      <change type="DELETED" beforePath="E:\WebserverNew\domains\citymotors.loc\cache\smarty\compile\72\c1\10\72c110e16a06642e27ec92da9a09f1b782ecd83d.file.payment_return.tpl.php" afterPath="" />
-      <change type="DELETED" beforePath="E:\WebserverNew\domains\citymotors.loc\cache\smarty\compile\73\35\89\7335893246a900e32a11645104887a2ccef667e8.file.checkbox.tpl.php" afterPath="" />
-      <change type="DELETED" beforePath="E:\WebserverNew\domains\citymotors.loc\cache\smarty\compile\73\58\54\735854a4a504c08e492fd46f4fe8fedf35dff884.file.order-address-product-line.tpl.php" afterPath="" />
-      <change type="DELETED" beforePath="E:\WebserverNew\domains\citymotors.loc\cache\smarty\compile\74\55\2b\74552bf2c944e79f26aa7645b402ade3e755a8b5.file.category.tpl.php" afterPath="" />
-      <change type="DELETED" beforePath="E:\WebserverNew\domains\citymotors.loc\cache\smarty\compile\74\7f\f0\747ff04ae329430b76bc4ecc1055e2066653e23f.file.blocklayered-no-products.tpl.php" afterPath="" />
-      <change type="DELETED" beforePath="E:\WebserverNew\domains\citymotors.loc\cache\smarty\compile\74\db\b8\74dbb8ac9130696ec57f0604f18c5c43c7c38f31.file.list.tpl.php" afterPath="" />
-      <change type="DELETED" beforePath="E:\WebserverNew\domains\citymotors.loc\cache\smarty\compile\76\15\30\761530e0c423fe017173800ffb3bec43159b77c8.file.blockfacebook.tpl.cache.php" afterPath="" />
-      <change type="DELETED" beforePath="E:\WebserverNew\domains\citymotors.loc\cache\smarty\compile\76\15\30\761530e0c423fe017173800ffb3bec43159b77c8.file.blockfacebook.tpl.php" afterPath="" />
-      <change type="DELETED" beforePath="E:\WebserverNew\domains\citymotors.loc\cache\smarty\compile\76\23\5a\76235a01abe7101bb8db4c1ae618ad9a2fd7309b.file.blockwishlist.tpl.php" afterPath="" />
-      <change type="DELETED" beforePath="E:\WebserverNew\domains\citymotors.loc\cache\smarty\compile\76\53\5c\76535c347022639d318111d426b36582bfa93b77.file.blockmyaccountfooter.tpl.php" afterPath="" />
-      <change type="DELETED" beforePath="E:\WebserverNew\domains\citymotors.loc\cache\smarty\compile\77\27\83\7727837b42245fad7650cd6870d0f19919a496fd.file.blocksearch-top.tpl.php" afterPath="" />
-      <change type="DELETED" beforePath="E:\WebserverNew\domains\citymotors.loc\cache\smarty\compile\77\a4\52\77a452b0d8600eaef4bbe45dbc3825719094ec80.file.breadcrumb.tpl.php" afterPath="" />
-      <change type="DELETED" beforePath="E:\WebserverNew\domains\citymotors.loc\cache\smarty\compile\77\ea\71\77ea71b43b919b299d774c303ff2a428a9dbc56b.file.favoriteproducts-extra.tpl.php" afterPath="" />
-      <change type="DELETED" beforePath="E:\WebserverNew\domains\citymotors.loc\cache\smarty\compile\77\ef\6e\77ef6e1ce5179789b78f525ed4c36e44dd8e9686.file.blocklayered.tpl.php" afterPath="" />
-      <change type="DELETED" beforePath="E:\WebserverNew\domains\citymotors.loc\cache\smarty\compile\78\29\58\782958c3750ad223551bf774a8f0f5e144f8f46c.file.list_action_delete.tpl.php" afterPath="" />
-      <change type="DELETED" beforePath="E:\WebserverNew\domains\citymotors.loc\cache\smarty\compile\78\d6\e2\78d6e28d8359b981136d9dedb94e84a193bece8e.file.form.tpl.php" afterPath="" />
-      <change type="DELETED" beforePath="E:\WebserverNew\domains\citymotors.loc\cache\smarty\compile\79\a3\9d\79a39def1bbc2f1d754bafb236331f0ed5c0b8b0.file.list_footer.tpl.php" afterPath="" />
-      <change type="DELETED" beforePath="E:\WebserverNew\domains\citymotors.loc\cache\smarty\compile\7a\8a\f1\7a8af143df83858c599de1e746d8249155bf4895.file.blocktopmenu.tpl.cache.php" afterPath="" />
-      <change type="DELETED" beforePath="E:\WebserverNew\domains\citymotors.loc\cache\smarty\compile\7a\8a\f1\7a8af143df83858c599de1e746d8249155bf4895.file.blocktopmenu.tpl.php" afterPath="" />
-      <change type="DELETED" beforePath="E:\WebserverNew\domains\citymotors.loc\cache\smarty\compile\7b\70\81\7b7081d46541b4b88d70e66f5c96ba5c64f04b5f.file.warning_module.tpl.php" afterPath="" />
-      <change type="DELETED" beforePath="E:\WebserverNew\domains\citymotors.loc\cache\smarty\compile\7b\c6\b4\7bc6b4725816bc587ba7c3bd997e3a91f1be3631.file.informations.tpl.php" afterPath="" />
-      <change type="DELETED" beforePath="E:\WebserverNew\domains\citymotors.loc\cache\smarty\compile\7d\0a\42\7d0a427db65c70f213b3d5a3520d6ad4473f5ba0.file.suppliers.tpl.php" afterPath="" />
-      <change type="DELETED" beforePath="E:\WebserverNew\domains\citymotors.loc\cache\smarty\compile\7d\20\36\7d203613b2248caae3150698814bc364326cd236.file.payment.tpl.php" afterPath="" />
-      <change type="DELETED" beforePath="E:\WebserverNew\domains\citymotors.loc\cache\smarty\compile\7d\81\ce\7d81ce916f18cbdba6c913c37f1cfbe1cb24a5b4.file.list_modules.tpl.php" afterPath="" />
-      <change type="DELETED" beforePath="E:\WebserverNew\domains\citymotors.loc\cache\smarty\compile\7d\8b\03\7d8b030d9a1eb25558789ce86fef3acfa46d07a3.file.modal_translation.tpl.php" afterPath="" />
-      <change type="DELETED" beforePath="E:\WebserverNew\domains\citymotors.loc\cache\smarty\compile\7d\d3\b6\7dd3b6d16c435fca658744276c93fe56bc473cce.file.kpi.tpl.php" afterPath="" />
-      <change type="DELETED" beforePath="E:\WebserverNew\domains\citymotors.loc\cache\smarty\compile\7d\d6\c3\7dd6c35f03eb65f2a90126282244c3c1e11589f7.file.seo.tpl.php" afterPath="" />
-      <change type="DELETED" beforePath="E:\WebserverNew\domains\citymotors.loc\cache\smarty\compile\7e\12\3a\7e123a09b49723b22d80a67ebe140844dd650842.file.list_action_delete.tpl.php" afterPath="" />
-      <change type="DELETED" beforePath="E:\WebserverNew\domains\citymotors.loc\cache\smarty\compile\7e\1f\e7\7e1fe791b4b6a28eded7d5a0c407b387ba47c708.file.order-detail.tpl.php" afterPath="" />
-      <change type="DELETED" beforePath="E:\WebserverNew\domains\citymotors.loc\cache\smarty\compile\7e\8c\13\7e8c13d3269bdcff70dde9afa21f5c34536b47e5.file.blockwishlist-extra.tpl.php" afterPath="" />
-      <change type="DELETED" beforePath="E:\WebserverNew\domains\citymotors.loc\cache\smarty\compile\7e\94\3a\7e943aa115d8f44518c27853f6c8aa5537a02153.file.list_action_addstock.tpl.php" afterPath="" />
-      <change type="DELETED" beforePath="E:\WebserverNew\domains\citymotors.loc\cache\smarty\compile\7f\8d\e2\7f8de2b06f6515047179a3bb724ae88d36b9c46e.file.seo.tpl.php" afterPath="" />
-      <change type="DELETED" beforePath="E:\WebserverNew\domains\citymotors.loc\cache\smarty\compile\7f\b9\1f\7fb91f6dfb661bb87e2d433222768f25480b0be0.file.blockcategories.tpl.php" afterPath="" />
-      <change type="DELETED" beforePath="E:\WebserverNew\domains\citymotors.loc\cache\smarty\compile\80\56\56\805656e037bdb4b03f6f167d8bb0c5ed629ea2b3.file.tree_header.tpl.php" afterPath="" />
-      <change type="DELETED" beforePath="E:\WebserverNew\domains\citymotors.loc\cache\smarty\compile\80\d7\69\80d7693ccc2525216d7d14b89570357cfac06562.file._print_pdf_icon.tpl.php" afterPath="" />
-      <change type="DELETED" beforePath="E:\WebserverNew\domains\citymotors.loc\cache\smarty\compile\81\49\3f\81493f158d01792359933332e29863fd3d130f9d.file.form.tpl.php" afterPath="" />
-      <change type="DELETED" beforePath="E:\WebserverNew\domains\citymotors.loc\cache\smarty\compile\81\b3\5f\81b35f1e36786d2bff213863d13fa027c0fe7f52.file.calendar.tpl.php" afterPath="" />
-      <change type="DELETED" beforePath="E:\WebserverNew\domains\citymotors.loc\cache\smarty\compile\82\74\4f\82744fe88a7769544fd6e812aa561d1e460eeedc.file.customization.tpl.php" afterPath="" />
-      <change type="DELETED" beforePath="E:\WebserverNew\domains\citymotors.loc\cache\smarty\compile\83\0d\40\830d4005e363df69ec1924c1adcc9f74a588fb21.file.crossselling.tpl.php" afterPath="" />
-      <change type="DELETED" beforePath="E:\WebserverNew\domains\citymotors.loc\cache\smarty\compile\83\6d\09\836d098bb8a7dcc2f2b5a482e60e37b499968add.file.message.tpl.php" afterPath="" />
-      <change type="DELETED" beforePath="E:\WebserverNew\domains\citymotors.loc\cache\smarty\compile\83\7d\62\837d624edfe95cf02204b05d1c05816f684eb2f1.file.order-payment-advanced.tpl.php" afterPath="" />
-      <change type="DELETED" beforePath="E:\WebserverNew\domains\citymotors.loc\cache\smarty\compile\83\cc\ad\83ccadbc35cc952b70de5c095c912dacc2d06bc2.file.mailalerts-account.tpl.php" afterPath="" />
-      <change type="DELETED" beforePath="E:\WebserverNew\domains\citymotors.loc\cache\smarty\compile\83\ce\e5\83cee596bd6873117d599633e8a921aefe365686.file.tree_node_folder_radio.tpl.php" afterPath="" />
-      <change type="DELETED" beforePath="E:\WebserverNew\domains\citymotors.loc\cache\smarty\compile\84\29\df\8429df29584c1ca6e85814507d1890f4c1e78839.file.employee_field.tpl.php" afterPath="" />
-      <change type="DELETED" beforePath="E:\WebserverNew\domains\citymotors.loc\cache\smarty\compile\85\56\4d\85564ddd7ccb474219f21e2b698df639791acb5d.file.dashboard_zone_two.tpl.php" afterPath="" />
-      <change type="DELETED" beforePath="E:\WebserverNew\domains\citymotors.loc\cache\smarty\compile\85\a1\9c\85a19ccb65a74c1438d61583241f93f90c2fbde3.file.page.tpl.php" afterPath="" />
-      <change type="DELETED" beforePath="E:\WebserverNew\domains\citymotors.loc\cache\smarty\compile\86\40\5b\86405b7476c1b1ab27e041a1310e1a07f884e42f.file.blockcontact.tpl.php" afterPath="" />
-      <change type="DELETED" beforePath="E:\WebserverNew\domains\citymotors.loc\cache\smarty\compile\86\ed\d7\86edd7c19769fb921a3c292822634333b288d3a5.file.product-compare.tpl.php" afterPath="" />
-      <change type="DELETED" beforePath="E:\WebserverNew\domains\citymotors.loc\cache\smarty\compile\88\5e\8d\885e8d920954d37909865f47e119a883b711a027.file.list.tpl.php" afterPath="" />
-      <change type="DELETED" beforePath="E:\WebserverNew\domains\citymotors.loc\cache\smarty\compile\88\99\65\88996536664458ab9832edd824ae01c5b2dccb51.file.logo.tpl.php" afterPath="" />
-      <change type="DELETED" beforePath="E:\WebserverNew\domains\citymotors.loc\cache\smarty\compile\88\f3\b0\88f3b085bf1d9b342122d491f5a1c1ca192e77bf.file.blocklanguages.tpl.php" afterPath="" />
-      <change type="DELETED" beforePath="E:\WebserverNew\domains\citymotors.loc\cache\smarty\compile\89\20\df\8920dfc6e5847e75d4a9c3abc8143aba5df97add.file.my-account.tpl.php" afterPath="" />
-      <change type="DELETED" beforePath="E:\WebserverNew\domains\citymotors.loc\cache\smarty\compile\89\7f\9c\897f9c6d26aed4aab33dd2d9c82bc4a66582eceb.file.404.tpl.php" afterPath="" />
-      <change type="DELETED" beforePath="E:\WebserverNew\domains\citymotors.loc\cache\smarty\compile\89\dd\87\89dd87a505c462bde25c9d8e2603806a734e625d.file.tab.tpl.cache.php" afterPath="" />
-      <change type="DELETED" beforePath="E:\WebserverNew\domains\citymotors.loc\cache\smarty\compile\89\dd\87\89dd87a505c462bde25c9d8e2603806a734e625d.file.tab.tpl.php" afterPath="" />
-      <change type="DELETED" beforePath="E:\WebserverNew\domains\citymotors.loc\cache\smarty\compile\8a\de\aa\8adeaafb45971f31230e89e73bf5aeedba89ad48.file.homefeatured.tpl.cache.php" afterPath="" />
-      <change type="DELETED" beforePath="E:\WebserverNew\domains\citymotors.loc\cache\smarty\compile\8a\de\aa\8adeaafb45971f31230e89e73bf5aeedba89ad48.file.homefeatured.tpl.php" afterPath="" />
-      <change type="DELETED" beforePath="E:\WebserverNew\domains\citymotors.loc\cache\smarty\compile\8c\04\52\8c04528968d1acc4c6122ca89fc60d36df0e3fca.file.confirmation.tpl.php" afterPath="" />
-      <change type="DELETED" beforePath="E:\WebserverNew\domains\citymotors.loc\cache\smarty\compile\8c\07\3b\8c073bbd3efd8044c029262c7b9804b1299580a2.file.list_content.tpl.php" afterPath="" />
-      <change type="DELETED" beforePath="E:\WebserverNew\domains\citymotors.loc\cache\smarty\compile\8c\72\b1\8c72b15afe38cef6f88e4029b1c6a41286396b45.file.blocknewsletter.tpl.php" afterPath="" />
-      <change type="DELETED" beforePath="E:\WebserverNew\domains\citymotors.loc\cache\smarty\compile\8c\fa\a5\8cfaa54c87cf290c5e8065e22e1c4eb1fd0b6730.file.combinations.tpl.php" afterPath="" />
-      <change type="DELETED" beforePath="E:\WebserverNew\domains\citymotors.loc\cache\smarty\compile\8d\29\f3\8d29f359eb7e68c62385e499d14adc64124ae221.file.tree_node_item_radio.tpl.php" afterPath="" />
-      <change type="DELETED" beforePath="E:\WebserverNew\domains\citymotors.loc\cache\smarty\compile\8e\35\a6\8e35a6b666f2c8068baa3463fc11eb2e80124b20.file.shopping-cart.tpl.php" afterPath="" />
-      <change type="DELETED" beforePath="E:\WebserverNew\domains\citymotors.loc\cache\smarty\compile\8e\6b\57\8e6b570d202cc83fe2ae04c4c49734b52c70a1ad.file.textarea_lang.tpl.php" afterPath="" />
-      <change type="DELETED" beforePath="E:\WebserverNew\domains\citymotors.loc\cache\smarty\compile\8e\76\11\8e7611489f91506660a914a6ba716b7499818925.file.tree_node_folder_radio.tpl.php" afterPath="" />
-      <change type="DELETED" beforePath="E:\WebserverNew\domains\citymotors.loc\cache\smarty\compile\8e\81\fb\8e81fb7e123c06aad954b736821632d9346febcc.file.content.tpl.php" afterPath="" />
-      <change type="DELETED" beforePath="E:\WebserverNew\domains\citymotors.loc\cache\smarty\compile\8f\73\c2\8f73c23f86548453283bb40c862dc35a9ab173f7.file.mywishlist.tpl.php" afterPath="" />
-      <change type="DELETED" beforePath="E:\WebserverNew\domains\citymotors.loc\cache\smarty\compile\8f\a4\d3\8fa4d34fc163f57e1d8869319bd29e941568584e.file.shopping-cart-advanced.tpl.php" afterPath="" />
-      <change type="DELETED" beforePath="E:\WebserverNew\domains\citymotors.loc\cache\smarty\compile\90\15\a6\9015a66a6214ea629c59a0ff2bd13782b2f87108.file.shopping-cart.tpl.php" afterPath="" />
-      <change type="DELETED" beforePath="E:\WebserverNew\domains\citymotors.loc\cache\smarty\compile\91\b9\44\91b944013547e4eb9431af494e3427c1283aa77c.file.blockspecials.tpl.php" afterPath="" />
-      <change type="DELETED" beforePath="E:\WebserverNew\domains\citymotors.loc\cache\smarty\compile\91\c1\45\91c14524fc212711dded8628a8ee68a5c7c03b0b.file.tree_node_item_checkbox.tpl.php" afterPath="" />
-      <change type="DELETED" beforePath="E:\WebserverNew\domains\citymotors.loc\cache\smarty\compile\92\9a\cf\929acf41a23535bd507d852dbd0071b9f8031a5d.file.login_addons.tpl.php" afterPath="" />
-      <change type="DELETED" beforePath="E:\WebserverNew\domains\citymotors.loc\cache\smarty\compile\93\dd\f4\93ddf475264d8eb044d80235cf2176ee449c917e.file.view.tpl.php" afterPath="" />
-      <change type="DELETED" beforePath="E:\WebserverNew\domains\citymotors.loc\cache\smarty\compile\93\f4\42\93f44264b5c41dd2d32eaf52367eea7156ca4857.file.productscategory.tpl.php" afterPath="" />
-      <change type="DELETED" beforePath="E:\WebserverNew\domains\citymotors.loc\cache\smarty\compile\94\37\b4\9437b4d8699bf770bd85595f52ac57727c25be59.file.tree_associated_categories.tpl.php" afterPath="" />
-      <change type="DELETED" beforePath="E:\WebserverNew\domains\citymotors.loc\cache\smarty\compile\94\57\e4\9457e4f13a09c8817789d542d9dbdf72149ed834.file.restrictions.tpl.php" afterPath="" />
-      <change type="DELETED" beforePath="E:\WebserverNew\domains\citymotors.loc\cache\smarty\compile\94\cf\e0\94cfe09c675e8dd866cd861d992b30fce538c7f8.file.form.tpl.php" afterPath="" />
-      <change type="DELETED" beforePath="E:\WebserverNew\domains\citymotors.loc\cache\smarty\compile\96\25\b1\9625b114cdd6eeec6d5cf3041e4fff84b281b957.file.tree_categories.tpl.php" afterPath="" />
-      <change type="DELETED" beforePath="E:\WebserverNew\domains\citymotors.loc\cache\smarty\compile\96\4b\87\964b87f409634e6c00c479c0d3908a60a2531a02.file.view.tpl.php" afterPath="" />
-      <change type="DELETED" beforePath="E:\WebserverNew\domains\citymotors.loc\cache\smarty\compile\96\f5\4f\96f54f13c5c5e11c97449fdcfc2353c4838e3368.file.tree_toolbar_link.tpl.php" afterPath="" />
-      <change type="DELETED" beforePath="E:\WebserverNew\domains\citymotors.loc\cache\smarty\compile\97\d1\a5\97d1a53e5108a78a3744a435bee80a4018523bbc.file.header.tpl.php" afterPath="" />
-      <change type="DELETED" beforePath="E:\WebserverNew\domains\citymotors.loc\cache\smarty\compile\98\59\f0\9859f0a4fdf687f28f2a1e6efa36ceecde556a17.file.list_footer.tpl.php" afterPath="" />
-      <change type="DELETED" beforePath="E:\WebserverNew\domains\citymotors.loc\cache\smarty\compile\98\c4\67\98c467cc9d47155215af0db7306031bf19fc8ed8.file.required_fields.tpl.php" afterPath="" />
-      <change type="DELETED" beforePath="E:\WebserverNew\domains\citymotors.loc\cache\smarty\compile\98\c4\67\wrt5b6d8817e0e744_17564447" afterPath="" />
-      <change type="DELETED" beforePath="E:\WebserverNew\domains\citymotors.loc\cache\smarty\compile\99\08\6b\99086b213e414a7a1008f5b8b71a6d5aa162ea6a.file.engines.tpl.php" afterPath="" />
-      <change type="DELETED" beforePath="E:\WebserverNew\domains\citymotors.loc\cache\smarty\compile\99\6f\f1\996ff1e08ce69c5b8b682179dbcc08164e197e40.file.tree_toolbar_search.tpl.php" afterPath="" />
-      <change type="DELETED" beforePath="E:\WebserverNew\domains\citymotors.loc\cache\smarty\compile\99\f0\85\99f0852969b844a2014bbcbb2160e47077ed72b1.file.features.tpl.php" afterPath="" />
-      <change type="DELETED" beforePath="E:\WebserverNew\domains\citymotors.loc\cache\smarty\compile\9a\49\f0\9a49f0ee8b71227815cedc7cea306f8d0089c263.file.product_rule.tpl.php" afterPath="" />
-      <change type="DELETED" beforePath="E:\WebserverNew\domains\citymotors.loc\cache\smarty\compile\9a\af\44\9aaf44750bdf40c5b0610769874575f4202cc3fc.file.product-list.tpl.php" afterPath="" />
-      <change type="DELETED" beforePath="E:\WebserverNew\domains\citymotors.loc\cache\smarty\compile\9a\fa\0f\9afa0f584e19a5ce24af8d0ba5d1467e08f00b41.file.blockmyaccount.tpl.php" afterPath="" />
-      <change type="DELETED" beforePath="E:\WebserverNew\domains\citymotors.loc\cache\smarty\compile\9b\1c\d1\9b1cd1822a26b347700e8ee06b59f11878a79598.file.modal_translation.tpl.php" afterPath="" />
-      <change type="DELETED" beforePath="E:\WebserverNew\domains\citymotors.loc\cache\smarty\compile\9b\71\6d\9b716d4466df4e487c460910ccc3002a5cb8b19f.file.tree_toolbar_link.tpl.php" afterPath="" />
-      <change type="DELETED" beforePath="E:\WebserverNew\domains\citymotors.loc\cache\smarty\compile\9b\cc\19\9bcc191887eaeceef290aebaab095e0278e092c4.file.shipping.tpl.php" afterPath="" />
-      <change type="DELETED" beforePath="E:\WebserverNew\domains\citymotors.loc\cache\smarty\compile\9c\91\e6\9c91e64faf38cb6c31e9ab0fc0197059f6b2fa44.file.modal.tpl.php" afterPath="" />
-      <change type="DELETED" beforePath="E:\WebserverNew\domains\citymotors.loc\cache\smarty\compile\9c\c5\07\9cc50701b8c0b48923d7cea98c2d18ed0bf173b6.file.blockbestsellers-home.tpl.cache.php" afterPath="" />
-      <change type="DELETED" beforePath="E:\WebserverNew\domains\citymotors.loc\cache\smarty\compile\9c\c5\ae\9cc5ae3e396075ccdae5159be2c02d21f2f1d509.file.tab_modules_list.tpl.php" afterPath="" />
-      <change type="DELETED" beforePath="E:\WebserverNew\domains\citymotors.loc\cache\smarty\compile\9d\de\2e\9dde2e071dff399e23e4dde3e2dd5aa0fb26c767.file.list_action_view.tpl.php" afterPath="" />
-      <change type="DELETED" beforePath="E:\WebserverNew\domains\citymotors.loc\cache\smarty\compile\9d\f2\fe\9df2fecf5b57f9c788bc45afe6e059dbb73871cc.file.form.tpl.php" afterPath="" />
-      <change type="DELETED" beforePath="E:\WebserverNew\domains\citymotors.loc\cache\smarty\compile\9e\1a\0d\9e1a0dce8fefbf93fdbae3497b1e4333238beddc.file.socialsharing.tpl.php" afterPath="" />
-      <change type="DELETED" beforePath="E:\WebserverNew\domains\citymotors.loc\cache\smarty\compile\9f\13\27\9f1327f30f25d4bd7574dde75ab4689e9c1a836e.file.product-sort.tpl.php" afterPath="" />
-      <change type="DELETED" beforePath="E:\WebserverNew\domains\citymotors.loc\cache\smarty\compile\9f\38\e2\9f38e235ee9ac9ecb7802af1b5fc651b538dbfd9.file.prices.tpl.php" afterPath="" />
-      <change type="DELETED" beforePath="E:\WebserverNew\domains\citymotors.loc\cache\smarty\compile\9f\ba\4a\9fba4a168ba99cade86f9c63dea14e996d7fd0b7.file.blockwishlist_button.tpl.php" afterPath="" />
-      <change type="DELETED" beforePath="E:\WebserverNew\domains\citymotors.loc\cache\smarty\compile\9f\f1\7f\9ff17f17ed7f638a73a12331049b40153e9a8d92.file.homefeatured.tpl.php" afterPath="" />
-      <change type="DELETED" beforePath="E:\WebserverNew\domains\citymotors.loc\cache\smarty\compile\a0\4d\5c\a04d5c8679ec5f033329ee4fc8fbdf283beec31d.file.page_header_toolbar.tpl.php" afterPath="" />
-      <change type="DELETED" beforePath="E:\WebserverNew\domains\citymotors.loc\cache\smarty\compile\a0\72\a9\a072a9b4adf2dfb68c3c0c5835d358990d474c61.file.attachments.tpl.php" afterPath="" />
-      <change type="DELETED" beforePath="E:\WebserverNew\domains\citymotors.loc\cache\smarty\compile\a0\bb\e9\a0bbe9253a9a335a94a3b30334c1ec86a19233b0.file.graph.tpl.php" afterPath="" />
-      <change type="DELETED" beforePath="E:\WebserverNew\domains\citymotors.loc\cache\smarty\compile\a0\fe\c5\a0fec58b93bc385566577091d8056e14dbf31d46.file.infos.tpl.php" afterPath="" />
-      <change type="DELETED" beforePath="E:\WebserverNew\domains\citymotors.loc\cache\smarty\compile\a1\a1\61\a1a1610b74efee350923cfd22ca0b2f845b8bd4f.file.list_header.tpl.php" afterPath="" />
-      <change type="DELETED" beforePath="E:\WebserverNew\domains\citymotors.loc\cache\smarty\compile\a1\d7\f5\a1d7f521a33007dce7e6fe80897fd9155323480a.file.error.tpl.php" afterPath="" />
-      <change type="DELETED" beforePath="E:\WebserverNew\domains\citymotors.loc\cache\smarty\compile\a1\f4\81\a1f4811a8bd6662c2cd34cd6d89ddc233c98bf39.file.tree_shops.tpl.php" afterPath="" />
-      <change type="DELETED" beforePath="E:\WebserverNew\domains\citymotors.loc\cache\smarty\compile\a1\fc\14\a1fc14c76f22c640527642bf33b86a8e43e46c61.file.list_action_details.tpl.php" afterPath="" />
-      <change type="DELETED" beforePath="E:\WebserverNew\domains\citymotors.loc\cache\smarty\compile\a3\48\42\a348420a1a3220e2e0c512fe4bc7505373a04253.file.view.tpl.php" afterPath="" />
-      <change type="DELETED" beforePath="E:\WebserverNew\domains\citymotors.loc\cache\smarty\compile\a3\48\42\wrt5b6d8819217661_13319912" afterPath="" />
-      <change type="DELETED" beforePath="E:\WebserverNew\domains\citymotors.loc\cache\smarty\compile\a4\75\18\a47518f870d59cfd063edd1a85e29f12a6e99452.file._select_payment.tpl.php" afterPath="" />
-      <change type="DELETED" beforePath="E:\WebserverNew\domains\citymotors.loc\cache\smarty\compile\a4\79\5e\a4795eafd944e73508d7f6e4ab4e1a1c53ca9168.file.header.tpl.php" afterPath="" />
-      <change type="DELETED" beforePath="E:\WebserverNew\domains\citymotors.loc\cache\smarty\compile\a5\0f\44\a50f449416aff5457357054664f6349297a05b03.file.blockwishlist_top.tpl.php" afterPath="" />
-      <change type="DELETED" beforePath="E:\WebserverNew\domains\citymotors.loc\cache\smarty\compile\a5\23\29\a52329cad94fd2b21b845c76569705da50f834a8.file.ajax.tpl.php" afterPath="" />
-      <change type="DELETED" beforePath="E:\WebserverNew\domains\citymotors.loc\cache\smarty\compile\a5\b8\08\a5b808da451b863f98ccef0cf5dfea1e6f197818.file.order-address-advanced.tpl.php" afterPath="" />
-      <change type="DELETED" beforePath="E:\WebserverNew\domains\citymotors.loc\cache\smarty\compile\a5\e1\ed\a5e1edaf5b631ce0749af54e2aad31cd1cee83e1.file.order-carrier-advanced.tpl.php" afterPath="" />
-      <change type="DELETED" beforePath="E:\WebserverNew\domains\citymotors.loc\cache\smarty\compile\a5\f0\df\a5f0dfaa229037ebd02ab9dc84bff15a164f0281.file.importtheme_view.tpl.php" afterPath="" />
-      <change type="DELETED" beforePath="E:\WebserverNew\domains\citymotors.loc\cache\smarty\compile\a6\79\f7\a679f76c616cb05bef818e2b4568157b6e7154ea.file.store_infos.tpl.php" afterPath="" />
-      <change type="DELETED" beforePath="E:\WebserverNew\domains\citymotors.loc\cache\smarty\compile\a7\71\35\a77135ae4ecfd0a920e1cfbc9a6cc219b5a7f11c.file.list_action_edit.tpl.php" afterPath="" />
-      <change type="DELETED" beforePath="E:\WebserverNew\domains\citymotors.loc\cache\smarty\compile\a7\f6\a2\a7f6a274607aa8f47aed7098d579748b7a51efc6.file.favoriteproducts-header.tpl.php" afterPath="" />
-      <change type="DELETED" beforePath="E:\WebserverNew\domains\citymotors.loc\cache\smarty\compile\a8\27\0b\a8270b5d8030eb66c4b71d639d38a9fb69b95a58.file.product.tpl.php" afterPath="" />
-      <change type="DELETED" beforePath="E:\WebserverNew\domains\citymotors.loc\cache\smarty\compile\a9\67\0d\a9670d0a565aa1ed9859e56001d2ad25c537926a.file.images.tpl.php" afterPath="" />
-      <change type="DELETED" beforePath="E:\WebserverNew\domains\citymotors.loc\cache\smarty\compile\a9\7d\4c\a97d4cdb1de38a73bec844ae8ff9b869c2b63b85.file.form.tpl.php" afterPath="" />
-      <change type="DELETED" beforePath="E:\WebserverNew\domains\citymotors.loc\cache\smarty\compile\a9\ea\11\a9ea116aaa3d07ef740c8088486dfba36385964e.file.live_configurator.tpl.php" afterPath="" />
-      <change type="DELETED" beforePath="E:\WebserverNew\domains\citymotors.loc\cache\smarty\compile\aa\10\a5\aa10a597ec4a888653810de20c4cc1b20282d49e.file.program.tpl.php" afterPath="" />
-      <change type="DELETED" beforePath="E:\WebserverNew\domains\citymotors.loc\cache\smarty\compile\aa\95\5a\aa955a0bb8767e15f330033a56d38e88488e741f.file.payment.tpl.php" afterPath="" />
-      <change type="DELETED" beforePath="E:\WebserverNew\domains\citymotors.loc\cache\smarty\compile\aa\9b\ca\aa9bca3737c56fb7d75953194531ebc4e92f1ec2.file.blocksupplier.tpl.php" afterPath="" />
-      <change type="DELETED" beforePath="E:\WebserverNew\domains\citymotors.loc\cache\smarty\compile\aa\f5\51\aaf551e383d18544fd808c7a2bb7608a2c5e0706.file.list_action_edit.tpl.php" afterPath="" />
-      <change type="DELETED" beforePath="E:\WebserverNew\domains\citymotors.loc\cache\smarty\compile\ac\32\8d\ac328d82ea8ace8b75e7da48aae22454cb53b2ca.file.productcomments-extra.tpl.php" afterPath="" />
-      <change type="DELETED" beforePath="E:\WebserverNew\domains\citymotors.loc\cache\smarty\compile\ad\0e\1c\ad0e1c3caeb69f5dbcd968552b175fc3312c5c89.file.ajax.tpl.php" afterPath="" />
-      <change type="DELETED" beforePath="E:\WebserverNew\domains\citymotors.loc\cache\smarty\compile\ad\85\b3\ad85b30a70db674c0ac7a943336886533d29af78.file.list_header.tpl.php" afterPath="" />
-      <change type="DELETED" beforePath="E:\WebserverNew\domains\citymotors.loc\cache\smarty\compile\ae\c3\84\aec3842ade36021072ad6342ecfa69cf655cb3ea.file.list_action_enable.tpl.php" afterPath="" />
-      <change type="DELETED" beforePath="E:\WebserverNew\domains\citymotors.loc\cache\smarty\compile\ae\f5\92\aef592b876520ba0c82d56838e7832ae5d1e5978.file.content.tpl.php" afterPath="" />
-      <change type="DELETED" beforePath="E:\WebserverNew\domains\citymotors.loc\cache\smarty\compile\ae\fd\52\aefd52fefc4a2256a0523ef3241d426ed249a325.file.list_action_duplicate.tpl.php" afterPath="" />
-      <change type="DELETED" beforePath="E:\WebserverNew\domains\citymotors.loc\cache\smarty\compile\af\02\4e\af024efbb3ee3f66d7c5fdeb3337e9be5232fbd8.file.list.tpl.php" afterPath="" />
-      <change type="DELETED" beforePath="E:\WebserverNew\domains\citymotors.loc\cache\smarty\compile\af\34\01\af3401661da7f4e663668803b3d467f37de09514.file.guest-tracking.tpl.php" afterPath="" />
-      <change type="DELETED" beforePath="E:\WebserverNew\domains\citymotors.loc\cache\smarty\compile\b0\e3\5d\b0e35d016f82b224e0cb1fe0dfd79b44982487e6.file.tree_node_folder_checkbox.tpl.php" afterPath="" />
-      <change type="DELETED" beforePath="E:\WebserverNew\domains\citymotors.loc\cache\smarty\compile\b1\13\8b\b1138b3cbebc1239c1e3abd665215d255013e897.file.password.tpl.php" afterPath="" />
-      <change type="DELETED" beforePath="E:\WebserverNew\domains\citymotors.loc\cache\smarty\compile\b1\71\f0\b171f0bd9b03eafdc02a70b2b8a2d7ce9c9700d1.file.blockcustomerprivacy.tpl.php" afterPath="" />
-      <change type="DELETED" beforePath="E:\WebserverNew\domains\citymotors.loc\cache\smarty\compile\b2\61\c2\b261c23f3efbef2a6e6a5af9cce0397b1c56f4be.file.tab.tpl.php" afterPath="" />
-      <change type="DELETED" beforePath="E:\WebserverNew\domains\citymotors.loc\cache\smarty\compile\b2\9b\02\b29b02fd94106bc12649e7dc0c4b401d5780dfeb.file.sendtoafriend-extra.tpl.php" afterPath="" />
-      <change type="DELETED" beforePath="E:\WebserverNew\domains\citymotors.loc\cache\smarty\compile\b3\ee\e6\b3eee6108976501aa04fcb39f3b2ca4f1630eaa3.file.blocktags.tpl.php" afterPath="" />
-      <change type="DELETED" beforePath="E:\WebserverNew\domains\citymotors.loc\cache\smarty\compile\b4\02\90\b4029034f65e81bff18410826889893a41cc4e1c.file.nav.tpl.php" afterPath="" />
-      <change type="DELETED" beforePath="E:\WebserverNew\domains\citymotors.loc\cache\smarty\compile\b4\8e\6f\b48e6fa0b8472a4058aac2629138aa2a75dc9f32.file.calendar.tpl.php" afterPath="" />
-      <change type="DELETED" beforePath="E:\WebserverNew\domains\citymotors.loc\cache\smarty\compile\b5\66\31\b56631f224c8efc2817f38062da8064aad38595b.file.search_form.tpl.php" afterPath="" />
-      <change type="DELETED" beforePath="E:\WebserverNew\domains\citymotors.loc\cache\smarty\compile\b5\e6\6f\b5e66fbf0276ff2f24d4507f76b16dafbe57fbfd.file.header.tpl.php" afterPath="" />
-      <change type="DELETED" beforePath="E:\WebserverNew\domains\citymotors.loc\cache\smarty\compile\b5\f9\a0\b5f9a0a28f0235f157f6b4e415ee2132c1c4a5f6.file.subtree_associated_categories.tpl.php" afterPath="" />
-      <change type="DELETED" beforePath="E:\WebserverNew\domains\citymotors.loc\cache\smarty\compile\b6\41\fe\b641fed2b58c61d58cfa471d327fad93ec013f2c.file.modal.tpl.php" afterPath="" />
-      <change type="DELETED" beforePath="E:\WebserverNew\domains\citymotors.loc\cache\smarty\compile\b8\64\9a\b8649a7c98e310322e9635de4588ef8a64028d7a.file.shopping-cart.tpl.php" afterPath="" />
-      <change type="DELETED" beforePath="E:\WebserverNew\domains\citymotors.loc\cache\smarty\compile\bc\12\b0\bc12b0b8b11e91fc005a4e48379d79368ce4ff57.file.managewishlist.tpl.php" afterPath="" />
-      <change type="DELETED" beforePath="E:\WebserverNew\domains\citymotors.loc\cache\smarty\compile\bc\e8\f8\bce8f8583ee832b63e806e86674a0b7022038ccf.file.list_header.tpl.php" afterPath="" />
-      <change type="DELETED" beforePath="E:\WebserverNew\domains\citymotors.loc\cache\smarty\compile\bd\0b\93\bd0b930d2a304412ce013043f8bbd10ef447625e.file.global.tpl.php" afterPath="" />
-      <change type="DELETED" beforePath="E:\WebserverNew\domains\citymotors.loc\cache\smarty\compile\bd\a0\a1\bda0a1d525142075aec06f61504d3b46a1be1bce.file.tree_toolbar.tpl.php" afterPath="" />
-      <change type="DELETED" beforePath="E:\WebserverNew\domains\citymotors.loc\cache\smarty\compile\bd\bc\f5\bdbcf58e68710ed1eb7c380bba88bd919badbe74.file.modal_not_trusted_country.tpl.php" afterPath="" />
-      <change type="DELETED" beforePath="E:\WebserverNew\domains\citymotors.loc\cache\smarty\compile\bf\13\f8\bf13f886cfee966e8b7353a243f9f8c3cdf86d41.file.list_action_removestock.tpl.php" afterPath="" />
-      <change type="DELETED" beforePath="E:\WebserverNew\domains\citymotors.loc\cache\smarty\compile\bf\d2\f4\bfd2f4424595ad343ed039cfab8f39e0381e889e.file.list_action_view.tpl.php" afterPath="" />
-      <change type="DELETED" beforePath="E:\WebserverNew\domains\citymotors.loc\cache\smarty\compile\c0\79\aa\c079aa1c2df26dda36b0c4a28321fecf568788d1.file.tree_associated_categories.tpl.php" afterPath="" />
-      <change type="DELETED" beforePath="E:\WebserverNew\domains\citymotors.loc\cache\smarty\compile\c0\a6\a6\c0a6a637d25166174bc6424ddf4bafe5ce4ed95d.file.category-tree-branch.tpl.php" afterPath="" />
-      <change type="DELETED" beforePath="E:\WebserverNew\domains\citymotors.loc\cache\smarty\compile\c1\09\5b\c1095b47413f445e859e73bbfa9838ffdf489e27.file.order-confirmation.tpl.php" afterPath="" />
-      <change type="DELETED" beforePath="E:\WebserverNew\domains\citymotors.loc\cache\smarty\compile\c1\a0\92\c1a09229956a3ca389450de6dfb4e3d97bf8e897.file.blocksearch-top.tpl.cache.php" afterPath="" />
-      <change type="DELETED" beforePath="E:\WebserverNew\domains\citymotors.loc\cache\smarty\compile\c1\a0\92\c1a09229956a3ca389450de6dfb4e3d97bf8e897.file.blocksearch-top.tpl.php" afterPath="" />
-      <change type="DELETED" beforePath="E:\WebserverNew\domains\citymotors.loc\cache\smarty\compile\c2\29\26\c22926a13aba8e18d1a5152bcc2e58334d7475fe.file.order-address.tpl.php" afterPath="" />
-      <change type="DELETED" beforePath="E:\WebserverNew\domains\citymotors.loc\cache\smarty\compile\c2\2b\60\c22b60aa385517a727fb2d23176abaaaa47b2fda.file.tree_node_folder_checkbox.tpl.php" afterPath="" />
-      <change type="DELETED" beforePath="E:\WebserverNew\domains\citymotors.loc\cache\smarty\compile\c2\ab\51\c2ab510d3ebc9bd2449ec4fad6f19550d3632b6e.file.simple.tpl.php" afterPath="" />
-      <change type="DELETED" beforePath="E:\WebserverNew\domains\citymotors.loc\cache\smarty\compile\c2\d7\ec\c2d7ecd02ccfa6e09152feafff1700685d0712e7.file.dashboard_zone_one.tpl.php" afterPath="" />
-      <change type="DELETED" beforePath="E:\WebserverNew\domains\citymotors.loc\cache\smarty\compile\c3\e1\cf\c3e1cf75b34e1fb583787ecacda84d866bfc59aa.file.config.tpl.php" afterPath="" />
-      <change type="DELETED" beforePath="E:\WebserverNew\domains\citymotors.loc\cache\smarty\compile\c4\08\01\c408012e81c0888117e6ab95cd009695d83c25b6.file.input_text_lang.tpl.php" afterPath="" />
-      <change type="DELETED" beforePath="E:\WebserverNew\domains\citymotors.loc\cache\smarty\compile\c4\11\1b\c4111bf2e9ca99524f800124813622f6ca63e36e.file.search.tpl.php" afterPath="" />
-      <change type="DELETED" beforePath="E:\WebserverNew\domains\citymotors.loc\cache\smarty\compile\c4\43\dd\c443dd0980798be063dcb8c89fd6855ac496ebd1.file.restricted-country.tpl.php" afterPath="" />
-      <change type="DELETED" beforePath="E:\WebserverNew\domains\citymotors.loc\cache\smarty\compile\c5\0a\ce\c50acef58ccc44dacf83588e1d23b5b0529b3490.file.check_fields.tpl.php" afterPath="" />
-      <change type="DELETED" beforePath="E:\WebserverNew\domains\citymotors.loc\cache\smarty\compile\c5\50\b6\c550b69d087772556959adcad11bf40463f0a3d3.file.category-tree-branch.tpl.php" afterPath="" />
-      <change type="DELETED" beforePath="E:\WebserverNew\domains\citymotors.loc\cache\smarty\compile\c5\df\3b\c5df3bb441708e17242537cfb0158f3ad7267adc.file.index.tpl.php" afterPath="" />
-      <change type="DELETED" beforePath="E:\WebserverNew\domains\citymotors.loc\cache\smarty\compile\c6\d1\31\c6d13178cbc7daf4bbff0700902d49115d3bde05.file.list_header.tpl.php" afterPath="" />
-      <change type="DELETED" beforePath="E:\WebserverNew\domains\citymotors.loc\cache\smarty\compile\c8\25\68\c82568c028c74f194ecb9d895202eb04e4c3ad36.file.configuration.tpl.php" afterPath="" />
-      <change type="DELETED" beforePath="E:\WebserverNew\domains\citymotors.loc\cache\smarty\compile\c9\2a\30\c92a30a25077f84a71018991f4c10b5e27824586.file.contact-form.tpl.php" afterPath="" />
-      <change type="DELETED" beforePath="E:\WebserverNew\domains\citymotors.loc\cache\smarty\compile\ca\ef\4d\caef4d1eba8b0de565f1a34355bc3e4f6b07b4a4.file.list_action_enable.tpl.php" afterPath="" />
-      <change type="DELETED" beforePath="E:\WebserverNew\domains\citymotors.loc\cache\smarty\compile\cd\54\5f\cd545f023d00173a4cb1b8ebc818f684cc1e9eb3.file.list_action_transferstock.tpl.php" afterPath="" />
-      <change type="DELETED" beforePath="E:\WebserverNew\domains\citymotors.loc\cache\smarty\compile\cd\ad\05\cdad05162137b251628350d8518c253a43e908f5.file.pagination.tpl.php" afterPath="" />
-      <change type="DELETED" beforePath="E:\WebserverNew\domains\citymotors.loc\cache\smarty\compile\cd\ee\90\cdee90394cb81d16e6283d81cf043084583fc1c5.file.modal.tpl.php" afterPath="" />
-      <change type="DELETED" beforePath="E:\WebserverNew\domains\citymotors.loc\cache\smarty\compile\ce\4b\c5\ce4bc5dfa724c0058da7736fd3e3e36d19407970.file.tree_toolbar.tpl.php" afterPath="" />
-      <change type="DELETED" beforePath="E:\WebserverNew\domains\citymotors.loc\cache\smarty\compile\ce\b6\a3\ceb6a3216bd1e013720bfcfabed25049adee847f.file.homeslider.tpl.cache.php" afterPath="" />
-      <change type="DELETED" beforePath="E:\WebserverNew\domains\citymotors.loc\cache\smarty\compile\ce\b6\a3\ceb6a3216bd1e013720bfcfabed25049adee847f.file.homeslider.tpl.php" afterPath="" />
-      <change type="DELETED" beforePath="E:\WebserverNew\domains\citymotors.loc\cache\smarty\compile\d0\b1\8d\d0b18de238d63fdaa7df3fe6606500831256d98d.file.address.tpl.php" afterPath="" />
-      <change type="DELETED" beforePath="E:\WebserverNew\domains\citymotors.loc\cache\smarty\compile\d0\f9\34\d0f934381967c78101904da71a6fa4c390514a1d.file.list_footer.tpl.php" afterPath="" />
-      <change type="DELETED" beforePath="E:\WebserverNew\domains\citymotors.loc\cache\smarty\compile\d1\00\37\d10037539a5bef20afbf7e80407179560b0381d1.file.index.tpl.php" afterPath="" />
-      <change type="DELETED" beforePath="E:\WebserverNew\domains\citymotors.loc\cache\smarty\compile\d1\42\97\d14297986ee0eeeae16e9ededd6ea46ed9db618c.file.blockcontactinfos.tpl.cache.php" afterPath="" />
-      <change type="DELETED" beforePath="E:\WebserverNew\domains\citymotors.loc\cache\smarty\compile\d1\42\97\d14297986ee0eeeae16e9ededd6ea46ed9db618c.file.blockcontactinfos.tpl.php" afterPath="" />
-      <change type="DELETED" beforePath="E:\WebserverNew\domains\citymotors.loc\cache\smarty\compile\d1\e6\fc\d1e6fc227052cc38c6c0f1697fab620e5f8990be.file.list_action_edit.tpl.php" afterPath="" />
-      <change type="DELETED" beforePath="E:\WebserverNew\domains\citymotors.loc\cache\smarty\compile\d2\89\03\d2890311d16d82a89eb6c48cd2850ead9098b4ed.file.form.tpl.php" afterPath="" />
-      <change type="DELETED" beforePath="E:\WebserverNew\domains\citymotors.loc\cache\smarty\compile\d2\bc\ac\d2bcac4733f3f5df5c1f4329e7927744eeb3f6f5.file.list_action_preview.tpl.php" afterPath="" />
-      <change type="DELETED" beforePath="E:\WebserverNew\domains\citymotors.loc\cache\smarty\compile\d4\12\e4\d412e481fba640122e5b9967078653787ba5616e.file._customized_data.tpl.php" afterPath="" />
-      <change type="DELETED" beforePath="E:\WebserverNew\domains\citymotors.loc\cache\smarty\compile\d4\15\0e\d4150e2f05642fc17762c1f203d3d019db92e6a7.file.list.tpl.php" afterPath="" />
-      <change type="DELETED" beforePath="E:\WebserverNew\domains\citymotors.loc\cache\smarty\compile\d4\c8\78\d4c87827e3d0d94598c628800c9352a64a106140.file.form.tpl.php" afterPath="" />
-      <change type="DELETED" beforePath="E:\WebserverNew\domains\citymotors.loc\cache\smarty\compile\d5\28\a9\d528a9981a88f8572986aca4805dd0e47eff9268.file.blockwishlist-ajax.tpl.php" afterPath="" />
-      <change type="DELETED" beforePath="E:\WebserverNew\domains\citymotors.loc\cache\smarty\compile\d5\a7\6f\d5a76f5d7f9bb70f42cb2aef194733684731f7c2.file.form_category.tpl.php" afterPath="" />
-      <change type="DELETED" beforePath="E:\WebserverNew\domains\citymotors.loc\cache\smarty\compile\d5\b0\96\d5b0963a1cf0719bb5bb589f46452fab45fd0395.file.tree_toolbar.tpl.php" afterPath="" />
-      <change type="DELETED" beforePath="E:\WebserverNew\domains\citymotors.loc\cache\smarty\compile\d5\c1\3f\d5c13fb397766626f7bf84e49680926750d2718d.file.quickview.tpl.php" afterPath="" />
-      <change type="DELETED" beforePath="E:\WebserverNew\domains\citymotors.loc\cache\smarty\compile\d5\c8\da\d5c8da5342b9290cf0cc29e2bd33635a78ffc3cd.file._shipping.tpl.php" afterPath="" />
-      <change type="DELETED" beforePath="E:\WebserverNew\domains\citymotors.loc\cache\smarty\compile\d5\e0\77\d5e077331cf776e8988659df289c414f0776862b.file.menu.tpl.php" afterPath="" />
-      <change type="DELETED" beforePath="E:\WebserverNew\domains\citymotors.loc\cache\smarty\compile\d6\59\2b\d6592bb52a1ade123c5c4905bafb93e5c7e1ea9d.file.layout-ajax.tpl.php" afterPath="" />
-      <change type="DELETED" beforePath="E:\WebserverNew\domains\citymotors.loc\cache\smarty\compile\d6\5e\dc\d65edce0efe7fab68b26a2f5f914ee905eb545b7.file.list_action_duplicate.tpl.php" afterPath="" />
-      <change type="DELETED" beforePath="E:\WebserverNew\domains\citymotors.loc\cache\smarty\compile\d6\d5\9a\d6d59a7247527bc6ca9db84c26c66db080642e3b.file._new_product.tpl.php" afterPath="" />
-      <change type="DELETED" beforePath="E:\WebserverNew\domains\citymotors.loc\cache\smarty\compile\d8\3e\99\d83e9926e6d4bb17687ae2bfde2b23388c8784c8.file.footer.tpl.php" afterPath="" />
-      <change type="DELETED" beforePath="E:\WebserverNew\domains\citymotors.loc\cache\smarty\compile\d9\11\2a\d9112a4b537679f72e031eb7aaf7897ae2d0b7e3.file.virtual_product.tpl.php" afterPath="" />
-      <change type="DELETED" beforePath="E:\WebserverNew\domains\citymotors.loc\cache\smarty\compile\d9\ee\b4\d9eeb4e435f818a69bf22bc8f866093be2a313f7.file.header.tpl.php" afterPath="" />
-      <change type="DELETED" beforePath="E:\WebserverNew\domains\citymotors.loc\cache\smarty\compile\da\1c\c3\da1cc3bec13c0b587a06e0a45d52a81cfc4258bb.file.tree_categories.tpl.php" afterPath="" />
-      <change type="DELETED" beforePath="E:\WebserverNew\domains\citymotors.loc\cache\smarty\compile\da\c4\cf\dac4cf43eb2628af052fdb62854407e564136fb1.file.order-return.tpl.php" afterPath="" />
-      <change type="DELETED" beforePath="E:\WebserverNew\domains\citymotors.loc\cache\smarty\compile\db\93\03\db9303bcf558dc220428f4066e32e517983e9336.file.view.tpl.php" afterPath="" />
-      <change type="DELETED" beforePath="E:\WebserverNew\domains\citymotors.loc\cache\smarty\compile\dc\15\80\dc15801df2f041f88cb07e8efc0f8814d223b71d.file._discount_form.tpl.php" afterPath="" />
-      <change type="DELETED" beforePath="E:\WebserverNew\domains\citymotors.loc\cache\smarty\compile\dc\84\e1\dc84e12f334a131f913628ae5b906e89fce1fbc2.file.history.tpl.php" afterPath="" />
-      <change type="DELETED" beforePath="E:\WebserverNew\domains\citymotors.loc\cache\smarty\compile\dc\8e\3d\dc8e3d25ab66048955b2962b0a5acf58306fa383.file.attachment_ajax.tpl.php" afterPath="" />
-      <change type="DELETED" beforePath="E:\WebserverNew\domains\citymotors.loc\cache\smarty\compile\dd\9a\6f\dd9a6f92a8a81d3079b0aacbc77aca1c6012af2e.file.customization.tpl.php" afterPath="" />
-      <change type="DELETED" beforePath="E:\WebserverNew\domains\citymotors.loc\cache\smarty\compile\de\4f\d7\de4fd70f89cc77f06f59f0b016f8a91d730cef0b.file.shop_tree_node_folder.tpl.php" afterPath="" />
-      <change type="DELETED" beforePath="E:\WebserverNew\domains\citymotors.loc\cache\smarty\compile\df\12\5c\df125c7c1a46b4ce2a0c01671346e7ad6c47b173.file.images.tpl.php" afterPath="" />
-      <change type="DELETED" beforePath="E:\WebserverNew\domains\citymotors.loc\cache\smarty\compile\df\44\34\df44341e87b24fbb0bc1d47093e529905a396c4b.file.blockcart-json.tpl.php" afterPath="" />
-      <change type="DELETED" beforePath="E:\WebserverNew\domains\citymotors.loc\cache\smarty\compile\df\51\28\df5128d593ad6c4ef64f1e3dee346b256ab33b1d.file.products-comparison.tpl.php" afterPath="" />
-      <change type="DELETED" beforePath="E:\WebserverNew\domains\citymotors.loc\cache\smarty\compile\df\b4\97\dfb49781f723e31e4d4d69e4b065d28e852d8f5a.file.content.tpl.php" afterPath="" />
-      <change type="DELETED" beforePath="E:\WebserverNew\domains\citymotors.loc\cache\smarty\compile\e0\68\d9\e068d917d3cfa43f2f88a5cddc91079cad7e2881.file.productcomments.tpl.php" afterPath="" />
-      <change type="DELETED" beforePath="E:\WebserverNew\domains\citymotors.loc\cache\smarty\compile\e1\04\0f\e1040f7959ba04445967b47ae25a758962ccc933.file.payment_return.tpl.php" afterPath="" />
-      <change type="DELETED" beforePath="E:\WebserverNew\domains\citymotors.loc\cache\smarty\compile\e1\1a\d3\e11ad384d1751d58327888a706c7a16df4fed270.file.list_action_preview.tpl.php" afterPath="" />
-      <change type="DELETED" beforePath="E:\WebserverNew\domains\citymotors.loc\cache\smarty\compile\e1\6d\a0\e16da0c84434a53bf04f829648858d27aca1f284.file.footer.tpl.php" afterPath="" />
-      <change type="DELETED" beforePath="E:\WebserverNew\domains\citymotors.loc\cache\smarty\compile\e2\15\69\e21569e22b6072afad4d00a1ba329f2cb8737f21.file.informations.tpl.php" afterPath="" />
-      <change type="DELETED" beforePath="E:\WebserverNew\domains\citymotors.loc\cache\smarty\compile\e2\27\d7\e227d7c4d3ed822c576ea8872a1232b602365fbd.file.maintenance.tpl.php" afterPath="" />
-      <change type="DELETED" beforePath="E:\WebserverNew\domains\citymotors.loc\cache\smarty\compile\e2\99\68\e2996847f458d3f1455ce59bbb824ba9de022388.file.list_action_supply_order_create_from_template.tpl.php" afterPath="" />
-      <change type="DELETED" beforePath="E:\WebserverNew\domains\citymotors.loc\cache\smarty\compile\e2\f1\50\e2f1508361528d727e0b097ede2ae2b919a57659.file.virtual_product.tpl.php" afterPath="" />
-      <change type="DELETED" beforePath="E:\WebserverNew\domains\citymotors.loc\cache\smarty\compile\e4\35\c5\e435c517feaf729fdb9589f3fc96ed85ac87d1fd.file.features.tpl.php" afterPath="" />
-      <change type="DELETED" beforePath="E:\WebserverNew\domains\citymotors.loc\cache\smarty\compile\e4\e5\15\e4e515996d6638a2aef03a5d88bb1e6e9c6ac91e.file.category.tpl.php" afterPath="" />
-      <change type="DELETED" beforePath="E:\WebserverNew\domains\citymotors.loc\cache\smarty\compile\e5\15\1a\e5151aa73fe2aa7e59ff1f7239993bf098af7546.file.blockviewed.tpl.php" afterPath="" />
-      <change type="DELETED" beforePath="E:\WebserverNew\domains\citymotors.loc\cache\smarty\compile\e5\fc\ac\e5fcac547fd34d936caf17d0046be905983a1e7c.file.blockcontactinfos.tpl.php" afterPath="" />
-      <change type="DELETED" beforePath="E:\WebserverNew\domains\citymotors.loc\cache\smarty\compile\e6\47\bd\e647bdeac8b69c152282a988121c595438e7c387.file.blockcmsinfo.tpl.cache.php" afterPath="" />
-      <change type="DELETED" beforePath="E:\WebserverNew\domains\citymotors.loc\cache\smarty\compile\e6\47\bd\e647bdeac8b69c152282a988121c595438e7c387.file.blockcmsinfo.tpl.php" afterPath="" />
-      <change type="DELETED" beforePath="E:\WebserverNew\domains\citymotors.loc\cache\smarty\compile\e6\d2\76\e6d276ab49a64ce5fa2fcfb9b538bc89539dcc44.file.input_text_lang.tpl.php" afterPath="" />
-      <change type="DELETED" beforePath="E:\WebserverNew\domains\citymotors.loc\cache\smarty\compile\e7\4e\0d\e74e0de94aeef28155c39096d59ae63492047f92.file.tree_node_folder_radio.tpl.php" afterPath="" />
-      <change type="DELETED" beforePath="E:\WebserverNew\domains\citymotors.loc\cache\smarty\compile\e8\94\66\e8946674d11e3c7de6ddcf8cad45289f87711fe3.file.my-account.tpl.php" afterPath="" />
-      <change type="DELETED" beforePath="E:\WebserverNew\domains\citymotors.loc\cache\smarty\compile\e9\c1\a4\e9c1a4927efd5e957b3d92282b2d12d1cdd133ba.file.payment.tpl.php" afterPath="" />
-      <change type="DELETED" beforePath="E:\WebserverNew\domains\citymotors.loc\cache\smarty\compile\e9\c4\12\e9c41259036c53791b6e230dadb8ad69d1f4c354.file.list_action_delete.tpl.php" afterPath="" />
-      <change type="DELETED" beforePath="E:\WebserverNew\domains\citymotors.loc\cache\smarty\compile\e9\d1\35\e9d13559b06045d6a04c454265930d1cb39eaa9f.file.scenes.tpl.php" afterPath="" />
-      <change type="DELETED" beforePath="E:\WebserverNew\domains\citymotors.loc\cache\smarty\compile\ea\05\09\ea050977f43016079db2c4c7b5e0671b5245b2f6.file.blockmanufacturer.tpl.php" afterPath="" />
-      <change type="DELETED" beforePath="E:\WebserverNew\domains\citymotors.loc\cache\smarty\compile\ea\51\7e\ea517e80591ccd402ce0ce81f3bc59d7a5835d77.file.list_action_supply_order_change_state.tpl.php" afterPath="" />
-      <change type="DELETED" beforePath="E:\WebserverNew\domains\citymotors.loc\cache\smarty\compile\ea\90\88\ea908826e9930c9c19990c76ef660294486e0124.file.product-sort.tpl.php" afterPath="" />
-      <change type="DELETED" beforePath="E:\WebserverNew\domains\citymotors.loc\cache\smarty\compile\ea\f2\67\eaf267fcb2929f72d849921556a309e203834541.file.order-slip.tpl.php" afterPath="" />
-      <change type="DELETED" beforePath="E:\WebserverNew\domains\citymotors.loc\cache\smarty\compile\eb\84\f5\eb84f5cca66fc1a7ff5791e5de9865b53630ff1d.file.authentication.tpl.php" afterPath="" />
-      <change type="DELETED" beforePath="E:\WebserverNew\domains\citymotors.loc\cache\smarty\compile\ed\30\d7\ed30d79bd14f5ac59fde1e005a5424059c3507f4.file.tree_node_folder.tpl.php" afterPath="" />
-      <change type="DELETED" beforePath="E:\WebserverNew\domains\citymotors.loc\cache\smarty\compile\ee\9b\37\ee9b37f9f1b229aa9cbf920c228f00c78d1c9dae.file.calendar.tpl.php" afterPath="" />
-      <change type="DELETED" beforePath="E:\WebserverNew\domains\citymotors.loc\cache\smarty\compile\f0\52\31\f052313e3127c7ddce7714a057a67e9e43f5cadb.file.tab.tpl.cache.php" afterPath="" />
-      <change type="DELETED" beforePath="E:\WebserverNew\domains\citymotors.loc\cache\smarty\compile\f0\fc\e7\f0fce7594d49c89a0fe9b93af44c905f12d6e85a.file.new-products.tpl.php" afterPath="" />
-      <change type="DELETED" beforePath="E:\WebserverNew\domains\citymotors.loc\cache\smarty\compile\f1\64\0a\f1640ab2524ae99c270a2704a34af899d1c0d577.file.form_group.tpl.php" afterPath="" />
-      <change type="DELETED" beforePath="E:\WebserverNew\domains\citymotors.loc\cache\smarty\compile\f1\e3\58\f1e358f091015ddabd5ec1baa35c148f186c4792.file.list_action_supply_order_receipt.tpl.php" afterPath="" />
-      <change type="DELETED" beforePath="E:\WebserverNew\domains\citymotors.loc\cache\smarty\compile\f1\e5\16\f1e5162e3d8cfe7001d6a74863d5dd90a3d144bf.file.list_footer.tpl.php" afterPath="" />
-      <change type="DELETED" beforePath="E:\WebserverNew\domains\citymotors.loc\cache\smarty\compile\f2\0e\d7\f20ed757e8d8286279361036d98122072676b351.file.quantities.tpl.php" afterPath="" />
-      <change type="DELETED" beforePath="E:\WebserverNew\domains\citymotors.loc\cache\smarty\compile\f5\bc\4f\f5bc4f47a03fe2e7ad4a3d7989973c97d8199f2c.file.best-sales.tpl.php" afterPath="" />
-      <change type="DELETED" beforePath="E:\WebserverNew\domains\citymotors.loc\cache\smarty\compile\f6\27\fe\f627fedfd0c2921355946acdd3d23f0fbbcf44c3.file.simple.tpl.php" afterPath="" />
-      <change type="DELETED" beforePath="E:\WebserverNew\domains\citymotors.loc\cache\smarty\compile\f6\aa\1f\f6aa1f086887f2a59578b9ea32b6ba7d7d51bf96.file.content.tpl.php" afterPath="" />
-      <change type="DELETED" beforePath="E:\WebserverNew\domains\citymotors.loc\cache\smarty\compile\f6\b4\35\f6b435965aff4e95f7976741a4161dee332de509.file.order-opc-advanced.tpl.php" afterPath="" />
-      <change type="DELETED" beforePath="E:\WebserverNew\domains\citymotors.loc\cache\smarty\compile\f7\24\06\f724061bb7e45e160cd34b51508b237aa54b4661.file.blockbestsellers.tpl.php" afterPath="" />
-      <change type="DELETED" beforePath="E:\WebserverNew\domains\citymotors.loc\cache\smarty\compile\f7\60\e6\f760e6665010d7aa833bd7a7efe29cf72f0bb943.file.nav.tpl.php" afterPath="" />
-      <change type="DELETED" beforePath="E:\WebserverNew\domains\citymotors.loc\cache\smarty\compile\f8\5e\6c\f85e6cbb6aee72bd8576e0f275be80be2a21e6a1.file.js.tpl.php" afterPath="" />
-      <change type="DELETED" beforePath="E:\WebserverNew\domains\citymotors.loc\cache\smarty\compile\f8\90\34\f890348ddbd87f530042918136f8486eb494d2fa.file.actions.tpl.php" afterPath="" />
-      <change type="DELETED" beforePath="E:\WebserverNew\domains\citymotors.loc\cache\smarty\compile\f8\f1\5a\f8f15aed9c0ab749b3184b6deb2c15fe11e4ec89.file.modal_not_trusted.tpl.php" afterPath="" />
-      <change type="DELETED" beforePath="E:\WebserverNew\domains\citymotors.loc\cache\smarty\compile\f9\46\86\f946863dd54cb31c9e196fa9dd33bb36e46fbebe.file.layout.tpl.php" afterPath="" />
-      <change type="DELETED" beforePath="E:\WebserverNew\domains\citymotors.loc\cache\smarty\compile\fa\31\83\fa318387a4717beea140187a7a4bd81502a3ce9d.file.my-account.tpl.php" afterPath="" />
-      <change type="DELETED" beforePath="E:\WebserverNew\domains\citymotors.loc\cache\smarty\compile\fa\34\cc\fa34cc1f981074d142ab9cfe72e226697e7823e9.file.blocklink.tpl.php" afterPath="" />
-      <change type="DELETED" beforePath="E:\WebserverNew\domains\citymotors.loc\cache\smarty\compile\fa\5c\10\fa5c10c02a7cb0963fe8811ac8f8612d4d336717.file.tree_associated_header.tpl.php" afterPath="" />
-      <change type="DELETED" beforePath="E:\WebserverNew\domains\citymotors.loc\cache\smarty\compile\fa\8c\9d\fa8c9d2217bad18de76a9ce0dcdc539fb664753b.file.order-carrier-opc-advanced.tpl.php" afterPath="" />
-      <change type="DELETED" beforePath="E:\WebserverNew\domains\citymotors.loc\cache\smarty\compile\fb\3f\87\fb3f87ee4e748b06394dec1fc3390d757501a63c.file.form.tpl.php" afterPath="" />
-      <change type="DELETED" beforePath="E:\WebserverNew\domains\citymotors.loc\cache\smarty\compile\fb\ed\d3\fbedd3056ae7eaa05dc3cfa96823a2805fc20c8d.file.list_content.tpl.php" afterPath="" />
-      <change type="DELETED" beforePath="E:\WebserverNew\domains\citymotors.loc\cache\smarty\compile\fc\81\9c\fc819c2f219deb631434836a6dc54be671ef3c39.file.tree.tpl.php" afterPath="" />
-      <change type="DELETED" beforePath="E:\WebserverNew\domains\citymotors.loc\cache\smarty\compile\fd\1c\1a\fd1c1ace584de2a4e5b973fa2f36a37f4e76faf8.file.calendar.tpl.php" afterPath="" />
-      <change type="DELETED" beforePath="E:\WebserverNew\domains\citymotors.loc\cache\smarty\compile\fd\5b\fc\fd5bfc1cec1b40a82037006856087fad45c78aec.file.nbr-product-page.tpl.php" afterPath="" />
-      <change type="DELETED" beforePath="E:\WebserverNew\domains\citymotors.loc\cache\smarty\compile\fd\e5\c7\fde5c78925eff3896b6efeb8271adec71acb8ad4.file.socialsharing_header.tpl.php" afterPath="" />
-      <change type="DELETED" beforePath="E:\WebserverNew\domains\citymotors.loc\cache\smarty\compile\fd\f7\20\fdf72069cb709c8fc1c9e7925f42ee48cfd01a12.file.productcomments_top.tpl.php" afterPath="" />
-      <change type="DELETED" beforePath="E:\WebserverNew\domains\citymotors.loc\cache\smarty\compile\fe\c4\2e\fec42ebb4faabccd3b74c2ae13c6bbe92718c4e0.file.js.tpl.php" afterPath="" />
-      <change type="DELETED" beforePath="E:\WebserverNew\domains\citymotors.loc\config\xml\blog-ru.xml" afterPath="" />
-      <change type="DELETED" beforePath="E:\WebserverNew\domains\citymotors.loc\config\xml\modules_list.xml" afterPath="" />
-      <change type="DELETED" beforePath="E:\WebserverNew\domains\citymotors.loc\config\xml\trusted_modules_list.xml" afterPath="" />
-      <change type="DELETED" beforePath="E:\WebserverNew\domains\citymotors.loc\config\xml\untrusted_modules_list.xml" afterPath="" />
-      <change type="DELETED" beforePath="E:\WebserverNew\domains\citymotors.loc\img\s\2.jpg" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/translations/ru.gzip" afterPath="$PROJECT_DIR$/translations/ru.gzip" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.htaccess" afterPath="$PROJECT_DIR$/.htaccess" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/cache/smarty/compile/02/77/e0/0277e04377d8df45184975879f16f0ea829a85c0.file.modal.tpl.php" afterPath="$PROJECT_DIR$/cache/smarty/compile/02/77/e0/0277e04377d8df45184975879f16f0ea829a85c0.file.modal.tpl.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/cache/smarty/compile/0b/d3/25/0bd3257dee35d4d605b66df1a0a39447c03fa1d4.file.errors.tpl.php" afterPath="$PROJECT_DIR$/cache/smarty/compile/0b/d3/25/0bd3257dee35d4d605b66df1a0a39447c03fa1d4.file.errors.tpl.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/cache/smarty/compile/1a/15/40/1a1540f344d298918f26c8be16921dd262f75b49.file.hook.tpl.php" afterPath="$PROJECT_DIR$/cache/smarty/compile/1a/15/40/1a1540f344d298918f26c8be16921dd262f75b49.file.hook.tpl.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/cache/smarty/compile/21/53/9c/21539c72adbce5f60b80f325cdcf17865eed7698.file.layout.tpl.php" afterPath="$PROJECT_DIR$/cache/smarty/compile/21/53/9c/21539c72adbce5f60b80f325cdcf17865eed7698.file.layout.tpl.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/cache/smarty/compile/23/e9/de/23e9deb4ecf2dee7eded7c9099ad7b775106923c.file.global.tpl.php" afterPath="$PROJECT_DIR$/cache/smarty/compile/23/e9/de/23e9deb4ecf2dee7eded7c9099ad7b775106923c.file.global.tpl.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/cache/smarty/compile/25/cf/4f/25cf4fb5c50b03c2ee74532a1c423b42a8e26314.file.blockcurrencies.tpl.php" afterPath="$PROJECT_DIR$/cache/smarty/compile/25/cf/4f/25cf4fb5c50b03c2ee74532a1c423b42a8e26314.file.blockcurrencies.tpl.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/cache/smarty/compile/30/51/64/305164bdb2d4da023a75d4ee835f257711a6b6f0.file.modal.tpl.php" afterPath="$PROJECT_DIR$/cache/smarty/compile/30/51/64/305164bdb2d4da023a75d4ee835f257711a6b6f0.file.modal.tpl.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/cache/smarty/compile/3c/09/6b/3c096bbf14ccbf525c132ba6745112ae3c8687ee.file.blockcart-json.tpl.php" afterPath="$PROJECT_DIR$/cache/smarty/compile/3c/09/6b/3c096bbf14ccbf525c132ba6745112ae3c8687ee.file.blockcart-json.tpl.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/cache/smarty/compile/46/91/3a/46913a17583e755617e499432dbba4dd6679e182.file.blockbanner.tpl.cache.php" afterPath="$PROJECT_DIR$/cache/smarty/compile/46/91/3a/46913a17583e755617e499432dbba4dd6679e182.file.blockbanner.tpl.cache.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/cache/smarty/compile/47/74/cb/4774cb5b06e08ea4c029b5679f7103e3defa9763.file.blocklanguages.tpl.php" afterPath="$PROJECT_DIR$/cache/smarty/compile/47/74/cb/4774cb5b06e08ea4c029b5679f7103e3defa9763.file.blocklanguages.tpl.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/cache/smarty/compile/5a/4c/78/5a4c78b075c63d7546e648c13661ace77ccf171f.file.blockviewed.tpl.php" afterPath="$PROJECT_DIR$/cache/smarty/compile/5a/4c/78/5a4c78b075c63d7546e648c13661ace77ccf171f.file.blockviewed.tpl.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/cache/smarty/compile/60/38/53/6038534cae320404ccd0d7d80db2edebe9fa7e2e.file.blockuserinfo.tpl.php" afterPath="$PROJECT_DIR$/cache/smarty/compile/60/38/53/6038534cae320404ccd0d7d80db2edebe9fa7e2e.file.blockuserinfo.tpl.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/cache/smarty/compile/6d/f7/07/6df7071dafcd23882eb6c6ec6a16e87d03efdc49.file.content.tpl.php" afterPath="$PROJECT_DIR$/cache/smarty/compile/6d/f7/07/6df7071dafcd23882eb6c6ec6a16e87d03efdc49.file.content.tpl.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/cache/smarty/compile/6f/a7/a6/6fa7a62ed82586dc09f7088fb2b3a6d6283f5f59.file.footer.tpl.php" afterPath="$PROJECT_DIR$/cache/smarty/compile/6f/a7/a6/6fa7a62ed82586dc09f7088fb2b3a6d6283f5f59.file.footer.tpl.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/cache/smarty/compile/9b/7f/c0/9b7fc0f89c6b9dfc49f584bb46a1c9305c47e4e7.file.header.tpl.php" afterPath="$PROJECT_DIR$/cache/smarty/compile/9b/7f/c0/9b7fc0f89c6b9dfc49f584bb46a1c9305c47e4e7.file.header.tpl.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/cache/smarty/compile/9f/5c/07/9f5c07ab22eb043af4ad18d14ad3fbdc15b686a6.file.layout.tpl.php" afterPath="$PROJECT_DIR$/cache/smarty/compile/9f/5c/07/9f5c07ab22eb043af4ad18d14ad3fbdc15b686a6.file.layout.tpl.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/cache/smarty/compile/b0/dd/4b/b0dd4b9687802ea7e5e6fbb68e614dc8d2828591.file.nav.tpl.php" afterPath="$PROJECT_DIR$/cache/smarty/compile/b0/dd/4b/b0dd4b9687802ea7e5e6fbb68e614dc8d2828591.file.nav.tpl.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/cache/smarty/compile/b2/33/f7/b233f71836538a0b0c9a7e42075df67a7e04474c.file.blockcart.tpl.php" afterPath="$PROJECT_DIR$/cache/smarty/compile/b2/33/f7/b233f71836538a0b0c9a7e42075df67a7e04474c.file.blockcart.tpl.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/cache/smarty/compile/b7/39/63/b73963bfe13597c9c0761d4a32f4a1c12bb58cdf.file.header.tpl.php" afterPath="$PROJECT_DIR$/cache/smarty/compile/b7/39/63/b73963bfe13597c9c0761d4a32f4a1c12bb58cdf.file.header.tpl.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/modules/blockcart/blockcart.php" afterPath="$PROJECT_DIR$/modules/blockcart/blockcart.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/modules/blocklayered/blocklayered.php" afterPath="$PROJECT_DIR$/modules/blocklayered/blocklayered.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/modules/blocknewsletter/blocknewsletter.css" afterPath="$PROJECT_DIR$/modules/blocknewsletter/blocknewsletter.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/modules/blocknewsletter/blocknewsletter.php" afterPath="$PROJECT_DIR$/modules/blocknewsletter/blocknewsletter.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/modules/blocknewsletter/views/templates/hook/blocknewsletter.tpl" afterPath="$PROJECT_DIR$/modules/blocknewsletter/views/templates/hook/blocknewsletter.tpl" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/cache/smarty/compile/c4/2e/64/c42e6451841d604a0736f1629ce5d32c4f27e1fc.file.login_addons.tpl.php" afterPath="$PROJECT_DIR$/cache/smarty/compile/c4/2e/64/c42e6451841d604a0736f1629ce5d32c4f27e1fc.file.login_addons.tpl.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/cache/smarty/compile/c9/95/0e/c9950efecbc242bbfa0e314c2b8ee17c583d3a78.file.nav.tpl.php" afterPath="$PROJECT_DIR$/cache/smarty/compile/c9/95/0e/c9950efecbc242bbfa0e314c2b8ee17c583d3a78.file.nav.tpl.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/cache/class_index.php" afterPath="$PROJECT_DIR$/cache/class_index.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/modules/blockcart/config.xml" afterPath="$PROJECT_DIR$/modules/blockcart/config.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/modules/blocklayered/config.xml" afterPath="$PROJECT_DIR$/modules/blocklayered/config.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/modules/blocknewsletter/config.xml" afterPath="$PROJECT_DIR$/modules/blocknewsletter/config.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/modules/themeconfigurator/config.xml" afterPath="$PROJECT_DIR$/modules/themeconfigurator/config.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/modules/blockcart/config_ru.xml" afterPath="$PROJECT_DIR$/modules/blockcart/config_ru.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/modules/blocklayered/config_ru.xml" afterPath="$PROJECT_DIR$/modules/blocklayered/config_ru.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/modules/blocknewsletter/config_ru.xml" afterPath="$PROJECT_DIR$/modules/blocknewsletter/config_ru.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/modules/themeconfigurator/config_ru.xml" afterPath="$PROJECT_DIR$/modules/themeconfigurator/config_ru.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/cache/smarty/compile/d4/27/11/d42711d5118af3eee55bcf93711945719ec65846.file.search_form.tpl.php" afterPath="$PROJECT_DIR$/cache/smarty/compile/d4/27/11/d42711d5118af3eee55bcf93711945719ec65846.file.search_form.tpl.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/custom_order.js" afterPath="$PROJECT_DIR$/js/custom_order.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/cache/smarty/compile/d6/50/bd/d650bd01e97db8311ca05406c5d737cfba130796.file.javascript.tpl.php" afterPath="$PROJECT_DIR$/cache/smarty/compile/d6/50/bd/d650bd01e97db8311ca05406c5d737cfba130796.file.javascript.tpl.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/config/xml/default_country_modules_list.xml" afterPath="$PROJECT_DIR$/config/xml/default_country_modules_list.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/cache/smarty/compile/e3/50/56/e35056b768069d8a0bc0a812aeeaf045a970dcdd.file.breadcrumb.tpl.php" afterPath="$PROJECT_DIR$/cache/smarty/compile/e3/50/56/e35056b768069d8a0bc0a812aeeaf045a970dcdd.file.breadcrumb.tpl.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/cache/smarty/compile/e9/2d/12/e92d12244c2bc571674d1e9a50bd815b572dfe16.file.footer.tpl.php" afterPath="$PROJECT_DIR$/cache/smarty/compile/e9/2d/12/e92d12244c2bc571674d1e9a50bd815b572dfe16.file.footer.tpl.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/cache/smarty/compile/f0/6c/6a/f06c6a6eacb25b13778aaca9610d864476ccfd53.file.blocknewsletter.tpl.php" afterPath="$PROJECT_DIR$/cache/smarty/compile/f0/6c/6a/f06c6a6eacb25b13778aaca9610d864476ccfd53.file.blocknewsletter.tpl.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/cache/smarty/compile/fe/be/d4/febed49711e6d5b9f1bd38efcb623161ec1bdb1e.file.page_header_toolbar.tpl.php" afterPath="$PROJECT_DIR$/cache/smarty/compile/fe/be/d4/febed49711e6d5b9f1bd38efcb623161ec1bdb1e.file.page_header_toolbar.tpl.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/themes/citymotors/header.tpl" afterPath="$PROJECT_DIR$/themes/citymotors/header.tpl" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/config/xml/modules_native_addons.xml" afterPath="$PROJECT_DIR$/config/xml/modules_native_addons.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/config/xml/must_have_modules_list.xml" afterPath="$PROJECT_DIR$/config/xml/must_have_modules_list.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/config/settings.inc.php" afterPath="$PROJECT_DIR$/config/settings.inc.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/modules/themeconfigurator/themeconfigurator.php" afterPath="$PROJECT_DIR$/modules/themeconfigurator/themeconfigurator.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/modules/onepagecheckout/views/templates/front/order-carrier.tpl" afterPath="$PROJECT_DIR$/modules/onepagecheckout/views/templates/front/order-carrier.tpl" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/modules/onepagecheckout/views/templates/front/order-opc-new-account.tpl" afterPath="$PROJECT_DIR$/modules/onepagecheckout/views/templates/front/order-opc-new-account.tpl" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/modules/onepagecheckout/views/js/order-opc.js" afterPath="$PROJECT_DIR$/modules/onepagecheckout/views/js/order-opc.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="citymotors.loc.iws" />
@@ -564,71 +47,49 @@
       <file leaf-file-name=".gitignore" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/.gitignore">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-20.777779">
+            <state vertical-scroll-proportion="0.0">
               <caret line="33" column="6" selection-start-line="33" selection-start-column="0" selection-end-line="33" selection-end-column="6" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="order-opc-new-account.tpl" pinned="false" current-in-tab="true">
+      <file leaf-file-name="order-opc-new-account.tpl" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/modules/onepagecheckout/views/templates/front/order-opc-new-account.tpl">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.9050279">
-              <caret line="304" column="20" selection-start-line="298" selection-start-column="16" selection-end-line="304" selection-end-column="20" />
+            <state vertical-scroll-proportion="-2.8909092">
+              <caret line="83" column="34" selection-start-line="83" selection-start-column="34" selection-end-line="83" selection-end-column="34" />
               <folding>
-                <element signature="n#style#0;n#p#1;n#div#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#p#2;n#div#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#p#3;n#div#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#p#4;n#div#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#p#5;n#div#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#p#6;n#div#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#fieldset#0;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#div#0;n#div#0;n#fieldset#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#span#0;n#div#0;n#div#0;n#fieldset#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#select#0;n#div#0;n#div#0;n#fieldset#0;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#p#0;n#div#1;n#fieldset#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#div#0;n#div#1;n#fieldset#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#p#1;n#div#1;n#fieldset#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#p#2;n#div#1;n#fieldset#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#p#3;n#div#1;n#fieldset#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#p#4;n#div#1;n#fieldset#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#p#5;n#div#1;n#fieldset#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#p#6;n#div#1;n#fieldset#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#2;n#div#1;n#fieldset#0;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#p#7;n#div#1;n#fieldset#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#p#8;n#div#1;n#fieldset#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#p#10;n#div#1;n#fieldset#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#p#11;n#div#1;n#fieldset#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#p#12;n#div#1;n#fieldset#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#p#13;n#div#1;n#fieldset#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#div#1;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#div#0;n#div#0;n#fieldset#0;n#div#1;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#span#0;n#div#0;n#div#0;n#fieldset#0;n#div#1;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#select#0;n#div#0;n#div#0;n#fieldset#0;n#div#1;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#div#0;n#div#1;n#fieldset#0;n#div#1;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#p#0;n#div#1;n#fieldset#0;n#div#1;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#div#1;n#div#1;n#fieldset#0;n#div#1;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#p#5;n#div#1;n#fieldset#0;n#div#1;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#p#8;n#div#1;n#fieldset#0;n#div#1;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#p#9;n#div#1;n#fieldset#0;n#div#1;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#p#10;n#div#1;n#fieldset#0;n#div#1;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#p#11;n#div#1;n#fieldset#0;n#div#1;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#p#12;n#div#1;n#fieldset#0;n#div#1;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#p#13;n#div#1;n#fieldset#0;n#div#1;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#form#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#div#0;n#fieldset#0;n#form#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#div#0;n#div#0;n#fieldset#0;n#form#0;n#!!top" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="custom_order.js" pinned="false" current-in-tab="false">
+      <file leaf-file-name="custom_order.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/js/custom_order.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="141" column="21" selection-start-line="133" selection-start-column="18" selection-end-line="141" selection-end-column="21" />
+            <state vertical-scroll-proportion="-1.6489726">
+              <caret line="11" column="63" selection-start-line="11" selection-start-column="63" selection-end-line="11" selection-end-column="63" />
               <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="order-opc.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/modules/onepagecheckout/views/js/order-opc.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-130.06897">
+              <caret line="1374" column="46" selection-start-line="1374" selection-start-column="46" selection-end-line="1374" selection-end-column="46" />
+              <folding>
+                <element signature="n#!!doc" expanded="true" />
+                <marker date="1534456530125" expanded="true" signature="69022:69047" placeholder="..." />
+                <marker date="1534456530125" expanded="true" signature="69553:69604" placeholder="..." />
+                <marker date="1534456530125" expanded="true" signature="70093:70118" placeholder="..." />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -636,7 +97,7 @@
       <file leaf-file-name="IntimeApi2.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/IntimeApi2.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-17.192308">
+            <state vertical-scroll-proportion="0.0">
               <caret line="580" column="8" selection-start-line="580" selection-start-column="8" selection-end-line="581" selection-end-column="19" />
               <folding>
                 <element signature="e#155#177#0#PHP" expanded="true" />
@@ -648,9 +109,11 @@
       <file leaf-file-name="order-carrier.tpl" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/modules/onepagecheckout/views/templates/front/order-carrier.tpl">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-4.490909">
-              <caret line="89" column="86" selection-start-line="89" selection-start-column="86" selection-end-line="89" selection-end-column="86" />
-              <folding />
+            <state vertical-scroll-proportion="-28.115385">
+              <caret line="87" column="35" selection-start-line="85" selection-start-column="30" selection-end-line="87" selection-end-column="35" />
+              <folding>
+                <element signature="n#style#0;n#div#0;n#tbody#0;n#table#0;n#div#0;n#h3#0;n#fieldset#0;n#form#0;n#!!top" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -658,8 +121,8 @@
       <file leaf-file-name="composer.json" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/composer.json">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-0.0">
-              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+            <state vertical-scroll-proportion="0.0">
+              <caret line="2" column="0" selection-start-line="2" selection-start-column="0" selection-end-line="2" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -668,7 +131,7 @@
       <file leaf-file-name="header.tpl" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/themes/citymotors/header.tpl">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-11.226415">
+            <state vertical-scroll-proportion="0.0">
               <caret line="68" column="93" selection-start-line="68" selection-start-column="93" selection-end-line="68" selection-end-column="93" />
               <folding />
             </state>
@@ -686,9 +149,10 @@
         <option value="$PROJECT_DIR$/.gitignore" />
         <option value="$PROJECT_DIR$/themes/citymotors/header.tpl" />
         <option value="$PROJECT_DIR$/IntimeApi2.php" />
-        <option value="$PROJECT_DIR$/modules/onepagecheckout/views/templates/front/order-carrier.tpl" />
         <option value="$PROJECT_DIR$/js/custom_order.js" />
+        <option value="$PROJECT_DIR$/modules/onepagecheckout/views/templates/front/order-carrier.tpl" />
         <option value="$PROJECT_DIR$/modules/onepagecheckout/views/templates/front/order-opc-new-account.tpl" />
+        <option value="$PROJECT_DIR$/modules/onepagecheckout/views/js/order-opc.js" />
       </list>
     </option>
   </component>
@@ -704,10 +168,10 @@
   </component>
   <component name="PhpWorkspaceProjectConfiguration" backward_compatibility_performed="true" />
   <component name="ProjectFrameBounds">
-    <option name="x" value="-1928" />
-    <option name="y" value="-310" />
-    <option name="width" value="1936" />
-    <option name="height" value="1056" />
+    <option name="x" value="-8" />
+    <option name="y" value="-8" />
+    <option name="width" value="1382" />
+    <option name="height" value="744" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="false">
     <OptionsSetting value="true" id="Add" />
@@ -860,6 +324,32 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="citymotors.loc" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="citymotors.loc" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="modules" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="onepagecheckout" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="views" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="js" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
         </subPane>
       </pane>
       <pane id="Scope" />
@@ -868,9 +358,11 @@
   </component>
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="E:/Webserver/domains/sonicempire.loc" />
+    <property name="last_opened_file_path" value="E:/Webserver/domains/migliori.loc" />
     <property name="HbShouldOpenHtmlAsHb" value="" />
     <property name="FullScreen" value="false" />
+    <property name="settings.editor.selected.configurable" value="reference.settingsdialog.IDE.editor.colors.PHP" />
+    <property name="settings.editor.splitter.proportion" value="0.2" />
   </component>
   <component name="RunManager">
     <configuration default="true" type="JavascriptDebugType" factoryName="JavaScript Debug">
@@ -913,28 +405,28 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-1928" y="-310" width="1936" height="1056" extended-state="6" />
+    <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.17857143" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.28366113" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Get Gist" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.32900432" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32843137" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
   <component name="Vcs.Log.UiProperties">
@@ -956,6 +448,71 @@
     <entry file="file://$PROJECT_DIR$/.gitignore">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
+          <caret line="33" column="6" selection-start-line="33" selection-start-column="0" selection-end-line="33" selection-end-column="6" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/modules/onepagecheckout/views/templates/front/order-opc-new-account.tpl">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <element signature="n#style#0;n#div#0;n#div#0;n#fieldset#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#p#0;n#div#1;n#fieldset#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#2;n#div#1;n#fieldset#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#p#7;n#div#1;n#fieldset#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/custom_order.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="141" column="21" selection-start-line="133" selection-start-column="18" selection-end-line="141" selection-end-column="21" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/IntimeApi2.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="580" column="8" selection-start-line="580" selection-start-column="8" selection-end-line="581" selection-end-column="19" />
+          <folding>
+            <element signature="e#155#177#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/modules/onepagecheckout/views/templates/front/order-carrier.tpl">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="89" column="86" selection-start-line="89" selection-start-column="86" selection-end-line="89" selection-end-column="86" />
+          <folding>
+            <element signature="n#style#0;n#div#0;n#tbody#0;n#table#0;n#div#0;n#h3#0;n#fieldset#0;n#form#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/composer.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/themes/citymotors/header.tpl">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="68" column="93" selection-start-line="68" selection-start-column="93" selection-end-line="68" selection-end-column="93" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.gitignore">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding />
         </state>
@@ -970,7 +527,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/.gitignore">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-20.777779">
+        <state vertical-scroll-proportion="0.0">
           <caret line="33" column="6" selection-start-line="33" selection-start-column="0" selection-end-line="33" selection-end-column="6" />
           <folding />
         </state>
@@ -978,7 +535,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/themes/citymotors/header.tpl">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-11.226415">
+        <state vertical-scroll-proportion="0.0">
           <caret line="68" column="93" selection-start-line="68" selection-start-column="93" selection-end-line="68" selection-end-column="93" />
           <folding />
         </state>
@@ -987,14 +544,14 @@
     <entry file="file://$PROJECT_DIR$/composer.json">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <caret line="2" column="0" selection-start-line="2" selection-start-column="0" selection-end-line="2" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/IntimeApi2.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-17.192308">
+        <state vertical-scroll-proportion="0.0">
           <caret line="580" column="8" selection-start-line="580" selection-start-column="8" selection-end-line="581" selection-end-column="19" />
           <folding>
             <element signature="e#155#177#0#PHP" expanded="true" />
@@ -1004,67 +561,45 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/modules/onepagecheckout/views/templates/front/order-carrier.tpl">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-4.490909">
-          <caret line="89" column="86" selection-start-line="89" selection-start-column="86" selection-end-line="89" selection-end-column="86" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/js/custom_order.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="141" column="21" selection-start-line="133" selection-start-column="18" selection-end-line="141" selection-end-column="21" />
-          <folding />
+        <state vertical-scroll-proportion="-28.115385">
+          <caret line="87" column="35" selection-start-line="85" selection-start-column="30" selection-end-line="87" selection-end-column="35" />
+          <folding>
+            <element signature="n#style#0;n#div#0;n#tbody#0;n#table#0;n#div#0;n#h3#0;n#fieldset#0;n#form#0;n#!!top" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/modules/onepagecheckout/views/templates/front/order-opc-new-account.tpl">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.9050279">
-          <caret line="304" column="20" selection-start-line="298" selection-start-column="16" selection-end-line="304" selection-end-column="20" />
+        <state vertical-scroll-proportion="-2.8909092">
+          <caret line="83" column="34" selection-start-line="83" selection-start-column="34" selection-end-line="83" selection-end-column="34" />
           <folding>
-            <element signature="n#style#0;n#p#1;n#div#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#p#2;n#div#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#p#3;n#div#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#p#4;n#div#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#p#5;n#div#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#p#6;n#div#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#fieldset#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#div#0;n#div#0;n#fieldset#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#span#0;n#div#0;n#div#0;n#fieldset#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#select#0;n#div#0;n#div#0;n#fieldset#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#p#0;n#div#1;n#fieldset#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#0;n#div#1;n#fieldset#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#p#1;n#div#1;n#fieldset#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#p#2;n#div#1;n#fieldset#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#p#3;n#div#1;n#fieldset#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#p#4;n#div#1;n#fieldset#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#p#5;n#div#1;n#fieldset#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#p#6;n#div#1;n#fieldset#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#2;n#div#1;n#fieldset#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#p#7;n#div#1;n#fieldset#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#p#8;n#div#1;n#fieldset#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#p#10;n#div#1;n#fieldset#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#p#11;n#div#1;n#fieldset#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#p#12;n#div#1;n#fieldset#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#p#13;n#div#1;n#fieldset#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#1;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#0;n#div#0;n#fieldset#0;n#div#1;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#span#0;n#div#0;n#div#0;n#fieldset#0;n#div#1;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#select#0;n#div#0;n#div#0;n#fieldset#0;n#div#1;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#0;n#div#1;n#fieldset#0;n#div#1;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#p#0;n#div#1;n#fieldset#0;n#div#1;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#1;n#div#1;n#fieldset#0;n#div#1;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#p#5;n#div#1;n#fieldset#0;n#div#1;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#p#8;n#div#1;n#fieldset#0;n#div#1;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#p#9;n#div#1;n#fieldset#0;n#div#1;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#p#10;n#div#1;n#fieldset#0;n#div#1;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#p#11;n#div#1;n#fieldset#0;n#div#1;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#p#12;n#div#1;n#fieldset#0;n#div#1;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#p#13;n#div#1;n#fieldset#0;n#div#1;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#form#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#0;n#fieldset#0;n#form#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#0;n#div#0;n#fieldset#0;n#form#0;n#!!top" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/modules/onepagecheckout/views/js/order-opc.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-130.06897">
+          <caret line="1374" column="46" selection-start-line="1374" selection-start-column="46" selection-end-line="1374" selection-end-column="46" />
+          <folding>
+            <element signature="n#!!doc" expanded="true" />
+            <marker date="1534456530125" expanded="true" signature="69022:69047" placeholder="..." />
+            <marker date="1534456530125" expanded="true" signature="69553:69604" placeholder="..." />
+            <marker date="1534456530125" expanded="true" signature="70093:70118" placeholder="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/custom_order.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-1.6489726">
+          <caret line="11" column="63" selection-start-line="11" selection-start-column="63" selection-end-line="11" selection-end-column="63" />
+          <folding />
         </state>
       </provider>
     </entry>

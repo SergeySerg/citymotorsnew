@@ -61,45 +61,45 @@
                                     </td>
 
                                 </tr>
-                                <!--Отображение отделений и городов НОВОЙ ПОЧТЫ-->
+                                <!--РћС‚РѕР±СЂР°Р¶РµРЅРёРµ РѕС‚РґРµР»РµРЅРёР№ Рё РіРѕСЂРѕРґРѕРІ РќРћР’РћР™ РџРћР§РўР«-->
                             {if $carrier.id_carrier == 1900 && $carrier.id_carrier == $checked}
                                 <div id='carrier_np' style="display: none">1</div>
 
 
                                 {*<div id="np_section">*}
                                 {*<p class="required text" id="city_selector">*}
-                                {*<label for="city">Город<!--{l s='City' mod='onepagecheckout'}--><sup>*</sup></label>*}
+                                {*<label for="city">Р“РѕСЂРѕРґ<!--{l s='City' mod='onepagecheckout'}--><sup>*</sup></label>*}
                                 {*<select id="new_post_city" class="js-example-basic-single">*}
-                                {*<option selected disabled>Выберите город</option>*}
+                                {*<option selected disabled>Р’С‹Р±РµСЂРёС‚Рµ РіРѕСЂРѕРґ</option>*}
 
                                 {*</select>*}
                                 {*</p>*}
                                 {*<p class="required text" id="department_selector">*}
-                                {*<label for="city">Отделение<!--{l s='City' mod='onepagecheckout'}--><sup>*</sup></label>*}
+                                {*<label for="city">РћС‚РґРµР»РµРЅРёРµ<!--{l s='City' mod='onepagecheckout'}--><sup>*</sup></label>*}
                                 {*<select id="new_post_department" class="js-example-basic-single">*}
-                                {*<option selected disabled>Выберите отделение</option>*}
+                                {*<option selected disabled>Р’С‹Р±РµСЂРёС‚Рµ РѕС‚РґРµР»РµРЅРёРµ</option>*}
 
                                 {*</select>*}
                                 {*</p>*}
                                 {*</div>*}
                             {/if}
-                            {if $carrier.id_carrier == 1500 && $carrier.id_carrier == $checked}
-                                <div id='carrier_ukrpost' style="display: none">1</div>
-                            {/if}
+                            {*{if $carrier.id_carrier == 1500 && $carrier.id_carrier == $checked}*}
+                                {*<div id='carrier_ukrpost' style="display: none">1</div>*}
+                            {*{/if}*}
                             {if $carrier.id_carrier == 211000 && $carrier.id_carrier == $checked}
                                 <div id='carrier_intime' style="display: none">1</div>
                             {/if}
-                                {*{if $carrier.name == 'Интайм' && $carrier.id_carrier == $checked}*}
+                                {*{if $carrier.name == 'РРЅС‚Р°Р№Рј' && $carrier.id_carrier == $checked}*}
                                 {*<tr >*}
                                 {*<select id="intime_post_city"  class="js-example-basic-single">*}
-                                {*<option selected disabled>Выберите город</option>*}
+                                {*<option selected disabled>Р’С‹Р±РµСЂРёС‚Рµ РіРѕСЂРѕРґ</option>*}
 
                                 {*</select>*}
                                 {*</tr>*}
                                 {*<div style="margin-top: 10px">*}
                                 {*<tr id="intime_department_selector">*}
                                 {*<select id="intime_post_department" class="js-example-basic-single">*}
-                                {*<option selected disabled>Адрес отделения</option>*}
+                                {*<option selected disabled>РђРґСЂРµСЃ РѕС‚РґРµР»РµРЅРёСЏ</option>*}
 
                                 {*</select>*}
                                 {*</tr>*}

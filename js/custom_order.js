@@ -9,7 +9,7 @@ $(document).ready(function() {
         //prepare_content();
     }
    /*Init NP when click on link*/
-    $('div#opc_checkout').on('click','label[for="id_carrier1300"]', function(){
+    $('div#opc_checkout').on('click','label[for="id_carrier1900"]', function(){
         //prepare_content();
         init_np();
     });

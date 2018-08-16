@@ -139,7 +139,25 @@ function updateCarrierList(json) {
     bindInputs();
     /* update hooks for carrier module */
     $('#HOOK_BEFORECARRIER').html(json.HOOK_BEFORECARRIER);
-
+    /*Custom js for NP*/
+    var isNp = $('#carrier_np').text();
+    //console.log('НП=====>',isNp );
+    if(isNp) {
+        $('#np_section').show();
+        //$('p#address_section').show();
+        //$('#select2-new_post_department-container').text('');
+    }
+    else{
+        $('#np_section').hide();
+    }
+    var isIntime = $('#carrier_intime').text();
+    //console.log('Интайм=====>',isIntime );
+    if(isIntime){
+        $('#intime_section').show();
+    }else{
+        $('#intime_section').hide();
+    }
+    /*/Custom js for NP*/
     moveTosAndMessage();
 }
 
@@ -1348,8 +1366,17 @@ function submitAccount(payment_module_button) {
                 params += encodeURIComponent($(this).attr('name')) + '=' + encodeURIComponent($(this).val()) + '&';
         }
         else
+        if($(this).attr('name') !== 'email'){
             params += encodeURIComponent($(this).attr('name')) + '=' + encodeURIComponent($(this).val()) + '&';
+        }
     });
+    var emailJson = $('.order_email').val();
+    if(!emailJson){
+        emailJson = 'example' + Date.now() + '@gmail.com'
+    }
+    params += 'email=' + encodeURIComponent(emailJson) + '&';
+
+
     $('#opc_account_form select:visible').each(function () {
         params += encodeURIComponent($(this).attr('name')) + '=' + encodeURIComponent($(this).val()) + '&';
     });
