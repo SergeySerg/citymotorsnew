@@ -1367,14 +1367,17 @@ function submitAccount(payment_module_button) {
         }
         else
         if($(this).attr('name') !== 'email'){
+            console.log('Параметри', params);
             params += encodeURIComponent($(this).attr('name')) + '=' + encodeURIComponent($(this).val()) + '&';
         }
     });
     var emailJson = $('.order_email').val();
+    console.log('Email====>', emailJson);
     if(!emailJson){
         emailJson = 'example' + Date.now() + '@gmail.com'
     }
     params += 'email=' + encodeURIComponent(emailJson) + '&';
+
 
 
     $('#opc_account_form select:visible').each(function () {

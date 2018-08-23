@@ -3,6 +3,8 @@
  */
 
 $(document).ready(function() {
+    /*Костиль клика при замовленні з оплатою через приват*/
+    $('#redirect_to_success').click();
     if (window.location.href.indexOf("quick-order") > -1){
 
         init_np();
@@ -147,6 +149,28 @@ $(document).ready(function() {
             }
         },'json');
     });
+    /*Get delivery info and appent to additional info*/
+    $('.confirm_button').on('click', function(){
+        var isNp = $('#carrier_np').text();
+        //console.log('НП=====>',isNp );
+        if(isNp) {
+            var cityInfo = $('#select2-new_post_city-container').text();
+            console.log('Город', cityInfo);
+            var departmentInfo = $('#select2-new_post_department-container').text();
+            console.log('Отделение доставки - ', departmentInfo);
+            var message = $('#other').val('Город доставки - ' +  cityInfo + ", " + departmentInfo);
+        }
+        else{
+            var cityInfo = $('#select2-intime_post_city-container').text();
+            console.log('Город', cityInfo);
+            //var departmentInfo = $('#select2-new_post_department-container').text();
+            //console.log('Отделение доставки - ', departmentInfo);
+            var message = $('#other').val('Город доставки - ' +  cityInfo);
+        }
+        //console.log('Повідомлення', message);
+
+    });
+
 
 });
 /*Init NP*/

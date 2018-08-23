@@ -1,6 +1,6 @@
-<?php /* Smarty version Smarty-3.1.19, created on 2018-08-17 00:02:46
+<?php /* Smarty version Smarty-3.1.19, created on 2018-08-22 21:18:26
          compiled from "E:\WebserverNew\domains\citymotors.loc\themes\citymotors\modules\blockuserinfo\blockuserinfo.tpl" */ ?>
-<?php /*%%SmartyHeaderCode:171975b75e676934b44-79862707%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
+<?php /*%%SmartyHeaderCode:206445b7da8f21e43a4-17942069%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
   'file_dependency' => 
   array (
@@ -11,12 +11,12 @@ $_valid = $_smarty_tpl->decodeProperties(array (
       2 => 'file',
     ),
   ),
-  'nocache_hash' => '171975b75e676934b44-79862707',
+  'nocache_hash' => '206445b7da8f21e43a4-17942069',
   'function' => 
   array (
   ),
   'has_nocache_code' => false,
   'version' => 'Smarty-3.1.19',
-  'unifunc' => 'content_5b75e676936c05_36300817',
+  'unifunc' => 'content_5b7da8f21e5c39_42732360',
 ),false); /*/%%SmartyHeaderCode%%*/?>
-<?php if ($_valid && !is_callable('content_5b75e676936c05_36300817')) {function content_5b75e676936c05_36300817($_smarty_tpl) {?><?php }} ?>
+<?php if ($_valid && !is_callable('content_5b7da8f21e5c39_42732360')) {function content_5b7da8f21e5c39_42732360($_smarty_tpl) {?><?php }} ?>

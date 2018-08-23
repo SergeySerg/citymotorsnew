@@ -36,11 +36,11 @@
 {**********************************************************************************************************************}
 {capture name=invoice_checkbox_block}
 
-    <p class="checkbox is_customer_param{if !isset($opc_config.invoice_checkbox) || !$opc_config.invoice_checkbox} no_show{/if}" id="invoice_address_checkbox">
-        <input type="checkbox" name="invoice_address" id="invoice_address"
-               {if ((isset($guestInformations) && $guestInformations.use_another_invoice_address) OR (!isset($guestInformations) && $def_different_billing == 1))}checked="checked"{/if}/>
-        <label for="invoice_address"><b>{if $isVirtualCart && $opc_config.virtual_no_delivery}{l s='I would like to provide billing address' mod='onepagecheckout'}{else}{l s='Please use another address for invoice' mod='onepagecheckout'}{/if}</b></label>
-    </p>
+    {*<p class="checkbox is_customer_param{if !isset($opc_config.invoice_checkbox) || !$opc_config.invoice_checkbox} no_show{/if}" id="invoice_address_checkbox">*}
+        {*<input type="checkbox" name="invoice_address" id="invoice_address"*}
+               {*{if ((isset($guestInformations) && $guestInformations.use_another_invoice_address) OR (!isset($guestInformations) && $def_different_billing == 1))}checked="checked"{/if}/>*}
+        {*<label for="invoice_address"><b>{if $isVirtualCart && $opc_config.virtual_no_delivery}{l s='I would like to provide billing address' mod='onepagecheckout'}{else}{l s='Please use another address for invoice' mod='onepagecheckout'}{/if}</b></label>*}
+    {*</p>*}
 
 {/capture}
 
@@ -80,20 +80,20 @@
 
 
     {if isset($opc_config.offer_password_top) && $opc_config.offer_password_top}{$smarty.capture.password_checkbox}{/if}
+    {if $logged}
+        <p class="required text">
+            <label for="email">{l s='E-mail' mod='onepagecheckout'}<sup>*</sup></label>
+            <input type="text"
+                   {if isset($guestInformations) && $guestInformations.id_customer && !$isGuest}readonly="readonly"{/if}
+                   class="order_email ttp text{if isset($guestInformations) && $guestInformations.id_customer && !$isGuest} readonly{/if}"
+                   id="email" name="email"
+                   value="{if isset($guestInformations) && $guestInformations.email}{$guestInformations.email}{/if}"/>{*<span class="hint"><img class="callout" src="{$modules_dir|escape:'html':'UTF-8'}onepagecheckout/views/img/callout.gif" />We do not send out tons of emails.</span>*}{if isset($opc_config.validation_checkboxes) && $opc_config.validation_checkboxes}
+            <span class="validity valid_blank"></span>{/if}{if isset($opc_config.sample_values) && $opc_config.sample_values}
+                <span class="sample_text ex_blur">({l s='e.g.' mod='onepagecheckout'} {l s='jack@gmail.com' mod='onepagecheckout'})</span>{/if}
 
-    <p class="required text hidden">
-        <label for="email">{l s='E-mail' mod='onepagecheckout'}<sup>*</sup></label>
-        <input type="text"
-               {if isset($guestInformations) && $guestInformations.id_customer && !$isGuest}readonly="readonly"{/if}
-               class="ttp text{if isset($guestInformations) && $guestInformations.id_customer && !$isGuest} readonly{/if}"
-               id="email" name="email"
-               value="{if isset($guestInformations) && $guestInformations.email}{$guestInformations.email}{/if}"/>{*<span class="hint"><img class="callout" src="{$modules_dir|escape:'html':'UTF-8'}onepagecheckout/views/img/callout.gif" />We do not send out tons of emails.</span>*}{if isset($opc_config.validation_checkboxes) && $opc_config.validation_checkboxes}
-        <span class="validity valid_blank"></span>{/if}{if isset($opc_config.sample_values) && $opc_config.sample_values}
-            <span class="sample_text ex_blur">({l s='e.g.' mod='onepagecheckout'} {l s='jack@gmail.com' mod='onepagecheckout'})</span>{/if}
 
-
-    </p>
-
+        </p>
+    {/if}
     {if isset($opc_config.email_verify) && $opc_config.email_verify}
         <p class="required text" id="email_verify_cont"
            {if isset($guestInformations) && $guestInformations.id_customer}style="display: none"{/if}>
@@ -201,21 +201,21 @@
 
 
         <div class="address-type-header delivery">{l s='Delivery address' mod='onepagecheckout'}
-        <div id="dlv_addresses_div"
-             style="float: right;{if !isset($addresses) || $addresses|@count == 0}display:none;{elseif $addresses|@count == 1 AND $addresses[0].id_address==$cart->id_address_delivery}display:none;{else}display:block;{/if}">
-            <span style="font-size: 0.7em;">{l s='Choose another address' mod='onepagecheckout'}:</span>
-            <select id="dlv_addresses" style="width: 100px; margin-left: 0px;" onchange="updateAddressSelection_1();" title="{l s='Choose another address' mod='onepagecheckout'}">
-                {if isset($addresses)}
-                    {foreach from=$addresses item=address}
-                        <option value="{$address.id_address|intval}"
-                                {if $address.id_address == $cart->id_address_delivery}{assign "selOk" "1"}selected="selected"{/if}>{$address.alias|regex_replace:"/^dlv\-/":""}</option>
-                    {/foreach}
-                    {if !$selOk}
-                        <option value="{$addresses[0].id_address|intval}" selected="selected"> -- </option>
-                    {/if}
-                {/if}
-            </select>
-        </div>
+        {*<div id="dlv_addresses_div"*}
+             {*style="float: right;{if !isset($addresses) || $addresses|@count == 0}display:none;{elseif $addresses|@count == 1 AND $addresses[0].id_address==$cart->id_address_delivery}display:none;{else}display:block;{/if}">*}
+            {*<span style="font-size: 0.7em;">{l s='Choose another address' mod='onepagecheckout'}:</span>*}
+            {*<select id="dlv_addresses" style="width: 100px; margin-left: 0px;" onchange="updateAddressSelection_1();" title="{l s='Choose another address' mod='onepagecheckout'}">*}
+                {*{if isset($addresses)}*}
+                    {*{foreach from=$addresses item=address}*}
+                        {*<option value="{$address.id_address|intval}"*}
+                                {*{if $address.id_address == $cart->id_address_delivery}{assign "selOk" "1"}selected="selected"{/if}>{$address.alias|regex_replace:"/^dlv\-/":""}</option>*}
+                    {*{/foreach}*}
+                    {*{if !$selOk}*}
+                        {*<option value="{$addresses[0].id_address|intval}" selected="selected"> -- </option>*}
+                    {*{/if}*}
+                {*{/if}*}
+            {*</select>*}
+        {*</div>*}
         </div>
 
 
@@ -277,14 +277,14 @@
                   <p class="required text" id="city_selector">
                       <label>{l s='City' mod='onepagecheckout'}</label>
                       <select id="new_post_city" name ='city' class="js-example-basic-single">
-                          <option selected disabled>{l s='Select a city' mod='onepagecheckout'}</option>
+                          <option selected disabled>Выберете город{*{l s='Select a city' mod='onepagecheckout'}*}</option>
 
                       </select>
                   </p>
                   <p class="required text" id="department_selector">
-                      <label >{l s='Department' mod='onepagecheckout'}</label>
+                      <label>Выберете отделение{*{l s='Department' mod='onepagecheckout'}*}</label>
                       <select id="new_post_department" name="address1" class="js-example-basic-single">
-                          <option selected disabled>{l s='Select a department' mod='onepagecheckout'}</option>
+                          <option selected disabled>Выберете отделение{*{l s='Select a department' mod='onepagecheckout'}*}</option>
 
                       </select>
                   </p>
@@ -323,14 +323,14 @@
                 <span class="sample_text ex_blur">({l s='e.g.' mod='onepagecheckout'} {l s='90104' mod='onepagecheckout'})</span>{/if}
         </p>
 
-          <p id="city_section" class="required text hidden_field"
-             {if $isVirtualCart && $opc_config.virtual_no_delivery}style="display: none;"{/if}>
-              <label for="city">{l s='City' mod='onepagecheckout'}<sup>*</sup></label>
-              <input type="text" class="text" name="city" id="city"
-                     value=""/>{if isset($opc_config.validation_checkboxes) && $opc_config.validation_checkboxes}
-              <span class="validity valid_blank"></span>{/if}{if isset($opc_config.sample_values) && $opc_config.sample_values}
-                  <span class="sample_text ex_blur">({l s='e.g.' mod='onepagecheckout'} {l s='Paris' mod='onepagecheckout'})</span>{/if}
-          </p>
+          {*<p id="city_section" class="required text"*}
+             {*{if $isVirtualCart && $opc_config.virtual_no_delivery}style="display: none;"{/if}>*}
+              {*<label for="city">{l s='City' mod='onepagecheckout'}<sup>*</sup></label>*}
+              {*<input type="text" class="text" name="city" id="city"*}
+                     {*value=""/>{if isset($opc_config.validation_checkboxes) && $opc_config.validation_checkboxes}*}
+              {*<span class="validity valid_blank"></span>{/if}{if isset($opc_config.sample_values) && $opc_config.sample_values}*}
+                  {*<span class="sample_text ex_blur">({l s='e.g.' mod='onepagecheckout'} {l s='Paris' mod='onepagecheckout'})</span>{/if}*}
+          {*</p>*}
 
 
         {if $isVirtualCart && $opc_config.virtual_no_delivery}
@@ -380,7 +380,7 @@
                 <span class="sample_text ex_blur">({l s='e.g.' mod='onepagecheckout'} {l s='555-100200' mod='onepagecheckout'})</span>{/if}
         </p>
 
-        <p class="textarea is_customer_param"
+        <p class="textarea is_customer_param hidden"
            {if !isset($opc_config.additional_info_delivery) || !$opc_config.additional_info_delivery}style="display: none;"{/if}>
             <label for="other">{l s='Additional information' mod='onepagecheckout'}</label>
             <textarea name="other" id="other" cols="26"
@@ -472,6 +472,9 @@
                 <span class="validity valid_blank"></span>{/if}{if isset($opc_config.sample_values) && $opc_config.sample_values}
                     <span class="sample_text ex_blur">{l s='DNI / NIF / NIE' mod='onepagecheckout'}</span>{/if}
             </p>
+
+
+
 
             <p class="required text{if $opc_config.hidden_fields|strpos:'inv_firstname' > -1} hidden_field{/if}">
                 <label for="firstname_invoice">{l s='First name' mod='onepagecheckout'}<sup>*</sup></label>
