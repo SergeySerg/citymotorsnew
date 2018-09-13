@@ -13,9 +13,13 @@
 .sf-menu {
   position: relative;
   padding: 0;
-  width: 100%;
+  width: fit-content;
   border-bottom: 3px solid #428bca;
-  background: #add; }
+  background: #add;
+  text-align: center;
+  margin: 0 auto;
+  border-radius: 20px;
+  overflow: hidden;}
   @media (max-width: 767px) {
     .sf-menu {
       display: none; } }
@@ -39,6 +43,8 @@
   float: left;
   border-right: 1px solid #428bca;
   margin-bottom: -3px; }
+  .sf-menu > li:last-child {
+    border-right: none;}
   @media (max-width: 767px) {
     .sf-menu > li {
       float: none;
