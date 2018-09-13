@@ -14,8 +14,8 @@
   position: relative;
   padding: 0;
   width: 100%;
-  border-bottom: 3px solid #e9e9e9;
-  background: #f6f6f6; }
+  border-bottom: 3px solid #428bca;
+  background: #add; }
   @media (max-width: 767px) {
     .sf-menu {
       display: none; } }
@@ -37,7 +37,7 @@
 
 .sf-menu > li {
   float: left;
-  border-right: 1px solid #d6d4d4;
+  border-right: 1px solid #428bca;
   margin-bottom: -3px; }
   @media (max-width: 767px) {
     .sf-menu > li {
@@ -63,11 +63,11 @@
     color: #484848;
     display: block;
     padding: 17px 20px;
-    border-bottom: 3px solid #e9e9e9; }
+    border-bottom: 3px solid #428bca; }
   .sf-menu > li.sfHover > a,
   .sf-menu > li > a:hover, .sf-menu > li.sfHoverForce > a {
-    background: #333;
-    border-bottom-color: #666666;
+    background: #428bca;
+    border-bottom-color: #add;
     color: #fff; }
 
 .sf-menu li li li a {
