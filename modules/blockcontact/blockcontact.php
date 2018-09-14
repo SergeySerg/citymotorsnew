@@ -48,15 +48,18 @@ class Blockcontact extends Module
 	{
 		return parent::install()
 			&& Configuration::updateValue('BLOCKCONTACT_TELNUMBER', '')
+			&& Configuration::updateValue('BLOCKCONTACT_TELNUMBER2', '')
+			&& Configuration::updateValue('BLOCKCONTACT_TELNUMBER3', '')
 			&& Configuration::updateValue('BLOCKCONTACT_EMAIL', '')
 			&& $this->registerHook('displayNav')
+			&& $this->registerHook('displayTop')
 			&& $this->registerHook('displayHeader');
 	}
 
 	public function uninstall()
 	{
 		// Delete configuration
-		return Configuration::deleteByName('BLOCKCONTACT_TELNUMBER') && Configuration::deleteByName('BLOCKCONTACT_EMAIL') && parent::uninstall();
+		return Configuration::deleteByName('BLOCKCONTACT_TELNUMBER') && deleteByName('BLOCKCONTACT_TELNUMBER2') && deleteByName('BLOCKCONTACT_TELNUMBER3') && Configuration::deleteByName('BLOCKCONTACT_EMAIL') && parent::uninstall();
 	}
 
 	public function getContent()
@@ -66,6 +69,8 @@ class Blockcontact extends Module
 		if (Tools::isSubmit('submitModule'))
 		{
 			Configuration::updateValue('BLOCKCONTACT_TELNUMBER', Tools::getValue('blockcontact_telnumber'));
+			Configuration::updateValue('BLOCKCONTACT_TELNUMBER2', Tools::getValue('blockcontact_telnumber2'));
+			Configuration::updateValue('BLOCKCONTACT_TELNUMBER3', Tools::getValue('blockcontact_telnumber3'));
 			Configuration::updateValue('BLOCKCONTACT_EMAIL', Tools::getValue('blockcontact_email'));
 			$this->_clearCache('blockcontact.tpl');
 			$this->_clearCache('nav.tpl');
@@ -91,6 +96,9 @@ class Blockcontact extends Module
 		if (!$this->isCached($tpl.'.tpl', $this->getCacheId()))
 			$smarty->assign(array(
 				'telnumber' => Configuration::get('BLOCKCONTACT_TELNUMBER'),
+				'telnumber2' => Configuration::get('BLOCKCONTACT_TELNUMBER2'),
+				'telnumber3' => Configuration::get('BLOCKCONTACT_TELNUMBER3'),
+
 				'email' => Configuration::get('BLOCKCONTACT_EMAIL')
 			));
 		return $this->display(__FILE__, $tpl.'.tpl', $this->getCacheId());
@@ -102,6 +110,11 @@ class Blockcontact extends Module
 	}
 
 	public function hookDisplayNav($params)
+	{
+		$params['blockcontact_tpl'] = 'nav';
+		return $this->hookDisplayRightColumn($params);
+	}
+	public function hookDisplayTop($params)
 	{
 		$params['blockcontact_tpl'] = 'nav';
 		return $this->hookDisplayRightColumn($params);
@@ -123,6 +136,16 @@ class Blockcontact extends Module
 						'type' => 'text',
 						'label' => $this->l('Telephone number'),
 						'name' => 'blockcontact_telnumber',
+					),
+					array(
+						'type' => 'text',
+						'label' => $this->l('Telephone number2'),
+						'name' => 'blockcontact_telnumber2',
+					),
+					array(
+						'type' => 'text',
+						'label' => $this->l('Telephone number3'),
+						'name' => 'blockcontact_telnumber3',
 					),
 					array(
 						'type' => 'text',
@@ -162,6 +185,9 @@ class Blockcontact extends Module
 	{
 		return array(
 			'blockcontact_telnumber' => Tools::getValue('blockcontact_telnumber', Configuration::get('BLOCKCONTACT_TELNUMBER')),
+			'blockcontact_telnumber2' => Tools::getValue('blockcontact_telnumber2', Configuration::get('BLOCKCONTACT_TELNUMBER2')),
+			'blockcontact_telnumber3' => Tools::getValue('blockcontact_telnumber3', Configuration::get('BLOCKCONTACT_TELNUMBER3')),
+
 			'blockcontact_email' => Tools::getValue('blockcontact_email', Configuration::get('BLOCKCONTACT_EMAIL')),
 		);
 	}
