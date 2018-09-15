@@ -1,17 +1,17 @@
-<?php /* Smarty version Smarty-3.1.19, created on 2018-08-22 21:18:27
+<?php /* Smarty version Smarty-3.1.19, created on 2018-09-14 23:10:53
          compiled from "E:\WebserverNew\domains\citymotors.loc\themes\citymotors\header.tpl" */ ?>
-<?php /*%%SmartyHeaderCode:179735b7da8f3e25577-96392495%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
+<?php /*%%SmartyHeaderCode:77575b9c15cd6208b5-96396238%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
   'file_dependency' => 
   array (
     '9b7fc0f89c6b9dfc49f584bb46a1c9305c47e4e7' => 
     array (
       0 => 'E:\\WebserverNew\\domains\\citymotors.loc\\themes\\citymotors\\header.tpl',
-      1 => 1534338844,
+      1 => 1536952406,
       2 => 'file',
     ),
   ),
-  'nocache_hash' => '179735b7da8f3e25577-96392495',
+  'nocache_hash' => '77575b9c15cd6208b5-96396238',
   'function' => 
   array (
   ),
@@ -58,9 +58,9 @@ $_valid = $_smarty_tpl->decodeProperties(array (
   ),
   'has_nocache_code' => false,
   'version' => 'Smarty-3.1.19',
-  'unifunc' => 'content_5b7da8f40881e9_23690410',
+  'unifunc' => 'content_5b9c15cd830fa9_94255172',
 ),false); /*/%%SmartyHeaderCode%%*/?>
-<?php if ($_valid && !is_callable('content_5b7da8f40881e9_23690410')) {function content_5b7da8f40881e9_23690410($_smarty_tpl) {?><?php if (!is_callable('smarty_function_implode')) include 'E:\\WebserverNew\\domains\\citymotors.loc\\tools\\smarty\\plugins\\function.implode.php';
+<?php if ($_valid && !is_callable('content_5b9c15cd830fa9_94255172')) {function content_5b9c15cd830fa9_94255172($_smarty_tpl) {?><?php if (!is_callable('smarty_function_implode')) include 'E:\\WebserverNew\\domains\\citymotors.loc\\tools\\smarty\\plugins\\function.implode.php';
 ?>
 <!DOCTYPE HTML>
 <!--[if lt IE 7]> <html class="no-js lt-ie9 lt-ie8 lt-ie7"<?php if (isset($_smarty_tpl->tpl_vars['language_code']->value)&&$_smarty_tpl->tpl_vars['language_code']->value) {?> lang="<?php echo htmlspecialchars($_smarty_tpl->tpl_vars['language_code']->value, ENT_QUOTES, 'UTF-8', true);?>
@@ -240,10 +240,12 @@ if (!empty($_capture_buffer)) {
 						<?php }?>
 					</div>
 					<div class="row">
-						<?php if (isset($_smarty_tpl->tpl_vars['left_column_size']->value)&&!empty($_smarty_tpl->tpl_vars['left_column_size']->value)) {?>
-						<div id="left_column" class="column col-xs-12 col-sm-<?php echo intval($_smarty_tpl->tpl_vars['left_column_size']->value);?>
+						<?php if ($_smarty_tpl->tpl_vars['page_name']->value!='index') {?>
+							<?php if (isset($_smarty_tpl->tpl_vars['left_column_size']->value)&&!empty($_smarty_tpl->tpl_vars['left_column_size']->value)) {?>
+								<div id="left_column" class="column col-xs-12 col-sm-<?php echo intval($_smarty_tpl->tpl_vars['left_column_size']->value);?>
 "><?php echo $_smarty_tpl->tpl_vars['HOOK_LEFT_COLUMN']->value;?>
 </div>
+							<?php }?>
 						<?php }?>
 						<?php if (isset($_smarty_tpl->tpl_vars['left_column_size']->value)&&isset($_smarty_tpl->tpl_vars['right_column_size']->value)) {?><?php $_smarty_tpl->tpl_vars['cols'] = new Smarty_variable((12-$_smarty_tpl->tpl_vars['left_column_size']->value-$_smarty_tpl->tpl_vars['right_column_size']->value), null, 0);?><?php } else { ?><?php $_smarty_tpl->tpl_vars['cols'] = new Smarty_variable(12, null, 0);?><?php }?>
 						<div id="center_column" class="center_column col-xs-12 col-sm-<?php echo intval($_smarty_tpl->tpl_vars['cols']->value);?>
