@@ -47,6 +47,7 @@ if ($interval < 1) {
     $options = $_GET["os"];
 
     if (count($options) > 1) {
+       // die($options);
         // data to send
         $ids_data       = $_GET["hs"];
         $name           = $options[0];

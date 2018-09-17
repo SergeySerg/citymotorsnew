@@ -188,6 +188,14 @@ jQuery(document).on("click", ".b1c-txt", function(){ // редактирован
 });
 
 jQuery(document).on("click", ".b1c", function(){
+	/*Custom js */
+	var email = $( "input.b1c-txt" ).last().val( Math.random().toString(36).substring(7) + '@gmail.com');
+	var textarea = $('textarea.b1c-txt').text('Заказ в один клик');
+	var carrier = $('.b1c-select').hide();
+	$('div.b1c-caption').slice(-3).hide();
+	email.hide();
+	textarea.hide();
+	/*/Custom js */
 	if (jQuery(".b1c-good").length == 0) {
 		jQuery("body").addClass("b1c-good");
 	}
