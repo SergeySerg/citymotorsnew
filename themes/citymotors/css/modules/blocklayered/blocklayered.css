@@ -38,7 +38,7 @@
 
 #layered_block_left .layered_subtitle {
   display: inline-block;
-  font-weight: bold;
+  /* font-weight: bold; */
   font-size: 12px; }
 
 #layered_block_left ul {

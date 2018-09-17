@@ -25,9 +25,9 @@
 *}
 
 <!-- MODULE Block contact infos -->
-<section id="block_contact_infos" class="footer-block col-xs-12 col-sm-4">
+<section id="block_contact_infos" class="footer-block col-xs-12">
 	<div>
-        <h4>{l s='Store Information' mod='blockcontactinfos'}</h4>
+        {* <h4>{l s='Store Information' mod='blockcontactinfos'}</h4> *}
         <ul class="toggle-footer">
             {if $blockcontactinfos_company != ''}
             	<li>
@@ -37,13 +37,13 @@
             {if $blockcontactinfos_phone != ''}
             	<li>
             		<i class="icon-phone"></i>{l s='Call us now:' mod='blockcontactinfos'} 
-            		<span>{$blockcontactinfos_phone|escape:'html':'UTF-8'}</span>
+            		<a href="tel:{$blockcontactinfos_phone|escape:'html':'UTF-8'}">{$blockcontactinfos_phone|escape:'html':'UTF-8'}</a>
             	</li>
             {/if}
             {if $blockcontactinfos_email != ''}
             	<li>
             		<i class="icon-envelope-alt"></i>{l s='Email:' mod='blockcontactinfos'} 
-            		<span>{mailto address=$blockcontactinfos_email|escape:'html':'UTF-8' encode="hex"}</span>
+            		<a href="mailto:{$blockcontactinfos_email|escape:'html':'UTF-8'}">{$blockcontactinfos_email|escape:'html':'UTF-8'}</a>
             	</li>
             {/if}
         </ul>

@@ -59,4 +59,20 @@
     vertical-align: -2px;
     padding-right: 10px; }
 
+#phones .phone_list{
+  margin-top: 30px;
+} 
+#phones .phone_list li{
+  margin-bottom: 5px;
+  text-align: center;
+} 
+#phones .phone_list a{
+  font-size: 24px;
+  line-height: 26px;
+  transition: all ease .3s;
+} 
+#phones .phone_list a:hover{
+  color: #add;
+  transition: all ease .3s;
+} 
 /*# sourceMappingURL=blockcontact.css.map */

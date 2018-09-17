@@ -22,11 +22,15 @@
 *  @license    http://opensource.org/licenses/afl-3.0.php  Academic Free License (AFL 3.0)
 *  International Registered Trademark & Property of PrestaShop SA
 *}
-<div id="contact-link" {if isset($is_logged) && $is_logged} class="is_logged"{/if}>
+{* <div id="contact-link" {if isset($is_logged) && $is_logged} class="is_logged"{/if}>
 	<a href="{$link->getPageLink('contact', true)|escape:'html':'UTF-8'}" title="{l s='Contact us' mod='blockcontact'}">{l s='Contact us' mod='blockcontact'}</a>
-</div>
+</div> *}
 {if $telnumber}
-	<span class="shop-phone{if isset($is_logged) && $is_logged} is_logged{/if}">
-		<i class="icon-phone"></i>{l s='Call us now:' mod='blockcontact'} <strong>{$telnumber}<br>{$telnumber2}<br>{$telnumber3}</strong>
-	</span>
+	<div id="phones" class="col-sm-12 col-md-4">
+		<ul class="phone_list">
+			<li><a href="tel:{$telnumber}" class="phone_item">{$telnumber}</a></li>
+			<li><a href="tel:{$telnumber2}" class="phone_item">{$telnumber2}</a></li>
+			<li><a href="tel:{$telnumber3}" class="phone_item">{$telnumber3}</a></li>
+		</ul>
+	</div>
 {/if}

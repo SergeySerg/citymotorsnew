@@ -1,15 +1,13 @@
 -- phpMyAdmin SQL Dump
--- version 4.7.7
--- https://www.phpmyadmin.net/
+-- version 4.4.15.7
+-- http://www.phpmyadmin.net
 --
 -- Хост: 127.0.0.1:3306
--- Время создания: Сен 14 2018 г., 23:51
--- Версия сервера: 5.7.20-log
--- Версия PHP: 5.6.32
+-- Время создания: Сен 17 2018 г., 16:26
+-- Версия сервера: 5.5.50
+-- Версия PHP: 5.6.23
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
-SET AUTOCOMMIT = 0;
-START TRANSACTION;
 SET time_zone = "+00:00";
 
 
@@ -19,7 +17,7 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- База данных: `citymotors_db`
+-- База данных: `citymotonew_db`
 --
 
 -- --------------------------------------------------------
@@ -28,9 +26,9 @@ SET time_zone = "+00:00";
 -- Структура таблицы `ps_access`
 --
 
-CREATE TABLE `ps_access` (
-  `id_profile` int(10) UNSIGNED NOT NULL,
-  `id_tab` int(10) UNSIGNED NOT NULL,
+CREATE TABLE IF NOT EXISTS `ps_access` (
+  `id_profile` int(10) unsigned NOT NULL,
+  `id_tab` int(10) unsigned NOT NULL,
   `view` int(11) NOT NULL,
   `add` int(11) NOT NULL,
   `edit` int(11) NOT NULL,
@@ -444,9 +442,9 @@ INSERT INTO `ps_access` (`id_profile`, `id_tab`, `view`, `add`, `edit`, `delete`
 -- Структура таблицы `ps_accessory`
 --
 
-CREATE TABLE `ps_accessory` (
-  `id_product_1` int(10) UNSIGNED NOT NULL,
-  `id_product_2` int(10) UNSIGNED NOT NULL
+CREATE TABLE IF NOT EXISTS `ps_accessory` (
+  `id_product_1` int(10) unsigned NOT NULL,
+  `id_product_2` int(10) unsigned NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- --------------------------------------------------------
@@ -455,14 +453,14 @@ CREATE TABLE `ps_accessory` (
 -- Структура таблицы `ps_address`
 --
 
-CREATE TABLE `ps_address` (
-  `id_address` int(10) UNSIGNED NOT NULL,
-  `id_country` int(10) UNSIGNED NOT NULL,
-  `id_state` int(10) UNSIGNED DEFAULT NULL,
-  `id_customer` int(10) UNSIGNED NOT NULL DEFAULT '0',
-  `id_manufacturer` int(10) UNSIGNED NOT NULL DEFAULT '0',
-  `id_supplier` int(10) UNSIGNED NOT NULL DEFAULT '0',
-  `id_warehouse` int(10) UNSIGNED NOT NULL DEFAULT '0',
+CREATE TABLE IF NOT EXISTS `ps_address` (
+  `id_address` int(10) unsigned NOT NULL,
+  `id_country` int(10) unsigned NOT NULL,
+  `id_state` int(10) unsigned DEFAULT NULL,
+  `id_customer` int(10) unsigned NOT NULL DEFAULT '0',
+  `id_manufacturer` int(10) unsigned NOT NULL DEFAULT '0',
+  `id_supplier` int(10) unsigned NOT NULL DEFAULT '0',
+  `id_warehouse` int(10) unsigned NOT NULL DEFAULT '0',
   `alias` varchar(32) NOT NULL,
   `company` varchar(255) DEFAULT NULL,
   `lastname` varchar(32) NOT NULL,
@@ -478,9 +476,9 @@ CREATE TABLE `ps_address` (
   `dni` varchar(16) DEFAULT NULL,
   `date_add` datetime NOT NULL,
   `date_upd` datetime NOT NULL,
-  `active` tinyint(1) UNSIGNED NOT NULL DEFAULT '1',
-  `deleted` tinyint(1) UNSIGNED NOT NULL DEFAULT '0'
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+  `active` tinyint(1) unsigned NOT NULL DEFAULT '1',
+  `deleted` tinyint(1) unsigned NOT NULL DEFAULT '0'
+) ENGINE=InnoDB AUTO_INCREMENT=52 DEFAULT CHARSET=utf8;
 
 --
 -- Дамп данных таблицы `ps_address`
@@ -509,7 +507,7 @@ INSERT INTO `ps_address` (`id_address`, `id_country`, `id_state`, `id_customer`,
 (20, 216, 0, 4, 0, 0, 0, 'Брестська 4520', 'Нова пошта №3', 'Ляльков', 'Роман', 'Брестська 45', '', '', 'undefined', 'Город доставки - Авиаторское Отделение №1:ул. Аэродром, д.10,пом.91', '', '0971777929', '', '', '2018-08-17 17:16:02', '2018-08-22 12:36:57', 1, 1),
 (21, 216, 0, 10, 0, 0, 0, 'Отделение №19: ул. Радужная, 25А', '', 'Михайлюк', 'Петро', 'Отделение №19: ул. Радужная, 25А', '', '', 'Киев', '', '', '8787454545415', '', '', '2018-08-17 17:21:24', '2018-08-17 17:24:39', 1, 0),
 (22, 216, 0, 10, 0, 0, 0, 'Отделение №19: ул. Радужная, 25А', '', 'Михайлюк', 'Петро', 'Отделение №19: ул. Радужная, 25А', '', '', 'undefined', 'Город доставки - Агрономичное, Отделение №1: ул. Мичурина, 6', '', '8787454545415', '', '', '2018-08-22 12:34:00', '2018-08-22 12:34:00', 1, 0),
-(23, 216, 0, 4, 0, 0, 0, 'Брестська 45', 'Нова пошта №3', 'Ляльков', 'Роман', 'Брестська 45', '', '', 'undefined', 'Город доставки - Ковель, Отделение №3 (до 30 кг): ул. Левицкого, 2а (район рынка \"Брестский\")', '', '0971777929', '', '', '2018-08-22 12:37:36', '2018-08-22 15:48:35', 1, 1),
+(23, 216, 0, 4, 0, 0, 0, 'Брестська 45', 'Нова пошта №3', 'Ляльков', 'Роман', 'Брестська 45', '', '', 'undefined', 'Город доставки - Ковель, Отделение №3 (до 30 кг): ул. Левицкого, 2а (район рынка "Брестский")', '', '0971777929', '', '', '2018-08-22 12:37:36', '2018-08-22 15:48:35', 1, 1),
 (24, 216, 0, 11, 0, 0, 0, 'Отделение №16 (до 30 кг на одно ', '', 'Воробей', 'Сергей', 'Отделение №16 (до 30 кг на одно место): ул. Набережная, 2', '', '', 'Луцк', '', '', '0931163388', '', '', '2018-08-22 12:39:47', '2018-08-22 12:40:20', 1, 0),
 (25, 216, 0, 12, 0, 0, 0, 'Мой адрес', '', 'Мельничук', 'Андрій', 'dummyvalue', '', '', 'Луцк - 3 (ул. Ровенская, 83)', '', '', '0958331789', '', '', '2018-08-22 12:41:50', '2018-08-22 12:42:37', 1, 0),
 (26, 216, 0, 13, 0, 0, 0, 'Отделение №1: ул. Владимирская, ', '', 'Мирка', 'Петро', 'Отделение №1: ул. Владимирская, 135', '', '', 'undefined', 'Город доставки - Авиаторское, Отделение №1:ул. Аэродром, д.10,пом.91', '', '8789765454545', '', '', '2018-08-22 12:45:05', '2018-08-22 12:57:15', 1, 0),
@@ -520,7 +518,7 @@ INSERT INTO `ps_address` (`id_address`, `id_country`, `id_state`, `id_customer`,
 (31, 216, 0, 18, 0, 0, 0, 'Отделение №1: ул. Центральная, 6', '', 'Горний', 'Михаил', 'Отделение №1: ул. Центральная, 64', '', '', 'Аджамка', '', '', '435435435435', '', '', '2018-08-22 15:15:49', '2018-08-22 15:16:27', 1, 0),
 (32, 216, 0, 0, 0, 0, 0, 'My Address', '', 'dummyvalue', 'dummyvalue', 'dummyvalue', '', '', 'undefined', '', '', '', '', '', '2018-08-22 15:27:30', '2018-08-22 15:27:30', 1, 0),
 (33, 216, 0, 4, 0, 0, 0, 'Брестська 4533', 'Нова пошта №3', 'Ляльков', 'Роман', 'Брестська 45', '', '', 'undefined', 'Город доставки - Авиаторское, Отделение №1:ул. Аэродром, д.10,пом.91', '', '0971777929', '', '', '2018-08-22 15:29:35', '2018-08-22 15:48:25', 1, 1),
-(34, 216, 0, 4, 0, 0, 0, 'Брестська 45', 'Нова пошта №3', 'Ляльков', 'Роман', 'Брестська 45', '', '', 'undefined', 'Город доставки - Ковель, Отделение №3 (до 30 кг): ул. Левицкого, 2а (район рынка \"Брестский\")', '', '0971777929', '', '', '2018-08-22 18:06:07', '2018-08-22 18:09:09', 1, 1),
+(34, 216, 0, 4, 0, 0, 0, 'Брестська 45', 'Нова пошта №3', 'Ляльков', 'Роман', 'Брестська 45', '', '', 'undefined', 'Город доставки - Ковель, Отделение №3 (до 30 кг): ул. Левицкого, 2а (район рынка "Брестский")', '', '0971777929', '', '', '2018-08-22 18:06:07', '2018-08-22 18:09:09', 1, 1),
 (35, 216, 0, 19, 0, 0, 0, 'Шиномонтаж', 'Вианор', 'Козачук ', 'Владислав', 'Карбышева', '', '', 'Луцк', '', '', ' 0997298887', '', '', '2018-08-22 21:11:00', '2018-08-22 21:11:00', 1, 0),
 (36, 216, 0, 4, 0, 0, 0, 'Брестська 45', 'Нова пошта №3', 'Ляльков', 'Роман', 'Брестська 45', '', '', 'undefined', 'Город доставки - Агрономичное, Отделение №1: ул. Мичурина, 6', '', '0971777929', '', '', '2018-08-22 21:27:04', '2018-08-22 21:27:04', 1, 0),
 (37, 216, 0, 4, 0, 0, 0, 'Брестська 4537', 'Нова пошта №3', 'Ляльков', 'Роман', 'Брестська 45', '', '', 'undefined', 'Город доставки - Ананьев, Отделение: ул. Независимости, 19', '', '0971777929', '', '', '2018-08-22 21:28:44', '2018-08-22 21:28:44', 1, 0),
@@ -545,8 +543,8 @@ INSERT INTO `ps_address` (`id_address`, `id_country`, `id_state`, `id_customer`,
 -- Структура таблицы `ps_address_format`
 --
 
-CREATE TABLE `ps_address_format` (
-  `id_country` int(10) UNSIGNED NOT NULL,
+CREATE TABLE IF NOT EXISTS `ps_address_format` (
+  `id_country` int(10) unsigned NOT NULL,
   `format` varchar(255) NOT NULL DEFAULT ''
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
@@ -807,12 +805,12 @@ INSERT INTO `ps_address_format` (`id_country`, `format`) VALUES
 -- Структура таблицы `ps_alias`
 --
 
-CREATE TABLE `ps_alias` (
-  `id_alias` int(10) UNSIGNED NOT NULL,
+CREATE TABLE IF NOT EXISTS `ps_alias` (
+  `id_alias` int(10) unsigned NOT NULL,
   `alias` varchar(255) NOT NULL,
   `search` varchar(255) NOT NULL,
   `active` tinyint(1) NOT NULL DEFAULT '1'
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8;
 
 --
 -- Дамп данных таблицы `ps_alias`
@@ -828,11 +826,11 @@ INSERT INTO `ps_alias` (`id_alias`, `alias`, `search`, `active`) VALUES
 -- Структура таблицы `ps_attachment`
 --
 
-CREATE TABLE `ps_attachment` (
-  `id_attachment` int(10) UNSIGNED NOT NULL,
+CREATE TABLE IF NOT EXISTS `ps_attachment` (
+  `id_attachment` int(10) unsigned NOT NULL,
   `file` varchar(40) NOT NULL,
   `file_name` varchar(128) NOT NULL,
-  `file_size` bigint(10) UNSIGNED NOT NULL DEFAULT '0',
+  `file_size` bigint(10) unsigned NOT NULL DEFAULT '0',
   `mime` varchar(128) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
@@ -842,9 +840,9 @@ CREATE TABLE `ps_attachment` (
 -- Структура таблицы `ps_attachment_lang`
 --
 
-CREATE TABLE `ps_attachment_lang` (
-  `id_attachment` int(10) UNSIGNED NOT NULL,
-  `id_lang` int(10) UNSIGNED NOT NULL,
+CREATE TABLE IF NOT EXISTS `ps_attachment_lang` (
+  `id_attachment` int(10) unsigned NOT NULL,
+  `id_lang` int(10) unsigned NOT NULL,
   `name` varchar(32) DEFAULT NULL,
   `description` text
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
@@ -855,12 +853,12 @@ CREATE TABLE `ps_attachment_lang` (
 -- Структура таблицы `ps_attribute`
 --
 
-CREATE TABLE `ps_attribute` (
-  `id_attribute` int(10) UNSIGNED NOT NULL,
-  `id_attribute_group` int(10) UNSIGNED NOT NULL,
+CREATE TABLE IF NOT EXISTS `ps_attribute` (
+  `id_attribute` int(10) unsigned NOT NULL,
+  `id_attribute_group` int(10) unsigned NOT NULL,
   `color` varchar(32) DEFAULT NULL,
-  `position` int(10) UNSIGNED NOT NULL DEFAULT '0'
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+  `position` int(10) unsigned NOT NULL DEFAULT '0'
+) ENGINE=InnoDB AUTO_INCREMENT=25 DEFAULT CHARSET=utf8;
 
 --
 -- Дамп данных таблицы `ps_attribute`
@@ -898,12 +896,12 @@ INSERT INTO `ps_attribute` (`id_attribute`, `id_attribute_group`, `color`, `posi
 -- Структура таблицы `ps_attribute_group`
 --
 
-CREATE TABLE `ps_attribute_group` (
-  `id_attribute_group` int(10) UNSIGNED NOT NULL,
+CREATE TABLE IF NOT EXISTS `ps_attribute_group` (
+  `id_attribute_group` int(10) unsigned NOT NULL,
   `is_color_group` tinyint(1) NOT NULL DEFAULT '0',
   `group_type` enum('select','radio','color') NOT NULL DEFAULT 'select',
-  `position` int(10) UNSIGNED NOT NULL DEFAULT '0'
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+  `position` int(10) unsigned NOT NULL DEFAULT '0'
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8;
 
 --
 -- Дамп данных таблицы `ps_attribute_group`
@@ -920,9 +918,9 @@ INSERT INTO `ps_attribute_group` (`id_attribute_group`, `is_color_group`, `group
 -- Структура таблицы `ps_attribute_group_lang`
 --
 
-CREATE TABLE `ps_attribute_group_lang` (
-  `id_attribute_group` int(10) UNSIGNED NOT NULL,
-  `id_lang` int(10) UNSIGNED NOT NULL,
+CREATE TABLE IF NOT EXISTS `ps_attribute_group_lang` (
+  `id_attribute_group` int(10) unsigned NOT NULL,
+  `id_lang` int(10) unsigned NOT NULL,
   `name` varchar(128) NOT NULL,
   `public_name` varchar(64) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
@@ -942,9 +940,9 @@ INSERT INTO `ps_attribute_group_lang` (`id_attribute_group`, `id_lang`, `name`, 
 -- Структура таблицы `ps_attribute_group_shop`
 --
 
-CREATE TABLE `ps_attribute_group_shop` (
-  `id_attribute_group` int(11) UNSIGNED NOT NULL,
-  `id_shop` int(11) UNSIGNED NOT NULL
+CREATE TABLE IF NOT EXISTS `ps_attribute_group_shop` (
+  `id_attribute_group` int(11) unsigned NOT NULL,
+  `id_shop` int(11) unsigned NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
@@ -962,10 +960,10 @@ INSERT INTO `ps_attribute_group_shop` (`id_attribute_group`, `id_shop`) VALUES
 -- Структура таблицы `ps_attribute_impact`
 --
 
-CREATE TABLE `ps_attribute_impact` (
-  `id_attribute_impact` int(10) UNSIGNED NOT NULL,
-  `id_product` int(11) UNSIGNED NOT NULL,
-  `id_attribute` int(11) UNSIGNED NOT NULL,
+CREATE TABLE IF NOT EXISTS `ps_attribute_impact` (
+  `id_attribute_impact` int(10) unsigned NOT NULL,
+  `id_product` int(11) unsigned NOT NULL,
+  `id_attribute` int(11) unsigned NOT NULL,
   `weight` decimal(20,6) NOT NULL,
   `price` decimal(17,2) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
@@ -976,9 +974,9 @@ CREATE TABLE `ps_attribute_impact` (
 -- Структура таблицы `ps_attribute_lang`
 --
 
-CREATE TABLE `ps_attribute_lang` (
-  `id_attribute` int(10) UNSIGNED NOT NULL,
-  `id_lang` int(10) UNSIGNED NOT NULL,
+CREATE TABLE IF NOT EXISTS `ps_attribute_lang` (
+  `id_attribute` int(10) unsigned NOT NULL,
+  `id_lang` int(10) unsigned NOT NULL,
   `name` varchar(128) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
@@ -1018,9 +1016,9 @@ INSERT INTO `ps_attribute_lang` (`id_attribute`, `id_lang`, `name`) VALUES
 -- Структура таблицы `ps_attribute_shop`
 --
 
-CREATE TABLE `ps_attribute_shop` (
-  `id_attribute` int(11) UNSIGNED NOT NULL,
-  `id_shop` int(11) UNSIGNED NOT NULL
+CREATE TABLE IF NOT EXISTS `ps_attribute_shop` (
+  `id_attribute` int(11) unsigned NOT NULL,
+  `id_shop` int(11) unsigned NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
@@ -1059,29 +1057,29 @@ INSERT INTO `ps_attribute_shop` (`id_attribute`, `id_shop`) VALUES
 -- Структура таблицы `ps_carrier`
 --
 
-CREATE TABLE `ps_carrier` (
-  `id_carrier` int(10) UNSIGNED NOT NULL,
-  `id_reference` int(10) UNSIGNED NOT NULL,
-  `id_tax_rules_group` int(10) UNSIGNED DEFAULT '0',
+CREATE TABLE IF NOT EXISTS `ps_carrier` (
+  `id_carrier` int(10) unsigned NOT NULL,
+  `id_reference` int(10) unsigned NOT NULL,
+  `id_tax_rules_group` int(10) unsigned DEFAULT '0',
   `name` varchar(64) NOT NULL,
   `url` varchar(255) DEFAULT NULL,
-  `active` tinyint(1) UNSIGNED NOT NULL DEFAULT '0',
-  `deleted` tinyint(1) UNSIGNED NOT NULL DEFAULT '0',
-  `shipping_handling` tinyint(1) UNSIGNED NOT NULL DEFAULT '1',
-  `range_behavior` tinyint(1) UNSIGNED NOT NULL DEFAULT '0',
-  `is_module` tinyint(1) UNSIGNED NOT NULL DEFAULT '0',
-  `is_free` tinyint(1) UNSIGNED NOT NULL DEFAULT '0',
-  `shipping_external` tinyint(1) UNSIGNED NOT NULL DEFAULT '0',
-  `need_range` tinyint(1) UNSIGNED NOT NULL DEFAULT '0',
+  `active` tinyint(1) unsigned NOT NULL DEFAULT '0',
+  `deleted` tinyint(1) unsigned NOT NULL DEFAULT '0',
+  `shipping_handling` tinyint(1) unsigned NOT NULL DEFAULT '1',
+  `range_behavior` tinyint(1) unsigned NOT NULL DEFAULT '0',
+  `is_module` tinyint(1) unsigned NOT NULL DEFAULT '0',
+  `is_free` tinyint(1) unsigned NOT NULL DEFAULT '0',
+  `shipping_external` tinyint(1) unsigned NOT NULL DEFAULT '0',
+  `need_range` tinyint(1) unsigned NOT NULL DEFAULT '0',
   `external_module_name` varchar(64) DEFAULT NULL,
   `shipping_method` int(2) NOT NULL DEFAULT '0',
-  `position` int(10) UNSIGNED NOT NULL DEFAULT '0',
+  `position` int(10) unsigned NOT NULL DEFAULT '0',
   `max_width` int(10) DEFAULT '0',
   `max_height` int(10) DEFAULT '0',
   `max_depth` int(10) DEFAULT '0',
   `max_weight` decimal(20,6) DEFAULT '0.000000',
   `grade` int(10) DEFAULT '0'
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=12 DEFAULT CHARSET=utf8;
 
 --
 -- Дамп данных таблицы `ps_carrier`
@@ -1106,9 +1104,9 @@ INSERT INTO `ps_carrier` (`id_carrier`, `id_reference`, `id_tax_rules_group`, `n
 -- Структура таблицы `ps_carrier_group`
 --
 
-CREATE TABLE `ps_carrier_group` (
-  `id_carrier` int(10) UNSIGNED NOT NULL,
-  `id_group` int(10) UNSIGNED NOT NULL
+CREATE TABLE IF NOT EXISTS `ps_carrier_group` (
+  `id_carrier` int(10) unsigned NOT NULL,
+  `id_group` int(10) unsigned NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
@@ -1159,10 +1157,10 @@ INSERT INTO `ps_carrier_group` (`id_carrier`, `id_group`) VALUES
 -- Структура таблицы `ps_carrier_lang`
 --
 
-CREATE TABLE `ps_carrier_lang` (
-  `id_carrier` int(10) UNSIGNED NOT NULL,
-  `id_shop` int(11) UNSIGNED NOT NULL DEFAULT '1',
-  `id_lang` int(10) UNSIGNED NOT NULL,
+CREATE TABLE IF NOT EXISTS `ps_carrier_lang` (
+  `id_carrier` int(10) unsigned NOT NULL,
+  `id_shop` int(11) unsigned NOT NULL DEFAULT '1',
+  `id_lang` int(10) unsigned NOT NULL,
   `delay` varchar(512) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
@@ -1189,9 +1187,9 @@ INSERT INTO `ps_carrier_lang` (`id_carrier`, `id_shop`, `id_lang`, `delay`) VALU
 -- Структура таблицы `ps_carrier_shop`
 --
 
-CREATE TABLE `ps_carrier_shop` (
-  `id_carrier` int(11) UNSIGNED NOT NULL,
-  `id_shop` int(11) UNSIGNED NOT NULL
+CREATE TABLE IF NOT EXISTS `ps_carrier_shop` (
+  `id_carrier` int(11) unsigned NOT NULL,
+  `id_shop` int(11) unsigned NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
@@ -1217,10 +1215,10 @@ INSERT INTO `ps_carrier_shop` (`id_carrier`, `id_shop`) VALUES
 -- Структура таблицы `ps_carrier_tax_rules_group_shop`
 --
 
-CREATE TABLE `ps_carrier_tax_rules_group_shop` (
-  `id_carrier` int(11) UNSIGNED NOT NULL,
-  `id_tax_rules_group` int(11) UNSIGNED NOT NULL,
-  `id_shop` int(11) UNSIGNED NOT NULL
+CREATE TABLE IF NOT EXISTS `ps_carrier_tax_rules_group_shop` (
+  `id_carrier` int(11) unsigned NOT NULL,
+  `id_tax_rules_group` int(11) unsigned NOT NULL,
+  `id_shop` int(11) unsigned NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
@@ -1246,9 +1244,9 @@ INSERT INTO `ps_carrier_tax_rules_group_shop` (`id_carrier`, `id_tax_rules_group
 -- Структура таблицы `ps_carrier_zone`
 --
 
-CREATE TABLE `ps_carrier_zone` (
-  `id_carrier` int(10) UNSIGNED NOT NULL,
-  `id_zone` int(10) UNSIGNED NOT NULL
+CREATE TABLE IF NOT EXISTS `ps_carrier_zone` (
+  `id_carrier` int(10) unsigned NOT NULL,
+  `id_zone` int(10) unsigned NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
@@ -1275,57 +1273,57 @@ INSERT INTO `ps_carrier_zone` (`id_carrier`, `id_zone`) VALUES
 -- Структура таблицы `ps_cart`
 --
 
-CREATE TABLE `ps_cart` (
-  `id_cart` int(10) UNSIGNED NOT NULL,
-  `id_shop_group` int(11) UNSIGNED NOT NULL DEFAULT '1',
-  `id_shop` int(11) UNSIGNED NOT NULL DEFAULT '1',
-  `id_carrier` int(10) UNSIGNED NOT NULL,
+CREATE TABLE IF NOT EXISTS `ps_cart` (
+  `id_cart` int(10) unsigned NOT NULL,
+  `id_shop_group` int(11) unsigned NOT NULL DEFAULT '1',
+  `id_shop` int(11) unsigned NOT NULL DEFAULT '1',
+  `id_carrier` int(10) unsigned NOT NULL,
   `delivery_option` text NOT NULL,
-  `id_lang` int(10) UNSIGNED NOT NULL,
-  `id_address_delivery` int(10) UNSIGNED NOT NULL,
-  `id_address_invoice` int(10) UNSIGNED NOT NULL,
-  `id_currency` int(10) UNSIGNED NOT NULL,
-  `id_customer` int(10) UNSIGNED NOT NULL,
-  `id_guest` int(10) UNSIGNED NOT NULL,
+  `id_lang` int(10) unsigned NOT NULL,
+  `id_address_delivery` int(10) unsigned NOT NULL,
+  `id_address_invoice` int(10) unsigned NOT NULL,
+  `id_currency` int(10) unsigned NOT NULL,
+  `id_customer` int(10) unsigned NOT NULL,
+  `id_guest` int(10) unsigned NOT NULL,
   `secure_key` varchar(32) NOT NULL DEFAULT '-1',
-  `recyclable` tinyint(1) UNSIGNED NOT NULL DEFAULT '1',
-  `gift` tinyint(1) UNSIGNED NOT NULL DEFAULT '0',
+  `recyclable` tinyint(1) unsigned NOT NULL DEFAULT '1',
+  `gift` tinyint(1) unsigned NOT NULL DEFAULT '0',
   `gift_message` text,
   `mobile_theme` tinyint(1) NOT NULL DEFAULT '0',
-  `allow_seperated_package` tinyint(1) UNSIGNED NOT NULL DEFAULT '0',
+  `allow_seperated_package` tinyint(1) unsigned NOT NULL DEFAULT '0',
   `date_add` datetime NOT NULL,
   `date_upd` datetime NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=51 DEFAULT CHARSET=utf8;
 
 --
 -- Дамп данных таблицы `ps_cart`
 --
 
 INSERT INTO `ps_cart` (`id_cart`, `id_shop_group`, `id_shop`, `id_carrier`, `delivery_option`, `id_lang`, `id_address_delivery`, `id_address_invoice`, `id_currency`, `id_customer`, `id_guest`, `secure_key`, `recyclable`, `gift`, `gift_message`, `mobile_theme`, `allow_seperated_package`, `date_add`, `date_upd`) VALUES
-(6, 1, 1, 1, 'a:1:{i:6;s:2:\"1,\";}', 1, 6, 6, 1, 4, 3, '4346d310c5b9c85aab94200f7304cf35', 0, 0, '', 0, 0, '2018-08-15 13:03:11', '2018-08-15 14:33:39'),
-(7, 1, 1, 9, 'a:1:{i:7;s:2:\"9,\";}', 1, 7, 7, 1, 4, 4, '4346d310c5b9c85aab94200f7304cf35', 0, 0, '', 0, 0, '2018-08-15 14:50:19', '2018-08-15 15:42:35'),
-(8, 1, 1, 9, 'a:1:{i:11;s:2:\"9,\";}', 1, 11, 11, 1, 5, 5, 'c49f509aa818a8e6f2e882be92e5907f', 0, 0, '', 0, 0, '2018-08-15 15:43:16', '2018-08-15 15:47:33'),
-(9, 1, 1, 9, 'a:1:{i:7;s:2:\"9,\";}', 1, 7, 7, 1, 4, 6, '4346d310c5b9c85aab94200f7304cf35', 0, 0, '', 0, 0, '2018-08-15 15:53:25', '2018-08-16 23:37:21'),
+(6, 1, 1, 1, 'a:1:{i:6;s:2:"1,";}', 1, 6, 6, 1, 4, 3, '4346d310c5b9c85aab94200f7304cf35', 0, 0, '', 0, 0, '2018-08-15 13:03:11', '2018-08-15 14:33:39'),
+(7, 1, 1, 9, 'a:1:{i:7;s:2:"9,";}', 1, 7, 7, 1, 4, 4, '4346d310c5b9c85aab94200f7304cf35', 0, 0, '', 0, 0, '2018-08-15 14:50:19', '2018-08-15 15:42:35'),
+(8, 1, 1, 9, 'a:1:{i:11;s:2:"9,";}', 1, 11, 11, 1, 5, 5, 'c49f509aa818a8e6f2e882be92e5907f', 0, 0, '', 0, 0, '2018-08-15 15:43:16', '2018-08-15 15:47:33'),
+(9, 1, 1, 9, 'a:1:{i:7;s:2:"9,";}', 1, 7, 7, 1, 4, 6, '4346d310c5b9c85aab94200f7304cf35', 0, 0, '', 0, 0, '2018-08-15 15:53:25', '2018-08-16 23:37:21'),
 (10, 1, 1, 0, '', 1, 13, 13, 1, 0, 8, '', 0, 0, '', 0, 0, '2018-08-16 16:49:00', '2018-08-16 16:49:09'),
-(11, 1, 1, 9, 'a:1:{i:14;s:2:\"9,\";}', 1, 14, 14, 1, 6, 9, 'e5a8de4498f6d3880a0eb7528fa04b44', 0, 0, '', 0, 0, '2018-08-17 00:03:08', '2018-08-17 00:56:02'),
-(12, 1, 1, 11, 'a:1:{i:15;s:3:\"11,\";}', 1, 15, 15, 1, 7, 10, 'f07590031d99f324f896f6264a461185', 0, 0, '', 0, 0, '2018-08-17 00:58:10', '2018-08-17 00:58:44'),
-(13, 1, 1, 11, 'a:1:{i:7;s:3:\"11,\";}', 1, 7, 7, 1, 4, 11, '4346d310c5b9c85aab94200f7304cf35', 0, 0, '', 0, 0, '2018-08-17 01:00:37', '2018-08-17 13:13:48'),
+(11, 1, 1, 9, 'a:1:{i:14;s:2:"9,";}', 1, 14, 14, 1, 6, 9, 'e5a8de4498f6d3880a0eb7528fa04b44', 0, 0, '', 0, 0, '2018-08-17 00:03:08', '2018-08-17 00:56:02'),
+(12, 1, 1, 11, 'a:1:{i:15;s:3:"11,";}', 1, 15, 15, 1, 7, 10, 'f07590031d99f324f896f6264a461185', 0, 0, '', 0, 0, '2018-08-17 00:58:10', '2018-08-17 00:58:44'),
+(13, 1, 1, 11, 'a:1:{i:7;s:3:"11,";}', 1, 7, 7, 1, 4, 11, '4346d310c5b9c85aab94200f7304cf35', 0, 0, '', 0, 0, '2018-08-17 01:00:37', '2018-08-17 13:13:48'),
 (14, 1, 1, 0, '', 1, 16, 16, 1, 8, 11, 'ae7e8de46230320d28e420cbc4e26f19', 0, 0, '', 0, 0, '2018-08-17 13:15:52', '2018-08-17 13:17:07'),
-(15, 1, 1, 9, 'a:1:{i:7;s:2:\"9,\";}', 1, 17, 17, 1, 4, 12, '4346d310c5b9c85aab94200f7304cf35', 0, 0, '', 0, 0, '2018-08-17 13:25:06', '2018-08-17 13:35:51'),
+(15, 1, 1, 9, 'a:1:{i:7;s:2:"9,";}', 1, 17, 17, 1, 4, 12, '4346d310c5b9c85aab94200f7304cf35', 0, 0, '', 0, 0, '2018-08-17 13:25:06', '2018-08-17 13:35:51'),
 (16, 1, 1, 0, '', 1, 17, 17, 1, 4, 3, '4346d310c5b9c85aab94200f7304cf35', 0, 0, '', 0, 0, '2018-08-17 13:38:05', '2018-08-17 13:38:30'),
 (17, 1, 1, 0, '', 1, 7, 7, 1, 4, 3, '4346d310c5b9c85aab94200f7304cf35', 0, 0, '', 0, 0, '2018-08-17 14:31:32', '2018-08-17 14:31:59'),
-(18, 1, 1, 9, 'a:1:{i:7;s:2:\"9,\";}', 1, 19, 19, 1, 4, 13, '4346d310c5b9c85aab94200f7304cf35', 0, 0, '', 0, 0, '2018-08-17 14:33:22', '2018-08-17 16:57:08'),
+(18, 1, 1, 9, 'a:1:{i:7;s:2:"9,";}', 1, 19, 19, 1, 4, 13, '4346d310c5b9c85aab94200f7304cf35', 0, 0, '', 0, 0, '2018-08-17 14:33:22', '2018-08-17 16:57:08'),
 (19, 1, 1, 0, '', 1, 20, 20, 1, 4, 3, '4346d310c5b9c85aab94200f7304cf35', 0, 0, '', 0, 0, '2018-08-17 16:59:11', '2018-08-17 17:16:02'),
 (20, 1, 1, 0, '', 1, 21, 21, 1, 10, 14, '197364934d492fe302f0586dd837fa8a', 0, 0, '', 0, 0, '2018-08-17 17:21:07', '2018-08-17 17:24:40'),
-(21, 1, 1, 9, 'a:1:{i:21;s:2:\"9,\";}', 1, 22, 22, 1, 10, 14, '197364934d492fe302f0586dd837fa8a', 0, 0, '', 0, 0, '2018-08-17 17:28:22', '2018-08-22 12:34:00'),
+(21, 1, 1, 9, 'a:1:{i:21;s:2:"9,";}', 1, 22, 22, 1, 10, 14, '197364934d492fe302f0586dd837fa8a', 0, 0, '', 0, 0, '2018-08-17 17:28:22', '2018-08-22 12:34:00'),
 (22, 1, 1, 0, '', 1, 23, 23, 1, 4, 15, '4346d310c5b9c85aab94200f7304cf35', 0, 0, '', 0, 0, '2018-08-22 12:36:10', '2018-08-22 12:37:36'),
 (23, 1, 1, 0, '', 1, 24, 24, 1, 11, 16, 'd346bccfa19489c23c84f8eaf7711ac1', 0, 0, '', 0, 0, '2018-08-22 12:39:42', '2018-08-22 12:40:21'),
-(24, 1, 1, 11, 'a:1:{i:25;s:3:\"11,\";}', 1, 25, 25, 1, 12, 17, '014c4ed0476bef15d17011a069be0d4f', 0, 0, '', 0, 0, '2018-08-22 12:41:44', '2018-08-22 12:42:37'),
+(24, 1, 1, 11, 'a:1:{i:25;s:3:"11,";}', 1, 25, 25, 1, 12, 17, '014c4ed0476bef15d17011a069be0d4f', 0, 0, '', 0, 0, '2018-08-22 12:41:44', '2018-08-22 12:42:37'),
 (25, 1, 1, 0, '', 1, 26, 26, 1, 13, 18, 'ed68173d392c2d4f62382f97e74ed0d4', 0, 0, '', 0, 0, '2018-08-22 12:45:00', '2018-08-22 12:46:23'),
 (26, 1, 1, 0, '', 1, 27, 27, 1, 14, 19, 'bf6408f3a7a483456eb876b528748f21', 0, 0, '', 0, 0, '2018-08-22 12:59:57', '2018-08-22 13:08:15'),
 (27, 1, 1, 0, '', 1, 28, 28, 1, 15, 20, 'f3afb5a7706fc68769d118415bcc0796', 0, 0, '', 0, 0, '2018-08-22 15:02:12', '2018-08-22 15:03:25'),
-(28, 1, 1, 11, 'a:1:{i:29;s:3:\"11,\";}', 1, 29, 29, 1, 16, 21, '28d10e59f665d6b695c43e2b5caeccc4', 0, 0, '', 0, 0, '2018-08-22 15:11:43', '2018-08-22 15:12:32'),
-(29, 1, 1, 11, 'a:1:{i:30;s:3:\"11,\";}', 1, 30, 30, 1, 17, 22, 'd1cd6f007c96b20ac11889e0d3c53021', 0, 0, '', 0, 0, '2018-08-22 15:13:36', '2018-08-22 15:14:28'),
+(28, 1, 1, 11, 'a:1:{i:29;s:3:"11,";}', 1, 29, 29, 1, 16, 21, '28d10e59f665d6b695c43e2b5caeccc4', 0, 0, '', 0, 0, '2018-08-22 15:11:43', '2018-08-22 15:12:32'),
+(29, 1, 1, 11, 'a:1:{i:30;s:3:"11,";}', 1, 30, 30, 1, 17, 22, 'd1cd6f007c96b20ac11889e0d3c53021', 0, 0, '', 0, 0, '2018-08-22 15:13:36', '2018-08-22 15:14:28'),
 (30, 1, 1, 0, '', 1, 31, 31, 1, 18, 23, '23250366eff4f4ca4d5ab9e0bf6790b9', 0, 0, '', 0, 0, '2018-08-22 15:15:39', '2018-08-22 15:16:28'),
 (31, 1, 1, 0, '', 1, 33, 33, 1, 4, 24, '4346d310c5b9c85aab94200f7304cf35', 0, 0, '', 0, 0, '2018-08-22 15:27:24', '2018-08-22 15:29:35'),
 (32, 1, 1, 0, '', 1, 34, 34, 1, 4, 3, '4346d310c5b9c85aab94200f7304cf35', 0, 0, '', 0, 0, '2018-08-22 15:34:12', '2018-08-22 18:06:07'),
@@ -1335,7 +1333,7 @@ INSERT INTO `ps_cart` (`id_cart`, `id_shop_group`, `id_shop`, `id_carrier`, `del
 (36, 1, 1, 0, '', 1, 37, 37, 3, 4, 3, '4346d310c5b9c85aab94200f7304cf35', 0, 0, '', 0, 0, '2018-08-22 21:28:33', '2018-08-22 21:28:44'),
 (37, 1, 1, 0, '', 1, 38, 38, 1, 4, 28, '4346d310c5b9c85aab94200f7304cf35', 0, 0, '', 0, 0, '2018-08-22 21:32:07', '2018-08-22 21:32:27'),
 (38, 1, 1, 0, '', 1, 39, 39, 1, 20, 28, 'cfbb8657e0923b1131fb7efe5db071d1', 0, 0, '', 0, 0, '2018-09-14 23:12:33', '2018-09-14 23:13:26'),
-(39, 1, 1, 9, 'a:1:{i:40;s:2:\"9,\";}', 1, 40, 40, 1, 21, 29, '08de4997ef1c651ed4409af6dbaf4065', 0, 0, '', 0, 0, '2018-09-14 23:15:24', '2018-09-14 23:16:38'),
+(39, 1, 1, 9, 'a:1:{i:40;s:2:"9,";}', 1, 40, 40, 1, 21, 29, '08de4997ef1c651ed4409af6dbaf4065', 0, 0, '', 0, 0, '2018-09-14 23:15:24', '2018-09-14 23:16:38'),
 (40, 1, 1, 0, '', 1, 41, 41, 1, 21, 29, '08de4997ef1c651ed4409af6dbaf4065', 0, 0, '', 0, 0, '2018-09-14 23:17:41', '2018-09-14 23:18:11'),
 (41, 0, 1, 9, '', 1, 42, 42, 3, 22, 0, '789259fe57e451b14b33486bba6b6a0d', 0, 0, '', 0, 0, '2018-09-14 23:22:24', '2018-09-14 23:22:25'),
 (42, 0, 1, 0, '', 1, 43, 43, 3, 22, 0, '789259fe57e451b14b33486bba6b6a0d', 0, 0, '', 0, 0, '2018-09-14 23:30:12', '2018-09-14 23:30:12'),
@@ -1354,9 +1352,9 @@ INSERT INTO `ps_cart` (`id_cart`, `id_shop_group`, `id_shop`, `id_carrier`, `del
 -- Структура таблицы `ps_cart_cart_rule`
 --
 
-CREATE TABLE `ps_cart_cart_rule` (
-  `id_cart` int(10) UNSIGNED NOT NULL,
-  `id_cart_rule` int(10) UNSIGNED NOT NULL
+CREATE TABLE IF NOT EXISTS `ps_cart_cart_rule` (
+  `id_cart` int(10) unsigned NOT NULL,
+  `id_cart_rule` int(10) unsigned NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- --------------------------------------------------------
@@ -1365,13 +1363,13 @@ CREATE TABLE `ps_cart_cart_rule` (
 -- Структура таблицы `ps_cart_product`
 --
 
-CREATE TABLE `ps_cart_product` (
-  `id_cart` int(10) UNSIGNED NOT NULL,
-  `id_product` int(10) UNSIGNED NOT NULL,
-  `id_address_delivery` int(10) UNSIGNED NOT NULL DEFAULT '0',
-  `id_shop` int(10) UNSIGNED NOT NULL DEFAULT '1',
-  `id_product_attribute` int(10) UNSIGNED NOT NULL DEFAULT '0',
-  `quantity` int(10) UNSIGNED NOT NULL DEFAULT '0',
+CREATE TABLE IF NOT EXISTS `ps_cart_product` (
+  `id_cart` int(10) unsigned NOT NULL,
+  `id_product` int(10) unsigned NOT NULL,
+  `id_address_delivery` int(10) unsigned NOT NULL DEFAULT '0',
+  `id_shop` int(10) unsigned NOT NULL DEFAULT '1',
+  `id_product_attribute` int(10) unsigned NOT NULL DEFAULT '0',
+  `quantity` int(10) unsigned NOT NULL DEFAULT '0',
   `date_add` datetime NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
@@ -1425,37 +1423,37 @@ INSERT INTO `ps_cart_product` (`id_cart`, `id_product`, `id_address_delivery`, `
 -- Структура таблицы `ps_cart_rule`
 --
 
-CREATE TABLE `ps_cart_rule` (
-  `id_cart_rule` int(10) UNSIGNED NOT NULL,
-  `id_customer` int(10) UNSIGNED NOT NULL DEFAULT '0',
+CREATE TABLE IF NOT EXISTS `ps_cart_rule` (
+  `id_cart_rule` int(10) unsigned NOT NULL,
+  `id_customer` int(10) unsigned NOT NULL DEFAULT '0',
   `date_from` datetime NOT NULL,
   `date_to` datetime NOT NULL,
   `description` text,
-  `quantity` int(10) UNSIGNED NOT NULL DEFAULT '0',
-  `quantity_per_user` int(10) UNSIGNED NOT NULL DEFAULT '0',
-  `priority` int(10) UNSIGNED NOT NULL DEFAULT '1',
-  `partial_use` tinyint(1) UNSIGNED NOT NULL DEFAULT '0',
+  `quantity` int(10) unsigned NOT NULL DEFAULT '0',
+  `quantity_per_user` int(10) unsigned NOT NULL DEFAULT '0',
+  `priority` int(10) unsigned NOT NULL DEFAULT '1',
+  `partial_use` tinyint(1) unsigned NOT NULL DEFAULT '0',
   `code` varchar(254) NOT NULL,
   `minimum_amount` decimal(17,2) NOT NULL DEFAULT '0.00',
   `minimum_amount_tax` tinyint(1) NOT NULL DEFAULT '0',
-  `minimum_amount_currency` int(10) UNSIGNED NOT NULL DEFAULT '0',
+  `minimum_amount_currency` int(10) unsigned NOT NULL DEFAULT '0',
   `minimum_amount_shipping` tinyint(1) NOT NULL DEFAULT '0',
-  `country_restriction` tinyint(1) UNSIGNED NOT NULL DEFAULT '0',
-  `carrier_restriction` tinyint(1) UNSIGNED NOT NULL DEFAULT '0',
-  `group_restriction` tinyint(1) UNSIGNED NOT NULL DEFAULT '0',
-  `cart_rule_restriction` tinyint(1) UNSIGNED NOT NULL DEFAULT '0',
-  `product_restriction` tinyint(1) UNSIGNED NOT NULL DEFAULT '0',
-  `shop_restriction` tinyint(1) UNSIGNED NOT NULL DEFAULT '0',
+  `country_restriction` tinyint(1) unsigned NOT NULL DEFAULT '0',
+  `carrier_restriction` tinyint(1) unsigned NOT NULL DEFAULT '0',
+  `group_restriction` tinyint(1) unsigned NOT NULL DEFAULT '0',
+  `cart_rule_restriction` tinyint(1) unsigned NOT NULL DEFAULT '0',
+  `product_restriction` tinyint(1) unsigned NOT NULL DEFAULT '0',
+  `shop_restriction` tinyint(1) unsigned NOT NULL DEFAULT '0',
   `free_shipping` tinyint(1) NOT NULL DEFAULT '0',
   `reduction_percent` decimal(5,2) NOT NULL DEFAULT '0.00',
   `reduction_amount` decimal(17,2) NOT NULL DEFAULT '0.00',
-  `reduction_tax` tinyint(1) UNSIGNED NOT NULL DEFAULT '0',
-  `reduction_currency` int(10) UNSIGNED NOT NULL DEFAULT '0',
+  `reduction_tax` tinyint(1) unsigned NOT NULL DEFAULT '0',
+  `reduction_currency` int(10) unsigned NOT NULL DEFAULT '0',
   `reduction_product` int(10) NOT NULL DEFAULT '0',
-  `gift_product` int(10) UNSIGNED NOT NULL DEFAULT '0',
-  `gift_product_attribute` int(10) UNSIGNED NOT NULL DEFAULT '0',
-  `highlight` tinyint(1) UNSIGNED NOT NULL DEFAULT '0',
-  `active` tinyint(1) UNSIGNED NOT NULL DEFAULT '0',
+  `gift_product` int(10) unsigned NOT NULL DEFAULT '0',
+  `gift_product_attribute` int(10) unsigned NOT NULL DEFAULT '0',
+  `highlight` tinyint(1) unsigned NOT NULL DEFAULT '0',
+  `active` tinyint(1) unsigned NOT NULL DEFAULT '0',
   `date_add` datetime NOT NULL,
   `date_upd` datetime NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
@@ -1466,9 +1464,9 @@ CREATE TABLE `ps_cart_rule` (
 -- Структура таблицы `ps_cart_rule_carrier`
 --
 
-CREATE TABLE `ps_cart_rule_carrier` (
-  `id_cart_rule` int(10) UNSIGNED NOT NULL,
-  `id_carrier` int(10) UNSIGNED NOT NULL
+CREATE TABLE IF NOT EXISTS `ps_cart_rule_carrier` (
+  `id_cart_rule` int(10) unsigned NOT NULL,
+  `id_carrier` int(10) unsigned NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- --------------------------------------------------------
@@ -1477,9 +1475,9 @@ CREATE TABLE `ps_cart_rule_carrier` (
 -- Структура таблицы `ps_cart_rule_combination`
 --
 
-CREATE TABLE `ps_cart_rule_combination` (
-  `id_cart_rule_1` int(10) UNSIGNED NOT NULL,
-  `id_cart_rule_2` int(10) UNSIGNED NOT NULL
+CREATE TABLE IF NOT EXISTS `ps_cart_rule_combination` (
+  `id_cart_rule_1` int(10) unsigned NOT NULL,
+  `id_cart_rule_2` int(10) unsigned NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- --------------------------------------------------------
@@ -1488,9 +1486,9 @@ CREATE TABLE `ps_cart_rule_combination` (
 -- Структура таблицы `ps_cart_rule_country`
 --
 
-CREATE TABLE `ps_cart_rule_country` (
-  `id_cart_rule` int(10) UNSIGNED NOT NULL,
-  `id_country` int(10) UNSIGNED NOT NULL
+CREATE TABLE IF NOT EXISTS `ps_cart_rule_country` (
+  `id_cart_rule` int(10) unsigned NOT NULL,
+  `id_country` int(10) unsigned NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- --------------------------------------------------------
@@ -1499,9 +1497,9 @@ CREATE TABLE `ps_cart_rule_country` (
 -- Структура таблицы `ps_cart_rule_group`
 --
 
-CREATE TABLE `ps_cart_rule_group` (
-  `id_cart_rule` int(10) UNSIGNED NOT NULL,
-  `id_group` int(10) UNSIGNED NOT NULL
+CREATE TABLE IF NOT EXISTS `ps_cart_rule_group` (
+  `id_cart_rule` int(10) unsigned NOT NULL,
+  `id_group` int(10) unsigned NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- --------------------------------------------------------
@@ -1510,9 +1508,9 @@ CREATE TABLE `ps_cart_rule_group` (
 -- Структура таблицы `ps_cart_rule_lang`
 --
 
-CREATE TABLE `ps_cart_rule_lang` (
-  `id_cart_rule` int(10) UNSIGNED NOT NULL,
-  `id_lang` int(10) UNSIGNED NOT NULL,
+CREATE TABLE IF NOT EXISTS `ps_cart_rule_lang` (
+  `id_cart_rule` int(10) unsigned NOT NULL,
+  `id_lang` int(10) unsigned NOT NULL,
   `name` varchar(254) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
@@ -1522,9 +1520,9 @@ CREATE TABLE `ps_cart_rule_lang` (
 -- Структура таблицы `ps_cart_rule_product_rule`
 --
 
-CREATE TABLE `ps_cart_rule_product_rule` (
-  `id_product_rule` int(10) UNSIGNED NOT NULL,
-  `id_product_rule_group` int(10) UNSIGNED NOT NULL,
+CREATE TABLE IF NOT EXISTS `ps_cart_rule_product_rule` (
+  `id_product_rule` int(10) unsigned NOT NULL,
+  `id_product_rule_group` int(10) unsigned NOT NULL,
   `type` enum('products','categories','attributes','manufacturers','suppliers') NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
@@ -1534,10 +1532,10 @@ CREATE TABLE `ps_cart_rule_product_rule` (
 -- Структура таблицы `ps_cart_rule_product_rule_group`
 --
 
-CREATE TABLE `ps_cart_rule_product_rule_group` (
-  `id_product_rule_group` int(10) UNSIGNED NOT NULL,
-  `id_cart_rule` int(10) UNSIGNED NOT NULL,
-  `quantity` int(10) UNSIGNED NOT NULL DEFAULT '1'
+CREATE TABLE IF NOT EXISTS `ps_cart_rule_product_rule_group` (
+  `id_product_rule_group` int(10) unsigned NOT NULL,
+  `id_cart_rule` int(10) unsigned NOT NULL,
+  `quantity` int(10) unsigned NOT NULL DEFAULT '1'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- --------------------------------------------------------
@@ -1546,9 +1544,9 @@ CREATE TABLE `ps_cart_rule_product_rule_group` (
 -- Структура таблицы `ps_cart_rule_product_rule_value`
 --
 
-CREATE TABLE `ps_cart_rule_product_rule_value` (
-  `id_product_rule` int(10) UNSIGNED NOT NULL,
-  `id_item` int(10) UNSIGNED NOT NULL
+CREATE TABLE IF NOT EXISTS `ps_cart_rule_product_rule_value` (
+  `id_product_rule` int(10) unsigned NOT NULL,
+  `id_item` int(10) unsigned NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- --------------------------------------------------------
@@ -1557,9 +1555,9 @@ CREATE TABLE `ps_cart_rule_product_rule_value` (
 -- Структура таблицы `ps_cart_rule_shop`
 --
 
-CREATE TABLE `ps_cart_rule_shop` (
-  `id_cart_rule` int(10) UNSIGNED NOT NULL,
-  `id_shop` int(10) UNSIGNED NOT NULL
+CREATE TABLE IF NOT EXISTS `ps_cart_rule_shop` (
+  `id_cart_rule` int(10) unsigned NOT NULL,
+  `id_shop` int(10) unsigned NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- --------------------------------------------------------
@@ -1568,19 +1566,19 @@ CREATE TABLE `ps_cart_rule_shop` (
 -- Структура таблицы `ps_category`
 --
 
-CREATE TABLE `ps_category` (
-  `id_category` int(10) UNSIGNED NOT NULL,
-  `id_parent` int(10) UNSIGNED NOT NULL,
-  `id_shop_default` int(10) UNSIGNED NOT NULL DEFAULT '1',
-  `level_depth` tinyint(3) UNSIGNED NOT NULL DEFAULT '0',
-  `nleft` int(10) UNSIGNED NOT NULL DEFAULT '0',
-  `nright` int(10) UNSIGNED NOT NULL DEFAULT '0',
-  `active` tinyint(1) UNSIGNED NOT NULL DEFAULT '0',
+CREATE TABLE IF NOT EXISTS `ps_category` (
+  `id_category` int(10) unsigned NOT NULL,
+  `id_parent` int(10) unsigned NOT NULL,
+  `id_shop_default` int(10) unsigned NOT NULL DEFAULT '1',
+  `level_depth` tinyint(3) unsigned NOT NULL DEFAULT '0',
+  `nleft` int(10) unsigned NOT NULL DEFAULT '0',
+  `nright` int(10) unsigned NOT NULL DEFAULT '0',
+  `active` tinyint(1) unsigned NOT NULL DEFAULT '0',
   `date_add` datetime NOT NULL,
   `date_upd` datetime NOT NULL,
-  `position` int(10) UNSIGNED NOT NULL DEFAULT '0',
+  `position` int(10) unsigned NOT NULL DEFAULT '0',
   `is_root_category` tinyint(1) NOT NULL DEFAULT '0'
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=17 DEFAULT CHARSET=utf8;
 
 --
 -- Дамп данных таблицы `ps_category`
@@ -1589,19 +1587,19 @@ CREATE TABLE `ps_category` (
 INSERT INTO `ps_category` (`id_category`, `id_parent`, `id_shop_default`, `level_depth`, `nleft`, `nright`, `active`, `date_add`, `date_upd`, `position`, `is_root_category`) VALUES
 (1, 0, 1, 0, 1, 32, 1, '2018-08-10 15:51:27', '2018-08-10 15:51:27', 0, 0),
 (2, 1, 1, 1, 2, 31, 1, '2018-08-10 15:51:27', '2018-08-10 15:51:27', 0, 1),
-(3, 2, 1, 2, 3, 4, 1, '2018-08-10 17:00:04', '2018-08-10 17:00:04', 0, 0),
-(4, 2, 1, 2, 5, 6, 1, '2018-08-10 17:00:04', '2018-08-10 17:00:04', 0, 0),
-(5, 2, 1, 2, 7, 8, 1, '2018-08-10 17:00:04', '2018-08-10 17:00:04', 0, 0),
-(6, 2, 1, 2, 9, 10, 1, '2018-08-10 17:00:04', '2018-08-10 17:00:04', 0, 0),
-(7, 2, 1, 2, 11, 12, 1, '2018-08-10 17:00:04', '2018-08-10 17:00:04', 0, 0),
-(8, 2, 1, 2, 13, 14, 1, '2018-08-10 17:00:04', '2018-08-10 17:00:04', 0, 0),
-(9, 2, 1, 2, 15, 16, 1, '2018-08-10 17:00:04', '2018-08-10 17:00:04', 0, 0),
-(10, 2, 1, 2, 17, 18, 1, '2018-08-10 17:00:04', '2018-08-10 17:00:04', 0, 0),
-(11, 2, 1, 2, 19, 20, 1, '2018-08-10 17:00:04', '2018-08-10 17:00:04', 0, 0),
-(12, 2, 1, 2, 21, 22, 1, '2018-08-10 17:00:04', '2018-08-10 17:00:04', 0, 0),
-(13, 2, 1, 2, 23, 24, 1, '2018-08-10 17:04:10', '2018-08-10 17:04:10', 0, 0),
-(14, 2, 1, 2, 25, 26, 1, '2018-08-10 17:04:28', '2018-08-10 17:04:28', 0, 0),
-(15, 2, 1, 2, 27, 30, 1, '2018-08-10 17:04:34', '2018-08-10 17:04:34', 0, 0),
+(3, 2, 1, 2, 3, 4, 1, '2018-08-10 17:00:04', '2018-09-15 18:28:13', 0, 0),
+(4, 2, 1, 2, 5, 6, 1, '2018-08-10 17:00:04', '2018-09-17 12:26:53', 1, 0),
+(5, 2, 1, 2, 7, 8, 1, '2018-08-10 17:00:04', '2018-09-15 17:51:28', 2, 0),
+(6, 2, 1, 2, 9, 10, 1, '2018-08-10 17:00:04', '2018-09-15 17:52:02', 3, 0),
+(7, 2, 1, 2, 11, 12, 1, '2018-08-10 17:00:04', '2018-09-15 17:52:48', 4, 0),
+(8, 2, 1, 2, 13, 14, 1, '2018-08-10 17:00:04', '2018-09-17 13:05:18', 5, 0),
+(9, 2, 1, 2, 15, 16, 1, '2018-08-10 17:00:04', '2018-09-15 18:15:31', 6, 0),
+(10, 2, 1, 2, 17, 18, 1, '2018-08-10 17:00:04', '2018-09-15 18:23:10', 7, 0),
+(11, 2, 1, 2, 19, 20, 0, '2018-08-10 17:00:04', '2018-09-15 18:15:42', 8, 0),
+(12, 2, 1, 2, 21, 22, 1, '2018-08-10 17:00:04', '2018-09-15 18:06:58', 9, 0),
+(13, 2, 1, 2, 23, 24, 1, '2018-08-10 17:04:10', '2018-09-15 17:54:27', 10, 0),
+(14, 2, 1, 2, 25, 26, 0, '2018-08-10 17:04:28', '2018-09-15 19:03:34', 11, 0),
+(15, 2, 1, 2, 27, 30, 0, '2018-08-10 17:04:34', '2018-09-15 18:01:59', 12, 0),
 (16, 15, 1, 3, 28, 29, 1, '2018-08-10 17:04:34', '2018-08-10 17:04:34', 0, 0);
 
 -- --------------------------------------------------------
@@ -1610,9 +1608,9 @@ INSERT INTO `ps_category` (`id_category`, `id_parent`, `id_shop_default`, `level
 -- Структура таблицы `ps_category_group`
 --
 
-CREATE TABLE `ps_category_group` (
-  `id_category` int(10) UNSIGNED NOT NULL,
-  `id_group` int(10) UNSIGNED NOT NULL
+CREATE TABLE IF NOT EXISTS `ps_category_group` (
+  `id_category` int(10) unsigned NOT NULL,
+  `id_group` int(10) unsigned NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
@@ -4005,10 +4003,10 @@ INSERT INTO `ps_category_group` (`id_category`, `id_group`) VALUES
 -- Структура таблицы `ps_category_lang`
 --
 
-CREATE TABLE `ps_category_lang` (
-  `id_category` int(10) UNSIGNED NOT NULL,
-  `id_shop` int(11) UNSIGNED NOT NULL DEFAULT '1',
-  `id_lang` int(10) UNSIGNED NOT NULL,
+CREATE TABLE IF NOT EXISTS `ps_category_lang` (
+  `id_category` int(10) unsigned NOT NULL,
+  `id_shop` int(11) unsigned NOT NULL DEFAULT '1',
+  `id_lang` int(10) unsigned NOT NULL,
   `name` varchar(128) NOT NULL,
   `description` text,
   `link_rewrite` varchar(128) NOT NULL,
@@ -4025,11 +4023,11 @@ INSERT INTO `ps_category_lang` (`id_category`, `id_shop`, `id_lang`, `name`, `de
 (1, 1, 1, 'Корень', '', 'root', '', '', ''),
 (2, 1, 1, 'Главная', '', 'home', '', '', ''),
 (3, 1, 1, 'Гайки и болты', '', 'gajki-i-bolty', '', '', ''),
-(4, 1, 1, 'Секретки на колеса', 'Решили приобрести болты секретки? Узнайте все преимущества этой защиты.Для автомобилистов важно, чтобы машина всегда была под боком. Поэтому многие из нас привыкли оставлять любимое авто прямо под окнами дома. Такая привычка к удобству дает злоумышленникам поводы для преступлений. И если автомобиль останется на месте, то колеса могут просто и быстро исчезнуть. А что такое покупка новых колес, тем более внеплановая, могут предположить все.Ставить авто на стоянку или в гараж, каждый раз когда отходите от машины? Это не совсем удобно. Куда лучше купить секретные болты, чтобы быть уверенным в безопасности колес.Болты-секретки – это специальные болты, которыми крепятся колеса. По сути, они выполняют те же функции, что и обычные крепления. Но благодаря особой форме головки, открутить такой болт можно только специальным ключом.Секретные болты могут быть разных видов, поэтому и «секреты» у каждого вида свои. Какие-то сделают снятие колес невозможным, какие-то лишь на время задержать скручивание. В любом случае, болты секретки помешают ворам сделать свое дело.Увидев у своего подъезда соседскую машину на кирпичах, многие автовладельцы начинают задумываются о защите своей. Автосигнализация сегодня стоит у каждого, но от некоторых из них нет особого прока, если речь идет о скручивании колес. Гораздо более эффективный способ защиты – гайки секретки.Секретки – а именно так чаще всего называют автолюбители хитрые крепления, могут быть двух видов. Первый – болты, которые чаще всего используют на машинах европейского производства (сюда же относятся и отечественные авто). Второй – секретные гайки.Главная функция этих хитрых деталей – предотвратить кражу. Гайки секретки имеют отличную от обычных гаек форму. Поэтому для них в комплекте идет специальный ключ. Считается, что открутить секретные гайки можно только с помощью него, от чего возникают некоторые волнения. Как быть, если ключ будет потерян или сломан? Опытные специалисты автосервиса смогут помочь, применив специальное оборудование.', 'sekretki-na-kolesa', '', '', ''),
-(5, 1, 1, 'Центровочные кольца', 'Центровочные кольца для дисков, материал из которого они производятся, необходимость их использования вызывает множество споров среди автовладельцев. Кто-то убежден, что центровочные кольца – деталь абсолютно бесполезная, и можно обойтись без них. Другие без проблем ездят с так называемыми «одноразовыми» пластиковыми центровочными кольцами. Третьи же утверждают, что центровочные кольца для дисков обязательно должны быть изготовлены из высококачественного сплава, по индивидуальным размерам.Не будем доказывать или оспаривать ни одну точку зрения. Есть другой, неопровержимый факт: колесо должно быть четко отцентровано по ступице. Смещение оси колеса даже на полмиллиметра чревато проблемами. Как минимум, это «биение» колеса во время движения или при торможении, а следственно – чрезмерная нагрузка на подвеску и ее быстрое разрушение. Наиболее серьезным последствием неправильной посадки колеса может стать его потеря во время движения на высокой скорости. Чем это грозит, все наверняка понимают.Поэтому, в споре о необходимости использования центровочных колец для дисков, можно подвести итог. Лучше потратить небольшую сумму денег на корректную установку колес, нежели потом оплачивать дорогостоящий ремонт автомобиля. А в вопросе безопасности человеческой жизни риск вообще неоправдан.', 'centrovochnye-kolca', '', '', ''),
-(6, 1, 1, 'Проставки', 'Тюнинг колес – это не просто замена старых дисков на новые или более интересные в плане дизайна. Здесь целый полигон для действий с весьма широкими возможностями. Если купить проставки для дисков, можно добиться очень многого! Что же они из себя представляют? Проставки на колеса – это специальные диски, которые монтируются между ступицей машины и колесным диском.', 'prostavki', '', '', ''),
-(7, 1, 1, 'Шпильки', 'В нашем интернет-магазине вы можете приобрести отдельно колесные шпильки различной длины и ширины посадочных мест. В ассортименте представлены резьбовые и забивные шпильки высокого класса прочности.Колесные шпильки – аксессуар для монтажа, пользующийся большим спросом. Требуются они при установке колесных дисков, при расширении колесной базы с помощью проставок и прочих вариантах тюнинга колес. Обычно шпильки поставляются в комплекте с другими элементами крепежа. Но в некоторых ситуациях, как например, установка проставок, могут понадобиться шпильки большей длины, чем штатные. К тому же, шпильки, как и другие крепежные элементы, подвергаются большим нагрузкам при неправильной фиксации колесных дисков, а также могут быть повреждены при контакте с камнями при движении автомобиля. Самостоятельная установка, без специализированного инструмента, является еще одной частой причиной поломки колесных шпилек.Не теряйте время на поиск нужных вам крепежных элементов. На нашем сайте удобная система поиска, что позволит вам приобрести товар высокого качества по разумной цене.', 'shpilki', '', '', ''),
-(8, 1, 1, 'Колпачки на колесные гайки/болты', '', 'kolpachki-na-kolesnye-gajki-bolty', '', '', ''),
+(4, 1, 1, 'Секретки', '<p>Решили приобрести болты секретки? Узнайте все преимущества этой защиты.Для автомобилистов важно, чтобы машина всегда была под боком. Поэтому многие из нас привыкли оставлять любимое авто прямо под окнами дома. Такая привычка к удобству дает злоумышленникам поводы для преступлений. И если автомобиль останется на месте, то колеса могут просто и быстро исчезнуть. А что такое покупка новых колес, тем более внеплановая, могут предположить все.Ставить авто на стоянку или в гараж, каждый раз когда отходите от машины? Это не совсем удобно. Куда лучше купить секретные болты, чтобы быть уверенным в безопасности колес.Болты-секретки – это специальные болты, которыми крепятся колеса. По сути, они выполняют те же функции, что и обычные крепления. Но благодаря особой форме головки, открутить такой болт можно только специальным ключом.Секретные болты могут быть разных видов, поэтому и «секреты» у каждого вида свои. Какие-то сделают снятие колес невозможным, какие-то лишь на время задержать скручивание. В любом случае, болты секретки помешают ворам сделать свое дело.Увидев у своего подъезда соседскую машину на кирпичах, многие автовладельцы начинают задумываются о защите своей. Автосигнализация сегодня стоит у каждого, но от некоторых из них нет особого прока, если речь идет о скручивании колес. Гораздо более эффективный способ защиты – гайки секретки.Секретки – а именно так чаще всего называют автолюбители хитрые крепления, могут быть двух видов. Первый – болты, которые чаще всего используют на машинах европейского производства (сюда же относятся и отечественные авто). Второй – секретные гайки.Главная функция этих хитрых деталей – предотвратить кражу. Гайки секретки имеют отличную от обычных гаек форму. Поэтому для них в комплекте идет специальный ключ. Считается, что открутить секретные гайки можно только с помощью него, от чего возникают некоторые волнения. Как быть, если ключ будет потерян или сломан? Опытные специалисты автосервиса смогут помочь, применив специальное оборудование.</p>', 'sekretki-na-kolesa', '', '', ''),
+(5, 1, 1, 'Центровочные кольца', '<p>Центровочные кольца для дисков, материал из которого они производятся, необходимость их использования вызывает множество споров среди автовладельцев. Кто-то убежден, что центровочные кольца – деталь абсолютно бесполезная, и можно обойтись без них. Другие без проблем ездят с так называемыми «одноразовыми» пластиковыми центровочными кольцами. Третьи же утверждают, что центровочные кольца для дисков обязательно должны быть изготовлены из высококачественного сплава, по индивидуальным размерам.Не будем доказывать или оспаривать ни одну точку зрения. Есть другой, неопровержимый факт: колесо должно быть четко отцентровано по ступице. Смещение оси колеса даже на полмиллиметра чревато проблемами. Как минимум, это «биение» колеса во время движения или при торможении, а следственно – чрезмерная нагрузка на подвеску и ее быстрое разрушение. Наиболее серьезным последствием неправильной посадки колеса может стать его потеря во время движения на высокой скорости. Чем это грозит, все наверняка понимают.Поэтому, в споре о необходимости использования центровочных колец для дисков, можно подвести итог. Лучше потратить небольшую сумму денег на корректную установку колес, нежели потом оплачивать дорогостоящий ремонт автомобиля. А в вопросе безопасности человеческой жизни риск вообще неоправдан.</p>', 'centrovochnye-kolca', '', '', ''),
+(6, 1, 1, 'Проставки', '<p>Тюнинг колес – это не просто замена старых дисков на новые или более интересные в плане дизайна. Здесь целый полигон для действий с весьма широкими возможностями. Если купить проставки для дисков, можно добиться очень многого! Что же они из себя представляют? Проставки на колеса – это специальные диски, которые монтируются между ступицей машины и колесным диском.</p>', 'prostavki', '', '', ''),
+(7, 1, 1, 'Шпильки', '<p>В нашем интернет-магазине вы можете приобрести отдельно колесные шпильки различной длины и ширины посадочных мест. В ассортименте представлены резьбовые и забивные шпильки высокого класса прочности.Колесные шпильки – аксессуар для монтажа, пользующийся большим спросом. Требуются они при установке колесных дисков, при расширении колесной базы с помощью проставок и прочих вариантах тюнинга колес. Обычно шпильки поставляются в комплекте с другими элементами крепежа. Но в некоторых ситуациях, как например, установка проставок, могут понадобиться шпильки большей длины, чем штатные. К тому же, шпильки, как и другие крепежные элементы, подвергаются большим нагрузкам при неправильной фиксации колесных дисков, а также могут быть повреждены при контакте с камнями при движении автомобиля. Самостоятельная установка, без специализированного инструмента, является еще одной частой причиной поломки колесных шпилек.Не теряйте время на поиск нужных вам крепежных элементов. На нашем сайте удобная система поиска, что позволит вам приобрести товар высокого качества по разумной цене.</p>', 'shpilki', '', '', ''),
+(8, 1, 1, 'Колпачки на гайки/болты', '', 'kolpachki-na-kolesnye-gajkibolty', '', '', ''),
 (9, 1, 1, 'Наклейки на диски', '', 'naklejki-na-diski', '', '', ''),
 (10, 1, 1, 'Колпачки для литых дисков', '', 'kolpachki-dlya-litykh-diskov', '', '', ''),
 (11, 1, 1, 'Автоаксессуары', '', 'avtoaksessuary', '', '', ''),
@@ -4045,10 +4043,10 @@ INSERT INTO `ps_category_lang` (`id_category`, `id_shop`, `id_lang`, `name`, `de
 -- Структура таблицы `ps_category_product`
 --
 
-CREATE TABLE `ps_category_product` (
-  `id_category` int(10) UNSIGNED NOT NULL,
-  `id_product` int(10) UNSIGNED NOT NULL,
-  `position` int(10) UNSIGNED NOT NULL DEFAULT '0'
+CREATE TABLE IF NOT EXISTS `ps_category_product` (
+  `id_category` int(10) unsigned NOT NULL,
+  `id_product` int(10) unsigned NOT NULL,
+  `position` int(10) unsigned NOT NULL DEFAULT '0'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
@@ -4622,10 +4620,10 @@ INSERT INTO `ps_category_product` (`id_category`, `id_product`, `position`) VALU
 -- Структура таблицы `ps_category_shop`
 --
 
-CREATE TABLE `ps_category_shop` (
+CREATE TABLE IF NOT EXISTS `ps_category_shop` (
   `id_category` int(11) NOT NULL,
   `id_shop` int(11) NOT NULL,
-  `position` int(10) UNSIGNED NOT NULL DEFAULT '0'
+  `position` int(10) unsigned NOT NULL DEFAULT '0'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
@@ -4656,13 +4654,13 @@ INSERT INTO `ps_category_shop` (`id_category`, `id_shop`, `position`) VALUES
 -- Структура таблицы `ps_cms`
 --
 
-CREATE TABLE `ps_cms` (
-  `id_cms` int(10) UNSIGNED NOT NULL,
-  `id_cms_category` int(10) UNSIGNED NOT NULL,
-  `position` int(10) UNSIGNED NOT NULL DEFAULT '0',
-  `active` tinyint(1) UNSIGNED NOT NULL DEFAULT '0',
-  `indexation` tinyint(1) UNSIGNED NOT NULL DEFAULT '1'
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+CREATE TABLE IF NOT EXISTS `ps_cms` (
+  `id_cms` int(10) unsigned NOT NULL,
+  `id_cms_category` int(10) unsigned NOT NULL,
+  `position` int(10) unsigned NOT NULL DEFAULT '0',
+  `active` tinyint(1) unsigned NOT NULL DEFAULT '0',
+  `indexation` tinyint(1) unsigned NOT NULL DEFAULT '1'
+) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8;
 
 --
 -- Дамп данных таблицы `ps_cms`
@@ -4681,13 +4679,13 @@ INSERT INTO `ps_cms` (`id_cms`, `id_cms_category`, `position`, `active`, `indexa
 -- Структура таблицы `ps_cms_block`
 --
 
-CREATE TABLE `ps_cms_block` (
-  `id_cms_block` int(10) UNSIGNED NOT NULL,
-  `id_cms_category` int(10) UNSIGNED NOT NULL,
-  `location` tinyint(1) UNSIGNED NOT NULL,
-  `position` int(10) UNSIGNED NOT NULL DEFAULT '0',
-  `display_store` tinyint(1) UNSIGNED NOT NULL DEFAULT '1'
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+CREATE TABLE IF NOT EXISTS `ps_cms_block` (
+  `id_cms_block` int(10) unsigned NOT NULL,
+  `id_cms_category` int(10) unsigned NOT NULL,
+  `location` tinyint(1) unsigned NOT NULL,
+  `position` int(10) unsigned NOT NULL DEFAULT '0',
+  `display_store` tinyint(1) unsigned NOT NULL DEFAULT '1'
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
 
 --
 -- Дамп данных таблицы `ps_cms_block`
@@ -4702,9 +4700,9 @@ INSERT INTO `ps_cms_block` (`id_cms_block`, `id_cms_category`, `location`, `posi
 -- Структура таблицы `ps_cms_block_lang`
 --
 
-CREATE TABLE `ps_cms_block_lang` (
-  `id_cms_block` int(10) UNSIGNED NOT NULL,
-  `id_lang` int(10) UNSIGNED NOT NULL,
+CREATE TABLE IF NOT EXISTS `ps_cms_block_lang` (
+  `id_cms_block` int(10) unsigned NOT NULL,
+  `id_lang` int(10) unsigned NOT NULL,
   `name` varchar(40) NOT NULL DEFAULT ''
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
@@ -4721,12 +4719,12 @@ INSERT INTO `ps_cms_block_lang` (`id_cms_block`, `id_lang`, `name`) VALUES
 -- Структура таблицы `ps_cms_block_page`
 --
 
-CREATE TABLE `ps_cms_block_page` (
-  `id_cms_block_page` int(10) UNSIGNED NOT NULL,
-  `id_cms_block` int(10) UNSIGNED NOT NULL,
-  `id_cms` int(10) UNSIGNED NOT NULL,
-  `is_category` tinyint(1) UNSIGNED NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+CREATE TABLE IF NOT EXISTS `ps_cms_block_page` (
+  `id_cms_block_page` int(10) unsigned NOT NULL,
+  `id_cms_block` int(10) unsigned NOT NULL,
+  `id_cms` int(10) unsigned NOT NULL,
+  `is_category` tinyint(1) unsigned NOT NULL
+) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8;
 
 --
 -- Дамп данных таблицы `ps_cms_block_page`
@@ -4745,10 +4743,10 @@ INSERT INTO `ps_cms_block_page` (`id_cms_block_page`, `id_cms_block`, `id_cms`, 
 -- Структура таблицы `ps_cms_block_shop`
 --
 
-CREATE TABLE `ps_cms_block_shop` (
-  `id_cms_block` int(10) UNSIGNED NOT NULL,
-  `id_shop` int(10) UNSIGNED NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+CREATE TABLE IF NOT EXISTS `ps_cms_block_shop` (
+  `id_cms_block` int(10) unsigned NOT NULL,
+  `id_shop` int(10) unsigned NOT NULL
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
 
 --
 -- Дамп данных таблицы `ps_cms_block_shop`
@@ -4763,15 +4761,15 @@ INSERT INTO `ps_cms_block_shop` (`id_cms_block`, `id_shop`) VALUES
 -- Структура таблицы `ps_cms_category`
 --
 
-CREATE TABLE `ps_cms_category` (
-  `id_cms_category` int(10) UNSIGNED NOT NULL,
-  `id_parent` int(10) UNSIGNED NOT NULL,
-  `level_depth` tinyint(3) UNSIGNED NOT NULL DEFAULT '0',
-  `active` tinyint(1) UNSIGNED NOT NULL DEFAULT '0',
+CREATE TABLE IF NOT EXISTS `ps_cms_category` (
+  `id_cms_category` int(10) unsigned NOT NULL,
+  `id_parent` int(10) unsigned NOT NULL,
+  `level_depth` tinyint(3) unsigned NOT NULL DEFAULT '0',
+  `active` tinyint(1) unsigned NOT NULL DEFAULT '0',
   `date_add` datetime NOT NULL,
   `date_upd` datetime NOT NULL,
-  `position` int(10) UNSIGNED NOT NULL DEFAULT '0'
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+  `position` int(10) unsigned NOT NULL DEFAULT '0'
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
 
 --
 -- Дамп данных таблицы `ps_cms_category`
@@ -4786,10 +4784,10 @@ INSERT INTO `ps_cms_category` (`id_cms_category`, `id_parent`, `level_depth`, `a
 -- Структура таблицы `ps_cms_category_lang`
 --
 
-CREATE TABLE `ps_cms_category_lang` (
-  `id_cms_category` int(10) UNSIGNED NOT NULL,
-  `id_lang` int(10) UNSIGNED NOT NULL,
-  `id_shop` int(10) UNSIGNED NOT NULL DEFAULT '1',
+CREATE TABLE IF NOT EXISTS `ps_cms_category_lang` (
+  `id_cms_category` int(10) unsigned NOT NULL,
+  `id_lang` int(10) unsigned NOT NULL,
+  `id_shop` int(10) unsigned NOT NULL DEFAULT '1',
   `name` varchar(128) NOT NULL,
   `description` text,
   `link_rewrite` varchar(128) NOT NULL,
@@ -4811,10 +4809,10 @@ INSERT INTO `ps_cms_category_lang` (`id_cms_category`, `id_lang`, `id_shop`, `na
 -- Структура таблицы `ps_cms_category_shop`
 --
 
-CREATE TABLE `ps_cms_category_shop` (
-  `id_cms_category` int(10) UNSIGNED NOT NULL,
-  `id_shop` int(11) UNSIGNED NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+CREATE TABLE IF NOT EXISTS `ps_cms_category_shop` (
+  `id_cms_category` int(10) unsigned NOT NULL,
+  `id_shop` int(11) unsigned NOT NULL
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
 
 --
 -- Дамп данных таблицы `ps_cms_category_shop`
@@ -4829,10 +4827,10 @@ INSERT INTO `ps_cms_category_shop` (`id_cms_category`, `id_shop`) VALUES
 -- Структура таблицы `ps_cms_lang`
 --
 
-CREATE TABLE `ps_cms_lang` (
-  `id_cms` int(10) UNSIGNED NOT NULL,
-  `id_lang` int(10) UNSIGNED NOT NULL,
-  `id_shop` int(10) UNSIGNED NOT NULL DEFAULT '1',
+CREATE TABLE IF NOT EXISTS `ps_cms_lang` (
+  `id_cms` int(10) unsigned NOT NULL,
+  `id_lang` int(10) unsigned NOT NULL,
+  `id_shop` int(10) unsigned NOT NULL DEFAULT '1',
   `meta_title` varchar(128) NOT NULL,
   `meta_description` varchar(255) DEFAULT NULL,
   `meta_keywords` varchar(255) DEFAULT NULL,
@@ -4846,7 +4844,7 @@ CREATE TABLE `ps_cms_lang` (
 
 INSERT INTO `ps_cms_lang` (`id_cms`, `id_lang`, `id_shop`, `meta_title`, `meta_description`, `meta_keywords`, `content`, `link_rewrite`) VALUES
 (1, 1, 1, 'Доставка', 'Сроки и условия доставки', 'условия, доставка, сроки, отправка, упаковка', '<h2>Доставка и возврат</h2><h3>Отправка Вашего товара</h3><p>Отправка товара осуществляется через 2 дня после получения оплаты и отправляются через UPS с отслеживанием местоположения посылки и отгрузки без обязательной подписи. При выборе доставки через UPS Extra с обязательной подписью, с Вас будет взиматься дополнительная плата. Перед  выбором способа доставки, просим связаться с нами. Вне зависимости от выбранного Вами способа оплаты, Вы сможете отслеживать состояние Вашего заказа онлайн.</p><p>Стоимость доставки включает в себя расходы на обработку, упаковку и почтовые расходы. Затраты на обработку фиксированы, в то время как расходы на транспортировку могут варьироваться в зависимости от веса посылки. Мы советуем Вам объединять заказы. Мы не сможем объединить два отдельных заказа и доставка будет расчитана для каждого из них. Отправка товара будет на Вашей ответственности, но мы позаботимся о сохранности хрупких грузов.<br /><br />Коробки оптимального размера и с хорошим кровнем защиты.</p>', 'delivery'),
-(2, 1, 1, 'Правовое положение', 'Правовое положениe', 'правовое положение, права', '<h2>Правовое положение</h2><p>Производство:</p><p>Этот сайт был создан на <a href=\"http://www.prestashop.com\">PrestaShop</a>&trade; ПО с открытым доступом </p>', 'legal-notice'),
+(2, 1, 1, 'Правовое положение', 'Правовое положениe', 'правовое положение, права', '<h2>Правовое положение</h2><p>Производство:</p><p>Этот сайт был создан на <a href="http://www.prestashop.com">PrestaShop</a>&trade; ПО с открытым доступом </p>', 'legal-notice'),
 (3, 1, 1, 'Порядок и условия использования', 'Порядок и условия использования', 'условия, порядок, использование, продажа', '<h2>Порядок и условия использования</h2><h3>Правило 1</h3><p>Прочитайте правило 1 </p>\r\n<h3>Правило 2</h3><p> Прочитайте правило 2 </p>\r\n<h3>Правило 3</h3><p>Прочитайте правило 3 </p>', 'terms-and-conditions-of-use'),
 (4, 1, 1, 'О компании', 'Информация о компании', 'о нас, информация', '<h2>О компании</h2>\r\n<h3>Наша компания</h3><p>Наша компания</p>\r\n<h3>Наша команда</h3><p>Наша команда</p>\r\n<h3>Информация</h3><p>Информация</p>', 'about-us'),
 (5, 1, 1, 'Безопасность платежей', 'Безопасность платежей', 'безопасный платеж, ssl, visa, mastercard, paypal', '<h2>Безопасность платежей</h2>\r\n<h3>Безопасный платеж</h3><p>С использованием SSL</p>\r\n<h3>Использование Visa/Mastercard/Paypal</h3><p>Об этом сервисе</p>', 'secure-payment');
@@ -4857,10 +4855,10 @@ INSERT INTO `ps_cms_lang` (`id_cms`, `id_lang`, `id_shop`, `meta_title`, `meta_d
 -- Структура таблицы `ps_cms_role`
 --
 
-CREATE TABLE `ps_cms_role` (
-  `id_cms_role` int(11) UNSIGNED NOT NULL,
+CREATE TABLE IF NOT EXISTS `ps_cms_role` (
+  `id_cms_role` int(11) unsigned NOT NULL,
   `name` varchar(50) NOT NULL,
-  `id_cms` int(11) UNSIGNED NOT NULL
+  `id_cms` int(11) unsigned NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- --------------------------------------------------------
@@ -4869,10 +4867,10 @@ CREATE TABLE `ps_cms_role` (
 -- Структура таблицы `ps_cms_role_lang`
 --
 
-CREATE TABLE `ps_cms_role_lang` (
-  `id_cms_role` int(11) UNSIGNED NOT NULL,
-  `id_lang` int(11) UNSIGNED NOT NULL,
-  `id_shop` int(11) UNSIGNED NOT NULL,
+CREATE TABLE IF NOT EXISTS `ps_cms_role_lang` (
+  `id_cms_role` int(11) unsigned NOT NULL,
+  `id_lang` int(11) unsigned NOT NULL,
+  `id_shop` int(11) unsigned NOT NULL,
   `name` varchar(128) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
@@ -4882,9 +4880,9 @@ CREATE TABLE `ps_cms_role_lang` (
 -- Структура таблицы `ps_cms_shop`
 --
 
-CREATE TABLE `ps_cms_shop` (
-  `id_cms` int(11) UNSIGNED NOT NULL,
-  `id_shop` int(11) UNSIGNED NOT NULL
+CREATE TABLE IF NOT EXISTS `ps_cms_shop` (
+  `id_cms` int(11) unsigned NOT NULL,
+  `id_shop` int(11) unsigned NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
@@ -4904,9 +4902,9 @@ INSERT INTO `ps_cms_shop` (`id_cms`, `id_shop`) VALUES
 -- Структура таблицы `ps_compare`
 --
 
-CREATE TABLE `ps_compare` (
-  `id_compare` int(10) UNSIGNED NOT NULL,
-  `id_customer` int(10) UNSIGNED NOT NULL
+CREATE TABLE IF NOT EXISTS `ps_compare` (
+  `id_compare` int(10) unsigned NOT NULL,
+  `id_customer` int(10) unsigned NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- --------------------------------------------------------
@@ -4915,9 +4913,9 @@ CREATE TABLE `ps_compare` (
 -- Структура таблицы `ps_compare_product`
 --
 
-CREATE TABLE `ps_compare_product` (
-  `id_compare` int(10) UNSIGNED NOT NULL,
-  `id_product` int(10) UNSIGNED NOT NULL,
+CREATE TABLE IF NOT EXISTS `ps_compare_product` (
+  `id_compare` int(10) unsigned NOT NULL,
+  `id_product` int(10) unsigned NOT NULL,
   `date_add` datetime NOT NULL,
   `date_upd` datetime NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
@@ -4928,15 +4926,15 @@ CREATE TABLE `ps_compare_product` (
 -- Структура таблицы `ps_configuration`
 --
 
-CREATE TABLE `ps_configuration` (
-  `id_configuration` int(10) UNSIGNED NOT NULL,
-  `id_shop_group` int(11) UNSIGNED DEFAULT NULL,
-  `id_shop` int(11) UNSIGNED DEFAULT NULL,
+CREATE TABLE IF NOT EXISTS `ps_configuration` (
+  `id_configuration` int(10) unsigned NOT NULL,
+  `id_shop_group` int(11) unsigned DEFAULT NULL,
+  `id_shop` int(11) unsigned DEFAULT NULL,
   `name` varchar(254) NOT NULL,
   `value` text,
   `date_add` datetime NOT NULL,
   `date_upd` datetime NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=493 DEFAULT CHARSET=utf8;
 
 --
 -- Дамп данных таблицы `ps_configuration`
@@ -4984,8 +4982,8 @@ INSERT INTO `ps_configuration` (`id_configuration`, `id_shop_group`, `id_shop`, 
 (39, NULL, NULL, 'PS_PRODUCT_PICTURE_WIDTH', '64', '0000-00-00 00:00:00', '0000-00-00 00:00:00'),
 (40, NULL, NULL, 'PS_PRODUCT_PICTURE_HEIGHT', '64', '0000-00-00 00:00:00', '0000-00-00 00:00:00'),
 (41, NULL, NULL, 'PS_INVOICE_PREFIX', '#IN', '0000-00-00 00:00:00', '0000-00-00 00:00:00'),
-(42, NULL, NULL, 'PS_INVCE_INVOICE_ADDR_RULES', '{\"avoid\":[]}', '0000-00-00 00:00:00', '0000-00-00 00:00:00'),
-(43, NULL, NULL, 'PS_INVCE_DELIVERY_ADDR_RULES', '{\"avoid\":[]}', '0000-00-00 00:00:00', '0000-00-00 00:00:00'),
+(42, NULL, NULL, 'PS_INVCE_INVOICE_ADDR_RULES', '{"avoid":[]}', '0000-00-00 00:00:00', '0000-00-00 00:00:00'),
+(43, NULL, NULL, 'PS_INVCE_DELIVERY_ADDR_RULES', '{"avoid":[]}', '0000-00-00 00:00:00', '0000-00-00 00:00:00'),
 (44, NULL, NULL, 'PS_DELIVERY_PREFIX', '#DE', '0000-00-00 00:00:00', '0000-00-00 00:00:00'),
 (45, NULL, NULL, 'PS_DELIVERY_NUMBER', NULL, '0000-00-00 00:00:00', '2018-08-17 00:56:14'),
 (46, NULL, NULL, 'PS_RETURN_PREFIX', '#RE', '0000-00-00 00:00:00', '0000-00-00 00:00:00'),
@@ -5036,8 +5034,8 @@ INSERT INTO `ps_configuration` (`id_configuration`, `id_shop_group`, `id_shop`, 
 (91, NULL, NULL, 'PS_STORES_DISPLAY_CMS', '1', '0000-00-00 00:00:00', '0000-00-00 00:00:00'),
 (92, NULL, NULL, 'PS_STORES_DISPLAY_FOOTER', NULL, '0000-00-00 00:00:00', '2018-09-13 18:25:59'),
 (93, NULL, NULL, 'PS_STORES_SIMPLIFIED', '0', '0000-00-00 00:00:00', '0000-00-00 00:00:00'),
-(94, NULL, NULL, 'SHOP_LOGO_WIDTH', '350', '0000-00-00 00:00:00', '2018-08-10 15:51:34'),
-(95, NULL, NULL, 'SHOP_LOGO_HEIGHT', '99', '0000-00-00 00:00:00', '2018-08-10 15:51:34'),
+(94, NULL, NULL, 'SHOP_LOGO_WIDTH', '800', '0000-00-00 00:00:00', '2018-09-15 13:58:42'),
+(95, NULL, NULL, 'SHOP_LOGO_HEIGHT', '246', '0000-00-00 00:00:00', '2018-09-15 13:58:42'),
 (96, NULL, NULL, 'EDITORIAL_IMAGE_WIDTH', '530', '0000-00-00 00:00:00', '0000-00-00 00:00:00'),
 (97, NULL, NULL, 'EDITORIAL_IMAGE_HEIGHT', '228', '0000-00-00 00:00:00', '0000-00-00 00:00:00'),
 (98, NULL, NULL, 'PS_STATSDATA_CUSTOMER_PAGESVIEWS', '0', '0000-00-00 00:00:00', '0000-00-00 00:00:00'),
@@ -5062,7 +5060,7 @@ INSERT INTO `ps_configuration` (`id_configuration`, `id_shop_group`, `id_shop`, 
 (117, NULL, NULL, 'PS_STORES_CENTER_LONG', '-80.226439', '0000-00-00 00:00:00', '0000-00-00 00:00:00'),
 (118, NULL, NULL, 'PS_USE_ECOTAX', '0', '0000-00-00 00:00:00', '0000-00-00 00:00:00'),
 (119, NULL, NULL, 'PS_CANONICAL_REDIRECT', '1', '0000-00-00 00:00:00', '0000-00-00 00:00:00'),
-(120, NULL, NULL, 'PS_IMG_UPDATE_TIME', '1536842677', '0000-00-00 00:00:00', '2018-09-13 15:44:37'),
+(120, NULL, NULL, 'PS_IMG_UPDATE_TIME', '1537178662', '0000-00-00 00:00:00', '2018-09-17 13:04:22'),
 (121, NULL, NULL, 'PS_BACKUP_DROP_TABLE', '1', '0000-00-00 00:00:00', '0000-00-00 00:00:00'),
 (122, NULL, NULL, 'PS_OS_CHEQUE', '1', '0000-00-00 00:00:00', '0000-00-00 00:00:00'),
 (123, NULL, NULL, 'PS_OS_PAYMENT', '2', '0000-00-00 00:00:00', '0000-00-00 00:00:00'),
@@ -5156,15 +5154,15 @@ INSERT INTO `ps_configuration` (`id_configuration`, `id_shop_group`, `id_shop`, 
 (211, NULL, NULL, 'BLOCKADVERT_LINK', 'http://www.prestashop.com', '0000-00-00 00:00:00', '0000-00-00 00:00:00'),
 (212, NULL, NULL, 'BLOCKSTORE_IMG', 'store.jpg', '0000-00-00 00:00:00', '0000-00-00 00:00:00'),
 (213, NULL, NULL, 'BLOCKADVERT_IMG_EXT', 'jpg', '0000-00-00 00:00:00', '0000-00-00 00:00:00'),
-(214, NULL, NULL, 'MOD_BLOCKTOPMENU_ITEMS', 'CAT3,CAT8,CAT5,LNK1', '0000-00-00 00:00:00', '2018-08-10 15:51:58'),
-(215, NULL, NULL, 'MOD_BLOCKTOPMENU_SEARCH', '0', '0000-00-00 00:00:00', '2018-08-10 15:51:58'),
+(214, NULL, NULL, 'MOD_BLOCKTOPMENU_ITEMS', 'CAT3,CAT5,CAT7,CAT4,CAT6,CAT9,CAT8', '0000-00-00 00:00:00', '2018-09-17 13:06:24'),
+(215, NULL, NULL, 'MOD_BLOCKTOPMENU_SEARCH', NULL, '0000-00-00 00:00:00', '2018-09-17 13:07:17'),
 (216, NULL, NULL, 'BLOCKSOCIAL_FACEBOOK', 'http://www.facebook.com/prestashop', '0000-00-00 00:00:00', '2018-08-10 15:51:51'),
 (217, NULL, NULL, 'BLOCKSOCIAL_TWITTER', 'http://www.twitter.com/prestashop', '0000-00-00 00:00:00', '2018-08-10 15:51:51'),
 (218, NULL, NULL, 'BLOCKSOCIAL_RSS', 'http://www.prestashop.com/blog/en/', '0000-00-00 00:00:00', '2018-08-10 15:51:51'),
-(219, NULL, NULL, 'BLOCKCONTACTINFOS_COMPANY', 'My Company', '0000-00-00 00:00:00', '2018-08-10 15:51:57'),
-(220, NULL, NULL, 'BLOCKCONTACTINFOS_ADDRESS', '42 Puffin street\n12345 Puffinville\nFrance', '0000-00-00 00:00:00', '2018-08-10 15:51:57'),
-(221, NULL, NULL, 'BLOCKCONTACTINFOS_PHONE', '0123-456-789', '0000-00-00 00:00:00', '2018-08-10 15:51:57'),
-(222, NULL, NULL, 'BLOCKCONTACTINFOS_EMAIL', 'sales@yourcompany.com', '0000-00-00 00:00:00', '2018-08-10 15:51:57'),
+(219, NULL, NULL, 'BLOCKCONTACTINFOS_COMPANY', NULL, '0000-00-00 00:00:00', '2018-09-17 15:59:34'),
+(220, NULL, NULL, 'BLOCKCONTACTINFOS_ADDRESS', NULL, '0000-00-00 00:00:00', '2018-09-17 15:59:34'),
+(221, NULL, NULL, 'BLOCKCONTACTINFOS_PHONE', '+380677566440', '0000-00-00 00:00:00', '2018-09-17 15:58:56'),
+(222, NULL, NULL, 'BLOCKCONTACTINFOS_EMAIL', 'info@citymotors.com.ua', '0000-00-00 00:00:00', '2018-09-17 15:58:56'),
 (223, NULL, NULL, 'BLOCKCONTACT_TELNUMBER', '+38 (093) 833-17-78', '0000-00-00 00:00:00', '2018-09-13 16:56:34'),
 (224, NULL, NULL, 'BLOCKCONTACT_EMAIL', 'info@citymotors.com.ua', '0000-00-00 00:00:00', '2018-09-13 16:56:34'),
 (225, NULL, NULL, 'SUPPLIER_DISPLAY_TEXT', '1', '0000-00-00 00:00:00', '2018-08-10 15:51:57'),
@@ -5174,7 +5172,7 @@ INSERT INTO `ps_configuration` (`id_configuration`, `id_shop_group`, `id_shop`, 
 (229, NULL, NULL, 'UPGRADER_BACKUPDB_FILENAME', '', '0000-00-00 00:00:00', '0000-00-00 00:00:00'),
 (230, NULL, NULL, 'UPGRADER_BACKUPFILES_FILENAME', '', '0000-00-00 00:00:00', '0000-00-00 00:00:00'),
 (231, NULL, NULL, 'BLOCKREINSURANCE_NBBLOCKS', '5', '0000-00-00 00:00:00', '0000-00-00 00:00:00'),
-(232, NULL, NULL, 'HOMESLIDER_WIDTH', '900', '0000-00-00 00:00:00', '2018-09-13 17:51:18'),
+(232, NULL, NULL, 'HOMESLIDER_WIDTH', '1170', '0000-00-00 00:00:00', '2018-09-15 17:16:08'),
 (233, NULL, NULL, 'HOMESLIDER_SPEED', '500', '0000-00-00 00:00:00', '2018-08-10 15:51:59'),
 (234, NULL, NULL, 'HOMESLIDER_PAUSE', '3000', '0000-00-00 00:00:00', '2018-08-10 15:51:59'),
 (235, NULL, NULL, 'HOMESLIDER_LOOP', '1', '0000-00-00 00:00:00', '0000-00-00 00:00:00'),
@@ -5185,9 +5183,9 @@ INSERT INTO `ps_configuration` (`id_configuration`, `id_shop_group`, `id_shop`, 
 (240, NULL, NULL, 'PS_SHOP_EMAIL', 'info@citymotors.com.ua', '0000-00-00 00:00:00', '2018-08-10 15:51:35'),
 (241, NULL, NULL, 'PS_MAIL_METHOD', '1', '0000-00-00 00:00:00', '0000-00-00 00:00:00'),
 (242, NULL, NULL, 'PS_SHOP_ACTIVITY', '6', '0000-00-00 00:00:00', '2018-08-10 15:51:34'),
-(243, NULL, NULL, 'PS_LOGO', 'logo.jpg', '0000-00-00 00:00:00', '0000-00-00 00:00:00'),
-(244, NULL, NULL, 'PS_FAVICON', 'favicon.ico', '0000-00-00 00:00:00', '0000-00-00 00:00:00'),
-(245, NULL, NULL, 'PS_STORES_ICON', 'logo_stores.png', '0000-00-00 00:00:00', '0000-00-00 00:00:00'),
+(243, NULL, NULL, 'PS_LOGO', 'citymotors-logo-1537009121.jpg', '0000-00-00 00:00:00', '2018-09-15 13:58:41'),
+(244, NULL, NULL, 'PS_FAVICON', 'favicon.ico', '0000-00-00 00:00:00', '2018-09-15 16:43:53'),
+(245, NULL, NULL, 'PS_STORES_ICON', 'citymotors-logo_stores-1537009159.gif', '0000-00-00 00:00:00', '2018-09-15 13:59:19'),
 (246, NULL, NULL, 'PS_ROOT_CATEGORY', '1', '0000-00-00 00:00:00', '0000-00-00 00:00:00'),
 (247, NULL, NULL, 'PS_HOME_CATEGORY', '2', '0000-00-00 00:00:00', '0000-00-00 00:00:00'),
 (248, NULL, NULL, 'PS_CONFIGURATION_AGREMENT', '0', '0000-00-00 00:00:00', '0000-00-00 00:00:00'),
@@ -5209,7 +5207,7 @@ INSERT INTO `ps_configuration` (`id_configuration`, `id_shop_group`, `id_shop`, 
 (264, NULL, NULL, 'PS_ATTRIBUTE_ANCHOR_SEPARATOR', '-', '0000-00-00 00:00:00', '0000-00-00 00:00:00'),
 (265, NULL, NULL, 'CONF_AVERAGE_PRODUCT_MARGIN', '40', '0000-00-00 00:00:00', '0000-00-00 00:00:00'),
 (266, NULL, NULL, 'PS_DASHBOARD_SIMULATION', '1', '0000-00-00 00:00:00', '2018-08-15 13:03:52'),
-(267, NULL, NULL, 'PS_QUICK_VIEW', '1', '0000-00-00 00:00:00', '0000-00-00 00:00:00'),
+(267, NULL, NULL, 'PS_QUICK_VIEW', '0', '0000-00-00 00:00:00', '2018-09-17 12:25:15'),
 (268, NULL, NULL, 'PS_USE_HTMLPURIFIER', '1', '0000-00-00 00:00:00', '0000-00-00 00:00:00'),
 (269, NULL, NULL, 'PS_SMARTY_CACHING_TYPE', 'filesystem', '0000-00-00 00:00:00', '0000-00-00 00:00:00'),
 (270, NULL, NULL, 'PS_SMARTY_CLEAR_CACHE', 'everytime', '0000-00-00 00:00:00', '0000-00-00 00:00:00'),
@@ -5284,8 +5282,8 @@ INSERT INTO `ps_configuration` (`id_configuration`, `id_shop_group`, `id_shop`, 
 (339, NULL, NULL, 'PRODUCTPAYMENTLOGOS_IMG', 'payment-logo.png', '2018-08-10 15:51:59', '2018-08-10 15:51:59'),
 (340, NULL, NULL, 'PRODUCTPAYMENTLOGOS_LINK', NULL, '2018-08-10 15:51:59', '2018-08-10 15:51:59'),
 (341, NULL, NULL, 'PRODUCTPAYMENTLOGOS_TITLE', NULL, '2018-08-10 15:51:59', '2018-08-10 15:51:59'),
-(342, NULL, NULL, 'PS_TC_THEMES', 'a:9:{i:0;s:6:\"theme1\";i:1;s:6:\"theme2\";i:2;s:6:\"theme3\";i:3;s:6:\"theme4\";i:4;s:6:\"theme5\";i:5;s:6:\"theme6\";i:6;s:6:\"theme7\";i:7;s:6:\"theme8\";i:8;s:6:\"theme9\";}', '2018-08-10 15:52:01', '2018-08-10 15:52:01'),
-(343, NULL, NULL, 'PS_TC_FONTS', 'a:10:{s:5:\"font1\";s:9:\"Open Sans\";s:5:\"font2\";s:12:\"Josefin Slab\";s:5:\"font3\";s:4:\"Arvo\";s:5:\"font4\";s:4:\"Lato\";s:5:\"font5\";s:7:\"Volkorn\";s:5:\"font6\";s:13:\"Abril Fatface\";s:5:\"font7\";s:6:\"Ubuntu\";s:5:\"font8\";s:7:\"PT Sans\";s:5:\"font9\";s:15:\"Old Standard TT\";s:6:\"font10\";s:10:\"Droid Sans\";}', '2018-08-10 15:52:01', '2018-08-10 15:52:01'),
+(342, NULL, NULL, 'PS_TC_THEMES', 'a:9:{i:0;s:6:"theme1";i:1;s:6:"theme2";i:2;s:6:"theme3";i:3;s:6:"theme4";i:4;s:6:"theme5";i:5;s:6:"theme6";i:6;s:6:"theme7";i:7;s:6:"theme8";i:8;s:6:"theme9";}', '2018-08-10 15:52:01', '2018-08-10 15:52:01'),
+(343, NULL, NULL, 'PS_TC_FONTS', 'a:10:{s:5:"font1";s:9:"Open Sans";s:5:"font2";s:12:"Josefin Slab";s:5:"font3";s:4:"Arvo";s:5:"font4";s:4:"Lato";s:5:"font5";s:7:"Volkorn";s:5:"font6";s:13:"Abril Fatface";s:5:"font7";s:6:"Ubuntu";s:5:"font8";s:7:"PT Sans";s:5:"font9";s:15:"Old Standard TT";s:6:"font10";s:10:"Droid Sans";}', '2018-08-10 15:52:01', '2018-08-10 15:52:01'),
 (344, NULL, NULL, 'PS_TC_THEME', NULL, '2018-08-10 15:52:01', '2018-08-10 15:52:01'),
 (345, NULL, NULL, 'PS_TC_FONT', NULL, '2018-08-10 15:52:01', '2018-08-10 15:52:01'),
 (346, NULL, NULL, 'PS_TC_ACTIVE', '1', '2018-08-10 15:52:01', '2018-08-10 15:52:01'),
@@ -5320,11 +5318,11 @@ INSERT INTO `ps_configuration` (`id_configuration`, `id_shop_group`, `id_shop`, 
 (375, NULL, NULL, 'PS_B2B_ENABLE', '0', '2018-08-15 13:18:04', '2018-08-15 13:18:04'),
 (376, NULL, NULL, 'PS_CCCCSS_VERSION', '15', '2018-08-15 14:21:43', '2018-09-14 22:59:38'),
 (377, NULL, NULL, 'PS_CCCJS_VERSION', '15', '2018-08-15 14:21:43', '2018-09-14 22:59:38'),
-(378, NULL, NULL, 'PS_CSS_THEME_CACHE', '1', '2018-08-15 14:21:43', '2018-08-15 14:21:43'),
+(378, NULL, NULL, 'PS_CSS_THEME_CACHE', '0', '2018-08-15 14:21:43', '2018-09-15 17:04:39'),
 (379, NULL, NULL, 'PS_JS_THEME_CACHE', '0', '2018-08-15 14:21:43', '2018-08-15 16:12:00'),
-(380, NULL, NULL, 'PS_HTML_THEME_COMPRESSION', '1', '2018-08-15 14:21:43', '2018-08-15 14:21:43'),
+(380, NULL, NULL, 'PS_HTML_THEME_COMPRESSION', '0', '2018-08-15 14:21:43', '2018-09-15 17:04:39'),
 (381, NULL, NULL, 'PS_JS_DEFER', '0', '2018-08-15 14:21:43', '2018-08-15 16:12:00'),
-(382, NULL, NULL, 'PS_HTACCESS_CACHE_CONTROL', '1', '2018-08-15 14:21:43', '2018-08-15 14:21:43'),
+(382, NULL, NULL, 'PS_HTACCESS_CACHE_CONTROL', '0', '2018-08-15 14:21:43', '2018-09-15 17:04:39'),
 (383, NULL, NULL, 'PS_DISABLE_NON_NATIVE_MODULE', '0', '2018-08-15 14:21:43', '2018-08-15 14:21:43'),
 (384, NULL, NULL, 'PS_DISABLE_OVERRIDES', '0', '2018-08-15 14:21:43', '2018-08-15 14:21:43'),
 (385, NULL, NULL, 'OPC_TWO_COLUMN_OPC', '1', '2018-08-15 14:52:20', '2018-08-22 15:43:34'),
@@ -5420,6 +5418,11 @@ INSERT INTO `ps_configuration` (`id_configuration`, `id_shop_group`, `id_shop`, 
 (486, NULL, NULL, '_ECM_BUYMY_3_', '9', '2018-09-14 23:20:50', '2018-09-14 23:20:50'),
 (487, NULL, NULL, '_REF_', '1', '2018-09-14 23:20:50', '2018-09-14 23:20:50'),
 (488, NULL, NULL, '_ZERO_', '0', '2018-09-14 23:20:50', '2018-09-14 23:20:50');
+INSERT INTO `ps_configuration` (`id_configuration`, `id_shop_group`, `id_shop`, `name`, `value`, `date_add`, `date_upd`) VALUES
+(489, NULL, NULL, 'PS_SHOW_TYPE_MODULES_1', 'allModules', '2018-09-17 12:07:09', '2018-09-17 12:07:09'),
+(490, NULL, NULL, 'PS_SHOW_INSTALLED_MODULES_1', 'installed', '2018-09-17 12:07:09', '2018-09-17 12:07:09'),
+(491, NULL, NULL, 'PS_SHOW_ENABLED_MODULES_1', 'enabledDisabled', '2018-09-17 12:07:09', '2018-09-17 12:07:09'),
+(492, NULL, NULL, 'PS_GRID_PRODUCT', '0', '2018-09-17 12:25:15', '2018-09-17 12:25:15');
 
 -- --------------------------------------------------------
 
@@ -5427,15 +5430,15 @@ INSERT INTO `ps_configuration` (`id_configuration`, `id_shop_group`, `id_shop`, 
 -- Структура таблицы `ps_configuration_kpi`
 --
 
-CREATE TABLE `ps_configuration_kpi` (
-  `id_configuration_kpi` int(10) UNSIGNED NOT NULL,
-  `id_shop_group` int(11) UNSIGNED DEFAULT NULL,
-  `id_shop` int(11) UNSIGNED DEFAULT NULL,
+CREATE TABLE IF NOT EXISTS `ps_configuration_kpi` (
+  `id_configuration_kpi` int(10) unsigned NOT NULL,
+  `id_shop_group` int(11) unsigned DEFAULT NULL,
+  `id_shop` int(11) unsigned DEFAULT NULL,
   `name` varchar(64) NOT NULL,
   `value` text,
   `date_add` datetime NOT NULL,
   `date_upd` datetime NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=38 DEFAULT CHARSET=utf8;
 
 --
 -- Дамп данных таблицы `ps_configuration_kpi`
@@ -5486,9 +5489,9 @@ INSERT INTO `ps_configuration_kpi` (`id_configuration_kpi`, `id_shop_group`, `id
 -- Структура таблицы `ps_configuration_kpi_lang`
 --
 
-CREATE TABLE `ps_configuration_kpi_lang` (
-  `id_configuration_kpi` int(10) UNSIGNED NOT NULL,
-  `id_lang` int(10) UNSIGNED NOT NULL,
+CREATE TABLE IF NOT EXISTS `ps_configuration_kpi_lang` (
+  `id_configuration_kpi` int(10) unsigned NOT NULL,
+  `id_lang` int(10) unsigned NOT NULL,
   `value` text,
   `date_upd` datetime DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
@@ -5499,9 +5502,9 @@ CREATE TABLE `ps_configuration_kpi_lang` (
 -- Структура таблицы `ps_configuration_lang`
 --
 
-CREATE TABLE `ps_configuration_lang` (
-  `id_configuration` int(10) UNSIGNED NOT NULL,
-  `id_lang` int(10) UNSIGNED NOT NULL,
+CREATE TABLE IF NOT EXISTS `ps_configuration_lang` (
+  `id_configuration` int(10) unsigned NOT NULL,
+  `id_lang` int(10) unsigned NOT NULL,
   `value` text,
   `date_upd` datetime DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
@@ -5529,16 +5532,16 @@ INSERT INTO `ps_configuration_lang` (`id_configuration`, `id_lang`, `value`, `da
 -- Структура таблицы `ps_connections`
 --
 
-CREATE TABLE `ps_connections` (
-  `id_connections` int(10) UNSIGNED NOT NULL,
-  `id_shop_group` int(11) UNSIGNED NOT NULL DEFAULT '1',
-  `id_shop` int(11) UNSIGNED NOT NULL DEFAULT '1',
-  `id_guest` int(10) UNSIGNED NOT NULL,
-  `id_page` int(10) UNSIGNED NOT NULL,
+CREATE TABLE IF NOT EXISTS `ps_connections` (
+  `id_connections` int(10) unsigned NOT NULL,
+  `id_shop_group` int(11) unsigned NOT NULL DEFAULT '1',
+  `id_shop` int(11) unsigned NOT NULL DEFAULT '1',
+  `id_guest` int(10) unsigned NOT NULL,
+  `id_page` int(10) unsigned NOT NULL,
   `ip_address` bigint(20) DEFAULT NULL,
   `date_add` datetime NOT NULL,
   `http_referer` varchar(255) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=78 DEFAULT CHARSET=utf8;
 
 --
 -- Дамп данных таблицы `ps_connections`
@@ -5602,7 +5605,26 @@ INSERT INTO `ps_connections` (`id_connections`, `id_shop_group`, `id_shop`, `id_
 (55, 1, 1, 28, 1, 2130706433, '2018-09-14 22:20:08', ''),
 (56, 1, 1, 28, 1, 2130706433, '2018-09-14 22:57:24', ''),
 (57, 1, 1, 29, 7, 2130706433, '2018-09-14 23:14:06', ''),
-(58, 1, 1, 30, 5, 2130706433, '2018-09-14 23:19:09', '');
+(58, 1, 1, 30, 5, 2130706433, '2018-09-14 23:19:09', ''),
+(59, 1, 1, 27, 1, 2130706433, '2018-09-15 13:59:33', ''),
+(60, 1, 1, 27, 1, 2130706433, '2018-09-15 16:24:05', ''),
+(61, 1, 1, 27, 10, 2130706433, '2018-09-15 17:01:03', ''),
+(62, 1, 1, 27, 6, 2130706433, '2018-09-15 17:32:01', ''),
+(63, 1, 1, 27, 6, 2130706433, '2018-09-15 17:32:01', ''),
+(64, 1, 1, 27, 1, 2130706433, '2018-09-15 18:07:10', ''),
+(65, 1, 1, 27, 1, 2130706433, '2018-09-15 18:39:50', ''),
+(66, 1, 1, 27, 1, 2130706433, '2018-09-17 11:17:26', ''),
+(67, 1, 1, 27, 6, 2130706433, '2018-09-17 11:17:26', ''),
+(68, 1, 1, 27, 6, 2130706433, '2018-09-17 11:17:26', ''),
+(69, 1, 1, 27, 1, 2130706433, '2018-09-17 11:17:27', ''),
+(70, 1, 1, 27, 6, 2130706433, '2018-09-17 11:17:26', ''),
+(71, 1, 1, 27, 1, 2130706433, '2018-09-17 12:03:31', ''),
+(72, 1, 1, 27, 1, 2130706433, '2018-09-17 12:34:04', ''),
+(73, 1, 1, 27, 1, 2130706433, '2018-09-17 13:05:23', ''),
+(74, 1, 1, 27, 6, 2130706433, '2018-09-17 13:40:08', ''),
+(75, 1, 1, 27, 6, 2130706433, '2018-09-17 13:40:08', ''),
+(76, 1, 1, 27, 6, 2130706433, '2018-09-17 15:40:33', ''),
+(77, 1, 1, 27, 6, 2130706433, '2018-09-17 16:14:10', '');
 
 -- --------------------------------------------------------
 
@@ -5610,9 +5632,9 @@ INSERT INTO `ps_connections` (`id_connections`, `id_shop_group`, `id_shop`, `id_
 -- Структура таблицы `ps_connections_page`
 --
 
-CREATE TABLE `ps_connections_page` (
-  `id_connections` int(10) UNSIGNED NOT NULL,
-  `id_page` int(10) UNSIGNED NOT NULL,
+CREATE TABLE IF NOT EXISTS `ps_connections_page` (
+  `id_connections` int(10) unsigned NOT NULL,
+  `id_page` int(10) unsigned NOT NULL,
   `time_start` datetime NOT NULL,
   `time_end` datetime DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
@@ -5623,9 +5645,9 @@ CREATE TABLE `ps_connections_page` (
 -- Структура таблицы `ps_connections_source`
 --
 
-CREATE TABLE `ps_connections_source` (
-  `id_connections_source` int(10) UNSIGNED NOT NULL,
-  `id_connections` int(10) UNSIGNED NOT NULL,
+CREATE TABLE IF NOT EXISTS `ps_connections_source` (
+  `id_connections_source` int(10) unsigned NOT NULL,
+  `id_connections` int(10) unsigned NOT NULL,
   `http_referer` varchar(255) DEFAULT NULL,
   `request_uri` varchar(255) DEFAULT NULL,
   `keywords` varchar(255) DEFAULT NULL,
@@ -5638,12 +5660,12 @@ CREATE TABLE `ps_connections_source` (
 -- Структура таблицы `ps_contact`
 --
 
-CREATE TABLE `ps_contact` (
-  `id_contact` int(10) UNSIGNED NOT NULL,
+CREATE TABLE IF NOT EXISTS `ps_contact` (
+  `id_contact` int(10) unsigned NOT NULL,
   `email` varchar(128) NOT NULL,
   `customer_service` tinyint(1) NOT NULL DEFAULT '0',
-  `position` tinyint(2) UNSIGNED NOT NULL DEFAULT '0'
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+  `position` tinyint(2) unsigned NOT NULL DEFAULT '0'
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8;
 
 --
 -- Дамп данных таблицы `ps_contact`
@@ -5659,9 +5681,9 @@ INSERT INTO `ps_contact` (`id_contact`, `email`, `customer_service`, `position`)
 -- Структура таблицы `ps_contact_lang`
 --
 
-CREATE TABLE `ps_contact_lang` (
-  `id_contact` int(10) UNSIGNED NOT NULL,
-  `id_lang` int(10) UNSIGNED NOT NULL,
+CREATE TABLE IF NOT EXISTS `ps_contact_lang` (
+  `id_contact` int(10) unsigned NOT NULL,
+  `id_lang` int(10) unsigned NOT NULL,
   `name` varchar(32) NOT NULL,
   `description` text
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
@@ -5680,9 +5702,9 @@ INSERT INTO `ps_contact_lang` (`id_contact`, `id_lang`, `name`, `description`) V
 -- Структура таблицы `ps_contact_shop`
 --
 
-CREATE TABLE `ps_contact_shop` (
-  `id_contact` int(11) UNSIGNED NOT NULL,
-  `id_shop` int(11) UNSIGNED NOT NULL
+CREATE TABLE IF NOT EXISTS `ps_contact_shop` (
+  `id_contact` int(11) unsigned NOT NULL,
+  `id_shop` int(11) unsigned NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
@@ -5699,19 +5721,19 @@ INSERT INTO `ps_contact_shop` (`id_contact`, `id_shop`) VALUES
 -- Структура таблицы `ps_contentbox`
 --
 
-CREATE TABLE `ps_contentbox` (
-  `content_id` int(10) UNSIGNED NOT NULL,
+CREATE TABLE IF NOT EXISTS `ps_contentbox` (
+  `content_id` int(10) unsigned NOT NULL,
   `content_text` text NOT NULL,
-  `id_lang` int(10) UNSIGNED NOT NULL,
-  `id_store` int(10) UNSIGNED NOT NULL DEFAULT '1'
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+  `id_lang` int(10) unsigned NOT NULL,
+  `id_store` int(10) unsigned NOT NULL DEFAULT '1'
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
 
 --
 -- Дамп данных таблицы `ps_contentbox`
 --
 
 INSERT INTO `ps_contentbox` (`content_id`, `content_text`, `id_lang`, `id_store`) VALUES
-(1, '<h3>О магазине</h3>\r\n<p id=\"contentBox\" class=\"information\">Наш интернет магазин «Citymotors» продает только качественный колесный крепеж, отлично зарекомендовавший себя среди покупателей.Предлагая прочный и надежный крепеж, мы заслужили доверие и признание наших покупателей и стали одним из самых популярных интернет магазинов  колесного крепежа в Украине. Ассортимент нашей продукции настолько велик, что позволяет нам в полном объеме обеспечить все потребности наших клиентов. Номенклатура крепежа постоянно расширяется с учетом пожеланий наших заказчиков.Индивидуальный подход к нашим клиентам, взаимовыгодные условия сотрудничества, высокая квалификация наших сотрудников и оперативность, являются неотъемлемой частью нашей работы. Поэтому большинство компаний и покупателей, несомненно, останавливают свой выбор на нас, как на надежном и проверенном партнере и продавце.</p>', 1, 1);
+(1, '<h3>О магазине</h3>\r\n<p id="contentBox" class="information">Наш интернет магазин «Citymotors» продает только качественный колесный крепеж, отлично зарекомендовавший себя среди покупателей.Предлагая прочный и надежный крепеж, мы заслужили доверие и признание наших покупателей и стали одним из самых популярных интернет магазинов  колесного крепежа в Украине. Ассортимент нашей продукции настолько велик, что позволяет нам в полном объеме обеспечить все потребности наших клиентов. Номенклатура крепежа постоянно расширяется с учетом пожеланий наших заказчиков.Индивидуальный подход к нашим клиентам, взаимовыгодные условия сотрудничества, высокая квалификация наших сотрудников и оперативность, являются неотъемлемой частью нашей работы. Поэтому большинство компаний и покупателей, несомненно, останавливают свой выбор на нас, как на надежном и проверенном партнере и продавце.</p>', 1, 1);
 
 -- --------------------------------------------------------
 
@@ -5719,12 +5741,12 @@ INSERT INTO `ps_contentbox` (`content_id`, `content_text`, `id_lang`, `id_store`
 -- Структура таблицы `ps_contentbox_files`
 --
 
-CREATE TABLE `ps_contentbox_files` (
-  `id` int(10) UNSIGNED NOT NULL,
-  `id_store` int(10) UNSIGNED NOT NULL,
-  `id_lang` int(10) UNSIGNED NOT NULL,
+CREATE TABLE IF NOT EXISTS `ps_contentbox_files` (
+  `id` int(10) unsigned NOT NULL,
+  `id_store` int(10) unsigned NOT NULL,
+  `id_lang` int(10) unsigned NOT NULL,
   `files` text NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
 
 --
 -- Дамп данных таблицы `ps_contentbox_files`
@@ -5739,19 +5761,19 @@ INSERT INTO `ps_contentbox_files` (`id`, `id_store`, `id_lang`, `files`) VALUES
 -- Структура таблицы `ps_country`
 --
 
-CREATE TABLE `ps_country` (
-  `id_country` int(10) UNSIGNED NOT NULL,
-  `id_zone` int(10) UNSIGNED NOT NULL,
-  `id_currency` int(10) UNSIGNED NOT NULL DEFAULT '0',
+CREATE TABLE IF NOT EXISTS `ps_country` (
+  `id_country` int(10) unsigned NOT NULL,
+  `id_zone` int(10) unsigned NOT NULL,
+  `id_currency` int(10) unsigned NOT NULL DEFAULT '0',
   `iso_code` varchar(3) NOT NULL,
   `call_prefix` int(10) NOT NULL DEFAULT '0',
-  `active` tinyint(1) UNSIGNED NOT NULL DEFAULT '0',
+  `active` tinyint(1) unsigned NOT NULL DEFAULT '0',
   `contains_states` tinyint(1) NOT NULL DEFAULT '0',
   `need_identification_number` tinyint(1) NOT NULL DEFAULT '0',
   `need_zip_code` tinyint(1) NOT NULL DEFAULT '1',
   `zip_code_format` varchar(12) NOT NULL DEFAULT '',
   `display_tax_label` tinyint(1) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=246 DEFAULT CHARSET=utf8;
 
 --
 -- Дамп данных таблицы `ps_country`
@@ -6010,9 +6032,9 @@ INSERT INTO `ps_country` (`id_country`, `id_zone`, `id_currency`, `iso_code`, `c
 -- Структура таблицы `ps_country_lang`
 --
 
-CREATE TABLE `ps_country_lang` (
-  `id_country` int(10) UNSIGNED NOT NULL,
-  `id_lang` int(10) UNSIGNED NOT NULL,
+CREATE TABLE IF NOT EXISTS `ps_country_lang` (
+  `id_country` int(10) unsigned NOT NULL,
+  `id_lang` int(10) unsigned NOT NULL,
   `name` varchar(64) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
@@ -6052,7 +6074,7 @@ INSERT INTO `ps_country_lang` (`id_country`, `id_lang`, `name`) VALUES
 (29, 1, 'Израиль'),
 (30, 1, 'ЮАР'),
 (31, 1, 'Нигерия'),
-(32, 1, 'Кот-д\'Ивуар'),
+(32, 1, 'Кот-д''Ивуар'),
 (33, 1, 'Того'),
 (34, 1, 'Боливия'),
 (35, 1, 'Маврикий'),
@@ -6273,9 +6295,9 @@ INSERT INTO `ps_country_lang` (`id_country`, `id_lang`, `name`) VALUES
 -- Структура таблицы `ps_country_shop`
 --
 
-CREATE TABLE `ps_country_shop` (
-  `id_country` int(11) UNSIGNED NOT NULL,
-  `id_shop` int(11) UNSIGNED NOT NULL
+CREATE TABLE IF NOT EXISTS `ps_country_shop` (
+  `id_country` int(11) unsigned NOT NULL,
+  `id_shop` int(11) unsigned NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
@@ -6535,19 +6557,19 @@ INSERT INTO `ps_country_shop` (`id_country`, `id_shop`) VALUES
 -- Структура таблицы `ps_currency`
 --
 
-CREATE TABLE `ps_currency` (
-  `id_currency` int(10) UNSIGNED NOT NULL,
+CREATE TABLE IF NOT EXISTS `ps_currency` (
+  `id_currency` int(10) unsigned NOT NULL,
   `name` varchar(32) NOT NULL,
   `iso_code` varchar(3) NOT NULL DEFAULT '0',
   `iso_code_num` varchar(3) NOT NULL DEFAULT '0',
   `sign` varchar(8) NOT NULL,
-  `blank` tinyint(1) UNSIGNED NOT NULL DEFAULT '0',
-  `format` tinyint(1) UNSIGNED NOT NULL DEFAULT '0',
-  `decimals` tinyint(1) UNSIGNED NOT NULL DEFAULT '1',
+  `blank` tinyint(1) unsigned NOT NULL DEFAULT '0',
+  `format` tinyint(1) unsigned NOT NULL DEFAULT '0',
+  `decimals` tinyint(1) unsigned NOT NULL DEFAULT '1',
   `conversion_rate` decimal(13,6) NOT NULL,
-  `deleted` tinyint(1) UNSIGNED NOT NULL DEFAULT '0',
-  `active` tinyint(1) UNSIGNED NOT NULL DEFAULT '1'
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+  `deleted` tinyint(1) unsigned NOT NULL DEFAULT '0',
+  `active` tinyint(1) unsigned NOT NULL DEFAULT '1'
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8;
 
 --
 -- Дамп данных таблицы `ps_currency`
@@ -6564,9 +6586,9 @@ INSERT INTO `ps_currency` (`id_currency`, `name`, `iso_code`, `iso_code_num`, `s
 -- Структура таблицы `ps_currency_shop`
 --
 
-CREATE TABLE `ps_currency_shop` (
-  `id_currency` int(11) UNSIGNED NOT NULL,
-  `id_shop` int(11) UNSIGNED NOT NULL,
+CREATE TABLE IF NOT EXISTS `ps_currency_shop` (
+  `id_currency` int(11) unsigned NOT NULL,
+  `id_shop` int(11) unsigned NOT NULL,
   `conversion_rate` decimal(13,6) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
@@ -6585,14 +6607,14 @@ INSERT INTO `ps_currency_shop` (`id_currency`, `id_shop`, `conversion_rate`) VAL
 -- Структура таблицы `ps_customer`
 --
 
-CREATE TABLE `ps_customer` (
-  `id_customer` int(10) UNSIGNED NOT NULL,
-  `id_shop_group` int(11) UNSIGNED NOT NULL DEFAULT '1',
-  `id_shop` int(11) UNSIGNED NOT NULL DEFAULT '1',
-  `id_gender` int(10) UNSIGNED NOT NULL,
-  `id_default_group` int(10) UNSIGNED NOT NULL DEFAULT '1',
-  `id_lang` int(10) UNSIGNED DEFAULT NULL,
-  `id_risk` int(10) UNSIGNED NOT NULL DEFAULT '1',
+CREATE TABLE IF NOT EXISTS `ps_customer` (
+  `id_customer` int(10) unsigned NOT NULL,
+  `id_shop_group` int(11) unsigned NOT NULL DEFAULT '1',
+  `id_shop` int(11) unsigned NOT NULL DEFAULT '1',
+  `id_gender` int(10) unsigned NOT NULL,
+  `id_default_group` int(10) unsigned NOT NULL DEFAULT '1',
+  `id_lang` int(10) unsigned DEFAULT NULL,
+  `id_risk` int(10) unsigned NOT NULL DEFAULT '1',
   `company` varchar(64) DEFAULT NULL,
   `siret` varchar(14) DEFAULT NULL,
   `ape` varchar(5) DEFAULT NULL,
@@ -6602,22 +6624,22 @@ CREATE TABLE `ps_customer` (
   `passwd` varchar(32) NOT NULL,
   `last_passwd_gen` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
   `birthday` date DEFAULT NULL,
-  `newsletter` tinyint(1) UNSIGNED NOT NULL DEFAULT '0',
+  `newsletter` tinyint(1) unsigned NOT NULL DEFAULT '0',
   `ip_registration_newsletter` varchar(15) DEFAULT NULL,
   `newsletter_date_add` datetime DEFAULT NULL,
-  `optin` tinyint(1) UNSIGNED NOT NULL DEFAULT '0',
+  `optin` tinyint(1) unsigned NOT NULL DEFAULT '0',
   `website` varchar(128) DEFAULT NULL,
   `outstanding_allow_amount` decimal(20,6) NOT NULL DEFAULT '0.000000',
-  `show_public_prices` tinyint(1) UNSIGNED NOT NULL DEFAULT '0',
-  `max_payment_days` int(10) UNSIGNED NOT NULL DEFAULT '60',
+  `show_public_prices` tinyint(1) unsigned NOT NULL DEFAULT '0',
+  `max_payment_days` int(10) unsigned NOT NULL DEFAULT '60',
   `secure_key` varchar(32) NOT NULL DEFAULT '-1',
   `note` text,
-  `active` tinyint(1) UNSIGNED NOT NULL DEFAULT '0',
+  `active` tinyint(1) unsigned NOT NULL DEFAULT '0',
   `is_guest` tinyint(1) NOT NULL DEFAULT '0',
   `deleted` tinyint(1) NOT NULL DEFAULT '0',
   `date_add` datetime NOT NULL,
   `date_upd` datetime NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=31 DEFAULT CHARSET=utf8;
 
 --
 -- Дамп данных таблицы `ps_customer`
@@ -6660,9 +6682,9 @@ INSERT INTO `ps_customer` (`id_customer`, `id_shop_group`, `id_shop`, `id_gender
 -- Структура таблицы `ps_customer_group`
 --
 
-CREATE TABLE `ps_customer_group` (
-  `id_customer` int(10) UNSIGNED NOT NULL,
-  `id_group` int(10) UNSIGNED NOT NULL
+CREATE TABLE IF NOT EXISTS `ps_customer_group` (
+  `id_customer` int(10) unsigned NOT NULL,
+  `id_group` int(10) unsigned NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
@@ -6709,10 +6731,10 @@ INSERT INTO `ps_customer_group` (`id_customer`, `id_group`) VALUES
 -- Структура таблицы `ps_customer_message`
 --
 
-CREATE TABLE `ps_customer_message` (
-  `id_customer_message` int(10) UNSIGNED NOT NULL,
+CREATE TABLE IF NOT EXISTS `ps_customer_message` (
+  `id_customer_message` int(10) unsigned NOT NULL,
   `id_customer_thread` int(11) DEFAULT NULL,
-  `id_employee` int(10) UNSIGNED DEFAULT NULL,
+  `id_employee` int(10) unsigned DEFAULT NULL,
   `message` mediumtext NOT NULL,
   `file_name` varchar(18) DEFAULT NULL,
   `ip_address` varchar(16) DEFAULT NULL,
@@ -6729,7 +6751,7 @@ CREATE TABLE `ps_customer_message` (
 -- Структура таблицы `ps_customer_message_sync_imap`
 --
 
-CREATE TABLE `ps_customer_message_sync_imap` (
+CREATE TABLE IF NOT EXISTS `ps_customer_message_sync_imap` (
   `md5_header` varbinary(32) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
@@ -6739,14 +6761,14 @@ CREATE TABLE `ps_customer_message_sync_imap` (
 -- Структура таблицы `ps_customer_thread`
 --
 
-CREATE TABLE `ps_customer_thread` (
-  `id_customer_thread` int(11) UNSIGNED NOT NULL,
-  `id_shop` int(11) UNSIGNED NOT NULL DEFAULT '1',
-  `id_lang` int(10) UNSIGNED NOT NULL,
-  `id_contact` int(10) UNSIGNED NOT NULL,
-  `id_customer` int(10) UNSIGNED DEFAULT NULL,
-  `id_order` int(10) UNSIGNED DEFAULT NULL,
-  `id_product` int(10) UNSIGNED DEFAULT NULL,
+CREATE TABLE IF NOT EXISTS `ps_customer_thread` (
+  `id_customer_thread` int(11) unsigned NOT NULL,
+  `id_shop` int(11) unsigned NOT NULL DEFAULT '1',
+  `id_lang` int(10) unsigned NOT NULL,
+  `id_contact` int(10) unsigned NOT NULL,
+  `id_customer` int(10) unsigned DEFAULT NULL,
+  `id_order` int(10) unsigned DEFAULT NULL,
+  `id_product` int(10) unsigned DEFAULT NULL,
   `status` enum('open','closed','pending1','pending2') NOT NULL DEFAULT 'open',
   `email` varchar(128) NOT NULL,
   `token` varchar(12) DEFAULT NULL,
@@ -6760,16 +6782,16 @@ CREATE TABLE `ps_customer_thread` (
 -- Структура таблицы `ps_customization`
 --
 
-CREATE TABLE `ps_customization` (
-  `id_customization` int(10) UNSIGNED NOT NULL,
-  `id_product_attribute` int(10) UNSIGNED NOT NULL DEFAULT '0',
-  `id_address_delivery` int(10) UNSIGNED NOT NULL DEFAULT '0',
-  `id_cart` int(10) UNSIGNED NOT NULL,
+CREATE TABLE IF NOT EXISTS `ps_customization` (
+  `id_customization` int(10) unsigned NOT NULL,
+  `id_product_attribute` int(10) unsigned NOT NULL DEFAULT '0',
+  `id_address_delivery` int(10) unsigned NOT NULL DEFAULT '0',
+  `id_cart` int(10) unsigned NOT NULL,
   `id_product` int(10) NOT NULL,
   `quantity` int(10) NOT NULL,
   `quantity_refunded` int(11) NOT NULL DEFAULT '0',
   `quantity_returned` int(11) NOT NULL DEFAULT '0',
-  `in_cart` tinyint(1) UNSIGNED NOT NULL DEFAULT '0'
+  `in_cart` tinyint(1) unsigned NOT NULL DEFAULT '0'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- --------------------------------------------------------
@@ -6778,9 +6800,9 @@ CREATE TABLE `ps_customization` (
 -- Структура таблицы `ps_customization_field`
 --
 
-CREATE TABLE `ps_customization_field` (
-  `id_customization_field` int(10) UNSIGNED NOT NULL,
-  `id_product` int(10) UNSIGNED NOT NULL,
+CREATE TABLE IF NOT EXISTS `ps_customization_field` (
+  `id_customization_field` int(10) unsigned NOT NULL,
+  `id_product` int(10) unsigned NOT NULL,
   `type` tinyint(1) NOT NULL,
   `required` tinyint(1) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
@@ -6791,10 +6813,10 @@ CREATE TABLE `ps_customization_field` (
 -- Структура таблицы `ps_customization_field_lang`
 --
 
-CREATE TABLE `ps_customization_field_lang` (
-  `id_customization_field` int(10) UNSIGNED NOT NULL,
-  `id_lang` int(10) UNSIGNED NOT NULL,
-  `id_shop` int(10) UNSIGNED NOT NULL DEFAULT '1',
+CREATE TABLE IF NOT EXISTS `ps_customization_field_lang` (
+  `id_customization_field` int(10) unsigned NOT NULL,
+  `id_lang` int(10) unsigned NOT NULL,
+  `id_shop` int(10) unsigned NOT NULL DEFAULT '1',
   `name` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
@@ -6804,8 +6826,8 @@ CREATE TABLE `ps_customization_field_lang` (
 -- Структура таблицы `ps_customized_data`
 --
 
-CREATE TABLE `ps_customized_data` (
-  `id_customization` int(10) UNSIGNED NOT NULL,
+CREATE TABLE IF NOT EXISTS `ps_customized_data` (
+  `id_customization` int(10) unsigned NOT NULL,
   `type` tinyint(1) NOT NULL,
   `index` int(3) NOT NULL,
   `value` varchar(255) NOT NULL
@@ -6817,8 +6839,8 @@ CREATE TABLE `ps_customized_data` (
 -- Структура таблицы `ps_date_range`
 --
 
-CREATE TABLE `ps_date_range` (
-  `id_date_range` int(10) UNSIGNED NOT NULL,
+CREATE TABLE IF NOT EXISTS `ps_date_range` (
+  `id_date_range` int(10) unsigned NOT NULL,
   `time_start` datetime NOT NULL,
   `time_end` datetime NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
@@ -6829,16 +6851,16 @@ CREATE TABLE `ps_date_range` (
 -- Структура таблицы `ps_delivery`
 --
 
-CREATE TABLE `ps_delivery` (
-  `id_delivery` int(10) UNSIGNED NOT NULL,
-  `id_shop` int(10) UNSIGNED DEFAULT NULL,
-  `id_shop_group` int(10) UNSIGNED DEFAULT NULL,
-  `id_carrier` int(10) UNSIGNED NOT NULL,
-  `id_range_price` int(10) UNSIGNED DEFAULT NULL,
-  `id_range_weight` int(10) UNSIGNED DEFAULT NULL,
-  `id_zone` int(10) UNSIGNED NOT NULL,
+CREATE TABLE IF NOT EXISTS `ps_delivery` (
+  `id_delivery` int(10) unsigned NOT NULL,
+  `id_shop` int(10) unsigned DEFAULT NULL,
+  `id_shop_group` int(10) unsigned DEFAULT NULL,
+  `id_carrier` int(10) unsigned NOT NULL,
+  `id_range_price` int(10) unsigned DEFAULT NULL,
+  `id_range_weight` int(10) unsigned DEFAULT NULL,
+  `id_zone` int(10) unsigned NOT NULL,
   `price` decimal(20,6) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=18 DEFAULT CHARSET=utf8;
 
 --
 -- Дамп данных таблицы `ps_delivery`
@@ -6868,10 +6890,10 @@ INSERT INTO `ps_delivery` (`id_delivery`, `id_shop`, `id_shop_group`, `id_carrie
 -- Структура таблицы `ps_employee`
 --
 
-CREATE TABLE `ps_employee` (
-  `id_employee` int(10) UNSIGNED NOT NULL,
-  `id_profile` int(10) UNSIGNED NOT NULL,
-  `id_lang` int(10) UNSIGNED NOT NULL DEFAULT '0',
+CREATE TABLE IF NOT EXISTS `ps_employee` (
+  `id_employee` int(10) unsigned NOT NULL,
+  `id_profile` int(10) unsigned NOT NULL,
+  `id_lang` int(10) unsigned NOT NULL DEFAULT '0',
   `lastname` varchar(32) NOT NULL,
   `firstname` varchar(32) NOT NULL,
   `email` varchar(128) NOT NULL,
@@ -6881,28 +6903,28 @@ CREATE TABLE `ps_employee` (
   `stats_date_to` date DEFAULT NULL,
   `stats_compare_from` date DEFAULT NULL,
   `stats_compare_to` date DEFAULT NULL,
-  `stats_compare_option` int(1) UNSIGNED NOT NULL DEFAULT '1',
+  `stats_compare_option` int(1) unsigned NOT NULL DEFAULT '1',
   `preselect_date_range` varchar(32) DEFAULT NULL,
   `bo_color` varchar(32) DEFAULT NULL,
   `bo_theme` varchar(32) DEFAULT NULL,
   `bo_css` varchar(64) DEFAULT NULL,
-  `default_tab` int(10) UNSIGNED NOT NULL DEFAULT '0',
-  `bo_width` int(10) UNSIGNED NOT NULL DEFAULT '0',
+  `default_tab` int(10) unsigned NOT NULL DEFAULT '0',
+  `bo_width` int(10) unsigned NOT NULL DEFAULT '0',
   `bo_menu` tinyint(1) NOT NULL DEFAULT '1',
-  `active` tinyint(1) UNSIGNED NOT NULL DEFAULT '0',
-  `optin` tinyint(1) UNSIGNED NOT NULL DEFAULT '1',
-  `id_last_order` int(10) UNSIGNED NOT NULL DEFAULT '0',
-  `id_last_customer_message` int(10) UNSIGNED NOT NULL DEFAULT '0',
-  `id_last_customer` int(10) UNSIGNED NOT NULL DEFAULT '0',
+  `active` tinyint(1) unsigned NOT NULL DEFAULT '0',
+  `optin` tinyint(1) unsigned NOT NULL DEFAULT '1',
+  `id_last_order` int(10) unsigned NOT NULL DEFAULT '0',
+  `id_last_customer_message` int(10) unsigned NOT NULL DEFAULT '0',
+  `id_last_customer` int(10) unsigned NOT NULL DEFAULT '0',
   `last_connection_date` date DEFAULT '0000-00-00'
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
 
 --
 -- Дамп данных таблицы `ps_employee`
 --
 
 INSERT INTO `ps_employee` (`id_employee`, `id_profile`, `id_lang`, `lastname`, `firstname`, `email`, `passwd`, `last_passwd_gen`, `stats_date_from`, `stats_date_to`, `stats_compare_from`, `stats_compare_to`, `stats_compare_option`, `preselect_date_range`, `bo_color`, `bo_theme`, `bo_css`, `default_tab`, `bo_width`, `bo_menu`, `active`, `optin`, `id_last_order`, `id_last_customer_message`, `id_last_customer`, `last_connection_date`) VALUES
-(1, 1, 1, 'Admim', 'Admim', 'info@citymotors.com.ua', 'f7d1dfa10b46fa9c067cff226f500d1d', '2018-08-10 06:51:35', '2018-07-10', '2018-08-10', '0000-00-00', '0000-00-00', 1, NULL, NULL, 'default', 'admin-theme.css', 1, 0, 1, 1, 1, 38, 0, 14, '2018-09-14');
+(1, 1, 1, 'Admim', 'Admim', 'info@citymotors.com.ua', 'f7d1dfa10b46fa9c067cff226f500d1d', '2018-08-10 06:51:35', '2018-07-10', '2018-08-10', '0000-00-00', '0000-00-00', 1, NULL, NULL, 'default', 'admin-theme.css', 1, 0, 1, 1, 1, 38, 0, 14, '2018-09-17');
 
 -- --------------------------------------------------------
 
@@ -6910,9 +6932,9 @@ INSERT INTO `ps_employee` (`id_employee`, `id_profile`, `id_lang`, `lastname`, `
 -- Структура таблицы `ps_employee_shop`
 --
 
-CREATE TABLE `ps_employee_shop` (
-  `id_employee` int(11) UNSIGNED NOT NULL,
-  `id_shop` int(11) UNSIGNED NOT NULL
+CREATE TABLE IF NOT EXISTS `ps_employee_shop` (
+  `id_employee` int(11) unsigned NOT NULL,
+  `id_shop` int(11) unsigned NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
@@ -6928,10 +6950,10 @@ INSERT INTO `ps_employee_shop` (`id_employee`, `id_shop`) VALUES
 -- Структура таблицы `ps_feature`
 --
 
-CREATE TABLE `ps_feature` (
-  `id_feature` int(10) UNSIGNED NOT NULL,
-  `position` int(10) UNSIGNED NOT NULL DEFAULT '0'
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+CREATE TABLE IF NOT EXISTS `ps_feature` (
+  `id_feature` int(10) unsigned NOT NULL,
+  `position` int(10) unsigned NOT NULL DEFAULT '0'
+) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf8;
 
 --
 -- Дамп данных таблицы `ps_feature`
@@ -6952,9 +6974,9 @@ INSERT INTO `ps_feature` (`id_feature`, `position`) VALUES
 -- Структура таблицы `ps_feature_lang`
 --
 
-CREATE TABLE `ps_feature_lang` (
-  `id_feature` int(10) UNSIGNED NOT NULL,
-  `id_lang` int(10) UNSIGNED NOT NULL,
+CREATE TABLE IF NOT EXISTS `ps_feature_lang` (
+  `id_feature` int(10) unsigned NOT NULL,
+  `id_lang` int(10) unsigned NOT NULL,
   `name` varchar(128) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
@@ -6977,10 +6999,10 @@ INSERT INTO `ps_feature_lang` (`id_feature`, `id_lang`, `name`) VALUES
 -- Структура таблицы `ps_feature_product`
 --
 
-CREATE TABLE `ps_feature_product` (
-  `id_feature` int(10) UNSIGNED NOT NULL,
-  `id_product` int(10) UNSIGNED NOT NULL,
-  `id_feature_value` int(10) UNSIGNED NOT NULL
+CREATE TABLE IF NOT EXISTS `ps_feature_product` (
+  `id_feature` int(10) unsigned NOT NULL,
+  `id_product` int(10) unsigned NOT NULL,
+  `id_feature_value` int(10) unsigned NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- --------------------------------------------------------
@@ -6989,9 +7011,9 @@ CREATE TABLE `ps_feature_product` (
 -- Структура таблицы `ps_feature_shop`
 --
 
-CREATE TABLE `ps_feature_shop` (
-  `id_feature` int(11) UNSIGNED NOT NULL,
-  `id_shop` int(11) UNSIGNED NOT NULL
+CREATE TABLE IF NOT EXISTS `ps_feature_shop` (
+  `id_feature` int(11) unsigned NOT NULL,
+  `id_shop` int(11) unsigned NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
@@ -7013,11 +7035,11 @@ INSERT INTO `ps_feature_shop` (`id_feature`, `id_shop`) VALUES
 -- Структура таблицы `ps_feature_value`
 --
 
-CREATE TABLE `ps_feature_value` (
-  `id_feature_value` int(10) UNSIGNED NOT NULL,
-  `id_feature` int(10) UNSIGNED NOT NULL,
-  `custom` tinyint(3) UNSIGNED DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+CREATE TABLE IF NOT EXISTS `ps_feature_value` (
+  `id_feature_value` int(10) unsigned NOT NULL,
+  `id_feature` int(10) unsigned NOT NULL,
+  `custom` tinyint(3) unsigned DEFAULT NULL
+) ENGINE=InnoDB AUTO_INCREMENT=34 DEFAULT CHARSET=utf8;
 
 --
 -- Дамп данных таблицы `ps_feature_value`
@@ -7064,9 +7086,9 @@ INSERT INTO `ps_feature_value` (`id_feature_value`, `id_feature`, `custom`) VALU
 -- Структура таблицы `ps_feature_value_lang`
 --
 
-CREATE TABLE `ps_feature_value_lang` (
-  `id_feature_value` int(10) UNSIGNED NOT NULL,
-  `id_lang` int(10) UNSIGNED NOT NULL,
+CREATE TABLE IF NOT EXISTS `ps_feature_value_lang` (
+  `id_feature_value` int(10) unsigned NOT NULL,
+  `id_lang` int(10) unsigned NOT NULL,
   `value` varchar(255) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
@@ -7115,10 +7137,10 @@ INSERT INTO `ps_feature_value_lang` (`id_feature_value`, `id_lang`, `value`) VAL
 -- Структура таблицы `ps_gender`
 --
 
-CREATE TABLE `ps_gender` (
+CREATE TABLE IF NOT EXISTS `ps_gender` (
   `id_gender` int(11) NOT NULL,
   `type` tinyint(1) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8;
 
 --
 -- Дамп данных таблицы `ps_gender`
@@ -7134,9 +7156,9 @@ INSERT INTO `ps_gender` (`id_gender`, `type`) VALUES
 -- Структура таблицы `ps_gender_lang`
 --
 
-CREATE TABLE `ps_gender_lang` (
-  `id_gender` int(10) UNSIGNED NOT NULL,
-  `id_lang` int(10) UNSIGNED NOT NULL,
+CREATE TABLE IF NOT EXISTS `ps_gender_lang` (
+  `id_gender` int(10) unsigned NOT NULL,
+  `id_lang` int(10) unsigned NOT NULL,
   `name` varchar(20) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
@@ -7154,14 +7176,14 @@ INSERT INTO `ps_gender_lang` (`id_gender`, `id_lang`, `name`) VALUES
 -- Структура таблицы `ps_group`
 --
 
-CREATE TABLE `ps_group` (
-  `id_group` int(10) UNSIGNED NOT NULL,
+CREATE TABLE IF NOT EXISTS `ps_group` (
+  `id_group` int(10) unsigned NOT NULL,
   `reduction` decimal(17,2) NOT NULL DEFAULT '0.00',
   `price_display_method` tinyint(4) NOT NULL DEFAULT '0',
-  `show_prices` tinyint(1) UNSIGNED NOT NULL DEFAULT '1',
+  `show_prices` tinyint(1) unsigned NOT NULL DEFAULT '1',
   `date_add` datetime NOT NULL,
   `date_upd` datetime NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8;
 
 --
 -- Дамп данных таблицы `ps_group`
@@ -7179,9 +7201,9 @@ INSERT INTO `ps_group` (`id_group`, `reduction`, `price_display_method`, `show_p
 -- Структура таблицы `ps_group_lang`
 --
 
-CREATE TABLE `ps_group_lang` (
-  `id_group` int(10) UNSIGNED NOT NULL,
-  `id_lang` int(10) UNSIGNED NOT NULL,
+CREATE TABLE IF NOT EXISTS `ps_group_lang` (
+  `id_group` int(10) unsigned NOT NULL,
+  `id_lang` int(10) unsigned NOT NULL,
   `name` varchar(32) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
@@ -7201,10 +7223,10 @@ INSERT INTO `ps_group_lang` (`id_group`, `id_lang`, `name`) VALUES
 -- Структура таблицы `ps_group_reduction`
 --
 
-CREATE TABLE `ps_group_reduction` (
-  `id_group_reduction` mediumint(8) UNSIGNED NOT NULL,
-  `id_group` int(10) UNSIGNED NOT NULL,
-  `id_category` int(10) UNSIGNED NOT NULL,
+CREATE TABLE IF NOT EXISTS `ps_group_reduction` (
+  `id_group_reduction` mediumint(8) unsigned NOT NULL,
+  `id_group` int(10) unsigned NOT NULL,
+  `id_category` int(10) unsigned NOT NULL,
   `reduction` decimal(4,3) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
@@ -7214,9 +7236,9 @@ CREATE TABLE `ps_group_reduction` (
 -- Структура таблицы `ps_group_shop`
 --
 
-CREATE TABLE `ps_group_shop` (
-  `id_group` int(11) UNSIGNED NOT NULL,
-  `id_shop` int(11) UNSIGNED NOT NULL
+CREATE TABLE IF NOT EXISTS `ps_group_shop` (
+  `id_group` int(11) unsigned NOT NULL,
+  `id_shop` int(11) unsigned NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
@@ -7235,15 +7257,15 @@ INSERT INTO `ps_group_shop` (`id_group`, `id_shop`) VALUES
 -- Структура таблицы `ps_guest`
 --
 
-CREATE TABLE `ps_guest` (
-  `id_guest` int(10) UNSIGNED NOT NULL,
-  `id_operating_system` int(10) UNSIGNED DEFAULT NULL,
-  `id_web_browser` int(10) UNSIGNED DEFAULT NULL,
-  `id_customer` int(10) UNSIGNED DEFAULT NULL,
+CREATE TABLE IF NOT EXISTS `ps_guest` (
+  `id_guest` int(10) unsigned NOT NULL,
+  `id_operating_system` int(10) unsigned DEFAULT NULL,
+  `id_web_browser` int(10) unsigned DEFAULT NULL,
+  `id_customer` int(10) unsigned DEFAULT NULL,
   `javascript` tinyint(1) DEFAULT '0',
-  `screen_resolution_x` smallint(5) UNSIGNED DEFAULT NULL,
-  `screen_resolution_y` smallint(5) UNSIGNED DEFAULT NULL,
-  `screen_color` tinyint(3) UNSIGNED DEFAULT NULL,
+  `screen_resolution_x` smallint(5) unsigned DEFAULT NULL,
+  `screen_resolution_y` smallint(5) unsigned DEFAULT NULL,
+  `screen_color` tinyint(3) unsigned DEFAULT NULL,
   `sun_java` tinyint(1) DEFAULT NULL,
   `adobe_flash` tinyint(1) DEFAULT NULL,
   `adobe_director` tinyint(1) DEFAULT NULL,
@@ -7252,7 +7274,7 @@ CREATE TABLE `ps_guest` (
   `windows_media` tinyint(1) DEFAULT NULL,
   `accept_language` varchar(8) DEFAULT NULL,
   `mobile_theme` tinyint(1) NOT NULL DEFAULT '0'
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=31 DEFAULT CHARSET=utf8;
 
 --
 -- Дамп данных таблицы `ps_guest`
@@ -7289,10 +7311,10 @@ INSERT INTO `ps_guest` (`id_guest`, `id_operating_system`, `id_web_browser`, `id
 -- Структура таблицы `ps_homeslider`
 --
 
-CREATE TABLE `ps_homeslider` (
-  `id_homeslider_slides` int(10) UNSIGNED NOT NULL,
-  `id_shop` int(10) UNSIGNED NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+CREATE TABLE IF NOT EXISTS `ps_homeslider` (
+  `id_homeslider_slides` int(10) unsigned NOT NULL,
+  `id_shop` int(10) unsigned NOT NULL
+) ENGINE=InnoDB AUTO_INCREMENT=9 DEFAULT CHARSET=utf8;
 
 --
 -- Дамп данных таблицы `ps_homeslider`
@@ -7302,7 +7324,6 @@ INSERT INTO `ps_homeslider` (`id_homeslider_slides`, `id_shop`) VALUES
 (1, 1),
 (2, 1),
 (3, 1),
-(4, 1),
 (5, 1),
 (6, 1),
 (7, 1),
@@ -7314,23 +7335,22 @@ INSERT INTO `ps_homeslider` (`id_homeslider_slides`, `id_shop`) VALUES
 -- Структура таблицы `ps_homeslider_slides`
 --
 
-CREATE TABLE `ps_homeslider_slides` (
-  `id_homeslider_slides` int(10) UNSIGNED NOT NULL,
-  `position` int(10) UNSIGNED NOT NULL DEFAULT '0',
-  `active` tinyint(1) UNSIGNED NOT NULL DEFAULT '0'
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+CREATE TABLE IF NOT EXISTS `ps_homeslider_slides` (
+  `id_homeslider_slides` int(10) unsigned NOT NULL,
+  `position` int(10) unsigned NOT NULL DEFAULT '0',
+  `active` tinyint(1) unsigned NOT NULL DEFAULT '0'
+) ENGINE=InnoDB AUTO_INCREMENT=9 DEFAULT CHARSET=utf8;
 
 --
 -- Дамп данных таблицы `ps_homeslider_slides`
 --
 
 INSERT INTO `ps_homeslider_slides` (`id_homeslider_slides`, `position`, `active`) VALUES
-(1, 1, 0),
-(2, 2, 0),
-(3, 3, 0),
-(4, 0, 1),
-(5, 0, 1),
-(6, 0, 1),
+(1, 0, 0),
+(2, 1, 0),
+(3, 2, 0),
+(5, 0, 0),
+(6, 0, 0),
 (7, 0, 1),
 (8, 0, 1);
 
@@ -7340,9 +7360,9 @@ INSERT INTO `ps_homeslider_slides` (`id_homeslider_slides`, `position`, `active`
 -- Структура таблицы `ps_homeslider_slides_lang`
 --
 
-CREATE TABLE `ps_homeslider_slides_lang` (
-  `id_homeslider_slides` int(10) UNSIGNED NOT NULL,
-  `id_lang` int(10) UNSIGNED NOT NULL,
+CREATE TABLE IF NOT EXISTS `ps_homeslider_slides_lang` (
+  `id_homeslider_slides` int(10) unsigned NOT NULL,
+  `id_lang` int(10) unsigned NOT NULL,
   `title` varchar(255) NOT NULL,
   `description` text NOT NULL,
   `legend` varchar(255) NOT NULL,
@@ -7355,14 +7375,13 @@ CREATE TABLE `ps_homeslider_slides_lang` (
 --
 
 INSERT INTO `ps_homeslider_slides_lang` (`id_homeslider_slides`, `id_lang`, `title`, `description`, `legend`, `url`, `image`) VALUES
-(1, 1, 'Sample 1', '<h2>EXCEPTEUR<br />OCCAECAT</h2>\n				<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin tristique in tortor et dignissim. Quisque non tempor leo. Maecenas egestas sem elit</p>\n				<p><button class=\"btn btn-default\" type=\"button\">Shop now !</button></p>', 'sample-1', 'http://www.prestashop.com/?utm_source=back-office&utm_medium=v16_homeslider&utm_campaign=back-office-RU&utm_content=download', 'sample-1.jpg'),
-(2, 1, 'Sample 2', '<h2>EXCEPTEUR<br />OCCAECAT</h2>\n				<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin tristique in tortor et dignissim. Quisque non tempor leo. Maecenas egestas sem elit</p>\n				<p><button class=\"btn btn-default\" type=\"button\">Shop now !</button></p>', 'sample-2', 'http://www.prestashop.com/?utm_source=back-office&utm_medium=v16_homeslider&utm_campaign=back-office-RU&utm_content=download', 'sample-2.jpg'),
-(3, 1, 'Sample 3', '<h2>EXCEPTEUR<br />OCCAECAT</h2>\n				<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin tristique in tortor et dignissim. Quisque non tempor leo. Maecenas egestas sem elit</p>\n				<p><button class=\"btn btn-default\" type=\"button\">Shop now !</button></p>', 'sample-3', 'http://www.prestashop.com/?utm_source=back-office&utm_medium=v16_homeslider&utm_campaign=back-office-RU&utm_content=download', 'sample-3.jpg'),
-(4, 1, 'Слайдер 1', '', 'Качественный колесный крепеж', 'citymotors.com.ua', 'e830d4c0a2c42dd1e449684c23ae2a7a0a74abcd_Слайдер.png'),
+(1, 1, 'Sample 1', '<h2>EXCEPTEUR<br />OCCAECAT</h2>\r\n				<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin tristique in tortor et dignissim. Quisque non tempor leo. Maecenas egestas sem elit</p>\r\n				<p><button class="btn btn-default" type="button">Shop now !</button></p>', 'sample-1', 'http://www.prestashop.com/?utm_source=back-office&utm_medium=v16_homeslider&utm_campaign=back-office-RU&utm_content=download', 'sample-1.jpg'),
+(2, 1, 'Sample 2', '<h2>EXCEPTEUR<br />OCCAECAT</h2>\r\n				<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin tristique in tortor et dignissim. Quisque non tempor leo. Maecenas egestas sem elit</p>\r\n				<p><button class="btn btn-default" type="button">Shop now !</button></p>', 'sample-2', 'http://www.prestashop.com/?utm_source=back-office&utm_medium=v16_homeslider&utm_campaign=back-office-RU&utm_content=download', 'sample-2.jpg'),
+(3, 1, 'Sample 3', '<h2>EXCEPTEUR<br />OCCAECAT</h2>\r\n				<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin tristique in tortor et dignissim. Quisque non tempor leo. Maecenas egestas sem elit</p>\r\n				<p><button class="btn btn-default" type="button">Shop now !</button></p>', 'sample-3', 'http://www.prestashop.com/?utm_source=back-office&utm_medium=v16_homeslider&utm_campaign=back-office-RU&utm_content=download', 'sample-3.jpg'),
 (5, 1, 'Слайд 2', '', 'Качественный колесные проставки', 'citymotors.com.ua', '53eb99d09b0ad623bc98f0e5451d97d78e6aa1f8_ring_type_joint_flanges.jpg'),
 (6, 1, 'Слайд 3', '', 'Широкий ассортимент', 'citymotors.com.ua', '9c868b7d88fd2d39578401bff93f214e571a56ca_2013-02-26_980x380_08-02-12_fissaggistandard.jpg'),
-(7, 1, 'Слайд 4', '', 'Колесные болты и колесные гайки', 'citymotors.com.ua', '678369ef2c538ddef1fd6fb9c45972ccdf598ff3_new-wheel-bolt-and-nuts.jpg'),
-(8, 1, 'Слайд 5', '', 'колесные шпильки', 'citymotors.com.ua', 'aa7bec0249cb68ad7dc5716166e599f5b7f60b40_IMG_6961.jpg');
+(7, 1, 'Слайд 4', '', 'Колесные болты и колесные гайки', 'citymotors.com.ua', '08967223fa28900ea0df6ccfa8e687a0a9b4f446_Slide2.jpg'),
+(8, 1, 'Слайд 5', '', 'колесные шпильки', 'citymotors.com.ua', '64cb95312f11b5dbdfab27027429a3b84c06836c_Slide2.jpg');
 
 -- --------------------------------------------------------
 
@@ -7370,14 +7389,14 @@ INSERT INTO `ps_homeslider_slides_lang` (`id_homeslider_slides`, `id_lang`, `tit
 -- Структура таблицы `ps_hook`
 --
 
-CREATE TABLE `ps_hook` (
-  `id_hook` int(10) UNSIGNED NOT NULL,
+CREATE TABLE IF NOT EXISTS `ps_hook` (
+  `id_hook` int(10) unsigned NOT NULL,
   `name` varchar(64) NOT NULL,
   `title` varchar(64) NOT NULL,
   `description` text,
   `position` tinyint(1) NOT NULL DEFAULT '1',
   `live_edit` tinyint(1) NOT NULL DEFAULT '0'
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=149 DEFAULT CHARSET=utf8;
 
 --
 -- Дамп данных таблицы `ps_hook`
@@ -7394,14 +7413,14 @@ INSERT INTO `ps_hook` (`id_hook`, `name`, `title`, `description`, `position`, `l
 (8, 'displayLeftColumn', 'Left column blocks', 'This hook displays new elements in the left-hand column', 1, 1),
 (9, 'displayHome', 'Homepage content', 'This hook displays new elements on the homepage', 1, 1),
 (10, 'Header', 'Pages html head section', 'This hook adds additional elements in the head section of your pages (head section of html)', 1, 0),
-(11, 'actionCartSave', 'Cart creation and update', 'This hook is displayed when a product is added to the cart or if the cart\'s content is modified', 1, 0),
+(11, 'actionCartSave', 'Cart creation and update', 'This hook is displayed when a product is added to the cart or if the cart''s content is modified', 1, 0),
 (12, 'actionAuthentication', 'Successful customer authentication', 'This hook is displayed after a customer successfully signs in', 1, 0),
 (13, 'actionProductAdd', 'Product creation', 'This hook is displayed after a product is created', 1, 0),
 (14, 'actionProductUpdate', 'Product update', 'This hook is displayed after a product has been updated', 1, 0),
 (15, 'displayTop', 'Top of pages', 'This hook displays additional elements at the top of your pages', 1, 0),
 (16, 'displayRightColumnProduct', 'New elements on the product page (right column)', 'This hook displays new elements in the right-hand column of the product page', 1, 0),
 (17, 'actionProductDelete', 'Product deletion', 'This hook is called when a product is deleted', 1, 0),
-(18, 'displayFooterProduct', 'Product footer', 'This hook adds new blocks under the product\'s description', 1, 1),
+(18, 'displayFooterProduct', 'Product footer', 'This hook adds new blocks under the product''s description', 1, 1),
 (19, 'displayInvoice', 'Invoice', 'This hook displays new blocks on the invoice (order)', 1, 0),
 (20, 'actionOrderStatusUpdate', 'Order status update - Event', 'This hook launches modules when the status of an order changes.', 1, 0),
 (21, 'displayAdminOrder', 'Display new elements in the Back Office, tab AdminOrder', 'This hook launches modules when the AdminOrder tab is displayed in the Back Office', 1, 0),
@@ -7413,70 +7432,70 @@ INSERT INTO `ps_hook` (`id_hook`, `name`, `title`, `description`, `position`, `l
 (27, 'displayPDFInvoice', 'PDF Invoice', 'This hook allows you to display additional information on PDF invoices', 1, 0),
 (28, 'displayInvoiceLegalFreeText', 'PDF Invoice - Legal Free Text', 'This hook allows you to modify the legal free text on PDF invoices', 1, 0),
 (29, 'displayAdminCustomers', 'Display new elements in the Back Office, tab AdminCustomers', 'This hook launches modules when the AdminCustomers tab is displayed in the Back Office', 1, 0),
-(30, 'displayOrderConfirmation', 'Order confirmation page', 'This hook is called within an order\'s confirmation page', 1, 0),
+(30, 'displayOrderConfirmation', 'Order confirmation page', 'This hook is called within an order''s confirmation page', 1, 0),
 (31, 'actionCustomerAccountAdd', 'Successful customer account creation', 'This hook is called when a new customer creates an account successfully', 1, 0),
 (32, 'displayCustomerAccount', 'Customer account displayed in Front Office', 'This hook displays new elements on the customer account page', 1, 0),
 (33, 'displayCustomerIdentityForm', 'Customer identity form displayed in Front Office', 'This hook displays new elements on the form to update a customer identity', 1, 0),
 (34, 'actionOrderSlipAdd', 'Order slip creation', 'This hook is called when a new credit slip is added regarding client order', 1, 0),
-(35, 'displayProductTab', 'Tabs on product page', 'This hook is called on the product page\'s tab', 1, 0),
-(36, 'displayProductTabContent', 'Tabs content on the product page', 'This hook is called on the product page\'s tab', 1, 0),
-(37, 'displayShoppingCartFooter', 'Shopping cart footer', 'This hook displays some specific information on the shopping cart\'s page', 1, 0),
+(35, 'displayProductTab', 'Tabs on product page', 'This hook is called on the product page''s tab', 1, 0),
+(36, 'displayProductTabContent', 'Tabs content on the product page', 'This hook is called on the product page''s tab', 1, 0),
+(37, 'displayShoppingCartFooter', 'Shopping cart footer', 'This hook displays some specific information on the shopping cart''s page', 1, 0),
 (38, 'displayCustomerAccountForm', 'Customer account creation form', 'This hook displays some information on the form to create a customer account', 1, 0),
 (39, 'displayAdminStatsModules', 'Stats - Modules', '', 1, 0),
 (40, 'displayAdminStatsGraphEngine', 'Graph engines', '', 1, 0),
 (41, 'actionOrderReturn', 'Returned product', 'This hook is displayed when a customer returns a product ', 1, 0),
 (42, 'displayProductButtons', 'Product page actions', 'This hook adds new action buttons on the product page', 1, 0),
-(43, 'displayBackOfficeHome', 'Administration panel homepage', 'This hook is displayed on the admin panel\'s homepage', 1, 0),
+(43, 'displayBackOfficeHome', 'Administration panel homepage', 'This hook is displayed on the admin panel''s homepage', 1, 0),
 (44, 'displayAdminStatsGridEngine', 'Grid engines', '', 1, 0),
 (45, 'actionWatermark', 'Watermark', '', 1, 0),
 (46, 'actionProductCancel', 'Product cancelled', 'This hook is called when you cancel a product in an order', 1, 0),
 (47, 'displayLeftColumnProduct', 'New elements on the product page (left column)', 'This hook displays new elements in the left-hand column of the product page', 1, 0),
 (48, 'actionProductOutOfStock', 'Out-of-stock product', 'This hook displays new action buttons if a product is out of stock', 1, 0),
-(49, 'actionProductAttributeUpdate', 'Product attribute update', 'This hook is displayed when a product\'s attribute is updated', 1, 0),
+(49, 'actionProductAttributeUpdate', 'Product attribute update', 'This hook is displayed when a product''s attribute is updated', 1, 0),
 (50, 'displayCarrierList', 'Extra carrier (module mode)', '', 1, 0),
 (51, 'displayShoppingCart', 'Shopping cart - Additional button', 'This hook displays new action buttons within the shopping cart', 1, 0),
 (52, 'actionSearch', 'Search', '', 1, 0),
 (53, 'displayBeforePayment', 'Redirect during the order process', 'This hook redirects the user to the module instead of displaying payment modules', 1, 0),
 (54, 'actionCarrierUpdate', 'Carrier Update', 'This hook is called when a carrier is updated', 1, 0),
 (55, 'actionOrderStatusPostUpdate', 'Post update of order status', '', 1, 0),
-(56, 'displayCustomerAccountFormTop', 'Block above the form for create an account', 'This hook is displayed above the customer\'s account creation form', 1, 0),
+(56, 'displayCustomerAccountFormTop', 'Block above the form for create an account', 'This hook is displayed above the customer''s account creation form', 1, 0),
 (57, 'displayBackOfficeHeader', 'Administration panel header', 'This hook is displayed in the header of the admin panel', 1, 0),
 (58, 'displayBackOfficeTop', 'Administration panel hover the tabs', 'This hook is displayed on the roll hover of the tabs within the admin panel', 1, 0),
-(59, 'displayBackOfficeFooter', 'Administration panel footer', 'This hook is displayed within the admin panel\'s footer', 1, 0),
-(60, 'actionProductAttributeDelete', 'Product attribute deletion', 'This hook is displayed when a product\'s attribute is deleted', 1, 0),
+(59, 'displayBackOfficeFooter', 'Administration panel footer', 'This hook is displayed within the admin panel''s footer', 1, 0),
+(60, 'actionProductAttributeDelete', 'Product attribute deletion', 'This hook is displayed when a product''s attribute is deleted', 1, 0),
 (61, 'actionCarrierProcess', 'Carrier process', '', 1, 0),
-(62, 'actionOrderDetail', 'Order detail', 'This hook is used to set the follow-up in Smarty when an order\'s detail is called', 1, 0),
+(62, 'actionOrderDetail', 'Order detail', 'This hook is used to set the follow-up in Smarty when an order''s detail is called', 1, 0),
 (63, 'displayBeforeCarrier', 'Before carriers list', 'This hook is displayed before the carrier list in Front Office', 1, 0),
-(64, 'displayOrderDetail', 'Order detail', 'This hook is displayed within the order\'s details in Front Office', 1, 0),
+(64, 'displayOrderDetail', 'Order detail', 'This hook is displayed within the order''s details in Front Office', 1, 0),
 (65, 'actionPaymentCCAdd', 'Payment CC added', '', 1, 0),
 (66, 'displayProductComparison', 'Extra product comparison', '', 1, 0),
 (67, 'actionCategoryAdd', 'Category creation', 'This hook is displayed when a category is created', 1, 0),
 (68, 'actionCategoryUpdate', 'Category modification', 'This hook is displayed when a category is modified', 1, 0),
 (69, 'actionCategoryDelete', 'Category deletion', 'This hook is displayed when a category is deleted', 1, 0),
-(70, 'actionBeforeAuthentication', 'Before authentication', 'This hook is displayed before the customer\'s authentication', 1, 0),
+(70, 'actionBeforeAuthentication', 'Before authentication', 'This hook is displayed before the customer''s authentication', 1, 0),
 (71, 'displayPaymentTop', 'Top of payment page', 'This hook is displayed at the top of the payment page', 1, 0),
 (72, 'actionHtaccessCreate', 'After htaccess creation', 'This hook is displayed after the htaccess creation', 1, 0),
 (73, 'actionAdminMetaSave', 'After saving the configuration in AdminMeta', 'This hook is displayed after saving the configuration in AdminMeta', 1, 0),
-(74, 'displayAttributeGroupForm', 'Add fields to the form \'attribute group\'', 'This hook adds fields to the form \'attribute group\'', 1, 0),
+(74, 'displayAttributeGroupForm', 'Add fields to the form ''attribute group''', 'This hook adds fields to the form ''attribute group''', 1, 0),
 (75, 'actionAttributeGroupSave', 'Saving an attribute group', 'This hook is called while saving an attributes group', 1, 0),
 (76, 'actionAttributeGroupDelete', 'Deleting attribute group', 'This hook is called while deleting an attributes  group', 1, 0),
-(77, 'displayFeatureForm', 'Add fields to the form \'feature\'', 'This hook adds fields to the form \'feature\'', 1, 0),
-(78, 'actionFeatureSave', 'Saving attributes\' features', 'This hook is called while saving an attributes features', 1, 0),
-(79, 'actionFeatureDelete', 'Deleting attributes\' features', 'This hook is called while deleting an attributes features', 1, 0),
+(77, 'displayFeatureForm', 'Add fields to the form ''feature''', 'This hook adds fields to the form ''feature''', 1, 0),
+(78, 'actionFeatureSave', 'Saving attributes'' features', 'This hook is called while saving an attributes features', 1, 0),
+(79, 'actionFeatureDelete', 'Deleting attributes'' features', 'This hook is called while deleting an attributes features', 1, 0),
 (80, 'actionProductSave', 'Saving products', 'This hook is called while saving products', 1, 0),
 (81, 'actionProductListOverride', 'Assign a products list to a category', 'This hook assigns a products list to a category', 1, 0),
 (82, 'displayAttributeGroupPostProcess', 'On post-process in admin attribute group', 'This hook is called on post-process in admin attribute group', 1, 0),
 (83, 'displayFeaturePostProcess', 'On post-process in admin feature', 'This hook is called on post-process in admin feature', 1, 0),
-(84, 'displayFeatureValueForm', 'Add fields to the form \'feature value\'', 'This hook adds fields to the form \'feature value\'', 1, 0),
+(84, 'displayFeatureValueForm', 'Add fields to the form ''feature value''', 'This hook adds fields to the form ''feature value''', 1, 0),
 (85, 'displayFeatureValuePostProcess', 'On post-process in admin feature value', 'This hook is called on post-process in admin feature value', 1, 0),
-(86, 'actionFeatureValueDelete', 'Deleting attributes\' features\' values', 'This hook is called while deleting an attributes features value', 1, 0),
+(86, 'actionFeatureValueDelete', 'Deleting attributes'' features'' values', 'This hook is called while deleting an attributes features value', 1, 0),
 (87, 'actionFeatureValueSave', 'Saving an attributes features value', 'This hook is called while saving an attributes features value', 1, 0),
-(88, 'displayAttributeForm', 'Add fields to the form \'attribute value\'', 'This hook adds fields to the form \'attribute value\'', 1, 0),
+(88, 'displayAttributeForm', 'Add fields to the form ''attribute value''', 'This hook adds fields to the form ''attribute value''', 1, 0),
 (89, 'actionAttributePostProcess', 'On post-process in admin feature value', 'This hook is called on post-process in admin feature value', 1, 0),
 (90, 'actionAttributeDelete', 'Deleting an attributes features value', 'This hook is called while deleting an attributes features value', 1, 0),
 (91, 'actionAttributeSave', 'Saving an attributes features value', 'This hook is called while saving an attributes features value', 1, 0),
 (92, 'actionTaxManager', 'Tax Manager Factory', '', 1, 0),
-(93, 'displayMyAccountBlock', 'My account block', 'This hook displays extra information within the \'my account\' block\"', 1, 0),
+(93, 'displayMyAccountBlock', 'My account block', 'This hook displays extra information within the ''my account'' block"', 1, 0),
 (94, 'actionModuleInstallBefore', 'actionModuleInstallBefore', '', 1, 0),
 (95, 'actionModuleInstallAfter', 'actionModuleInstallAfter', '', 1, 0),
 (96, 'displayHomeTab', 'Home Page Tabs', 'This hook displays new elements on the homepage tabs', 1, 1),
@@ -7510,7 +7529,7 @@ INSERT INTO `ps_hook` (`id_hook`, `name`, `title`, `description`, `position`, `l
 (124, 'actionObjectManufacturerUpdateAfter', 'actionObjectManufacturerUpdateAfter', '', 0, 0),
 (126, 'actionModuleRegisterHookAfter', 'actionModuleRegisterHookAfter', '', 0, 0),
 (127, 'actionModuleUnRegisterHookAfter', 'actionModuleUnRegisterHookAfter', '', 0, 0),
-(128, 'displayMyAccountBlockfooter', 'My account block', 'Display extra informations inside the \"my account\" block', 1, 0),
+(128, 'displayMyAccountBlockfooter', 'My account block', 'Display extra informations inside the "my account" block', 1, 0),
 (129, 'displayMobileTopSiteMap', 'displayMobileTopSiteMap', '', 1, 1),
 (130, 'displaySearch', 'displaySearch', '', 1, 1),
 (131, 'actionObjectSupplierDeleteAfter', 'actionObjectSupplierDeleteAfter', '', 0, 0),
@@ -7538,11 +7557,11 @@ INSERT INTO `ps_hook` (`id_hook`, `name`, `title`, `description`, `position`, `l
 -- Структура таблицы `ps_hook_alias`
 --
 
-CREATE TABLE `ps_hook_alias` (
-  `id_hook_alias` int(10) UNSIGNED NOT NULL,
+CREATE TABLE IF NOT EXISTS `ps_hook_alias` (
+  `id_hook_alias` int(10) unsigned NOT NULL,
   `alias` varchar(64) NOT NULL,
   `name` varchar(64) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=87 DEFAULT CHARSET=utf8;
 
 --
 -- Дамп данных таблицы `ps_hook_alias`
@@ -7642,11 +7661,11 @@ INSERT INTO `ps_hook_alias` (`id_hook_alias`, `alias`, `name`) VALUES
 -- Структура таблицы `ps_hook_module`
 --
 
-CREATE TABLE `ps_hook_module` (
-  `id_module` int(10) UNSIGNED NOT NULL,
-  `id_shop` int(11) UNSIGNED NOT NULL DEFAULT '1',
-  `id_hook` int(10) UNSIGNED NOT NULL,
-  `position` tinyint(2) UNSIGNED NOT NULL
+CREATE TABLE IF NOT EXISTS `ps_hook_module` (
+  `id_module` int(10) unsigned NOT NULL,
+  `id_shop` int(11) unsigned NOT NULL DEFAULT '1',
+  `id_hook` int(10) unsigned NOT NULL,
+  `position` tinyint(2) unsigned NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
@@ -7697,13 +7716,13 @@ INSERT INTO `ps_hook_module` (`id_module`, `id_shop`, `id_hook`, `position`) VAL
 (12, 1, 119, 1),
 (12, 1, 120, 1),
 (12, 1, 121, 1),
+(14, 1, 15, 1),
 (16, 1, 122, 1),
 (16, 1, 123, 1),
 (16, 1, 124, 1),
 (17, 1, 126, 1),
 (17, 1, 127, 1),
 (20, 1, 31, 1),
-(22, 1, 15, 1),
 (22, 1, 129, 1),
 (25, 1, 131, 1),
 (25, 1, 132, 1),
@@ -7741,13 +7760,13 @@ INSERT INTO `ps_hook_module` (`id_module`, `id_shop`, `id_hook`, `position`) VAL
 (11, 1, 67, 2),
 (11, 1, 68, 2),
 (11, 1, 69, 2),
-(14, 1, 15, 2),
 (15, 1, 26, 2),
 (18, 1, 126, 2),
 (18, 1, 127, 2),
 (19, 1, 13, 2),
 (19, 1, 14, 2),
 (19, 1, 17, 2),
+(22, 1, 15, 2),
 (27, 1, 108, 2),
 (27, 1, 109, 2),
 (27, 1, 118, 2),
@@ -7863,13 +7882,13 @@ INSERT INTO `ps_hook_module` (`id_module`, `id_shop`, `id_hook`, `position`) VAL
 -- Структура таблицы `ps_hook_module_exceptions`
 --
 
-CREATE TABLE `ps_hook_module_exceptions` (
-  `id_hook_module_exceptions` int(10) UNSIGNED NOT NULL,
-  `id_shop` int(11) UNSIGNED NOT NULL DEFAULT '1',
-  `id_module` int(10) UNSIGNED NOT NULL,
-  `id_hook` int(10) UNSIGNED NOT NULL,
+CREATE TABLE IF NOT EXISTS `ps_hook_module_exceptions` (
+  `id_hook_module_exceptions` int(10) unsigned NOT NULL,
+  `id_shop` int(11) unsigned NOT NULL DEFAULT '1',
+  `id_module` int(10) unsigned NOT NULL,
+  `id_hook` int(10) unsigned NOT NULL,
   `file_name` varchar(255) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=12 DEFAULT CHARSET=utf8;
 
 --
 -- Дамп данных таблицы `ps_hook_module_exceptions`
@@ -7887,12 +7906,12 @@ INSERT INTO `ps_hook_module_exceptions` (`id_hook_module_exceptions`, `id_shop`,
 -- Структура таблицы `ps_image`
 --
 
-CREATE TABLE `ps_image` (
-  `id_image` int(10) UNSIGNED NOT NULL,
-  `id_product` int(10) UNSIGNED NOT NULL,
-  `position` smallint(2) UNSIGNED NOT NULL DEFAULT '0',
-  `cover` tinyint(1) UNSIGNED DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+CREATE TABLE IF NOT EXISTS `ps_image` (
+  `id_image` int(10) unsigned NOT NULL,
+  `id_product` int(10) unsigned NOT NULL,
+  `position` smallint(2) unsigned NOT NULL DEFAULT '0',
+  `cover` tinyint(1) unsigned DEFAULT NULL
+) ENGINE=InnoDB AUTO_INCREMENT=866 DEFAULT CHARSET=utf8;
 
 --
 -- Дамп данных таблицы `ps_image`
@@ -8769,9 +8788,9 @@ INSERT INTO `ps_image` (`id_image`, `id_product`, `position`, `cover`) VALUES
 -- Структура таблицы `ps_image_lang`
 --
 
-CREATE TABLE `ps_image_lang` (
-  `id_image` int(10) UNSIGNED NOT NULL,
-  `id_lang` int(10) UNSIGNED NOT NULL,
+CREATE TABLE IF NOT EXISTS `ps_image_lang` (
+  `id_image` int(10) unsigned NOT NULL,
+  `id_lang` int(10) unsigned NOT NULL,
   `legend` varchar(128) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
@@ -9650,11 +9669,11 @@ INSERT INTO `ps_image_lang` (`id_image`, `id_lang`, `legend`) VALUES
 -- Структура таблицы `ps_image_shop`
 --
 
-CREATE TABLE `ps_image_shop` (
-  `id_product` int(10) UNSIGNED NOT NULL,
-  `id_image` int(11) UNSIGNED NOT NULL,
-  `id_shop` int(11) UNSIGNED NOT NULL,
-  `cover` tinyint(1) UNSIGNED DEFAULT NULL
+CREATE TABLE IF NOT EXISTS `ps_image_shop` (
+  `id_product` int(10) unsigned NOT NULL,
+  `id_image` int(11) unsigned NOT NULL,
+  `id_shop` int(11) unsigned NOT NULL,
+  `cover` tinyint(1) unsigned DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
@@ -10532,18 +10551,18 @@ INSERT INTO `ps_image_shop` (`id_product`, `id_image`, `id_shop`, `cover`) VALUE
 -- Структура таблицы `ps_image_type`
 --
 
-CREATE TABLE `ps_image_type` (
-  `id_image_type` int(10) UNSIGNED NOT NULL,
+CREATE TABLE IF NOT EXISTS `ps_image_type` (
+  `id_image_type` int(10) unsigned NOT NULL,
   `name` varchar(64) NOT NULL,
-  `width` int(10) UNSIGNED NOT NULL,
-  `height` int(10) UNSIGNED NOT NULL,
+  `width` int(10) unsigned NOT NULL,
+  `height` int(10) unsigned NOT NULL,
   `products` tinyint(1) NOT NULL DEFAULT '1',
   `categories` tinyint(1) NOT NULL DEFAULT '1',
   `manufacturers` tinyint(1) NOT NULL DEFAULT '1',
   `suppliers` tinyint(1) NOT NULL DEFAULT '1',
   `scenes` tinyint(1) NOT NULL DEFAULT '1',
   `stores` tinyint(1) NOT NULL DEFAULT '1'
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=19 DEFAULT CHARSET=utf8;
 
 --
 -- Дамп данных таблицы `ps_image_type`
@@ -10566,7 +10585,7 @@ INSERT INTO `ps_image_type` (`id_image_type`, `name`, `width`, `height`, `produc
 -- Структура таблицы `ps_import_match`
 --
 
-CREATE TABLE `ps_import_match` (
+CREATE TABLE IF NOT EXISTS `ps_import_match` (
   `id_import_match` int(10) NOT NULL,
   `name` varchar(32) NOT NULL,
   `match` text NOT NULL,
@@ -10579,10 +10598,10 @@ CREATE TABLE `ps_import_match` (
 -- Структура таблицы `ps_info`
 --
 
-CREATE TABLE `ps_info` (
-  `id_info` int(10) UNSIGNED NOT NULL,
-  `id_shop` int(10) UNSIGNED DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+CREATE TABLE IF NOT EXISTS `ps_info` (
+  `id_info` int(10) unsigned NOT NULL,
+  `id_shop` int(10) unsigned DEFAULT NULL
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8;
 
 --
 -- Дамп данных таблицы `ps_info`
@@ -10598,9 +10617,9 @@ INSERT INTO `ps_info` (`id_info`, `id_shop`) VALUES
 -- Структура таблицы `ps_info_lang`
 --
 
-CREATE TABLE `ps_info_lang` (
-  `id_info` int(10) UNSIGNED NOT NULL,
-  `id_lang` int(10) UNSIGNED NOT NULL,
+CREATE TABLE IF NOT EXISTS `ps_info_lang` (
+  `id_info` int(10) unsigned NOT NULL,
+  `id_lang` int(10) unsigned NOT NULL,
   `text` text NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
@@ -10609,8 +10628,8 @@ CREATE TABLE `ps_info_lang` (
 --
 
 INSERT INTO `ps_info_lang` (`id_info`, `id_lang`, `text`) VALUES
-(1, 1, '<ul>\n<li><em class=\"icon-truck\" id=\"icon-truck\"></em>\n<div class=\"type-text\">\n<h3>Lorem Ipsum</h3>\n<p>Lorem ipsum dolor sit amet conse ctetur voluptate velit esse cillum dolore eu</p>\n</div>\n</li>\n<li><em class=\"icon-phone\" id=\"icon-phone\"></em>\n<div class=\"type-text\">\n<h3>Dolor Sit Amet</h3>\n<p>Lorem ipsum dolor sit amet conse ctetur voluptate velit esse cillum dolore eu</p>\n</div>\n</li>\n<li><em class=\"icon-credit-card\" id=\"icon-credit-card\"></em>\n<div class=\"type-text\">\n<h3>Ctetur Voluptate</h3>\n<p>Lorem ipsum dolor sit amet conse ctetur voluptate velit esse cillum dolore eu</p>\n</div>\n</li>\n</ul>'),
-(2, 1, '<h3>Custom Block</h3>\n<p><strong class=\"dark\">Lorem ipsum dolor sit amet conse ctetu</strong></p>\n<p>Sit amet conse ctetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit.</p>');
+(1, 1, '<ul>\n<li><em class="icon-truck" id="icon-truck"></em>\n<div class="type-text">\n<h3>Lorem Ipsum</h3>\n<p>Lorem ipsum dolor sit amet conse ctetur voluptate velit esse cillum dolore eu</p>\n</div>\n</li>\n<li><em class="icon-phone" id="icon-phone"></em>\n<div class="type-text">\n<h3>Dolor Sit Amet</h3>\n<p>Lorem ipsum dolor sit amet conse ctetur voluptate velit esse cillum dolore eu</p>\n</div>\n</li>\n<li><em class="icon-credit-card" id="icon-credit-card"></em>\n<div class="type-text">\n<h3>Ctetur Voluptate</h3>\n<p>Lorem ipsum dolor sit amet conse ctetur voluptate velit esse cillum dolore eu</p>\n</div>\n</li>\n</ul>'),
+(2, 1, '<h3>Custom Block</h3>\n<p><strong class="dark">Lorem ipsum dolor sit amet conse ctetu</strong></p>\n<p>Sit amet conse ctetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit.</p>');
 
 -- --------------------------------------------------------
 
@@ -10618,16 +10637,16 @@ INSERT INTO `ps_info_lang` (`id_info`, `id_lang`, `text`) VALUES
 -- Структура таблицы `ps_lang`
 --
 
-CREATE TABLE `ps_lang` (
-  `id_lang` int(10) UNSIGNED NOT NULL,
+CREATE TABLE IF NOT EXISTS `ps_lang` (
+  `id_lang` int(10) unsigned NOT NULL,
   `name` varchar(32) NOT NULL,
-  `active` tinyint(3) UNSIGNED NOT NULL DEFAULT '0',
+  `active` tinyint(3) unsigned NOT NULL DEFAULT '0',
   `iso_code` char(2) NOT NULL,
   `language_code` char(5) NOT NULL,
   `date_format_lite` char(32) NOT NULL DEFAULT 'Y-m-d',
   `date_format_full` char(32) NOT NULL DEFAULT 'Y-m-d H:i:s',
   `is_rtl` tinyint(1) NOT NULL DEFAULT '0'
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
 
 --
 -- Дамп данных таблицы `ps_lang`
@@ -10642,9 +10661,9 @@ INSERT INTO `ps_lang` (`id_lang`, `name`, `active`, `iso_code`, `language_code`,
 -- Структура таблицы `ps_lang_shop`
 --
 
-CREATE TABLE `ps_lang_shop` (
-  `id_lang` int(11) UNSIGNED NOT NULL,
-  `id_shop` int(11) UNSIGNED NOT NULL
+CREATE TABLE IF NOT EXISTS `ps_lang_shop` (
+  `id_lang` int(11) unsigned NOT NULL,
+  `id_shop` int(11) unsigned NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
@@ -10660,16 +10679,16 @@ INSERT INTO `ps_lang_shop` (`id_lang`, `id_shop`) VALUES
 -- Структура таблицы `ps_layered_category`
 --
 
-CREATE TABLE `ps_layered_category` (
-  `id_layered_category` int(10) UNSIGNED NOT NULL,
-  `id_shop` int(11) UNSIGNED NOT NULL,
-  `id_category` int(10) UNSIGNED NOT NULL,
-  `id_value` int(10) UNSIGNED DEFAULT '0',
+CREATE TABLE IF NOT EXISTS `ps_layered_category` (
+  `id_layered_category` int(10) unsigned NOT NULL,
+  `id_shop` int(11) unsigned NOT NULL,
+  `id_category` int(10) unsigned NOT NULL,
+  `id_value` int(10) unsigned DEFAULT '0',
   `type` enum('category','id_feature','id_attribute_group','quantity','condition','manufacturer','weight','price') NOT NULL,
-  `position` int(10) UNSIGNED NOT NULL,
-  `filter_type` int(10) UNSIGNED NOT NULL DEFAULT '0',
-  `filter_show_limit` int(10) UNSIGNED NOT NULL DEFAULT '0'
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+  `position` int(10) unsigned NOT NULL,
+  `filter_type` int(10) unsigned NOT NULL DEFAULT '0',
+  `filter_show_limit` int(10) unsigned NOT NULL DEFAULT '0'
+) ENGINE=InnoDB AUTO_INCREMENT=89 DEFAULT CHARSET=latin1;
 
 --
 -- Дамп данных таблицы `ps_layered_category`
@@ -10687,94 +10706,83 @@ INSERT INTO `ps_layered_category` (`id_layered_category`, `id_shop`, `id_categor
 (9, 1, 10, NULL, 'condition', 9, 0, 0),
 (10, 1, 10, NULL, 'weight', 10, 0, 0),
 (11, 1, 10, NULL, 'price', 11, 0, 0),
-(12, 1, 11, NULL, 'category', 1, 0, 0),
-(13, 1, 11, 1, 'id_attribute_group', 2, 0, 0),
-(14, 1, 11, 3, 'id_attribute_group', 3, 0, 0),
-(15, 1, 11, 5, 'id_feature', 4, 0, 0),
-(16, 1, 11, 6, 'id_feature', 5, 0, 0),
-(17, 1, 11, 7, 'id_feature', 6, 0, 0),
-(18, 1, 11, NULL, 'quantity', 7, 0, 0),
-(19, 1, 11, NULL, 'manufacturer', 8, 0, 0),
-(20, 1, 11, NULL, 'condition', 9, 0, 0),
-(21, 1, 11, NULL, 'weight', 10, 0, 0),
-(22, 1, 11, NULL, 'price', 11, 0, 0),
-(23, 1, 3, NULL, 'category', 1, 0, 0),
-(24, 1, 3, 1, 'id_attribute_group', 2, 0, 0),
-(25, 1, 3, 3, 'id_attribute_group', 3, 0, 0),
-(26, 1, 3, 5, 'id_feature', 4, 0, 0),
-(27, 1, 3, 6, 'id_feature', 5, 0, 0),
-(28, 1, 3, 7, 'id_feature', 6, 0, 0),
-(29, 1, 3, NULL, 'quantity', 7, 0, 0),
-(30, 1, 3, NULL, 'manufacturer', 8, 0, 0),
-(31, 1, 3, NULL, 'condition', 9, 0, 0),
-(32, 1, 3, NULL, 'weight', 10, 0, 0),
-(33, 1, 3, NULL, 'price', 11, 0, 0),
-(34, 1, 4, NULL, 'category', 1, 0, 0),
-(35, 1, 4, 1, 'id_attribute_group', 2, 0, 0),
-(36, 1, 4, 3, 'id_attribute_group', 3, 0, 0),
-(37, 1, 4, 5, 'id_feature', 4, 0, 0),
-(38, 1, 4, 6, 'id_feature', 5, 0, 0),
-(39, 1, 4, 7, 'id_feature', 6, 0, 0),
-(40, 1, 4, NULL, 'quantity', 7, 0, 0),
-(41, 1, 4, NULL, 'manufacturer', 8, 0, 0),
-(42, 1, 4, NULL, 'condition', 9, 0, 0),
-(43, 1, 4, NULL, 'weight', 10, 0, 0),
-(44, 1, 4, NULL, 'price', 11, 0, 0),
-(45, 1, 5, NULL, 'category', 1, 0, 0),
-(46, 1, 5, 1, 'id_attribute_group', 2, 0, 0),
-(47, 1, 5, 3, 'id_attribute_group', 3, 0, 0),
-(48, 1, 5, 5, 'id_feature', 4, 0, 0),
-(49, 1, 5, 6, 'id_feature', 5, 0, 0),
-(50, 1, 5, 7, 'id_feature', 6, 0, 0),
-(51, 1, 5, NULL, 'quantity', 7, 0, 0),
-(52, 1, 5, NULL, 'manufacturer', 8, 0, 0),
-(53, 1, 5, NULL, 'condition', 9, 0, 0),
-(54, 1, 5, NULL, 'weight', 10, 0, 0),
-(55, 1, 5, NULL, 'price', 11, 0, 0),
-(56, 1, 7, NULL, 'category', 1, 0, 0),
-(57, 1, 7, 1, 'id_attribute_group', 2, 0, 0),
-(58, 1, 7, 3, 'id_attribute_group', 3, 0, 0),
-(59, 1, 7, 5, 'id_feature', 4, 0, 0),
-(60, 1, 7, 6, 'id_feature', 5, 0, 0),
-(61, 1, 7, 7, 'id_feature', 6, 0, 0),
-(62, 1, 7, NULL, 'quantity', 7, 0, 0),
-(63, 1, 7, NULL, 'manufacturer', 8, 0, 0),
-(64, 1, 7, NULL, 'condition', 9, 0, 0),
-(65, 1, 7, NULL, 'weight', 10, 0, 0),
-(66, 1, 7, NULL, 'price', 11, 0, 0),
-(67, 1, 8, NULL, 'category', 1, 0, 0),
-(68, 1, 8, 1, 'id_attribute_group', 2, 0, 0),
-(69, 1, 8, 3, 'id_attribute_group', 3, 0, 0),
-(70, 1, 8, 5, 'id_feature', 4, 0, 0),
-(71, 1, 8, 6, 'id_feature', 5, 0, 0),
-(72, 1, 8, 7, 'id_feature', 6, 0, 0),
-(73, 1, 8, NULL, 'quantity', 7, 0, 0),
-(74, 1, 8, NULL, 'manufacturer', 8, 0, 0),
-(75, 1, 8, NULL, 'condition', 9, 0, 0),
-(76, 1, 8, NULL, 'weight', 10, 0, 0),
-(77, 1, 8, NULL, 'price', 11, 0, 0),
-(78, 1, 9, NULL, 'category', 1, 0, 0),
-(79, 1, 9, 1, 'id_attribute_group', 2, 0, 0),
-(80, 1, 9, 3, 'id_attribute_group', 3, 0, 0),
-(81, 1, 9, 5, 'id_feature', 4, 0, 0),
-(82, 1, 9, 6, 'id_feature', 5, 0, 0),
-(83, 1, 9, 7, 'id_feature', 6, 0, 0),
-(84, 1, 9, NULL, 'quantity', 7, 0, 0),
-(85, 1, 9, NULL, 'manufacturer', 8, 0, 0),
-(86, 1, 9, NULL, 'condition', 9, 0, 0),
-(87, 1, 9, NULL, 'weight', 10, 0, 0),
-(88, 1, 9, NULL, 'price', 11, 0, 0),
-(89, 1, 2, NULL, 'category', 1, 0, 0),
-(90, 1, 2, 1, 'id_attribute_group', 2, 0, 0),
-(91, 1, 2, 3, 'id_attribute_group', 3, 0, 0),
-(92, 1, 2, 5, 'id_feature', 4, 0, 0),
-(93, 1, 2, 6, 'id_feature', 5, 0, 0),
-(94, 1, 2, 7, 'id_feature', 6, 0, 0),
-(95, 1, 2, NULL, 'quantity', 7, 0, 0),
-(96, 1, 2, NULL, 'manufacturer', 8, 0, 0),
-(97, 1, 2, NULL, 'condition', 9, 0, 0),
-(98, 1, 2, NULL, 'weight', 10, 0, 0),
-(99, 1, 2, NULL, 'price', 11, 0, 0);
+(12, 1, 3, NULL, 'category', 1, 0, 0),
+(13, 1, 3, 1, 'id_attribute_group', 2, 0, 0),
+(14, 1, 3, 3, 'id_attribute_group', 3, 0, 0),
+(15, 1, 3, 5, 'id_feature', 4, 0, 0),
+(16, 1, 3, 6, 'id_feature', 5, 0, 0),
+(17, 1, 3, 7, 'id_feature', 6, 0, 0),
+(18, 1, 3, NULL, 'quantity', 7, 0, 0),
+(19, 1, 3, NULL, 'manufacturer', 8, 0, 0),
+(20, 1, 3, NULL, 'condition', 9, 0, 0),
+(21, 1, 3, NULL, 'weight', 10, 0, 0),
+(22, 1, 3, NULL, 'price', 11, 0, 0),
+(23, 1, 4, NULL, 'category', 1, 0, 0),
+(24, 1, 4, 1, 'id_attribute_group', 2, 0, 0),
+(25, 1, 4, 3, 'id_attribute_group', 3, 0, 0),
+(26, 1, 4, 5, 'id_feature', 4, 0, 0),
+(27, 1, 4, 6, 'id_feature', 5, 0, 0),
+(28, 1, 4, 7, 'id_feature', 6, 0, 0),
+(29, 1, 4, NULL, 'quantity', 7, 0, 0),
+(30, 1, 4, NULL, 'manufacturer', 8, 0, 0),
+(31, 1, 4, NULL, 'condition', 9, 0, 0),
+(32, 1, 4, NULL, 'weight', 10, 0, 0),
+(33, 1, 4, NULL, 'price', 11, 0, 0),
+(34, 1, 5, NULL, 'category', 1, 0, 0),
+(35, 1, 5, 1, 'id_attribute_group', 2, 0, 0),
+(36, 1, 5, 3, 'id_attribute_group', 3, 0, 0),
+(37, 1, 5, 5, 'id_feature', 4, 0, 0),
+(38, 1, 5, 6, 'id_feature', 5, 0, 0),
+(39, 1, 5, 7, 'id_feature', 6, 0, 0),
+(40, 1, 5, NULL, 'quantity', 7, 0, 0),
+(41, 1, 5, NULL, 'manufacturer', 8, 0, 0),
+(42, 1, 5, NULL, 'condition', 9, 0, 0),
+(43, 1, 5, NULL, 'weight', 10, 0, 0),
+(44, 1, 5, NULL, 'price', 11, 0, 0),
+(45, 1, 7, NULL, 'category', 1, 0, 0),
+(46, 1, 7, 1, 'id_attribute_group', 2, 0, 0),
+(47, 1, 7, 3, 'id_attribute_group', 3, 0, 0),
+(48, 1, 7, 5, 'id_feature', 4, 0, 0),
+(49, 1, 7, 6, 'id_feature', 5, 0, 0),
+(50, 1, 7, 7, 'id_feature', 6, 0, 0),
+(51, 1, 7, NULL, 'quantity', 7, 0, 0),
+(52, 1, 7, NULL, 'manufacturer', 8, 0, 0),
+(53, 1, 7, NULL, 'condition', 9, 0, 0),
+(54, 1, 7, NULL, 'weight', 10, 0, 0),
+(55, 1, 7, NULL, 'price', 11, 0, 0),
+(56, 1, 8, NULL, 'category', 1, 0, 0),
+(57, 1, 8, 1, 'id_attribute_group', 2, 0, 0),
+(58, 1, 8, 3, 'id_attribute_group', 3, 0, 0),
+(59, 1, 8, 5, 'id_feature', 4, 0, 0),
+(60, 1, 8, 6, 'id_feature', 5, 0, 0),
+(61, 1, 8, 7, 'id_feature', 6, 0, 0),
+(62, 1, 8, NULL, 'quantity', 7, 0, 0),
+(63, 1, 8, NULL, 'manufacturer', 8, 0, 0),
+(64, 1, 8, NULL, 'condition', 9, 0, 0),
+(65, 1, 8, NULL, 'weight', 10, 0, 0),
+(66, 1, 8, NULL, 'price', 11, 0, 0),
+(67, 1, 9, NULL, 'category', 1, 0, 0),
+(68, 1, 9, 1, 'id_attribute_group', 2, 0, 0),
+(69, 1, 9, 3, 'id_attribute_group', 3, 0, 0),
+(70, 1, 9, 5, 'id_feature', 4, 0, 0),
+(71, 1, 9, 6, 'id_feature', 5, 0, 0),
+(72, 1, 9, 7, 'id_feature', 6, 0, 0),
+(73, 1, 9, NULL, 'quantity', 7, 0, 0),
+(74, 1, 9, NULL, 'manufacturer', 8, 0, 0),
+(75, 1, 9, NULL, 'condition', 9, 0, 0),
+(76, 1, 9, NULL, 'weight', 10, 0, 0),
+(77, 1, 9, NULL, 'price', 11, 0, 0),
+(78, 1, 2, NULL, 'category', 1, 0, 0),
+(79, 1, 2, 1, 'id_attribute_group', 2, 0, 0),
+(80, 1, 2, 3, 'id_attribute_group', 3, 0, 0),
+(81, 1, 2, 5, 'id_feature', 4, 0, 0),
+(82, 1, 2, 6, 'id_feature', 5, 0, 0),
+(83, 1, 2, 7, 'id_feature', 6, 0, 0),
+(84, 1, 2, NULL, 'quantity', 7, 0, 0),
+(85, 1, 2, NULL, 'manufacturer', 8, 0, 0),
+(86, 1, 2, NULL, 'condition', 9, 0, 0),
+(87, 1, 2, NULL, 'weight', 10, 0, 0),
+(88, 1, 2, NULL, 'price', 11, 0, 0);
 
 -- --------------------------------------------------------
 
@@ -10782,28 +10790,28 @@ INSERT INTO `ps_layered_category` (`id_layered_category`, `id_shop`, `id_categor
 -- Структура таблицы `ps_layered_filter`
 --
 
-CREATE TABLE `ps_layered_filter` (
-  `id_layered_filter` int(10) UNSIGNED NOT NULL,
+CREATE TABLE IF NOT EXISTS `ps_layered_filter` (
+  `id_layered_filter` int(10) unsigned NOT NULL,
   `name` varchar(64) NOT NULL,
   `filters` text,
-  `n_categories` int(10) UNSIGNED NOT NULL,
+  `n_categories` int(10) unsigned NOT NULL,
   `date_add` datetime NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=10 DEFAULT CHARSET=utf8;
 
 --
 -- Дамп данных таблицы `ps_layered_filter`
 --
 
 INSERT INTO `ps_layered_filter` (`id_layered_filter`, `name`, `filters`, `n_categories`, `date_add`) VALUES
-(1, 'Мой шаблон 2018-08-10', 'a:13:{s:10:\"categories\";a:9:{i:0;i:2;i:1;i:3;i:2;i:4;i:3;i:5;i:4;i:7;i:5;i:8;i:6;i:9;i:7;i:10;i:8;i:11;}s:9:\"shop_list\";a:1:{i:1;i:1;}s:31:\"layered_selection_subcategories\";a:2:{s:11:\"filter_type\";i:0;s:17:\"filter_show_limit\";i:0;}s:22:\"layered_selection_ag_1\";a:2:{s:11:\"filter_type\";i:0;s:17:\"filter_show_limit\";i:0;}s:22:\"layered_selection_ag_3\";a:2:{s:11:\"filter_type\";i:0;s:17:\"filter_show_limit\";i:0;}s:24:\"layered_selection_feat_5\";a:2:{s:11:\"filter_type\";i:0;s:17:\"filter_show_limit\";i:0;}s:24:\"layered_selection_feat_6\";a:2:{s:11:\"filter_type\";i:0;s:17:\"filter_show_limit\";i:0;}s:24:\"layered_selection_feat_7\";a:2:{s:11:\"filter_type\";i:0;s:17:\"filter_show_limit\";i:0;}s:23:\"layered_selection_stock\";a:2:{s:11:\"filter_type\";i:0;s:17:\"filter_show_limit\";i:0;}s:30:\"layered_selection_manufacturer\";a:2:{s:11:\"filter_type\";i:0;s:17:\"filter_show_limit\";i:0;}s:27:\"layered_selection_condition\";a:2:{s:11:\"filter_type\";i:0;s:17:\"filter_show_limit\";i:0;}s:31:\"layered_selection_weight_slider\";a:2:{s:11:\"filter_type\";i:0;s:17:\"filter_show_limit\";i:0;}s:30:\"layered_selection_price_slider\";a:2:{s:11:\"filter_type\";i:0;s:17:\"filter_show_limit\";i:0;}}', 9, '2018-08-10 15:51:52'),
-(2, 'Мой шаблон 2018-08-10', 'a:13:{s:10:\"categories\";a:1:{i:0;i:3;}s:9:\"shop_list\";a:1:{i:1;i:1;}s:31:\"layered_selection_subcategories\";a:2:{s:11:\"filter_type\";i:0;s:17:\"filter_show_limit\";i:0;}s:22:\"layered_selection_ag_1\";a:2:{s:11:\"filter_type\";i:0;s:17:\"filter_show_limit\";i:0;}s:22:\"layered_selection_ag_3\";a:2:{s:11:\"filter_type\";i:0;s:17:\"filter_show_limit\";i:0;}s:24:\"layered_selection_feat_5\";a:2:{s:11:\"filter_type\";i:0;s:17:\"filter_show_limit\";i:0;}s:24:\"layered_selection_feat_6\";a:2:{s:11:\"filter_type\";i:0;s:17:\"filter_show_limit\";i:0;}s:24:\"layered_selection_feat_7\";a:2:{s:11:\"filter_type\";i:0;s:17:\"filter_show_limit\";i:0;}s:23:\"layered_selection_stock\";a:2:{s:11:\"filter_type\";i:0;s:17:\"filter_show_limit\";i:0;}s:30:\"layered_selection_manufacturer\";a:2:{s:11:\"filter_type\";i:0;s:17:\"filter_show_limit\";i:0;}s:27:\"layered_selection_condition\";a:2:{s:11:\"filter_type\";i:0;s:17:\"filter_show_limit\";i:0;}s:31:\"layered_selection_weight_slider\";a:2:{s:11:\"filter_type\";i:0;s:17:\"filter_show_limit\";i:0;}s:30:\"layered_selection_price_slider\";a:2:{s:11:\"filter_type\";i:0;s:17:\"filter_show_limit\";i:0;}}', 1, '2018-08-10 16:48:24'),
-(3, 'Мой шаблон 2018-08-10', 'a:13:{s:10:\"categories\";a:1:{i:0;i:4;}s:9:\"shop_list\";a:1:{i:1;i:1;}s:31:\"layered_selection_subcategories\";a:2:{s:11:\"filter_type\";i:0;s:17:\"filter_show_limit\";i:0;}s:22:\"layered_selection_ag_1\";a:2:{s:11:\"filter_type\";i:0;s:17:\"filter_show_limit\";i:0;}s:22:\"layered_selection_ag_3\";a:2:{s:11:\"filter_type\";i:0;s:17:\"filter_show_limit\";i:0;}s:24:\"layered_selection_feat_5\";a:2:{s:11:\"filter_type\";i:0;s:17:\"filter_show_limit\";i:0;}s:24:\"layered_selection_feat_6\";a:2:{s:11:\"filter_type\";i:0;s:17:\"filter_show_limit\";i:0;}s:24:\"layered_selection_feat_7\";a:2:{s:11:\"filter_type\";i:0;s:17:\"filter_show_limit\";i:0;}s:23:\"layered_selection_stock\";a:2:{s:11:\"filter_type\";i:0;s:17:\"filter_show_limit\";i:0;}s:30:\"layered_selection_manufacturer\";a:2:{s:11:\"filter_type\";i:0;s:17:\"filter_show_limit\";i:0;}s:27:\"layered_selection_condition\";a:2:{s:11:\"filter_type\";i:0;s:17:\"filter_show_limit\";i:0;}s:31:\"layered_selection_weight_slider\";a:2:{s:11:\"filter_type\";i:0;s:17:\"filter_show_limit\";i:0;}s:30:\"layered_selection_price_slider\";a:2:{s:11:\"filter_type\";i:0;s:17:\"filter_show_limit\";i:0;}}', 1, '2018-08-10 16:48:24'),
-(4, 'Мой шаблон 2018-08-10', 'a:13:{s:10:\"categories\";a:1:{i:0;i:5;}s:9:\"shop_list\";a:1:{i:1;i:1;}s:31:\"layered_selection_subcategories\";a:2:{s:11:\"filter_type\";i:0;s:17:\"filter_show_limit\";i:0;}s:22:\"layered_selection_ag_1\";a:2:{s:11:\"filter_type\";i:0;s:17:\"filter_show_limit\";i:0;}s:22:\"layered_selection_ag_3\";a:2:{s:11:\"filter_type\";i:0;s:17:\"filter_show_limit\";i:0;}s:24:\"layered_selection_feat_5\";a:2:{s:11:\"filter_type\";i:0;s:17:\"filter_show_limit\";i:0;}s:24:\"layered_selection_feat_6\";a:2:{s:11:\"filter_type\";i:0;s:17:\"filter_show_limit\";i:0;}s:24:\"layered_selection_feat_7\";a:2:{s:11:\"filter_type\";i:0;s:17:\"filter_show_limit\";i:0;}s:23:\"layered_selection_stock\";a:2:{s:11:\"filter_type\";i:0;s:17:\"filter_show_limit\";i:0;}s:30:\"layered_selection_manufacturer\";a:2:{s:11:\"filter_type\";i:0;s:17:\"filter_show_limit\";i:0;}s:27:\"layered_selection_condition\";a:2:{s:11:\"filter_type\";i:0;s:17:\"filter_show_limit\";i:0;}s:31:\"layered_selection_weight_slider\";a:2:{s:11:\"filter_type\";i:0;s:17:\"filter_show_limit\";i:0;}s:30:\"layered_selection_price_slider\";a:2:{s:11:\"filter_type\";i:0;s:17:\"filter_show_limit\";i:0;}}', 1, '2018-08-10 16:48:24'),
-(5, 'Мой шаблон 2018-08-10', 'a:13:{s:10:\"categories\";a:1:{i:0;i:7;}s:9:\"shop_list\";a:1:{i:1;i:1;}s:31:\"layered_selection_subcategories\";a:2:{s:11:\"filter_type\";i:0;s:17:\"filter_show_limit\";i:0;}s:22:\"layered_selection_ag_1\";a:2:{s:11:\"filter_type\";i:0;s:17:\"filter_show_limit\";i:0;}s:22:\"layered_selection_ag_3\";a:2:{s:11:\"filter_type\";i:0;s:17:\"filter_show_limit\";i:0;}s:24:\"layered_selection_feat_5\";a:2:{s:11:\"filter_type\";i:0;s:17:\"filter_show_limit\";i:0;}s:24:\"layered_selection_feat_6\";a:2:{s:11:\"filter_type\";i:0;s:17:\"filter_show_limit\";i:0;}s:24:\"layered_selection_feat_7\";a:2:{s:11:\"filter_type\";i:0;s:17:\"filter_show_limit\";i:0;}s:23:\"layered_selection_stock\";a:2:{s:11:\"filter_type\";i:0;s:17:\"filter_show_limit\";i:0;}s:30:\"layered_selection_manufacturer\";a:2:{s:11:\"filter_type\";i:0;s:17:\"filter_show_limit\";i:0;}s:27:\"layered_selection_condition\";a:2:{s:11:\"filter_type\";i:0;s:17:\"filter_show_limit\";i:0;}s:31:\"layered_selection_weight_slider\";a:2:{s:11:\"filter_type\";i:0;s:17:\"filter_show_limit\";i:0;}s:30:\"layered_selection_price_slider\";a:2:{s:11:\"filter_type\";i:0;s:17:\"filter_show_limit\";i:0;}}', 1, '2018-08-10 16:48:24'),
-(6, 'Мой шаблон 2018-08-10', 'a:13:{s:10:\"categories\";a:1:{i:0;i:8;}s:9:\"shop_list\";a:1:{i:1;i:1;}s:31:\"layered_selection_subcategories\";a:2:{s:11:\"filter_type\";i:0;s:17:\"filter_show_limit\";i:0;}s:22:\"layered_selection_ag_1\";a:2:{s:11:\"filter_type\";i:0;s:17:\"filter_show_limit\";i:0;}s:22:\"layered_selection_ag_3\";a:2:{s:11:\"filter_type\";i:0;s:17:\"filter_show_limit\";i:0;}s:24:\"layered_selection_feat_5\";a:2:{s:11:\"filter_type\";i:0;s:17:\"filter_show_limit\";i:0;}s:24:\"layered_selection_feat_6\";a:2:{s:11:\"filter_type\";i:0;s:17:\"filter_show_limit\";i:0;}s:24:\"layered_selection_feat_7\";a:2:{s:11:\"filter_type\";i:0;s:17:\"filter_show_limit\";i:0;}s:23:\"layered_selection_stock\";a:2:{s:11:\"filter_type\";i:0;s:17:\"filter_show_limit\";i:0;}s:30:\"layered_selection_manufacturer\";a:2:{s:11:\"filter_type\";i:0;s:17:\"filter_show_limit\";i:0;}s:27:\"layered_selection_condition\";a:2:{s:11:\"filter_type\";i:0;s:17:\"filter_show_limit\";i:0;}s:31:\"layered_selection_weight_slider\";a:2:{s:11:\"filter_type\";i:0;s:17:\"filter_show_limit\";i:0;}s:30:\"layered_selection_price_slider\";a:2:{s:11:\"filter_type\";i:0;s:17:\"filter_show_limit\";i:0;}}', 1, '2018-08-10 16:48:24'),
-(7, 'Мой шаблон 2018-08-10', 'a:13:{s:10:\"categories\";a:1:{i:0;i:9;}s:9:\"shop_list\";a:1:{i:1;i:1;}s:31:\"layered_selection_subcategories\";a:2:{s:11:\"filter_type\";i:0;s:17:\"filter_show_limit\";i:0;}s:22:\"layered_selection_ag_1\";a:2:{s:11:\"filter_type\";i:0;s:17:\"filter_show_limit\";i:0;}s:22:\"layered_selection_ag_3\";a:2:{s:11:\"filter_type\";i:0;s:17:\"filter_show_limit\";i:0;}s:24:\"layered_selection_feat_5\";a:2:{s:11:\"filter_type\";i:0;s:17:\"filter_show_limit\";i:0;}s:24:\"layered_selection_feat_6\";a:2:{s:11:\"filter_type\";i:0;s:17:\"filter_show_limit\";i:0;}s:24:\"layered_selection_feat_7\";a:2:{s:11:\"filter_type\";i:0;s:17:\"filter_show_limit\";i:0;}s:23:\"layered_selection_stock\";a:2:{s:11:\"filter_type\";i:0;s:17:\"filter_show_limit\";i:0;}s:30:\"layered_selection_manufacturer\";a:2:{s:11:\"filter_type\";i:0;s:17:\"filter_show_limit\";i:0;}s:27:\"layered_selection_condition\";a:2:{s:11:\"filter_type\";i:0;s:17:\"filter_show_limit\";i:0;}s:31:\"layered_selection_weight_slider\";a:2:{s:11:\"filter_type\";i:0;s:17:\"filter_show_limit\";i:0;}s:30:\"layered_selection_price_slider\";a:2:{s:11:\"filter_type\";i:0;s:17:\"filter_show_limit\";i:0;}}', 1, '2018-08-10 16:48:24'),
-(8, 'Мой шаблон 2018-08-10', 'a:13:{s:10:\"categories\";a:1:{i:0;i:10;}s:9:\"shop_list\";a:1:{i:1;i:1;}s:31:\"layered_selection_subcategories\";a:2:{s:11:\"filter_type\";i:0;s:17:\"filter_show_limit\";i:0;}s:22:\"layered_selection_ag_1\";a:2:{s:11:\"filter_type\";i:0;s:17:\"filter_show_limit\";i:0;}s:22:\"layered_selection_ag_3\";a:2:{s:11:\"filter_type\";i:0;s:17:\"filter_show_limit\";i:0;}s:24:\"layered_selection_feat_5\";a:2:{s:11:\"filter_type\";i:0;s:17:\"filter_show_limit\";i:0;}s:24:\"layered_selection_feat_6\";a:2:{s:11:\"filter_type\";i:0;s:17:\"filter_show_limit\";i:0;}s:24:\"layered_selection_feat_7\";a:2:{s:11:\"filter_type\";i:0;s:17:\"filter_show_limit\";i:0;}s:23:\"layered_selection_stock\";a:2:{s:11:\"filter_type\";i:0;s:17:\"filter_show_limit\";i:0;}s:30:\"layered_selection_manufacturer\";a:2:{s:11:\"filter_type\";i:0;s:17:\"filter_show_limit\";i:0;}s:27:\"layered_selection_condition\";a:2:{s:11:\"filter_type\";i:0;s:17:\"filter_show_limit\";i:0;}s:31:\"layered_selection_weight_slider\";a:2:{s:11:\"filter_type\";i:0;s:17:\"filter_show_limit\";i:0;}s:30:\"layered_selection_price_slider\";a:2:{s:11:\"filter_type\";i:0;s:17:\"filter_show_limit\";i:0;}}', 1, '2018-08-10 16:48:25'),
-(9, 'Мой шаблон 2018-08-10', 'a:13:{s:10:\"categories\";a:1:{i:0;i:11;}s:9:\"shop_list\";a:1:{i:1;i:1;}s:31:\"layered_selection_subcategories\";a:2:{s:11:\"filter_type\";i:0;s:17:\"filter_show_limit\";i:0;}s:22:\"layered_selection_ag_1\";a:2:{s:11:\"filter_type\";i:0;s:17:\"filter_show_limit\";i:0;}s:22:\"layered_selection_ag_3\";a:2:{s:11:\"filter_type\";i:0;s:17:\"filter_show_limit\";i:0;}s:24:\"layered_selection_feat_5\";a:2:{s:11:\"filter_type\";i:0;s:17:\"filter_show_limit\";i:0;}s:24:\"layered_selection_feat_6\";a:2:{s:11:\"filter_type\";i:0;s:17:\"filter_show_limit\";i:0;}s:24:\"layered_selection_feat_7\";a:2:{s:11:\"filter_type\";i:0;s:17:\"filter_show_limit\";i:0;}s:23:\"layered_selection_stock\";a:2:{s:11:\"filter_type\";i:0;s:17:\"filter_show_limit\";i:0;}s:30:\"layered_selection_manufacturer\";a:2:{s:11:\"filter_type\";i:0;s:17:\"filter_show_limit\";i:0;}s:27:\"layered_selection_condition\";a:2:{s:11:\"filter_type\";i:0;s:17:\"filter_show_limit\";i:0;}s:31:\"layered_selection_weight_slider\";a:2:{s:11:\"filter_type\";i:0;s:17:\"filter_show_limit\";i:0;}s:30:\"layered_selection_price_slider\";a:2:{s:11:\"filter_type\";i:0;s:17:\"filter_show_limit\";i:0;}}', 1, '2018-08-10 16:48:25');
+(1, 'Мой шаблон 2018-08-10', 'a:13:{s:10:"categories";a:8:{i:0;i:2;i:1;i:3;i:2;i:4;i:3;i:5;i:4;i:7;i:5;i:8;i:6;i:9;i:7;i:10;}s:9:"shop_list";a:1:{i:1;i:1;}s:31:"layered_selection_subcategories";a:2:{s:11:"filter_type";i:0;s:17:"filter_show_limit";i:0;}s:22:"layered_selection_ag_1";a:2:{s:11:"filter_type";i:0;s:17:"filter_show_limit";i:0;}s:22:"layered_selection_ag_3";a:2:{s:11:"filter_type";i:0;s:17:"filter_show_limit";i:0;}s:24:"layered_selection_feat_5";a:2:{s:11:"filter_type";i:0;s:17:"filter_show_limit";i:0;}s:24:"layered_selection_feat_6";a:2:{s:11:"filter_type";i:0;s:17:"filter_show_limit";i:0;}s:24:"layered_selection_feat_7";a:2:{s:11:"filter_type";i:0;s:17:"filter_show_limit";i:0;}s:23:"layered_selection_stock";a:2:{s:11:"filter_type";i:0;s:17:"filter_show_limit";i:0;}s:30:"layered_selection_manufacturer";a:2:{s:11:"filter_type";i:0;s:17:"filter_show_limit";i:0;}s:27:"layered_selection_condition";a:2:{s:11:"filter_type";i:0;s:17:"filter_show_limit";i:0;}s:31:"layered_selection_weight_slider";a:2:{s:11:"filter_type";i:0;s:17:"filter_show_limit";i:0;}s:30:"layered_selection_price_slider";a:2:{s:11:"filter_type";i:0;s:17:"filter_show_limit";i:0;}}', 9, '2018-08-10 15:51:52'),
+(2, 'Мой шаблон 2018-08-10', 'a:13:{s:10:"categories";a:1:{i:0;i:3;}s:9:"shop_list";a:1:{i:1;i:1;}s:31:"layered_selection_subcategories";a:2:{s:11:"filter_type";i:0;s:17:"filter_show_limit";i:0;}s:22:"layered_selection_ag_1";a:2:{s:11:"filter_type";i:0;s:17:"filter_show_limit";i:0;}s:22:"layered_selection_ag_3";a:2:{s:11:"filter_type";i:0;s:17:"filter_show_limit";i:0;}s:24:"layered_selection_feat_5";a:2:{s:11:"filter_type";i:0;s:17:"filter_show_limit";i:0;}s:24:"layered_selection_feat_6";a:2:{s:11:"filter_type";i:0;s:17:"filter_show_limit";i:0;}s:24:"layered_selection_feat_7";a:2:{s:11:"filter_type";i:0;s:17:"filter_show_limit";i:0;}s:23:"layered_selection_stock";a:2:{s:11:"filter_type";i:0;s:17:"filter_show_limit";i:0;}s:30:"layered_selection_manufacturer";a:2:{s:11:"filter_type";i:0;s:17:"filter_show_limit";i:0;}s:27:"layered_selection_condition";a:2:{s:11:"filter_type";i:0;s:17:"filter_show_limit";i:0;}s:31:"layered_selection_weight_slider";a:2:{s:11:"filter_type";i:0;s:17:"filter_show_limit";i:0;}s:30:"layered_selection_price_slider";a:2:{s:11:"filter_type";i:0;s:17:"filter_show_limit";i:0;}}', 1, '2018-08-10 16:48:24'),
+(3, 'Мой шаблон 2018-08-10', 'a:13:{s:10:"categories";a:1:{i:0;i:4;}s:9:"shop_list";a:1:{i:1;i:1;}s:31:"layered_selection_subcategories";a:2:{s:11:"filter_type";i:0;s:17:"filter_show_limit";i:0;}s:22:"layered_selection_ag_1";a:2:{s:11:"filter_type";i:0;s:17:"filter_show_limit";i:0;}s:22:"layered_selection_ag_3";a:2:{s:11:"filter_type";i:0;s:17:"filter_show_limit";i:0;}s:24:"layered_selection_feat_5";a:2:{s:11:"filter_type";i:0;s:17:"filter_show_limit";i:0;}s:24:"layered_selection_feat_6";a:2:{s:11:"filter_type";i:0;s:17:"filter_show_limit";i:0;}s:24:"layered_selection_feat_7";a:2:{s:11:"filter_type";i:0;s:17:"filter_show_limit";i:0;}s:23:"layered_selection_stock";a:2:{s:11:"filter_type";i:0;s:17:"filter_show_limit";i:0;}s:30:"layered_selection_manufacturer";a:2:{s:11:"filter_type";i:0;s:17:"filter_show_limit";i:0;}s:27:"layered_selection_condition";a:2:{s:11:"filter_type";i:0;s:17:"filter_show_limit";i:0;}s:31:"layered_selection_weight_slider";a:2:{s:11:"filter_type";i:0;s:17:"filter_show_limit";i:0;}s:30:"layered_selection_price_slider";a:2:{s:11:"filter_type";i:0;s:17:"filter_show_limit";i:0;}}', 1, '2018-08-10 16:48:24'),
+(4, 'Мой шаблон 2018-08-10', 'a:13:{s:10:"categories";a:1:{i:0;i:5;}s:9:"shop_list";a:1:{i:1;i:1;}s:31:"layered_selection_subcategories";a:2:{s:11:"filter_type";i:0;s:17:"filter_show_limit";i:0;}s:22:"layered_selection_ag_1";a:2:{s:11:"filter_type";i:0;s:17:"filter_show_limit";i:0;}s:22:"layered_selection_ag_3";a:2:{s:11:"filter_type";i:0;s:17:"filter_show_limit";i:0;}s:24:"layered_selection_feat_5";a:2:{s:11:"filter_type";i:0;s:17:"filter_show_limit";i:0;}s:24:"layered_selection_feat_6";a:2:{s:11:"filter_type";i:0;s:17:"filter_show_limit";i:0;}s:24:"layered_selection_feat_7";a:2:{s:11:"filter_type";i:0;s:17:"filter_show_limit";i:0;}s:23:"layered_selection_stock";a:2:{s:11:"filter_type";i:0;s:17:"filter_show_limit";i:0;}s:30:"layered_selection_manufacturer";a:2:{s:11:"filter_type";i:0;s:17:"filter_show_limit";i:0;}s:27:"layered_selection_condition";a:2:{s:11:"filter_type";i:0;s:17:"filter_show_limit";i:0;}s:31:"layered_selection_weight_slider";a:2:{s:11:"filter_type";i:0;s:17:"filter_show_limit";i:0;}s:30:"layered_selection_price_slider";a:2:{s:11:"filter_type";i:0;s:17:"filter_show_limit";i:0;}}', 1, '2018-08-10 16:48:24'),
+(5, 'Мой шаблон 2018-08-10', 'a:13:{s:10:"categories";a:1:{i:0;i:7;}s:9:"shop_list";a:1:{i:1;i:1;}s:31:"layered_selection_subcategories";a:2:{s:11:"filter_type";i:0;s:17:"filter_show_limit";i:0;}s:22:"layered_selection_ag_1";a:2:{s:11:"filter_type";i:0;s:17:"filter_show_limit";i:0;}s:22:"layered_selection_ag_3";a:2:{s:11:"filter_type";i:0;s:17:"filter_show_limit";i:0;}s:24:"layered_selection_feat_5";a:2:{s:11:"filter_type";i:0;s:17:"filter_show_limit";i:0;}s:24:"layered_selection_feat_6";a:2:{s:11:"filter_type";i:0;s:17:"filter_show_limit";i:0;}s:24:"layered_selection_feat_7";a:2:{s:11:"filter_type";i:0;s:17:"filter_show_limit";i:0;}s:23:"layered_selection_stock";a:2:{s:11:"filter_type";i:0;s:17:"filter_show_limit";i:0;}s:30:"layered_selection_manufacturer";a:2:{s:11:"filter_type";i:0;s:17:"filter_show_limit";i:0;}s:27:"layered_selection_condition";a:2:{s:11:"filter_type";i:0;s:17:"filter_show_limit";i:0;}s:31:"layered_selection_weight_slider";a:2:{s:11:"filter_type";i:0;s:17:"filter_show_limit";i:0;}s:30:"layered_selection_price_slider";a:2:{s:11:"filter_type";i:0;s:17:"filter_show_limit";i:0;}}', 1, '2018-08-10 16:48:24'),
+(6, 'Мой шаблон 2018-08-10', 'a:13:{s:10:"categories";a:1:{i:0;i:8;}s:9:"shop_list";a:1:{i:1;i:1;}s:31:"layered_selection_subcategories";a:2:{s:11:"filter_type";i:0;s:17:"filter_show_limit";i:0;}s:22:"layered_selection_ag_1";a:2:{s:11:"filter_type";i:0;s:17:"filter_show_limit";i:0;}s:22:"layered_selection_ag_3";a:2:{s:11:"filter_type";i:0;s:17:"filter_show_limit";i:0;}s:24:"layered_selection_feat_5";a:2:{s:11:"filter_type";i:0;s:17:"filter_show_limit";i:0;}s:24:"layered_selection_feat_6";a:2:{s:11:"filter_type";i:0;s:17:"filter_show_limit";i:0;}s:24:"layered_selection_feat_7";a:2:{s:11:"filter_type";i:0;s:17:"filter_show_limit";i:0;}s:23:"layered_selection_stock";a:2:{s:11:"filter_type";i:0;s:17:"filter_show_limit";i:0;}s:30:"layered_selection_manufacturer";a:2:{s:11:"filter_type";i:0;s:17:"filter_show_limit";i:0;}s:27:"layered_selection_condition";a:2:{s:11:"filter_type";i:0;s:17:"filter_show_limit";i:0;}s:31:"layered_selection_weight_slider";a:2:{s:11:"filter_type";i:0;s:17:"filter_show_limit";i:0;}s:30:"layered_selection_price_slider";a:2:{s:11:"filter_type";i:0;s:17:"filter_show_limit";i:0;}}', 1, '2018-08-10 16:48:24'),
+(7, 'Мой шаблон 2018-08-10', 'a:13:{s:10:"categories";a:1:{i:0;i:9;}s:9:"shop_list";a:1:{i:1;i:1;}s:31:"layered_selection_subcategories";a:2:{s:11:"filter_type";i:0;s:17:"filter_show_limit";i:0;}s:22:"layered_selection_ag_1";a:2:{s:11:"filter_type";i:0;s:17:"filter_show_limit";i:0;}s:22:"layered_selection_ag_3";a:2:{s:11:"filter_type";i:0;s:17:"filter_show_limit";i:0;}s:24:"layered_selection_feat_5";a:2:{s:11:"filter_type";i:0;s:17:"filter_show_limit";i:0;}s:24:"layered_selection_feat_6";a:2:{s:11:"filter_type";i:0;s:17:"filter_show_limit";i:0;}s:24:"layered_selection_feat_7";a:2:{s:11:"filter_type";i:0;s:17:"filter_show_limit";i:0;}s:23:"layered_selection_stock";a:2:{s:11:"filter_type";i:0;s:17:"filter_show_limit";i:0;}s:30:"layered_selection_manufacturer";a:2:{s:11:"filter_type";i:0;s:17:"filter_show_limit";i:0;}s:27:"layered_selection_condition";a:2:{s:11:"filter_type";i:0;s:17:"filter_show_limit";i:0;}s:31:"layered_selection_weight_slider";a:2:{s:11:"filter_type";i:0;s:17:"filter_show_limit";i:0;}s:30:"layered_selection_price_slider";a:2:{s:11:"filter_type";i:0;s:17:"filter_show_limit";i:0;}}', 1, '2018-08-10 16:48:24'),
+(8, 'Мой шаблон 2018-08-10', 'a:13:{s:10:"categories";a:1:{i:0;i:10;}s:9:"shop_list";a:1:{i:1;i:1;}s:31:"layered_selection_subcategories";a:2:{s:11:"filter_type";i:0;s:17:"filter_show_limit";i:0;}s:22:"layered_selection_ag_1";a:2:{s:11:"filter_type";i:0;s:17:"filter_show_limit";i:0;}s:22:"layered_selection_ag_3";a:2:{s:11:"filter_type";i:0;s:17:"filter_show_limit";i:0;}s:24:"layered_selection_feat_5";a:2:{s:11:"filter_type";i:0;s:17:"filter_show_limit";i:0;}s:24:"layered_selection_feat_6";a:2:{s:11:"filter_type";i:0;s:17:"filter_show_limit";i:0;}s:24:"layered_selection_feat_7";a:2:{s:11:"filter_type";i:0;s:17:"filter_show_limit";i:0;}s:23:"layered_selection_stock";a:2:{s:11:"filter_type";i:0;s:17:"filter_show_limit";i:0;}s:30:"layered_selection_manufacturer";a:2:{s:11:"filter_type";i:0;s:17:"filter_show_limit";i:0;}s:27:"layered_selection_condition";a:2:{s:11:"filter_type";i:0;s:17:"filter_show_limit";i:0;}s:31:"layered_selection_weight_slider";a:2:{s:11:"filter_type";i:0;s:17:"filter_show_limit";i:0;}s:30:"layered_selection_price_slider";a:2:{s:11:"filter_type";i:0;s:17:"filter_show_limit";i:0;}}', 1, '2018-08-10 16:48:25'),
+(9, 'Мой шаблон 2018-08-10', 'a:13:{s:10:"categories";a:0:{}s:9:"shop_list";a:1:{i:1;i:1;}s:31:"layered_selection_subcategories";a:2:{s:11:"filter_type";i:0;s:17:"filter_show_limit";i:0;}s:22:"layered_selection_ag_1";a:2:{s:11:"filter_type";i:0;s:17:"filter_show_limit";i:0;}s:22:"layered_selection_ag_3";a:2:{s:11:"filter_type";i:0;s:17:"filter_show_limit";i:0;}s:24:"layered_selection_feat_5";a:2:{s:11:"filter_type";i:0;s:17:"filter_show_limit";i:0;}s:24:"layered_selection_feat_6";a:2:{s:11:"filter_type";i:0;s:17:"filter_show_limit";i:0;}s:24:"layered_selection_feat_7";a:2:{s:11:"filter_type";i:0;s:17:"filter_show_limit";i:0;}s:23:"layered_selection_stock";a:2:{s:11:"filter_type";i:0;s:17:"filter_show_limit";i:0;}s:30:"layered_selection_manufacturer";a:2:{s:11:"filter_type";i:0;s:17:"filter_show_limit";i:0;}s:27:"layered_selection_condition";a:2:{s:11:"filter_type";i:0;s:17:"filter_show_limit";i:0;}s:31:"layered_selection_weight_slider";a:2:{s:11:"filter_type";i:0;s:17:"filter_show_limit";i:0;}s:30:"layered_selection_price_slider";a:2:{s:11:"filter_type";i:0;s:17:"filter_show_limit";i:0;}}', 1, '2018-08-10 16:48:25');
 
 -- --------------------------------------------------------
 
@@ -10811,9 +10819,9 @@ INSERT INTO `ps_layered_filter` (`id_layered_filter`, `name`, `filters`, `n_cate
 -- Структура таблицы `ps_layered_filter_shop`
 --
 
-CREATE TABLE `ps_layered_filter_shop` (
-  `id_layered_filter` int(10) UNSIGNED NOT NULL,
-  `id_shop` int(11) UNSIGNED NOT NULL
+CREATE TABLE IF NOT EXISTS `ps_layered_filter_shop` (
+  `id_layered_filter` int(10) unsigned NOT NULL,
+  `id_shop` int(11) unsigned NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
@@ -10837,73 +10845,73 @@ INSERT INTO `ps_layered_filter_shop` (`id_layered_filter`, `id_shop`) VALUES
 -- Структура таблицы `ps_layered_friendly_url`
 --
 
-CREATE TABLE `ps_layered_friendly_url` (
+CREATE TABLE IF NOT EXISTS `ps_layered_friendly_url` (
   `id_layered_friendly_url` int(11) NOT NULL,
   `url_key` varchar(32) NOT NULL,
   `data` varchar(200) NOT NULL,
   `id_lang` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=56 DEFAULT CHARSET=utf8;
 
 --
 -- Дамп данных таблицы `ps_layered_friendly_url`
 --
 
 INSERT INTO `ps_layered_friendly_url` (`id_layered_friendly_url`, `url_key`, `data`, `id_lang`) VALUES
-(1, '553d2e00a0d80be6df3fbdc9ec7b97e1', 'a:1:{s:8:\"category\";a:1:{i:7;s:1:\"7\";}}', 1),
-(2, '3a2624a0a427feb7e6647530ec5f09d6', 'a:1:{s:8:\"category\";a:1:{i:9;s:1:\"9\";}}', 1),
-(3, '3cb249b9498d2a785351c34992b868e2', 'a:1:{s:8:\"category\";a:1:{i:8;s:1:\"8\";}}', 1),
-(4, 'c593be5cef6ec94fb562594d8264138b', 'a:1:{s:8:\"category\";a:1:{i:10;s:2:\"10\";}}', 1),
-(5, '23aee1ec2b610e411d71732bfa515379', 'a:1:{s:8:\"category\";a:1:{i:11;s:2:\"11\";}}', 1),
-(6, '4a7819c59c759ed56498869f0c6339ad', 'a:1:{s:8:\"category\";a:1:{i:5;s:1:\"5\";}}', 1),
-(7, 'b8ccc848a42133690aef4f98e52ba608', 'a:1:{s:8:\"category\";a:1:{i:4;s:1:\"4\";}}', 1),
-(8, '9b1b1df69408480ba0a2a3166ba35b72', 'a:1:{s:8:\"category\";a:1:{i:3;s:1:\"3\";}}', 1),
-(9, 'f8000c446241ab157391423708648da7', 'a:1:{s:8:\"category\";a:1:{i:2;s:1:\"2\";}}', 1),
-(10, 'aa8684addc53ccd3bbfad9bbcef0fdb5', 'a:1:{s:8:\"category\";a:1:{i:1;s:1:\"1\";}}', 1),
-(11, 'c4d7335317f2f1ba381e038fb625d918', 'a:1:{s:10:\"id_feature\";a:1:{i:1;s:3:\"5_1\";}}', 1),
-(12, '18f41c9cab1c150e429f1b670cae3bc1', 'a:1:{s:10:\"id_feature\";a:1:{i:2;s:3:\"5_2\";}}', 1),
-(13, '823192a052e44927f06b39b32bcef002', 'a:1:{s:10:\"id_feature\";a:1:{i:3;s:3:\"5_3\";}}', 1),
-(14, '905fe5b57eb2e1353911171da4ee7706', 'a:1:{s:10:\"id_feature\";a:1:{i:4;s:3:\"5_4\";}}', 1),
-(15, 'ebb42f1bbf0d25b40049c14f1860b952', 'a:1:{s:10:\"id_feature\";a:1:{i:5;s:3:\"5_5\";}}', 1),
-(16, 'f9a71edd8befbb99baceadc2b2fbe793', 'a:1:{s:10:\"id_feature\";a:1:{i:6;s:3:\"5_6\";}}', 1),
-(17, 'e195459fb3d97a32e94673db75dcf299', 'a:1:{s:10:\"id_feature\";a:1:{i:7;s:3:\"5_7\";}}', 1),
-(18, 'b7783cae5eeefc81ff4a69f4ea712ea7', 'a:1:{s:10:\"id_feature\";a:1:{i:8;s:3:\"5_8\";}}', 1),
-(19, '45f1d9162a9fe2ffcf9f365eace9eeec', 'a:1:{s:10:\"id_feature\";a:1:{i:9;s:3:\"5_9\";}}', 1),
-(20, '7a04872959f09781f3b883a91c5332c7', 'a:1:{s:10:\"id_feature\";a:1:{i:10;s:4:\"6_10\";}}', 1),
-(21, '025d11eb379709c8e409a7d712d8e362', 'a:1:{s:10:\"id_feature\";a:1:{i:11;s:4:\"6_11\";}}', 1),
-(22, 'e224c427b75f7805c14e8b63ca9e4e0c', 'a:1:{s:10:\"id_feature\";a:1:{i:12;s:4:\"6_12\";}}', 1),
-(23, '677717092975926de02151dd9227864e', 'a:1:{s:10:\"id_feature\";a:1:{i:13;s:4:\"6_13\";}}', 1),
-(24, '00dff7b63b6f7ddb4b341a9308422730', 'a:1:{s:10:\"id_feature\";a:1:{i:14;s:4:\"6_14\";}}', 1),
-(25, 'ff721a9727728b15cd4654a462aaeea0', 'a:1:{s:10:\"id_feature\";a:1:{i:15;s:4:\"6_15\";}}', 1),
-(26, '0327a5c6fbcd99ae1fa8ef01f1e7e100', 'a:1:{s:10:\"id_feature\";a:1:{i:16;s:4:\"6_16\";}}', 1),
-(27, '58ddd7a988c042c25121ffeb149f3ac7', 'a:1:{s:10:\"id_feature\";a:1:{i:17;s:4:\"7_17\";}}', 1),
-(28, 'b7248af6c62c1e54b6f13739739e2d17', 'a:1:{s:10:\"id_feature\";a:1:{i:18;s:4:\"7_18\";}}', 1),
-(29, 'b97d201e9d169f46c2a9e6fa356e40d2', 'a:1:{s:10:\"id_feature\";a:1:{i:19;s:4:\"7_19\";}}', 1),
-(30, 'de50b73f078d5cde7cc9d8efc61c9e55', 'a:1:{s:10:\"id_feature\";a:1:{i:20;s:4:\"7_20\";}}', 1),
-(31, '85a3c64761151fe72e5d027e729072a3', 'a:1:{s:10:\"id_feature\";a:1:{i:21;s:4:\"7_21\";}}', 1),
-(32, '97d9dd08827238b39342d37e16ee7fc3', 'a:1:{s:18:\"id_attribute_group\";a:1:{i:1;s:3:\"1_1\";}}', 1),
-(33, '2f3d5048a6335cac20241e0f8cb5294e', 'a:1:{s:18:\"id_attribute_group\";a:1:{i:2;s:3:\"1_2\";}}', 1),
-(34, '19819345209f29bb2865355fa2cdb800', 'a:1:{s:18:\"id_attribute_group\";a:1:{i:3;s:3:\"1_3\";}}', 1),
-(35, '27dd5799da96500f9e0ab61387a556b5', 'a:1:{s:18:\"id_attribute_group\";a:1:{i:4;s:3:\"1_4\";}}', 1),
-(36, '6a73ce72468db97129f092fa3d9a0b2e', 'a:1:{s:18:\"id_attribute_group\";a:1:{i:5;s:3:\"3_5\";}}', 1),
-(37, 'f1fc935c7d64dfac606eb814dcc6c4a7', 'a:1:{s:18:\"id_attribute_group\";a:1:{i:6;s:3:\"3_6\";}}', 1),
-(38, 'f036e061c6e0e9cd6b3c463f72f524a5', 'a:1:{s:18:\"id_attribute_group\";a:1:{i:7;s:3:\"3_7\";}}', 1),
-(39, '468a278b79ece55c0ed0d3bd1b2dd01f', 'a:1:{s:18:\"id_attribute_group\";a:1:{i:8;s:3:\"3_8\";}}', 1),
-(40, '8996dbd99c9d2240f117ba0d26b39b10', 'a:1:{s:18:\"id_attribute_group\";a:1:{i:9;s:3:\"3_9\";}}', 1),
-(41, '601a4dd13077730810f102b18680b537', 'a:1:{s:18:\"id_attribute_group\";a:1:{i:10;s:4:\"3_10\";}}', 1),
-(42, '0a68b3ba0819d7126935f51335ef9503', 'a:1:{s:18:\"id_attribute_group\";a:1:{i:11;s:4:\"3_11\";}}', 1),
-(43, '5f556205d67d7c26c2726dba638c2d95', 'a:1:{s:18:\"id_attribute_group\";a:1:{i:12;s:4:\"3_12\";}}', 1),
-(44, '4b4bb79b20455e8047c972f9ca69cd72', 'a:1:{s:18:\"id_attribute_group\";a:1:{i:13;s:4:\"3_13\";}}', 1),
-(45, '54dd539ce8bbf02b44485941f2d8d80b', 'a:1:{s:18:\"id_attribute_group\";a:1:{i:14;s:4:\"3_14\";}}', 1),
-(46, '73b845a28e9ced9709fa414f9b97dae9', 'a:1:{s:18:\"id_attribute_group\";a:1:{i:15;s:4:\"3_15\";}}', 1),
-(47, 'be50cfae4c360fdb124af017a4e80905', 'a:1:{s:18:\"id_attribute_group\";a:1:{i:16;s:4:\"3_16\";}}', 1),
-(48, '4c4550abfc4eec4c91e558fa9b5171c9', 'a:1:{s:18:\"id_attribute_group\";a:1:{i:17;s:4:\"3_17\";}}', 1),
-(49, 'ab223cc0ca7ebf34af71e067556ee2aa', 'a:1:{s:18:\"id_attribute_group\";a:1:{i:24;s:4:\"3_24\";}}', 1),
-(50, '3f0ea01c87fe8856677585dbff119d3c', 'a:1:{s:8:\"quantity\";a:1:{i:0;i:0;}}', 1),
-(51, '937e96c696ebe23a04f806e8a851fc26', 'a:1:{s:8:\"quantity\";a:1:{i:0;i:1;}}', 1),
-(52, '80a60800fb2bfa43b6b05458d6a12a3b', 'a:1:{s:9:\"condition\";a:1:{s:3:\"new\";s:3:\"new\";}}', 1),
-(53, 'cc2a0d34f882a8c07b6fb7a08775b1e8', 'a:1:{s:9:\"condition\";a:1:{s:4:\"used\";s:4:\"used\";}}', 1),
-(54, 'ada725c2df902416f88e6f941af4893e', 'a:1:{s:9:\"condition\";a:1:{s:11:\"refurbished\";s:11:\"refurbished\";}}', 1),
-(55, '0c30cbfe6e66246a191a8f91b34bc731', 'a:1:{s:12:\"manufacturer\";a:1:{i:1;s:1:\"1\";}}', 1);
+(1, '553d2e00a0d80be6df3fbdc9ec7b97e1', 'a:1:{s:8:"category";a:1:{i:7;s:1:"7";}}', 1),
+(2, '3a2624a0a427feb7e6647530ec5f09d6', 'a:1:{s:8:"category";a:1:{i:9;s:1:"9";}}', 1),
+(3, '3cb249b9498d2a785351c34992b868e2', 'a:1:{s:8:"category";a:1:{i:8;s:1:"8";}}', 1),
+(4, 'c593be5cef6ec94fb562594d8264138b', 'a:1:{s:8:"category";a:1:{i:10;s:2:"10";}}', 1),
+(5, '23aee1ec2b610e411d71732bfa515379', 'a:1:{s:8:"category";a:1:{i:11;s:2:"11";}}', 1),
+(6, '4a7819c59c759ed56498869f0c6339ad', 'a:1:{s:8:"category";a:1:{i:5;s:1:"5";}}', 1),
+(7, 'b8ccc848a42133690aef4f98e52ba608', 'a:1:{s:8:"category";a:1:{i:4;s:1:"4";}}', 1),
+(8, '9b1b1df69408480ba0a2a3166ba35b72', 'a:1:{s:8:"category";a:1:{i:3;s:1:"3";}}', 1),
+(9, 'f8000c446241ab157391423708648da7', 'a:1:{s:8:"category";a:1:{i:2;s:1:"2";}}', 1),
+(10, 'aa8684addc53ccd3bbfad9bbcef0fdb5', 'a:1:{s:8:"category";a:1:{i:1;s:1:"1";}}', 1),
+(11, 'c4d7335317f2f1ba381e038fb625d918', 'a:1:{s:10:"id_feature";a:1:{i:1;s:3:"5_1";}}', 1),
+(12, '18f41c9cab1c150e429f1b670cae3bc1', 'a:1:{s:10:"id_feature";a:1:{i:2;s:3:"5_2";}}', 1),
+(13, '823192a052e44927f06b39b32bcef002', 'a:1:{s:10:"id_feature";a:1:{i:3;s:3:"5_3";}}', 1),
+(14, '905fe5b57eb2e1353911171da4ee7706', 'a:1:{s:10:"id_feature";a:1:{i:4;s:3:"5_4";}}', 1),
+(15, 'ebb42f1bbf0d25b40049c14f1860b952', 'a:1:{s:10:"id_feature";a:1:{i:5;s:3:"5_5";}}', 1),
+(16, 'f9a71edd8befbb99baceadc2b2fbe793', 'a:1:{s:10:"id_feature";a:1:{i:6;s:3:"5_6";}}', 1),
+(17, 'e195459fb3d97a32e94673db75dcf299', 'a:1:{s:10:"id_feature";a:1:{i:7;s:3:"5_7";}}', 1),
+(18, 'b7783cae5eeefc81ff4a69f4ea712ea7', 'a:1:{s:10:"id_feature";a:1:{i:8;s:3:"5_8";}}', 1),
+(19, '45f1d9162a9fe2ffcf9f365eace9eeec', 'a:1:{s:10:"id_feature";a:1:{i:9;s:3:"5_9";}}', 1),
+(20, '7a04872959f09781f3b883a91c5332c7', 'a:1:{s:10:"id_feature";a:1:{i:10;s:4:"6_10";}}', 1),
+(21, '025d11eb379709c8e409a7d712d8e362', 'a:1:{s:10:"id_feature";a:1:{i:11;s:4:"6_11";}}', 1),
+(22, 'e224c427b75f7805c14e8b63ca9e4e0c', 'a:1:{s:10:"id_feature";a:1:{i:12;s:4:"6_12";}}', 1),
+(23, '677717092975926de02151dd9227864e', 'a:1:{s:10:"id_feature";a:1:{i:13;s:4:"6_13";}}', 1),
+(24, '00dff7b63b6f7ddb4b341a9308422730', 'a:1:{s:10:"id_feature";a:1:{i:14;s:4:"6_14";}}', 1),
+(25, 'ff721a9727728b15cd4654a462aaeea0', 'a:1:{s:10:"id_feature";a:1:{i:15;s:4:"6_15";}}', 1),
+(26, '0327a5c6fbcd99ae1fa8ef01f1e7e100', 'a:1:{s:10:"id_feature";a:1:{i:16;s:4:"6_16";}}', 1),
+(27, '58ddd7a988c042c25121ffeb149f3ac7', 'a:1:{s:10:"id_feature";a:1:{i:17;s:4:"7_17";}}', 1),
+(28, 'b7248af6c62c1e54b6f13739739e2d17', 'a:1:{s:10:"id_feature";a:1:{i:18;s:4:"7_18";}}', 1),
+(29, 'b97d201e9d169f46c2a9e6fa356e40d2', 'a:1:{s:10:"id_feature";a:1:{i:19;s:4:"7_19";}}', 1),
+(30, 'de50b73f078d5cde7cc9d8efc61c9e55', 'a:1:{s:10:"id_feature";a:1:{i:20;s:4:"7_20";}}', 1),
+(31, '85a3c64761151fe72e5d027e729072a3', 'a:1:{s:10:"id_feature";a:1:{i:21;s:4:"7_21";}}', 1),
+(32, '97d9dd08827238b39342d37e16ee7fc3', 'a:1:{s:18:"id_attribute_group";a:1:{i:1;s:3:"1_1";}}', 1),
+(33, '2f3d5048a6335cac20241e0f8cb5294e', 'a:1:{s:18:"id_attribute_group";a:1:{i:2;s:3:"1_2";}}', 1),
+(34, '19819345209f29bb2865355fa2cdb800', 'a:1:{s:18:"id_attribute_group";a:1:{i:3;s:3:"1_3";}}', 1),
+(35, '27dd5799da96500f9e0ab61387a556b5', 'a:1:{s:18:"id_attribute_group";a:1:{i:4;s:3:"1_4";}}', 1),
+(36, '6a73ce72468db97129f092fa3d9a0b2e', 'a:1:{s:18:"id_attribute_group";a:1:{i:5;s:3:"3_5";}}', 1),
+(37, 'f1fc935c7d64dfac606eb814dcc6c4a7', 'a:1:{s:18:"id_attribute_group";a:1:{i:6;s:3:"3_6";}}', 1),
+(38, 'f036e061c6e0e9cd6b3c463f72f524a5', 'a:1:{s:18:"id_attribute_group";a:1:{i:7;s:3:"3_7";}}', 1),
+(39, '468a278b79ece55c0ed0d3bd1b2dd01f', 'a:1:{s:18:"id_attribute_group";a:1:{i:8;s:3:"3_8";}}', 1),
+(40, '8996dbd99c9d2240f117ba0d26b39b10', 'a:1:{s:18:"id_attribute_group";a:1:{i:9;s:3:"3_9";}}', 1),
+(41, '601a4dd13077730810f102b18680b537', 'a:1:{s:18:"id_attribute_group";a:1:{i:10;s:4:"3_10";}}', 1),
+(42, '0a68b3ba0819d7126935f51335ef9503', 'a:1:{s:18:"id_attribute_group";a:1:{i:11;s:4:"3_11";}}', 1),
+(43, '5f556205d67d7c26c2726dba638c2d95', 'a:1:{s:18:"id_attribute_group";a:1:{i:12;s:4:"3_12";}}', 1),
+(44, '4b4bb79b20455e8047c972f9ca69cd72', 'a:1:{s:18:"id_attribute_group";a:1:{i:13;s:4:"3_13";}}', 1),
+(45, '54dd539ce8bbf02b44485941f2d8d80b', 'a:1:{s:18:"id_attribute_group";a:1:{i:14;s:4:"3_14";}}', 1),
+(46, '73b845a28e9ced9709fa414f9b97dae9', 'a:1:{s:18:"id_attribute_group";a:1:{i:15;s:4:"3_15";}}', 1),
+(47, 'be50cfae4c360fdb124af017a4e80905', 'a:1:{s:18:"id_attribute_group";a:1:{i:16;s:4:"3_16";}}', 1),
+(48, '4c4550abfc4eec4c91e558fa9b5171c9', 'a:1:{s:18:"id_attribute_group";a:1:{i:17;s:4:"3_17";}}', 1),
+(49, 'ab223cc0ca7ebf34af71e067556ee2aa', 'a:1:{s:18:"id_attribute_group";a:1:{i:24;s:4:"3_24";}}', 1),
+(50, '3f0ea01c87fe8856677585dbff119d3c', 'a:1:{s:8:"quantity";a:1:{i:0;i:0;}}', 1),
+(51, '937e96c696ebe23a04f806e8a851fc26', 'a:1:{s:8:"quantity";a:1:{i:0;i:1;}}', 1),
+(52, '80a60800fb2bfa43b6b05458d6a12a3b', 'a:1:{s:9:"condition";a:1:{s:3:"new";s:3:"new";}}', 1),
+(53, 'cc2a0d34f882a8c07b6fb7a08775b1e8', 'a:1:{s:9:"condition";a:1:{s:4:"used";s:4:"used";}}', 1),
+(54, 'ada725c2df902416f88e6f941af4893e', 'a:1:{s:9:"condition";a:1:{s:11:"refurbished";s:11:"refurbished";}}', 1),
+(55, '0c30cbfe6e66246a191a8f91b34bc731', 'a:1:{s:12:"manufacturer";a:1:{i:1;s:1:"1";}}', 1);
 
 -- --------------------------------------------------------
 
@@ -10911,7 +10919,7 @@ INSERT INTO `ps_layered_friendly_url` (`id_layered_friendly_url`, `url_key`, `da
 -- Структура таблицы `ps_layered_indexable_attribute_group`
 --
 
-CREATE TABLE `ps_layered_indexable_attribute_group` (
+CREATE TABLE IF NOT EXISTS `ps_layered_indexable_attribute_group` (
   `id_attribute_group` int(11) NOT NULL,
   `indexable` tinyint(1) NOT NULL DEFAULT '0'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
@@ -10931,7 +10939,7 @@ INSERT INTO `ps_layered_indexable_attribute_group` (`id_attribute_group`, `index
 -- Структура таблицы `ps_layered_indexable_attribute_group_lang_value`
 --
 
-CREATE TABLE `ps_layered_indexable_attribute_group_lang_value` (
+CREATE TABLE IF NOT EXISTS `ps_layered_indexable_attribute_group_lang_value` (
   `id_attribute_group` int(11) NOT NULL,
   `id_lang` int(11) NOT NULL,
   `url_name` varchar(128) DEFAULT NULL,
@@ -10944,7 +10952,7 @@ CREATE TABLE `ps_layered_indexable_attribute_group_lang_value` (
 -- Структура таблицы `ps_layered_indexable_attribute_lang_value`
 --
 
-CREATE TABLE `ps_layered_indexable_attribute_lang_value` (
+CREATE TABLE IF NOT EXISTS `ps_layered_indexable_attribute_lang_value` (
   `id_attribute` int(11) NOT NULL,
   `id_lang` int(11) NOT NULL,
   `url_name` varchar(128) DEFAULT NULL,
@@ -10957,7 +10965,7 @@ CREATE TABLE `ps_layered_indexable_attribute_lang_value` (
 -- Структура таблицы `ps_layered_indexable_feature`
 --
 
-CREATE TABLE `ps_layered_indexable_feature` (
+CREATE TABLE IF NOT EXISTS `ps_layered_indexable_feature` (
   `id_feature` int(11) NOT NULL,
   `indexable` tinyint(1) NOT NULL DEFAULT '0'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
@@ -10981,7 +10989,7 @@ INSERT INTO `ps_layered_indexable_feature` (`id_feature`, `indexable`) VALUES
 -- Структура таблицы `ps_layered_indexable_feature_lang_value`
 --
 
-CREATE TABLE `ps_layered_indexable_feature_lang_value` (
+CREATE TABLE IF NOT EXISTS `ps_layered_indexable_feature_lang_value` (
   `id_feature` int(11) NOT NULL,
   `id_lang` int(11) NOT NULL,
   `url_name` varchar(128) NOT NULL,
@@ -10994,7 +11002,7 @@ CREATE TABLE `ps_layered_indexable_feature_lang_value` (
 -- Структура таблицы `ps_layered_indexable_feature_value_lang_value`
 --
 
-CREATE TABLE `ps_layered_indexable_feature_value_lang_value` (
+CREATE TABLE IF NOT EXISTS `ps_layered_indexable_feature_value_lang_value` (
   `id_feature_value` int(11) NOT NULL,
   `id_lang` int(11) NOT NULL,
   `url_name` varchar(128) DEFAULT NULL,
@@ -11007,7 +11015,7 @@ CREATE TABLE `ps_layered_indexable_feature_value_lang_value` (
 -- Структура таблицы `ps_layered_price_index`
 --
 
-CREATE TABLE `ps_layered_price_index` (
+CREATE TABLE IF NOT EXISTS `ps_layered_price_index` (
   `id_product` int(11) NOT NULL,
   `id_currency` int(11) NOT NULL,
   `id_shop` int(11) NOT NULL,
@@ -12704,11 +12712,11 @@ INSERT INTO `ps_layered_price_index` (`id_product`, `id_currency`, `id_shop`, `p
 -- Структура таблицы `ps_layered_product_attribute`
 --
 
-CREATE TABLE `ps_layered_product_attribute` (
-  `id_attribute` int(10) UNSIGNED NOT NULL,
-  `id_product` int(10) UNSIGNED NOT NULL,
-  `id_attribute_group` int(10) UNSIGNED NOT NULL DEFAULT '0',
-  `id_shop` int(10) UNSIGNED NOT NULL DEFAULT '1'
+CREATE TABLE IF NOT EXISTS `ps_layered_product_attribute` (
+  `id_attribute` int(10) unsigned NOT NULL,
+  `id_product` int(10) unsigned NOT NULL,
+  `id_attribute_group` int(10) unsigned NOT NULL DEFAULT '0',
+  `id_shop` int(10) unsigned NOT NULL DEFAULT '1'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- --------------------------------------------------------
@@ -12717,9 +12725,9 @@ CREATE TABLE `ps_layered_product_attribute` (
 -- Структура таблицы `ps_linksmenutop`
 --
 
-CREATE TABLE `ps_linksmenutop` (
-  `id_linksmenutop` int(10) UNSIGNED NOT NULL,
-  `id_shop` int(11) UNSIGNED NOT NULL,
+CREATE TABLE IF NOT EXISTS `ps_linksmenutop` (
+  `id_linksmenutop` int(10) unsigned NOT NULL,
+  `id_shop` int(11) unsigned NOT NULL,
   `new_window` tinyint(1) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
@@ -12729,10 +12737,10 @@ CREATE TABLE `ps_linksmenutop` (
 -- Структура таблицы `ps_linksmenutop_lang`
 --
 
-CREATE TABLE `ps_linksmenutop_lang` (
-  `id_linksmenutop` int(11) UNSIGNED NOT NULL,
-  `id_lang` int(11) UNSIGNED NOT NULL,
-  `id_shop` int(11) UNSIGNED NOT NULL,
+CREATE TABLE IF NOT EXISTS `ps_linksmenutop_lang` (
+  `id_linksmenutop` int(11) unsigned NOT NULL,
+  `id_lang` int(11) unsigned NOT NULL,
+  `id_shop` int(11) unsigned NOT NULL,
   `label` varchar(128) NOT NULL,
   `link` varchar(128) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
@@ -12743,17 +12751,17 @@ CREATE TABLE `ps_linksmenutop_lang` (
 -- Структура таблицы `ps_log`
 --
 
-CREATE TABLE `ps_log` (
-  `id_log` int(10) UNSIGNED NOT NULL,
+CREATE TABLE IF NOT EXISTS `ps_log` (
+  `id_log` int(10) unsigned NOT NULL,
   `severity` tinyint(1) NOT NULL,
   `error_code` int(11) DEFAULT NULL,
   `message` text NOT NULL,
   `object_type` varchar(32) DEFAULT NULL,
-  `object_id` int(10) UNSIGNED DEFAULT NULL,
-  `id_employee` int(10) UNSIGNED DEFAULT NULL,
+  `object_id` int(10) unsigned DEFAULT NULL,
+  `id_employee` int(10) unsigned DEFAULT NULL,
   `date_add` datetime NOT NULL,
   `date_upd` datetime NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=111 DEFAULT CHARSET=utf8;
 
 --
 -- Дамп данных таблицы `ps_log`
@@ -12846,7 +12854,30 @@ INSERT INTO `ps_log` (`id_log`, `severity`, `error_code`, `message`, `object_typ
 (84, 1, 0, 'Currency модификация', 'Currency', 1, 1, '2018-09-13 18:26:27', '2018-09-13 18:26:27'),
 (85, 1, 0, 'Соединение с BackOffice из 127.0.0.1', '', 0, 1, '2018-09-14 22:59:02', '2018-09-14 22:59:02'),
 (86, 1, 0, 'Frontcontroller::init - Cart cannot be loaded or an order has already been placed using this cart', 'Cart', 38, 0, '2018-09-14 23:14:05', '2018-09-14 23:14:05'),
-(87, 1, 0, 'Frontcontroller::init - Cart cannot be loaded or an order has already been placed using this cart', 'Cart', 39, 0, '2018-09-14 23:16:49', '2018-09-14 23:16:49');
+(87, 1, 0, 'Frontcontroller::init - Cart cannot be loaded or an order has already been placed using this cart', 'Cart', 39, 0, '2018-09-14 23:16:49', '2018-09-14 23:16:49'),
+(88, 1, 0, 'Frontcontroller::init - Cart cannot be loaded or an order has already been placed using this cart', 'Cart', 38, 0, '2018-09-15 13:50:43', '2018-09-15 13:50:43'),
+(89, 1, 0, 'Соединение с BackOffice из 127.0.0.1', '', 0, 1, '2018-09-15 13:51:33', '2018-09-15 13:51:33'),
+(90, 1, 0, 'Соединение с BackOffice из 127.0.0.1', '', 0, 1, '2018-09-15 16:28:27', '2018-09-15 16:28:27'),
+(91, 1, 0, 'Category модификация', 'Category', 3, 1, '2018-09-15 16:53:43', '2018-09-15 16:53:43'),
+(92, 1, 0, 'Category модификация', 'Category', 4, 1, '2018-09-15 16:54:15', '2018-09-15 16:54:15'),
+(93, 1, 0, 'Соединение с BackOffice из 127.0.0.1', '', 0, 1, '2018-09-15 17:50:06', '2018-09-15 17:50:06'),
+(94, 1, 0, 'Category модификация', 'Category', 5, 1, '2018-09-15 17:51:29', '2018-09-15 17:51:29'),
+(95, 1, 0, 'Category модификация', 'Category', 6, 1, '2018-09-15 17:52:02', '2018-09-15 17:52:02'),
+(96, 1, 0, 'Category модификация', 'Category', 7, 1, '2018-09-15 17:52:48', '2018-09-15 17:52:48'),
+(97, 1, 0, 'Category модификация', 'Category', 13, 1, '2018-09-15 17:54:28', '2018-09-15 17:54:28'),
+(98, 1, 0, 'Category модификация', 'Category', 8, 1, '2018-09-15 18:01:06', '2018-09-15 18:01:06'),
+(99, 1, 0, 'Category модификация', 'Category', 14, 1, '2018-09-15 18:02:48', '2018-09-15 18:02:48'),
+(100, 1, 0, 'Category модификация', 'Category', 12, 1, '2018-09-15 18:06:58', '2018-09-15 18:06:58'),
+(101, 1, 0, 'Category модификация', 'Category', 9, 1, '2018-09-15 18:15:31', '2018-09-15 18:15:31'),
+(102, 1, 0, 'Category модификация', 'Category', 10, 1, '2018-09-15 18:23:10', '2018-09-15 18:23:10'),
+(103, 1, 0, 'Category модификация', 'Category', 3, 1, '2018-09-15 18:28:14', '2018-09-15 18:28:14'),
+(104, 1, 0, 'Category модификация', 'Category', 14, 1, '2018-09-15 18:43:00', '2018-09-15 18:43:00'),
+(105, 1, 0, 'Соединение с BackOffice из 127.0.0.1', '', 0, 1, '2018-09-15 19:02:46', '2018-09-15 19:02:46'),
+(106, 1, 0, 'Соединение с BackOffice из 127.0.0.1', '', 0, 1, '2018-09-17 11:27:06', '2018-09-17 11:27:06'),
+(107, 1, 0, 'Category модификация', 'Category', 4, 1, '2018-09-17 12:26:53', '2018-09-17 12:26:53'),
+(108, 1, 0, 'Соединение с BackOffice из 127.0.0.1', '', 0, 1, '2018-09-17 13:04:18', '2018-09-17 13:04:18'),
+(109, 1, 0, 'Category модификация', 'Category', 8, 1, '2018-09-17 13:05:18', '2018-09-17 13:05:18'),
+(110, 1, 0, 'Соединение с BackOffice из 127.0.0.1', '', 0, 1, '2018-09-17 15:55:52', '2018-09-17 15:55:52');
 
 -- --------------------------------------------------------
 
@@ -12854,8 +12885,8 @@ INSERT INTO `ps_log` (`id_log`, `severity`, `error_code`, `message`, `object_typ
 -- Структура таблицы `ps_magictoolbox_video`
 --
 
-CREATE TABLE `ps_magictoolbox_video` (
-  `id_product` int(10) UNSIGNED NOT NULL,
+CREATE TABLE IF NOT EXISTS `ps_magictoolbox_video` (
+  `id_product` int(10) unsigned NOT NULL,
   `data` mediumtext
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
@@ -12873,15 +12904,15 @@ INSERT INTO `ps_magictoolbox_video` (`id_product`, `data`) VALUES
 -- Структура таблицы `ps_magiczoomplus_settings`
 --
 
-CREATE TABLE `ps_magiczoomplus_settings` (
-  `id` int(10) UNSIGNED NOT NULL,
+CREATE TABLE IF NOT EXISTS `ps_magiczoomplus_settings` (
+  `id` int(10) unsigned NOT NULL,
   `block` varchar(32) NOT NULL,
   `name` varchar(32) NOT NULL,
   `value` text,
   `default_value` text,
-  `enabled` tinyint(1) UNSIGNED NOT NULL,
-  `default_enabled` tinyint(1) UNSIGNED NOT NULL
-) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+  `enabled` tinyint(1) unsigned NOT NULL,
+  `default_enabled` tinyint(1) unsigned NOT NULL
+) ENGINE=MyISAM AUTO_INCREMENT=596 DEFAULT CHARSET=utf8;
 
 --
 -- Дамп данных таблицы `ps_magiczoomplus_settings`
@@ -13490,14 +13521,14 @@ INSERT INTO `ps_magiczoomplus_settings` (`id`, `block`, `name`, `value`, `defaul
 -- Структура таблицы `ps_mail`
 --
 
-CREATE TABLE `ps_mail` (
-  `id_mail` int(11) UNSIGNED NOT NULL,
+CREATE TABLE IF NOT EXISTS `ps_mail` (
+  `id_mail` int(11) unsigned NOT NULL,
   `recipient` varchar(126) NOT NULL,
   `template` varchar(62) NOT NULL,
   `subject` varchar(254) NOT NULL,
-  `id_lang` int(11) UNSIGNED NOT NULL,
+  `id_lang` int(11) unsigned NOT NULL,
   `date_add` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=76 DEFAULT CHARSET=utf8;
 
 --
 -- Дамп данных таблицы `ps_mail`
@@ -13586,13 +13617,13 @@ INSERT INTO `ps_mail` (`id_mail`, `recipient`, `template`, `subject`, `id_lang`,
 -- Структура таблицы `ps_manufacturer`
 --
 
-CREATE TABLE `ps_manufacturer` (
-  `id_manufacturer` int(10) UNSIGNED NOT NULL,
+CREATE TABLE IF NOT EXISTS `ps_manufacturer` (
+  `id_manufacturer` int(10) unsigned NOT NULL,
   `name` varchar(64) NOT NULL,
   `date_add` datetime NOT NULL,
   `date_upd` datetime NOT NULL,
   `active` tinyint(1) NOT NULL DEFAULT '0'
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8;
 
 --
 -- Дамп данных таблицы `ps_manufacturer`
@@ -13610,9 +13641,9 @@ INSERT INTO `ps_manufacturer` (`id_manufacturer`, `name`, `date_add`, `date_upd`
 -- Структура таблицы `ps_manufacturer_lang`
 --
 
-CREATE TABLE `ps_manufacturer_lang` (
-  `id_manufacturer` int(10) UNSIGNED NOT NULL,
-  `id_lang` int(10) UNSIGNED NOT NULL,
+CREATE TABLE IF NOT EXISTS `ps_manufacturer_lang` (
+  `id_manufacturer` int(10) unsigned NOT NULL,
+  `id_lang` int(10) unsigned NOT NULL,
   `description` text,
   `short_description` text,
   `meta_title` varchar(128) DEFAULT NULL,
@@ -13636,9 +13667,9 @@ INSERT INTO `ps_manufacturer_lang` (`id_manufacturer`, `id_lang`, `description`,
 -- Структура таблицы `ps_manufacturer_shop`
 --
 
-CREATE TABLE `ps_manufacturer_shop` (
-  `id_manufacturer` int(11) UNSIGNED NOT NULL,
-  `id_shop` int(11) UNSIGNED NOT NULL
+CREATE TABLE IF NOT EXISTS `ps_manufacturer_shop` (
+  `id_manufacturer` int(11) unsigned NOT NULL,
+  `id_shop` int(11) unsigned NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
@@ -13657,11 +13688,11 @@ INSERT INTO `ps_manufacturer_shop` (`id_manufacturer`, `id_shop`) VALUES
 -- Структура таблицы `ps_memcached_servers`
 --
 
-CREATE TABLE `ps_memcached_servers` (
-  `id_memcached_server` int(11) UNSIGNED NOT NULL,
+CREATE TABLE IF NOT EXISTS `ps_memcached_servers` (
+  `id_memcached_server` int(11) unsigned NOT NULL,
   `ip` varchar(254) NOT NULL,
-  `port` int(11) UNSIGNED NOT NULL,
-  `weight` int(11) UNSIGNED NOT NULL
+  `port` int(11) unsigned NOT NULL,
+  `weight` int(11) unsigned NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- --------------------------------------------------------
@@ -13670,14 +13701,14 @@ CREATE TABLE `ps_memcached_servers` (
 -- Структура таблицы `ps_message`
 --
 
-CREATE TABLE `ps_message` (
-  `id_message` int(10) UNSIGNED NOT NULL,
-  `id_cart` int(10) UNSIGNED DEFAULT NULL,
-  `id_customer` int(10) UNSIGNED NOT NULL,
-  `id_employee` int(10) UNSIGNED DEFAULT NULL,
-  `id_order` int(10) UNSIGNED NOT NULL,
+CREATE TABLE IF NOT EXISTS `ps_message` (
+  `id_message` int(10) unsigned NOT NULL,
+  `id_cart` int(10) unsigned DEFAULT NULL,
+  `id_customer` int(10) unsigned NOT NULL,
+  `id_employee` int(10) unsigned DEFAULT NULL,
+  `id_order` int(10) unsigned NOT NULL,
   `message` text NOT NULL,
-  `private` tinyint(1) UNSIGNED NOT NULL DEFAULT '1',
+  `private` tinyint(1) unsigned NOT NULL DEFAULT '1',
   `date_add` datetime NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
@@ -13687,9 +13718,9 @@ CREATE TABLE `ps_message` (
 -- Структура таблицы `ps_message_readed`
 --
 
-CREATE TABLE `ps_message_readed` (
-  `id_message` int(10) UNSIGNED NOT NULL,
-  `id_employee` int(10) UNSIGNED NOT NULL,
+CREATE TABLE IF NOT EXISTS `ps_message_readed` (
+  `id_message` int(10) unsigned NOT NULL,
+  `id_employee` int(10) unsigned NOT NULL,
   `date_add` datetime NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
@@ -13699,11 +13730,11 @@ CREATE TABLE `ps_message_readed` (
 -- Структура таблицы `ps_meta`
 --
 
-CREATE TABLE `ps_meta` (
-  `id_meta` int(10) UNSIGNED NOT NULL,
+CREATE TABLE IF NOT EXISTS `ps_meta` (
+  `id_meta` int(10) unsigned NOT NULL,
   `page` varchar(64) NOT NULL,
-  `configurable` tinyint(1) UNSIGNED NOT NULL DEFAULT '1'
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+  `configurable` tinyint(1) unsigned NOT NULL DEFAULT '1'
+) ENGINE=InnoDB AUTO_INCREMENT=37 DEFAULT CHARSET=utf8;
 
 --
 -- Дамп данных таблицы `ps_meta`
@@ -13753,10 +13784,10 @@ INSERT INTO `ps_meta` (`id_meta`, `page`, `configurable`) VALUES
 -- Структура таблицы `ps_meta_lang`
 --
 
-CREATE TABLE `ps_meta_lang` (
-  `id_meta` int(10) UNSIGNED NOT NULL,
-  `id_shop` int(11) UNSIGNED NOT NULL DEFAULT '1',
-  `id_lang` int(10) UNSIGNED NOT NULL,
+CREATE TABLE IF NOT EXISTS `ps_meta_lang` (
+  `id_meta` int(10) unsigned NOT NULL,
+  `id_shop` int(11) unsigned NOT NULL DEFAULT '1',
+  `id_lang` int(10) unsigned NOT NULL,
   `title` varchar(128) DEFAULT NULL,
   `description` varchar(255) DEFAULT NULL,
   `keywords` varchar(255) DEFAULT NULL,
@@ -13802,12 +13833,12 @@ INSERT INTO `ps_meta_lang` (`id_meta`, `id_shop`, `id_lang`, `title`, `descripti
 -- Структура таблицы `ps_module`
 --
 
-CREATE TABLE `ps_module` (
-  `id_module` int(10) UNSIGNED NOT NULL,
+CREATE TABLE IF NOT EXISTS `ps_module` (
+  `id_module` int(10) unsigned NOT NULL,
   `name` varchar(64) NOT NULL,
-  `active` tinyint(1) UNSIGNED NOT NULL DEFAULT '0',
+  `active` tinyint(1) unsigned NOT NULL DEFAULT '0',
   `version` varchar(8) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=74 DEFAULT CHARSET=utf8;
 
 --
 -- Дамп данных таблицы `ps_module`
@@ -13892,15 +13923,15 @@ INSERT INTO `ps_module` (`id_module`, `name`, `active`, `version`) VALUES
 -- Структура таблицы `ps_modules_perfs`
 --
 
-CREATE TABLE `ps_modules_perfs` (
-  `id_modules_perfs` int(11) UNSIGNED NOT NULL,
-  `session` int(11) UNSIGNED NOT NULL,
+CREATE TABLE IF NOT EXISTS `ps_modules_perfs` (
+  `id_modules_perfs` int(11) unsigned NOT NULL,
+  `session` int(11) unsigned NOT NULL,
   `module` varchar(62) NOT NULL,
   `method` varchar(126) NOT NULL,
-  `time_start` double UNSIGNED NOT NULL,
-  `time_end` double UNSIGNED NOT NULL,
-  `memory_start` int(10) UNSIGNED NOT NULL,
-  `memory_end` int(10) UNSIGNED NOT NULL
+  `time_start` double unsigned NOT NULL,
+  `time_end` double unsigned NOT NULL,
+  `memory_start` int(10) unsigned NOT NULL,
+  `memory_end` int(10) unsigned NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- --------------------------------------------------------
@@ -13909,9 +13940,9 @@ CREATE TABLE `ps_modules_perfs` (
 -- Структура таблицы `ps_module_access`
 --
 
-CREATE TABLE `ps_module_access` (
-  `id_profile` int(10) UNSIGNED NOT NULL,
-  `id_module` int(10) UNSIGNED NOT NULL,
+CREATE TABLE IF NOT EXISTS `ps_module_access` (
+  `id_profile` int(10) unsigned NOT NULL,
+  `id_module` int(10) unsigned NOT NULL,
   `view` tinyint(1) NOT NULL DEFAULT '0',
   `configure` tinyint(1) NOT NULL DEFAULT '0',
   `uninstall` tinyint(1) NOT NULL DEFAULT '0'
@@ -14142,10 +14173,10 @@ INSERT INTO `ps_module_access` (`id_profile`, `id_module`, `view`, `configure`, 
 -- Структура таблицы `ps_module_country`
 --
 
-CREATE TABLE `ps_module_country` (
-  `id_module` int(10) UNSIGNED NOT NULL,
-  `id_shop` int(11) UNSIGNED NOT NULL DEFAULT '1',
-  `id_country` int(10) UNSIGNED NOT NULL
+CREATE TABLE IF NOT EXISTS `ps_module_country` (
+  `id_module` int(10) unsigned NOT NULL,
+  `id_shop` int(11) unsigned NOT NULL DEFAULT '1',
+  `id_country` int(10) unsigned NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
@@ -14165,9 +14196,9 @@ INSERT INTO `ps_module_country` (`id_module`, `id_shop`, `id_country`) VALUES
 -- Структура таблицы `ps_module_currency`
 --
 
-CREATE TABLE `ps_module_currency` (
-  `id_module` int(10) UNSIGNED NOT NULL,
-  `id_shop` int(11) UNSIGNED NOT NULL DEFAULT '1',
+CREATE TABLE IF NOT EXISTS `ps_module_currency` (
+  `id_module` int(10) unsigned NOT NULL,
+  `id_shop` int(11) unsigned NOT NULL DEFAULT '1',
   `id_currency` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
@@ -14192,10 +14223,10 @@ INSERT INTO `ps_module_currency` (`id_module`, `id_shop`, `id_currency`) VALUES
 -- Структура таблицы `ps_module_group`
 --
 
-CREATE TABLE `ps_module_group` (
-  `id_module` int(10) UNSIGNED NOT NULL,
-  `id_shop` int(11) UNSIGNED NOT NULL DEFAULT '1',
-  `id_group` int(11) UNSIGNED NOT NULL
+CREATE TABLE IF NOT EXISTS `ps_module_group` (
+  `id_module` int(10) unsigned NOT NULL,
+  `id_shop` int(11) unsigned NOT NULL DEFAULT '1',
+  `id_group` int(11) unsigned NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
@@ -14494,7 +14525,7 @@ INSERT INTO `ps_module_group` (`id_module`, `id_shop`, `id_group`) VALUES
 -- Структура таблицы `ps_module_preference`
 --
 
-CREATE TABLE `ps_module_preference` (
+CREATE TABLE IF NOT EXISTS `ps_module_preference` (
   `id_module_preference` int(11) NOT NULL,
   `id_employee` int(11) NOT NULL,
   `module` varchar(255) NOT NULL,
@@ -14508,9 +14539,9 @@ CREATE TABLE `ps_module_preference` (
 -- Структура таблицы `ps_module_shop`
 --
 
-CREATE TABLE `ps_module_shop` (
-  `id_module` int(11) UNSIGNED NOT NULL,
-  `id_shop` int(11) UNSIGNED NOT NULL,
+CREATE TABLE IF NOT EXISTS `ps_module_shop` (
+  `id_module` int(11) unsigned NOT NULL,
+  `id_shop` int(11) unsigned NOT NULL,
   `enable_device` tinyint(1) NOT NULL DEFAULT '7'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
@@ -14594,10 +14625,10 @@ INSERT INTO `ps_module_shop` (`id_module`, `id_shop`, `enable_device`) VALUES
 -- Структура таблицы `ps_newsletter`
 --
 
-CREATE TABLE `ps_newsletter` (
+CREATE TABLE IF NOT EXISTS `ps_newsletter` (
   `id` int(6) NOT NULL,
-  `id_shop` int(10) UNSIGNED NOT NULL DEFAULT '1',
-  `id_shop_group` int(10) UNSIGNED NOT NULL DEFAULT '1',
+  `id_shop` int(10) unsigned NOT NULL DEFAULT '1',
+  `id_shop_group` int(10) unsigned NOT NULL DEFAULT '1',
   `email` varchar(255) NOT NULL,
   `newsletter_date_add` datetime DEFAULT NULL,
   `ip_registration_newsletter` varchar(15) NOT NULL,
@@ -14611,10 +14642,10 @@ CREATE TABLE `ps_newsletter` (
 -- Структура таблицы `ps_operating_system`
 --
 
-CREATE TABLE `ps_operating_system` (
-  `id_operating_system` int(10) UNSIGNED NOT NULL,
+CREATE TABLE IF NOT EXISTS `ps_operating_system` (
+  `id_operating_system` int(10) unsigned NOT NULL,
   `name` varchar(64) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf8;
 
 --
 -- Дамп данных таблицы `ps_operating_system`
@@ -14635,25 +14666,25 @@ INSERT INTO `ps_operating_system` (`id_operating_system`, `name`) VALUES
 -- Структура таблицы `ps_orders`
 --
 
-CREATE TABLE `ps_orders` (
-  `id_order` int(10) UNSIGNED NOT NULL,
+CREATE TABLE IF NOT EXISTS `ps_orders` (
+  `id_order` int(10) unsigned NOT NULL,
   `reference` varchar(9) DEFAULT NULL,
-  `id_shop_group` int(11) UNSIGNED NOT NULL DEFAULT '1',
-  `id_shop` int(11) UNSIGNED NOT NULL DEFAULT '1',
-  `id_carrier` int(10) UNSIGNED NOT NULL,
-  `id_lang` int(10) UNSIGNED NOT NULL,
-  `id_customer` int(10) UNSIGNED NOT NULL,
-  `id_cart` int(10) UNSIGNED NOT NULL,
-  `id_currency` int(10) UNSIGNED NOT NULL,
-  `id_address_delivery` int(10) UNSIGNED NOT NULL,
-  `id_address_invoice` int(10) UNSIGNED NOT NULL,
-  `current_state` int(10) UNSIGNED NOT NULL,
+  `id_shop_group` int(11) unsigned NOT NULL DEFAULT '1',
+  `id_shop` int(11) unsigned NOT NULL DEFAULT '1',
+  `id_carrier` int(10) unsigned NOT NULL,
+  `id_lang` int(10) unsigned NOT NULL,
+  `id_customer` int(10) unsigned NOT NULL,
+  `id_cart` int(10) unsigned NOT NULL,
+  `id_currency` int(10) unsigned NOT NULL,
+  `id_address_delivery` int(10) unsigned NOT NULL,
+  `id_address_invoice` int(10) unsigned NOT NULL,
+  `current_state` int(10) unsigned NOT NULL,
   `secure_key` varchar(32) NOT NULL DEFAULT '-1',
   `payment` varchar(255) NOT NULL,
   `conversion_rate` decimal(13,6) NOT NULL DEFAULT '1.000000',
   `module` varchar(255) DEFAULT NULL,
-  `recyclable` tinyint(1) UNSIGNED NOT NULL DEFAULT '0',
-  `gift` tinyint(1) UNSIGNED NOT NULL DEFAULT '0',
+  `recyclable` tinyint(1) unsigned NOT NULL DEFAULT '0',
+  `gift` tinyint(1) unsigned NOT NULL DEFAULT '0',
   `gift_message` text,
   `mobile_theme` tinyint(1) NOT NULL DEFAULT '0',
   `shipping_number` varchar(64) DEFAULT NULL,
@@ -14675,14 +14706,14 @@ CREATE TABLE `ps_orders` (
   `total_wrapping_tax_excl` decimal(20,6) NOT NULL DEFAULT '0.000000',
   `round_mode` tinyint(1) NOT NULL DEFAULT '2',
   `round_type` tinyint(1) NOT NULL DEFAULT '1',
-  `invoice_number` int(10) UNSIGNED NOT NULL DEFAULT '0',
-  `delivery_number` int(10) UNSIGNED NOT NULL DEFAULT '0',
+  `invoice_number` int(10) unsigned NOT NULL DEFAULT '0',
+  `delivery_number` int(10) unsigned NOT NULL DEFAULT '0',
   `invoice_date` datetime NOT NULL,
   `delivery_date` datetime NOT NULL,
-  `valid` int(1) UNSIGNED NOT NULL DEFAULT '0',
+  `valid` int(1) unsigned NOT NULL DEFAULT '0',
   `date_add` datetime NOT NULL,
   `date_upd` datetime NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=39 DEFAULT CHARSET=utf8;
 
 --
 -- Дамп данных таблицы `ps_orders`
@@ -14734,17 +14765,17 @@ INSERT INTO `ps_orders` (`id_order`, `reference`, `id_shop_group`, `id_shop`, `i
 -- Структура таблицы `ps_order_carrier`
 --
 
-CREATE TABLE `ps_order_carrier` (
+CREATE TABLE IF NOT EXISTS `ps_order_carrier` (
   `id_order_carrier` int(11) NOT NULL,
-  `id_order` int(11) UNSIGNED NOT NULL,
-  `id_carrier` int(11) UNSIGNED NOT NULL,
-  `id_order_invoice` int(11) UNSIGNED DEFAULT NULL,
+  `id_order` int(11) unsigned NOT NULL,
+  `id_carrier` int(11) unsigned NOT NULL,
+  `id_order_invoice` int(11) unsigned DEFAULT NULL,
   `weight` decimal(20,6) DEFAULT NULL,
   `shipping_cost_tax_excl` decimal(20,6) DEFAULT NULL,
   `shipping_cost_tax_incl` decimal(20,6) DEFAULT NULL,
   `tracking_number` varchar(64) DEFAULT NULL,
   `date_add` datetime NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=39 DEFAULT CHARSET=utf8;
 
 --
 -- Дамп данных таблицы `ps_order_carrier`
@@ -14796,11 +14827,11 @@ INSERT INTO `ps_order_carrier` (`id_order_carrier`, `id_order`, `id_carrier`, `i
 -- Структура таблицы `ps_order_cart_rule`
 --
 
-CREATE TABLE `ps_order_cart_rule` (
-  `id_order_cart_rule` int(10) UNSIGNED NOT NULL,
-  `id_order` int(10) UNSIGNED NOT NULL,
-  `id_cart_rule` int(10) UNSIGNED NOT NULL,
-  `id_order_invoice` int(10) UNSIGNED DEFAULT '0',
+CREATE TABLE IF NOT EXISTS `ps_order_cart_rule` (
+  `id_order_cart_rule` int(10) unsigned NOT NULL,
+  `id_order` int(10) unsigned NOT NULL,
+  `id_cart_rule` int(10) unsigned NOT NULL,
+  `id_order_invoice` int(10) unsigned DEFAULT '0',
   `name` varchar(254) NOT NULL,
   `value` decimal(17,2) NOT NULL DEFAULT '0.00',
   `value_tax_excl` decimal(17,2) NOT NULL DEFAULT '0.00',
@@ -14813,20 +14844,20 @@ CREATE TABLE `ps_order_cart_rule` (
 -- Структура таблицы `ps_order_detail`
 --
 
-CREATE TABLE `ps_order_detail` (
-  `id_order_detail` int(10) UNSIGNED NOT NULL,
-  `id_order` int(10) UNSIGNED NOT NULL,
+CREATE TABLE IF NOT EXISTS `ps_order_detail` (
+  `id_order_detail` int(10) unsigned NOT NULL,
+  `id_order` int(10) unsigned NOT NULL,
   `id_order_invoice` int(11) DEFAULT NULL,
-  `id_warehouse` int(10) UNSIGNED DEFAULT '0',
-  `id_shop` int(11) UNSIGNED NOT NULL,
-  `product_id` int(10) UNSIGNED NOT NULL,
-  `product_attribute_id` int(10) UNSIGNED DEFAULT NULL,
+  `id_warehouse` int(10) unsigned DEFAULT '0',
+  `id_shop` int(11) unsigned NOT NULL,
+  `product_id` int(10) unsigned NOT NULL,
+  `product_attribute_id` int(10) unsigned DEFAULT NULL,
   `product_name` varchar(255) NOT NULL,
-  `product_quantity` int(10) UNSIGNED NOT NULL DEFAULT '0',
+  `product_quantity` int(10) unsigned NOT NULL DEFAULT '0',
   `product_quantity_in_stock` int(10) NOT NULL DEFAULT '0',
-  `product_quantity_refunded` int(10) UNSIGNED NOT NULL DEFAULT '0',
-  `product_quantity_return` int(10) UNSIGNED NOT NULL DEFAULT '0',
-  `product_quantity_reinjected` int(10) UNSIGNED NOT NULL DEFAULT '0',
+  `product_quantity_refunded` int(10) unsigned NOT NULL DEFAULT '0',
+  `product_quantity_return` int(10) unsigned NOT NULL DEFAULT '0',
+  `product_quantity_reinjected` int(10) unsigned NOT NULL DEFAULT '0',
   `product_price` decimal(20,6) NOT NULL DEFAULT '0.000000',
   `reduction_percent` decimal(10,2) NOT NULL DEFAULT '0.00',
   `reduction_amount` decimal(20,6) NOT NULL DEFAULT '0.000000',
@@ -14839,15 +14870,15 @@ CREATE TABLE `ps_order_detail` (
   `product_reference` varchar(32) DEFAULT NULL,
   `product_supplier_reference` varchar(32) DEFAULT NULL,
   `product_weight` decimal(20,6) NOT NULL,
-  `id_tax_rules_group` int(11) UNSIGNED DEFAULT '0',
-  `tax_computation_method` tinyint(1) UNSIGNED NOT NULL DEFAULT '0',
+  `id_tax_rules_group` int(11) unsigned DEFAULT '0',
+  `tax_computation_method` tinyint(1) unsigned NOT NULL DEFAULT '0',
   `tax_name` varchar(16) NOT NULL,
   `tax_rate` decimal(10,3) NOT NULL DEFAULT '0.000',
   `ecotax` decimal(21,6) NOT NULL DEFAULT '0.000000',
   `ecotax_tax_rate` decimal(5,3) NOT NULL DEFAULT '0.000',
   `discount_quantity_applied` tinyint(1) NOT NULL DEFAULT '0',
   `download_hash` varchar(255) DEFAULT NULL,
-  `download_nb` int(10) UNSIGNED DEFAULT '0',
+  `download_nb` int(10) unsigned DEFAULT '0',
   `download_deadline` datetime DEFAULT NULL,
   `total_price_tax_incl` decimal(20,6) NOT NULL DEFAULT '0.000000',
   `total_price_tax_excl` decimal(20,6) NOT NULL DEFAULT '0.000000',
@@ -14858,7 +14889,7 @@ CREATE TABLE `ps_order_detail` (
   `purchase_supplier_price` decimal(20,6) NOT NULL DEFAULT '0.000000',
   `original_product_price` decimal(20,6) NOT NULL DEFAULT '0.000000',
   `original_wholesale_price` decimal(20,6) NOT NULL DEFAULT '0.000000'
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=47 DEFAULT CHARSET=utf8;
 
 --
 -- Дамп данных таблицы `ps_order_detail`
@@ -14918,7 +14949,7 @@ INSERT INTO `ps_order_detail` (`id_order_detail`, `id_order`, `id_order_invoice`
 -- Структура таблицы `ps_order_detail_tax`
 --
 
-CREATE TABLE `ps_order_detail_tax` (
+CREATE TABLE IF NOT EXISTS `ps_order_detail_tax` (
   `id_order_detail` int(11) NOT NULL,
   `id_tax` int(11) NOT NULL,
   `unit_amount` decimal(16,6) NOT NULL DEFAULT '0.000000',
@@ -14931,13 +14962,13 @@ CREATE TABLE `ps_order_detail_tax` (
 -- Структура таблицы `ps_order_history`
 --
 
-CREATE TABLE `ps_order_history` (
-  `id_order_history` int(10) UNSIGNED NOT NULL,
-  `id_employee` int(10) UNSIGNED NOT NULL,
-  `id_order` int(10) UNSIGNED NOT NULL,
-  `id_order_state` int(10) UNSIGNED NOT NULL,
+CREATE TABLE IF NOT EXISTS `ps_order_history` (
+  `id_order_history` int(10) unsigned NOT NULL,
+  `id_employee` int(10) unsigned NOT NULL,
+  `id_order` int(10) unsigned NOT NULL,
+  `id_order_state` int(10) unsigned NOT NULL,
   `date_add` datetime NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=43 DEFAULT CHARSET=utf8;
 
 --
 -- Дамп данных таблицы `ps_order_history`
@@ -14993,8 +15024,8 @@ INSERT INTO `ps_order_history` (`id_order_history`, `id_employee`, `id_order`, `
 -- Структура таблицы `ps_order_invoice`
 --
 
-CREATE TABLE `ps_order_invoice` (
-  `id_order_invoice` int(11) UNSIGNED NOT NULL,
+CREATE TABLE IF NOT EXISTS `ps_order_invoice` (
+  `id_order_invoice` int(11) unsigned NOT NULL,
   `id_order` int(11) NOT NULL,
   `number` int(11) NOT NULL,
   `delivery_number` int(11) NOT NULL,
@@ -15007,7 +15038,7 @@ CREATE TABLE `ps_order_invoice` (
   `total_products_wt` decimal(20,6) NOT NULL DEFAULT '0.000000',
   `total_shipping_tax_excl` decimal(20,6) NOT NULL DEFAULT '0.000000',
   `total_shipping_tax_incl` decimal(20,6) NOT NULL DEFAULT '0.000000',
-  `shipping_tax_computation_method` int(10) UNSIGNED NOT NULL,
+  `shipping_tax_computation_method` int(10) unsigned NOT NULL,
   `total_wrapping_tax_excl` decimal(20,6) NOT NULL DEFAULT '0.000000',
   `total_wrapping_tax_incl` decimal(20,6) NOT NULL DEFAULT '0.000000',
   `shop_address` text,
@@ -15015,7 +15046,7 @@ CREATE TABLE `ps_order_invoice` (
   `delivery_address` text,
   `note` text,
   `date_add` datetime NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=28 DEFAULT CHARSET=utf8;
 
 --
 -- Дамп данных таблицы `ps_order_invoice`
@@ -15056,10 +15087,10 @@ INSERT INTO `ps_order_invoice` (`id_order_invoice`, `id_order`, `number`, `deliv
 -- Структура таблицы `ps_order_invoice_payment`
 --
 
-CREATE TABLE `ps_order_invoice_payment` (
-  `id_order_invoice` int(11) UNSIGNED NOT NULL,
-  `id_order_payment` int(11) UNSIGNED NOT NULL,
-  `id_order` int(11) UNSIGNED NOT NULL
+CREATE TABLE IF NOT EXISTS `ps_order_invoice_payment` (
+  `id_order_invoice` int(11) unsigned NOT NULL,
+  `id_order_payment` int(11) unsigned NOT NULL,
+  `id_order` int(11) unsigned NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
@@ -15099,7 +15130,7 @@ INSERT INTO `ps_order_invoice_payment` (`id_order_invoice`, `id_order_payment`, 
 -- Структура таблицы `ps_order_invoice_tax`
 --
 
-CREATE TABLE `ps_order_invoice_tax` (
+CREATE TABLE IF NOT EXISTS `ps_order_invoice_tax` (
   `id_order_invoice` int(11) NOT NULL,
   `type` varchar(15) NOT NULL,
   `id_tax` int(11) NOT NULL,
@@ -15112,10 +15143,10 @@ CREATE TABLE `ps_order_invoice_tax` (
 -- Структура таблицы `ps_order_message`
 --
 
-CREATE TABLE `ps_order_message` (
-  `id_order_message` int(10) UNSIGNED NOT NULL,
+CREATE TABLE IF NOT EXISTS `ps_order_message` (
+  `id_order_message` int(10) unsigned NOT NULL,
   `date_add` datetime NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
 
 --
 -- Дамп данных таблицы `ps_order_message`
@@ -15130,9 +15161,9 @@ INSERT INTO `ps_order_message` (`id_order_message`, `date_add`) VALUES
 -- Структура таблицы `ps_order_message_lang`
 --
 
-CREATE TABLE `ps_order_message_lang` (
-  `id_order_message` int(10) UNSIGNED NOT NULL,
-  `id_lang` int(10) UNSIGNED NOT NULL,
+CREATE TABLE IF NOT EXISTS `ps_order_message_lang` (
+  `id_order_message` int(10) unsigned NOT NULL,
+  `id_lang` int(10) unsigned NOT NULL,
   `name` varchar(128) NOT NULL,
   `message` text NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
@@ -15150,10 +15181,10 @@ INSERT INTO `ps_order_message_lang` (`id_order_message`, `id_lang`, `name`, `mes
 -- Структура таблицы `ps_order_payment`
 --
 
-CREATE TABLE `ps_order_payment` (
+CREATE TABLE IF NOT EXISTS `ps_order_payment` (
   `id_order_payment` int(11) NOT NULL,
   `order_reference` varchar(9) DEFAULT NULL,
-  `id_currency` int(10) UNSIGNED NOT NULL,
+  `id_currency` int(10) unsigned NOT NULL,
   `amount` decimal(10,2) NOT NULL,
   `payment_method` varchar(255) NOT NULL,
   `conversion_rate` decimal(13,6) NOT NULL DEFAULT '1.000000',
@@ -15163,7 +15194,7 @@ CREATE TABLE `ps_order_payment` (
   `card_expiration` char(7) DEFAULT NULL,
   `card_holder` varchar(254) DEFAULT NULL,
   `date_add` datetime NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=26 DEFAULT CHARSET=utf8;
 
 --
 -- Дамп данных таблицы `ps_order_payment`
@@ -15202,11 +15233,11 @@ INSERT INTO `ps_order_payment` (`id_order_payment`, `order_reference`, `id_curre
 -- Структура таблицы `ps_order_return`
 --
 
-CREATE TABLE `ps_order_return` (
-  `id_order_return` int(10) UNSIGNED NOT NULL,
-  `id_customer` int(10) UNSIGNED NOT NULL,
-  `id_order` int(10) UNSIGNED NOT NULL,
-  `state` tinyint(1) UNSIGNED NOT NULL DEFAULT '1',
+CREATE TABLE IF NOT EXISTS `ps_order_return` (
+  `id_order_return` int(10) unsigned NOT NULL,
+  `id_customer` int(10) unsigned NOT NULL,
+  `id_order` int(10) unsigned NOT NULL,
+  `state` tinyint(1) unsigned NOT NULL DEFAULT '1',
   `question` text NOT NULL,
   `date_add` datetime NOT NULL,
   `date_upd` datetime NOT NULL
@@ -15218,11 +15249,11 @@ CREATE TABLE `ps_order_return` (
 -- Структура таблицы `ps_order_return_detail`
 --
 
-CREATE TABLE `ps_order_return_detail` (
-  `id_order_return` int(10) UNSIGNED NOT NULL,
-  `id_order_detail` int(10) UNSIGNED NOT NULL,
-  `id_customization` int(10) UNSIGNED NOT NULL DEFAULT '0',
-  `product_quantity` int(10) UNSIGNED NOT NULL DEFAULT '0'
+CREATE TABLE IF NOT EXISTS `ps_order_return_detail` (
+  `id_order_return` int(10) unsigned NOT NULL,
+  `id_order_detail` int(10) unsigned NOT NULL,
+  `id_customization` int(10) unsigned NOT NULL DEFAULT '0',
+  `product_quantity` int(10) unsigned NOT NULL DEFAULT '0'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- --------------------------------------------------------
@@ -15231,10 +15262,10 @@ CREATE TABLE `ps_order_return_detail` (
 -- Структура таблицы `ps_order_return_state`
 --
 
-CREATE TABLE `ps_order_return_state` (
-  `id_order_return_state` int(10) UNSIGNED NOT NULL,
+CREATE TABLE IF NOT EXISTS `ps_order_return_state` (
+  `id_order_return_state` int(10) unsigned NOT NULL,
   `color` varchar(32) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8;
 
 --
 -- Дамп данных таблицы `ps_order_return_state`
@@ -15253,9 +15284,9 @@ INSERT INTO `ps_order_return_state` (`id_order_return_state`, `color`) VALUES
 -- Структура таблицы `ps_order_return_state_lang`
 --
 
-CREATE TABLE `ps_order_return_state_lang` (
-  `id_order_return_state` int(10) UNSIGNED NOT NULL,
-  `id_lang` int(10) UNSIGNED NOT NULL,
+CREATE TABLE IF NOT EXISTS `ps_order_return_state_lang` (
+  `id_order_return_state` int(10) unsigned NOT NULL,
+  `id_lang` int(10) unsigned NOT NULL,
   `name` varchar(64) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
@@ -15276,20 +15307,20 @@ INSERT INTO `ps_order_return_state_lang` (`id_order_return_state`, `id_lang`, `n
 -- Структура таблицы `ps_order_slip`
 --
 
-CREATE TABLE `ps_order_slip` (
-  `id_order_slip` int(10) UNSIGNED NOT NULL,
+CREATE TABLE IF NOT EXISTS `ps_order_slip` (
+  `id_order_slip` int(10) unsigned NOT NULL,
   `conversion_rate` decimal(13,6) NOT NULL DEFAULT '1.000000',
-  `id_customer` int(10) UNSIGNED NOT NULL,
-  `id_order` int(10) UNSIGNED NOT NULL,
+  `id_customer` int(10) unsigned NOT NULL,
+  `id_order` int(10) unsigned NOT NULL,
   `total_products_tax_excl` decimal(20,6) DEFAULT NULL,
   `total_products_tax_incl` decimal(20,6) DEFAULT NULL,
   `total_shipping_tax_excl` decimal(20,6) DEFAULT NULL,
   `total_shipping_tax_incl` decimal(20,6) DEFAULT NULL,
-  `shipping_cost` tinyint(3) UNSIGNED NOT NULL DEFAULT '0',
+  `shipping_cost` tinyint(3) unsigned NOT NULL DEFAULT '0',
   `amount` decimal(10,2) NOT NULL,
   `shipping_cost_amount` decimal(10,2) NOT NULL,
   `partial` tinyint(1) NOT NULL,
-  `order_slip_type` tinyint(1) UNSIGNED NOT NULL DEFAULT '0',
+  `order_slip_type` tinyint(1) unsigned NOT NULL DEFAULT '0',
   `date_add` datetime NOT NULL,
   `date_upd` datetime NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
@@ -15300,10 +15331,10 @@ CREATE TABLE `ps_order_slip` (
 -- Структура таблицы `ps_order_slip_detail`
 --
 
-CREATE TABLE `ps_order_slip_detail` (
-  `id_order_slip` int(10) UNSIGNED NOT NULL,
-  `id_order_detail` int(10) UNSIGNED NOT NULL,
-  `product_quantity` int(10) UNSIGNED NOT NULL DEFAULT '0',
+CREATE TABLE IF NOT EXISTS `ps_order_slip_detail` (
+  `id_order_slip` int(10) unsigned NOT NULL,
+  `id_order_detail` int(10) unsigned NOT NULL,
+  `product_quantity` int(10) unsigned NOT NULL DEFAULT '0',
   `unit_price_tax_excl` decimal(20,6) DEFAULT NULL,
   `unit_price_tax_incl` decimal(20,6) DEFAULT NULL,
   `total_price_tax_excl` decimal(20,6) DEFAULT NULL,
@@ -15318,9 +15349,9 @@ CREATE TABLE `ps_order_slip_detail` (
 -- Структура таблицы `ps_order_slip_detail_tax`
 --
 
-CREATE TABLE `ps_order_slip_detail_tax` (
-  `id_order_slip_detail` int(11) UNSIGNED NOT NULL,
-  `id_tax` int(11) UNSIGNED NOT NULL,
+CREATE TABLE IF NOT EXISTS `ps_order_slip_detail_tax` (
+  `id_order_slip_detail` int(11) unsigned NOT NULL,
+  `id_tax` int(11) unsigned NOT NULL,
   `unit_amount` decimal(16,6) NOT NULL DEFAULT '0.000000',
   `total_amount` decimal(16,6) NOT NULL DEFAULT '0.000000'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
@@ -15331,22 +15362,22 @@ CREATE TABLE `ps_order_slip_detail_tax` (
 -- Структура таблицы `ps_order_state`
 --
 
-CREATE TABLE `ps_order_state` (
-  `id_order_state` int(10) UNSIGNED NOT NULL,
-  `invoice` tinyint(1) UNSIGNED DEFAULT '0',
-  `send_email` tinyint(1) UNSIGNED NOT NULL DEFAULT '0',
+CREATE TABLE IF NOT EXISTS `ps_order_state` (
+  `id_order_state` int(10) unsigned NOT NULL,
+  `invoice` tinyint(1) unsigned DEFAULT '0',
+  `send_email` tinyint(1) unsigned NOT NULL DEFAULT '0',
   `module_name` varchar(255) DEFAULT NULL,
   `color` varchar(32) DEFAULT NULL,
-  `unremovable` tinyint(1) UNSIGNED NOT NULL,
-  `hidden` tinyint(1) UNSIGNED NOT NULL DEFAULT '0',
+  `unremovable` tinyint(1) unsigned NOT NULL,
+  `hidden` tinyint(1) unsigned NOT NULL DEFAULT '0',
   `logable` tinyint(1) NOT NULL DEFAULT '0',
-  `delivery` tinyint(1) UNSIGNED NOT NULL DEFAULT '0',
-  `shipped` tinyint(1) UNSIGNED NOT NULL DEFAULT '0',
-  `paid` tinyint(1) UNSIGNED NOT NULL DEFAULT '0',
-  `pdf_invoice` tinyint(1) UNSIGNED NOT NULL DEFAULT '0',
-  `pdf_delivery` tinyint(1) UNSIGNED NOT NULL DEFAULT '0',
-  `deleted` tinyint(1) UNSIGNED NOT NULL DEFAULT '0'
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+  `delivery` tinyint(1) unsigned NOT NULL DEFAULT '0',
+  `shipped` tinyint(1) unsigned NOT NULL DEFAULT '0',
+  `paid` tinyint(1) unsigned NOT NULL DEFAULT '0',
+  `pdf_invoice` tinyint(1) unsigned NOT NULL DEFAULT '0',
+  `pdf_delivery` tinyint(1) unsigned NOT NULL DEFAULT '0',
+  `deleted` tinyint(1) unsigned NOT NULL DEFAULT '0'
+) ENGINE=InnoDB AUTO_INCREMENT=16 DEFAULT CHARSET=utf8;
 
 --
 -- Дамп данных таблицы `ps_order_state`
@@ -15375,9 +15406,9 @@ INSERT INTO `ps_order_state` (`id_order_state`, `invoice`, `send_email`, `module
 -- Структура таблицы `ps_order_state_lang`
 --
 
-CREATE TABLE `ps_order_state_lang` (
-  `id_order_state` int(10) UNSIGNED NOT NULL,
-  `id_lang` int(10) UNSIGNED NOT NULL,
+CREATE TABLE IF NOT EXISTS `ps_order_state_lang` (
+  `id_order_state` int(10) unsigned NOT NULL,
+  `id_lang` int(10) unsigned NOT NULL,
   `name` varchar(64) NOT NULL,
   `template` varchar(64) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
@@ -15409,11 +15440,11 @@ INSERT INTO `ps_order_state_lang` (`id_order_state`, `id_lang`, `name`, `templat
 -- Структура таблицы `ps_pack`
 --
 
-CREATE TABLE `ps_pack` (
-  `id_product_pack` int(10) UNSIGNED NOT NULL,
-  `id_product_item` int(10) UNSIGNED NOT NULL,
-  `id_product_attribute_item` int(10) UNSIGNED NOT NULL,
-  `quantity` int(10) UNSIGNED NOT NULL DEFAULT '1'
+CREATE TABLE IF NOT EXISTS `ps_pack` (
+  `id_product_pack` int(10) unsigned NOT NULL,
+  `id_product_item` int(10) unsigned NOT NULL,
+  `id_product_attribute_item` int(10) unsigned NOT NULL,
+  `quantity` int(10) unsigned NOT NULL DEFAULT '1'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- --------------------------------------------------------
@@ -15422,11 +15453,11 @@ CREATE TABLE `ps_pack` (
 -- Структура таблицы `ps_page`
 --
 
-CREATE TABLE `ps_page` (
-  `id_page` int(10) UNSIGNED NOT NULL,
-  `id_page_type` int(10) UNSIGNED NOT NULL,
-  `id_object` int(10) UNSIGNED DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+CREATE TABLE IF NOT EXISTS `ps_page` (
+  `id_page` int(10) unsigned NOT NULL,
+  `id_page_type` int(10) unsigned NOT NULL,
+  `id_object` int(10) unsigned DEFAULT NULL
+) ENGINE=InnoDB AUTO_INCREMENT=11 DEFAULT CHARSET=utf8;
 
 --
 -- Дамп данных таблицы `ps_page`
@@ -15450,14 +15481,14 @@ INSERT INTO `ps_page` (`id_page`, `id_page_type`, `id_object`) VALUES
 -- Структура таблицы `ps_pagenotfound`
 --
 
-CREATE TABLE `ps_pagenotfound` (
-  `id_pagenotfound` int(10) UNSIGNED NOT NULL,
-  `id_shop` int(10) UNSIGNED NOT NULL DEFAULT '1',
-  `id_shop_group` int(10) UNSIGNED NOT NULL DEFAULT '1',
+CREATE TABLE IF NOT EXISTS `ps_pagenotfound` (
+  `id_pagenotfound` int(10) unsigned NOT NULL,
+  `id_shop` int(10) unsigned NOT NULL DEFAULT '1',
+  `id_shop_group` int(10) unsigned NOT NULL DEFAULT '1',
   `request_uri` varchar(256) NOT NULL,
   `http_referer` varchar(256) NOT NULL,
   `date_add` datetime NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=1542 DEFAULT CHARSET=utf8;
 
 --
 -- Дамп данных таблицы `ps_pagenotfound`
@@ -15499,7 +15530,1515 @@ INSERT INTO `ps_pagenotfound` (`id_pagenotfound`, `id_shop`, `id_shop_group`, `r
 (33, 1, 1, '/admin557jx7p07/themes/default/css/admin-theme.css.map', '', '2018-08-16 23:53:49'),
 (34, 1, 1, '/admin557jx7p07/themes/default/css/admin-theme.css.map', '', '2018-08-16 23:54:13'),
 (35, 1, 1, '/citymotors.com.ua', 'http://citynew.loc/?live_configurator_token=04fea2fd0785b85aaa0b5275ccf6c5ef&id_shop=1&id_employee=1&theme=&theme_font=', '2018-09-13 17:50:43'),
-(36, 1, 1, '/citymotors.com.ua', 'http://citynew.loc/', '2018-09-13 17:51:25');
+(36, 1, 1, '/citymotors.com.ua', 'http://citynew.loc/', '2018-09-13 17:51:25'),
+(37, 1, 1, '/robots.txt', '', '2018-09-15 16:28:28'),
+(38, 1, 1, '/robots.txt', '', '2018-09-15 16:52:29'),
+(39, 1, 1, '/citymotors.com.ua', 'http://citynew.loc/', '2018-09-15 17:05:04'),
+(40, 1, 1, '/robots.txt', '', '2018-09-15 17:07:32'),
+(41, 1, 1, '/themes/citymotors/css/modules/blockcart/blockcart.css.map', '', '2018-09-15 17:11:32'),
+(42, 1, 1, '/themes/citymotors/css/modules/blockbestsellers/blockbestsellers.css.map', '', '2018-09-15 17:11:32'),
+(43, 1, 1, '/themes/citymotors/css/modules/blockcategories/blockcategories.css.map', '', '2018-09-15 17:11:33'),
+(44, 1, 1, '/themes/citymotors/css/autoload/uniform.default.css.map', '', '2018-09-15 17:11:33'),
+(45, 1, 1, '/themes/citymotors/css/global.css.map', '', '2018-09-15 17:11:33'),
+(46, 1, 1, '/themes/citymotors/css/product_list.css.map', '', '2018-09-15 17:11:33'),
+(47, 1, 1, '/themes/citymotors/css/modules/blockmyaccountfooter/blockmyaccount.css.map', '', '2018-09-15 17:11:34'),
+(48, 1, 1, '/themes/citymotors/css/modules/blocklanguages/blocklanguages.css.map', '', '2018-09-15 17:11:34'),
+(49, 1, 1, '/themes/citymotors/css/modules/blockcontact/blockcontact.css.map', '', '2018-09-15 17:11:34'),
+(50, 1, 1, '/themes/citymotors/css/modules/blocknewproducts/blocknewproducts.css.map', '', '2018-09-15 17:11:35'),
+(51, 1, 1, '/themes/citymotors/css/modules/blocksearch/blocksearch.css.map', '', '2018-09-15 17:11:35'),
+(52, 1, 1, '/themes/citymotors/css/modules/blocknewsletter/blocknewsletter.css.map', '', '2018-09-15 17:11:35'),
+(53, 1, 1, '/themes/citymotors/css/modules/blockspecials/blockspecials.css.map', '', '2018-09-15 17:11:36'),
+(54, 1, 1, '/themes/citymotors/css/modules/homeslider/homeslider.css.map', '', '2018-09-15 17:11:37'),
+(55, 1, 1, '/themes/citymotors/css/modules/blockuserinfo/blockuserinfo.css.map', '', '2018-09-15 17:11:37'),
+(56, 1, 1, '/themes/citymotors/css/modules/blockviewed/blockviewed.css.map', '', '2018-09-15 17:11:37'),
+(57, 1, 1, '/themes/citymotors/css/modules/blocktags/blocktags.css.map', '', '2018-09-15 17:11:37'),
+(58, 1, 1, '/themes/citymotors/css/modules/homefeatured/homefeatured.css.map', '', '2018-09-15 17:11:37'),
+(59, 1, 1, '/themes/citymotors/css/modules/blocktopmenu/css/superfish-modified.css.map', '', '2018-09-15 17:11:38'),
+(60, 1, 1, '/themes/citymotors/css/modules/blocktopmenu/css/blocktopmenu.css.map', '', '2018-09-15 17:11:38'),
+(61, 1, 1, '/themes/citymotors/css/global.css.map', '', '2018-09-15 17:15:33'),
+(62, 1, 1, '/themes/citymotors/css/product_list.css.map', '', '2018-09-15 17:15:33'),
+(63, 1, 1, '/themes/citymotors/css/autoload/uniform.default.css.map', '', '2018-09-15 17:15:33'),
+(64, 1, 1, '/themes/citymotors/css/modules/blockcategories/blockcategories.css.map', '', '2018-09-15 17:15:33'),
+(65, 1, 1, '/themes/citymotors/css/modules/blockbestsellers/blockbestsellers.css.map', '', '2018-09-15 17:15:34'),
+(66, 1, 1, '/themes/citymotors/css/modules/blockcart/blockcart.css.map', '', '2018-09-15 17:15:34'),
+(67, 1, 1, '/themes/citymotors/css/modules/blocklanguages/blocklanguages.css.map', '', '2018-09-15 17:15:35'),
+(68, 1, 1, '/themes/citymotors/css/modules/blockmyaccountfooter/blockmyaccount.css.map', '', '2018-09-15 17:15:35'),
+(69, 1, 1, '/themes/citymotors/css/modules/blockcontact/blockcontact.css.map', '', '2018-09-15 17:15:35'),
+(70, 1, 1, '/themes/citymotors/css/modules/blocknewsletter/blocknewsletter.css.map', '', '2018-09-15 17:15:36'),
+(71, 1, 1, '/themes/citymotors/css/modules/blocknewproducts/blocknewproducts.css.map', '', '2018-09-15 17:15:36'),
+(72, 1, 1, '/themes/citymotors/css/modules/blocksearch/blocksearch.css.map', '', '2018-09-15 17:15:37'),
+(73, 1, 1, '/themes/citymotors/css/modules/blockspecials/blockspecials.css.map', '', '2018-09-15 17:15:37'),
+(74, 1, 1, '/themes/citymotors/css/modules/blocktags/blocktags.css.map', '', '2018-09-15 17:15:37'),
+(75, 1, 1, '/themes/citymotors/css/modules/blockviewed/blockviewed.css.map', '', '2018-09-15 17:15:37'),
+(76, 1, 1, '/themes/citymotors/css/modules/homeslider/homeslider.css.map', '', '2018-09-15 17:15:37'),
+(77, 1, 1, '/themes/citymotors/css/modules/blockuserinfo/blockuserinfo.css.map', '', '2018-09-15 17:15:38'),
+(78, 1, 1, '/themes/citymotors/css/modules/blocktopmenu/css/blocktopmenu.css.map', '', '2018-09-15 17:15:38'),
+(79, 1, 1, '/themes/citymotors/css/modules/blocktopmenu/css/superfish-modified.css.map', '', '2018-09-15 17:15:38'),
+(80, 1, 1, '/themes/citymotors/css/modules/homefeatured/homefeatured.css.map', '', '2018-09-15 17:15:38'),
+(81, 1, 1, '/themes/citymotors/css/autoload/uniform.default.css.map', '', '2018-09-15 17:16:19'),
+(82, 1, 1, '/themes/citymotors/css/modules/blockcategories/blockcategories.css.map', '', '2018-09-15 17:16:20'),
+(83, 1, 1, '/themes/citymotors/css/modules/blockbestsellers/blockbestsellers.css.map', '', '2018-09-15 17:16:20'),
+(84, 1, 1, '/themes/citymotors/css/modules/blocklanguages/blocklanguages.css.map', '', '2018-09-15 17:16:20'),
+(85, 1, 1, '/themes/citymotors/css/modules/blockcart/blockcart.css.map', '', '2018-09-15 17:16:21'),
+(86, 1, 1, '/themes/citymotors/css/product_list.css.map', '', '2018-09-15 17:16:22'),
+(87, 1, 1, '/themes/citymotors/css/modules/blocknewsletter/blocknewsletter.css.map', '', '2018-09-15 17:16:24'),
+(88, 1, 1, '/themes/citymotors/css/modules/blockcontact/blockcontact.css.map', '', '2018-09-15 17:16:24'),
+(89, 1, 1, '/themes/citymotors/css/modules/blockmyaccountfooter/blockmyaccount.css.map', '', '2018-09-15 17:16:25'),
+(90, 1, 1, '/themes/citymotors/css/modules/blocksearch/blocksearch.css.map', '', '2018-09-15 17:16:25'),
+(91, 1, 1, '/themes/citymotors/css/modules/blocknewproducts/blocknewproducts.css.map', '', '2018-09-15 17:16:25'),
+(92, 1, 1, '/themes/citymotors/css/modules/blockspecials/blockspecials.css.map', '', '2018-09-15 17:16:26'),
+(93, 1, 1, '/themes/citymotors/css/modules/blocktags/blocktags.css.map', '', '2018-09-15 17:16:27'),
+(94, 1, 1, '/themes/citymotors/css/modules/blockviewed/blockviewed.css.map', '', '2018-09-15 17:16:27'),
+(95, 1, 1, '/themes/citymotors/css/modules/blockuserinfo/blockuserinfo.css.map', '', '2018-09-15 17:16:28'),
+(96, 1, 1, '/themes/citymotors/css/modules/homeslider/homeslider.css.map', '', '2018-09-15 17:16:28'),
+(97, 1, 1, '/themes/citymotors/css/modules/homefeatured/homefeatured.css.map', '', '2018-09-15 17:16:28'),
+(98, 1, 1, '/themes/citymotors/css/modules/blocktopmenu/css/blocktopmenu.css.map', '', '2018-09-15 17:16:28'),
+(99, 1, 1, '/themes/citymotors/css/modules/blocktopmenu/css/superfish-modified.css.map', '', '2018-09-15 17:16:29'),
+(100, 1, 1, '/themes/citymotors/css/global.css.map', '', '2018-09-15 17:16:30'),
+(101, 1, 1, '/robots.txt', '', '2018-09-15 17:19:22'),
+(102, 1, 1, '/robots.txt', '', '2018-09-15 17:19:27'),
+(103, 1, 1, '/themes/citymotors/css/autoload/uniform.default.css.map', '', '2018-09-15 17:19:28'),
+(104, 1, 1, '/themes/citymotors/css/product_list.css.map', '', '2018-09-15 17:19:30'),
+(105, 1, 1, '/themes/citymotors/css/modules/blockbestsellers/blockbestsellers.css.map', '', '2018-09-15 17:19:30'),
+(106, 1, 1, '/themes/citymotors/css/global.css.map', '', '2018-09-15 17:19:32'),
+(107, 1, 1, '/themes/citymotors/css/modules/blocklanguages/blocklanguages.css.map', '', '2018-09-15 17:19:34'),
+(108, 1, 1, '/themes/citymotors/css/modules/blockcategories/blockcategories.css.map', '', '2018-09-15 17:19:34'),
+(109, 1, 1, '/themes/citymotors/css/modules/blockmyaccountfooter/blockmyaccount.css.map', '', '2018-09-15 17:19:34'),
+(110, 1, 1, '/themes/citymotors/css/modules/blockcontact/blockcontact.css.map', '', '2018-09-15 17:19:35'),
+(111, 1, 1, '/themes/citymotors/css/modules/blockcart/blockcart.css.map', '', '2018-09-15 17:19:35'),
+(112, 1, 1, '/themes/citymotors/css/modules/blocknewproducts/blocknewproducts.css.map', '', '2018-09-15 17:19:36'),
+(113, 1, 1, '/themes/citymotors/css/modules/blockspecials/blockspecials.css.map', '', '2018-09-15 17:19:37'),
+(114, 1, 1, '/themes/citymotors/css/modules/blocksearch/blocksearch.css.map', '', '2018-09-15 17:19:37'),
+(115, 1, 1, '/themes/citymotors/css/modules/blocknewsletter/blocknewsletter.css.map', '', '2018-09-15 17:19:37'),
+(116, 1, 1, '/themes/citymotors/css/modules/blockuserinfo/blockuserinfo.css.map', '', '2018-09-15 17:19:38'),
+(117, 1, 1, '/themes/citymotors/css/modules/blocktags/blocktags.css.map', '', '2018-09-15 17:19:38'),
+(118, 1, 1, '/themes/citymotors/css/modules/blockviewed/blockviewed.css.map', '', '2018-09-15 17:19:39'),
+(119, 1, 1, '/themes/citymotors/css/modules/blocktopmenu/css/blocktopmenu.css.map', '', '2018-09-15 17:19:39'),
+(120, 1, 1, '/themes/citymotors/css/modules/homefeatured/homefeatured.css.map', '', '2018-09-15 17:19:39'),
+(121, 1, 1, '/themes/citymotors/css/modules/blocktopmenu/css/superfish-modified.css.map', '', '2018-09-15 17:19:40'),
+(122, 1, 1, '/themes/citymotors/css/modules/homeslider/homeslider.css.map', '', '2018-09-15 17:19:40'),
+(123, 1, 1, '/themes/citymotors/css/product_list.css.map', '', '2018-09-15 17:19:53'),
+(124, 1, 1, '/themes/citymotors/css/category.css.map', '', '2018-09-15 17:19:54'),
+(125, 1, 1, '/themes/citymotors/css/scenes.css.map', '', '2018-09-15 17:19:54'),
+(126, 1, 1, '/themes/citymotors/css/autoload/uniform.default.css.map', '', '2018-09-15 17:19:54'),
+(127, 1, 1, '/themes/citymotors/css/modules/blockbestsellers/blockbestsellers.css.map', '', '2018-09-15 17:19:55'),
+(128, 1, 1, '/themes/citymotors/css/modules/blockcart/blockcart.css.map', '', '2018-09-15 17:19:55'),
+(129, 1, 1, '/themes/citymotors/css/modules/blockcategories/blockcategories.css.map', '', '2018-09-15 17:19:56'),
+(130, 1, 1, '/themes/citymotors/css/modules/blockcontact/blockcontact.css.map', '', '2018-09-15 17:19:56'),
+(131, 1, 1, '/themes/citymotors/css/modules/blocklanguages/blocklanguages.css.map', '', '2018-09-15 17:19:57'),
+(132, 1, 1, '/themes/citymotors/css/modules/blockmyaccountfooter/blockmyaccount.css.map', '', '2018-09-15 17:19:58'),
+(133, 1, 1, '/themes/citymotors/css/modules/blocklayered/blocklayered.css.map', '', '2018-09-15 17:19:58'),
+(134, 1, 1, '/themes/citymotors/css/modules/blocknewproducts/blocknewproducts.css.map', '', '2018-09-15 17:19:58'),
+(135, 1, 1, '/themes/citymotors/css/modules/blocksearch/blocksearch.css.map', '', '2018-09-15 17:19:59'),
+(136, 1, 1, '/themes/citymotors/css/modules/blockspecials/blockspecials.css.map', '', '2018-09-15 17:19:59'),
+(137, 1, 1, '/themes/citymotors/css/modules/blocknewsletter/blocknewsletter.css.map', '', '2018-09-15 17:19:59'),
+(138, 1, 1, '/themes/citymotors/css/modules/blocktags/blocktags.css.map', '', '2018-09-15 17:19:59'),
+(139, 1, 1, '/themes/citymotors/css/modules/blockviewed/blockviewed.css.map', '', '2018-09-15 17:19:59'),
+(140, 1, 1, '/themes/citymotors/css/modules/blockuserinfo/blockuserinfo.css.map', '', '2018-09-15 17:20:00'),
+(141, 1, 1, '/themes/citymotors/css/global.css.map', '', '2018-09-15 17:20:00'),
+(142, 1, 1, '/themes/citymotors/css/modules/homefeatured/homefeatured.css.map', '', '2018-09-15 17:20:00'),
+(143, 1, 1, '/themes/citymotors/css/modules/blocktopmenu/css/superfish-modified.css.map', '', '2018-09-15 17:20:00'),
+(144, 1, 1, '/themes/citymotors/css/modules/blocktopmenu/css/blocktopmenu.css.map', '', '2018-09-15 17:20:01'),
+(145, 1, 1, '/themes/citymotors/css/modules/blockbestsellers/blockbestsellers.css.map', '', '2018-09-15 17:20:31'),
+(146, 1, 1, '/themes/citymotors/css/product_list.css.map', '', '2018-09-15 17:20:31'),
+(147, 1, 1, '/themes/citymotors/css/autoload/uniform.default.css.map', '', '2018-09-15 17:20:31'),
+(148, 1, 1, '/themes/citymotors/css/modules/blockcart/blockcart.css.map', '', '2018-09-15 17:20:31'),
+(149, 1, 1, '/themes/citymotors/css/modules/blockcategories/blockcategories.css.map', '', '2018-09-15 17:20:33'),
+(150, 1, 1, '/themes/citymotors/css/modules/blocklanguages/blocklanguages.css.map', '', '2018-09-15 17:20:33'),
+(151, 1, 1, '/themes/citymotors/css/modules/blockmyaccountfooter/blockmyaccount.css.map', '', '2018-09-15 17:20:35'),
+(152, 1, 1, '/themes/citymotors/css/modules/blockcontact/blockcontact.css.map', '', '2018-09-15 17:20:35'),
+(153, 1, 1, '/themes/citymotors/css/modules/blocknewproducts/blocknewproducts.css.map', '', '2018-09-15 17:20:36'),
+(154, 1, 1, '/themes/citymotors/css/modules/blocknewsletter/blocknewsletter.css.map', '', '2018-09-15 17:20:36'),
+(155, 1, 1, '/themes/citymotors/css/modules/blockspecials/blockspecials.css.map', '', '2018-09-15 17:20:36'),
+(156, 1, 1, '/themes/citymotors/css/modules/blocksearch/blocksearch.css.map', '', '2018-09-15 17:20:36'),
+(157, 1, 1, '/themes/citymotors/css/modules/blockuserinfo/blockuserinfo.css.map', '', '2018-09-15 17:20:38'),
+(158, 1, 1, '/themes/citymotors/css/modules/homeslider/homeslider.css.map', '', '2018-09-15 17:20:38'),
+(159, 1, 1, '/themes/citymotors/css/modules/blocktags/blocktags.css.map', '', '2018-09-15 17:20:38'),
+(160, 1, 1, '/themes/citymotors/css/modules/blockviewed/blockviewed.css.map', '', '2018-09-15 17:20:39'),
+(161, 1, 1, '/themes/citymotors/css/modules/homefeatured/homefeatured.css.map', '', '2018-09-15 17:20:39'),
+(162, 1, 1, '/themes/citymotors/css/modules/blocktopmenu/css/blocktopmenu.css.map', '', '2018-09-15 17:20:40'),
+(163, 1, 1, '/themes/citymotors/css/modules/blocktopmenu/css/superfish-modified.css.map', '', '2018-09-15 17:20:40'),
+(164, 1, 1, '/themes/citymotors/css/global.css.map', '', '2018-09-15 17:20:41'),
+(165, 1, 1, '/themes/citymotors/css/autoload/uniform.default.css.map', '', '2018-09-15 17:29:02'),
+(166, 1, 1, '/themes/citymotors/css/global.css.map', '', '2018-09-15 17:29:02'),
+(167, 1, 1, '/themes/citymotors/css/modules/blockbestsellers/blockbestsellers.css.map', '', '2018-09-15 17:29:03'),
+(168, 1, 1, '/themes/citymotors/css/modules/blockcategories/blockcategories.css.map', '', '2018-09-15 17:29:03'),
+(169, 1, 1, '/themes/citymotors/css/modules/blockcart/blockcart.css.map', '', '2018-09-15 17:29:03'),
+(170, 1, 1, '/themes/citymotors/css/product_list.css.map', '', '2018-09-15 17:29:03'),
+(171, 1, 1, '/themes/citymotors/css/modules/blocklanguages/blocklanguages.css.map', '', '2018-09-15 17:29:07'),
+(172, 1, 1, '/themes/citymotors/css/modules/blockmyaccountfooter/blockmyaccount.css.map', '', '2018-09-15 17:29:07'),
+(173, 1, 1, '/themes/citymotors/css/modules/blocknewsletter/blocknewsletter.css.map', '', '2018-09-15 17:29:07'),
+(174, 1, 1, '/themes/citymotors/css/modules/blocknewproducts/blocknewproducts.css.map', '', '2018-09-15 17:29:07'),
+(175, 1, 1, '/themes/citymotors/css/modules/blocksearch/blocksearch.css.map', '', '2018-09-15 17:29:08'),
+(176, 1, 1, '/themes/citymotors/css/modules/blockcontact/blockcontact.css.map', '', '2018-09-15 17:29:09'),
+(177, 1, 1, '/themes/citymotors/css/modules/blockspecials/blockspecials.css.map', '', '2018-09-15 17:29:09'),
+(178, 1, 1, '/themes/citymotors/css/modules/blockuserinfo/blockuserinfo.css.map', '', '2018-09-15 17:29:10'),
+(179, 1, 1, '/themes/citymotors/css/modules/homeslider/homeslider.css.map', '', '2018-09-15 17:29:10'),
+(180, 1, 1, '/themes/citymotors/css/modules/blocktags/blocktags.css.map', '', '2018-09-15 17:29:10'),
+(181, 1, 1, '/themes/citymotors/css/modules/homefeatured/homefeatured.css.map', '', '2018-09-15 17:29:11'),
+(182, 1, 1, '/themes/citymotors/css/modules/blocktopmenu/css/blocktopmenu.css.map', '', '2018-09-15 17:29:11'),
+(183, 1, 1, '/themes/citymotors/css/modules/blockviewed/blockviewed.css.map', '', '2018-09-15 17:29:12'),
+(184, 1, 1, '/themes/citymotors/css/modules/blocktopmenu/css/superfish-modified.css.map', '', '2018-09-15 17:29:13'),
+(185, 1, 1, '/themes/citymotors/css/global.css.map', '', '2018-09-15 17:30:50'),
+(186, 1, 1, '/themes/citymotors/css/autoload/uniform.default.css.map', '', '2018-09-15 17:30:50'),
+(187, 1, 1, '/themes/citymotors/css/modules/blockbestsellers/blockbestsellers.css.map', '', '2018-09-15 17:30:51'),
+(188, 1, 1, '/themes/citymotors/css/modules/blockcart/blockcart.css.map', '', '2018-09-15 17:30:51'),
+(189, 1, 1, '/themes/citymotors/css/product_list.css.map', '', '2018-09-15 17:30:51'),
+(190, 1, 1, '/themes/citymotors/css/modules/blockcategories/blockcategories.css.map', '', '2018-09-15 17:30:54'),
+(191, 1, 1, '/themes/citymotors/css/modules/blocklanguages/blocklanguages.css.map', '', '2018-09-15 17:30:55'),
+(192, 1, 1, '/themes/citymotors/css/modules/blockmyaccountfooter/blockmyaccount.css.map', '', '2018-09-15 17:30:55'),
+(193, 1, 1, '/themes/citymotors/css/modules/blocknewproducts/blocknewproducts.css.map', '', '2018-09-15 17:30:55'),
+(194, 1, 1, '/themes/citymotors/css/modules/blockcontact/blockcontact.css.map', '', '2018-09-15 17:30:55'),
+(195, 1, 1, '/themes/citymotors/css/modules/blocknewsletter/blocknewsletter.css.map', '', '2018-09-15 17:30:55'),
+(196, 1, 1, '/themes/citymotors/css/modules/blocksearch/blocksearch.css.map', '', '2018-09-15 17:30:57'),
+(197, 1, 1, '/themes/citymotors/css/modules/blockviewed/blockviewed.css.map', '', '2018-09-15 17:30:57'),
+(198, 1, 1, '/themes/citymotors/css/modules/blocktags/blocktags.css.map', '', '2018-09-15 17:30:57'),
+(199, 1, 1, '/themes/citymotors/css/modules/blockuserinfo/blockuserinfo.css.map', '', '2018-09-15 17:30:58'),
+(200, 1, 1, '/themes/citymotors/css/modules/homeslider/homeslider.css.map', '', '2018-09-15 17:30:58'),
+(201, 1, 1, '/themes/citymotors/css/modules/blockspecials/blockspecials.css.map', '', '2018-09-15 17:30:59'),
+(202, 1, 1, '/themes/citymotors/css/modules/homefeatured/homefeatured.css.map', '', '2018-09-15 17:30:59'),
+(203, 1, 1, '/themes/citymotors/css/modules/blocktopmenu/css/blocktopmenu.css.map', '', '2018-09-15 17:30:59'),
+(204, 1, 1, '/themes/citymotors/css/modules/blocktopmenu/css/superfish-modified.css.map', '', '2018-09-15 17:31:00'),
+(205, 1, 1, '/themes/citymotors/css/modules/blockcategories/blockcategories.css.map', '', '2018-09-15 17:31:54'),
+(206, 1, 1, '/themes/citymotors/css/global.css.map', '', '2018-09-15 17:31:55'),
+(207, 1, 1, '/themes/citymotors/css/modules/blockcart/blockcart.css.map', '', '2018-09-15 17:31:55'),
+(208, 1, 1, '/themes/citymotors/css/autoload/uniform.default.css.map', '', '2018-09-15 17:31:55'),
+(209, 1, 1, '/themes/citymotors/css/modules/blockbestsellers/blockbestsellers.css.map', '', '2018-09-15 17:31:55'),
+(210, 1, 1, '/themes/citymotors/css/product_list.css.map', '', '2018-09-15 17:31:56'),
+(211, 1, 1, '/themes/citymotors/css/modules/blocklanguages/blocklanguages.css.map', '', '2018-09-15 17:32:00'),
+(212, 1, 1, '/themes/citymotors/css/modules/blocknewproducts/blocknewproducts.css.map', '', '2018-09-15 17:32:00'),
+(213, 1, 1, '/themes/citymotors/css/modules/blocksearch/blocksearch.css.map', '', '2018-09-15 17:32:01'),
+(214, 1, 1, '/themes/citymotors/css/modules/blockmyaccountfooter/blockmyaccount.css.map', '', '2018-09-15 17:32:01'),
+(215, 1, 1, '/themes/citymotors/css/modules/blockcontact/blockcontact.css.map', '', '2018-09-15 17:32:01'),
+(216, 1, 1, '/themes/citymotors/css/modules/blocknewsletter/blocknewsletter.css.map', '', '2018-09-15 17:32:02'),
+(217, 1, 1, '/themes/citymotors/css/modules/blocktags/blocktags.css.map', '', '2018-09-15 17:32:03'),
+(218, 1, 1, '/themes/citymotors/css/modules/homeslider/homeslider.css.map', '', '2018-09-15 17:32:04'),
+(219, 1, 1, '/themes/citymotors/css/modules/blockuserinfo/blockuserinfo.css.map', '', '2018-09-15 17:32:04'),
+(220, 1, 1, '/themes/citymotors/css/modules/blockspecials/blockspecials.css.map', '', '2018-09-15 17:32:04'),
+(221, 1, 1, '/themes/citymotors/css/modules/blockviewed/blockviewed.css.map', '', '2018-09-15 17:32:04'),
+(222, 1, 1, '/themes/citymotors/css/modules/homefeatured/homefeatured.css.map', '', '2018-09-15 17:32:05'),
+(223, 1, 1, '/themes/citymotors/css/modules/blocktopmenu/css/blocktopmenu.css.map', '', '2018-09-15 17:32:06'),
+(224, 1, 1, '/themes/citymotors/css/modules/blocktopmenu/css/superfish-modified.css.map', '', '2018-09-15 17:32:06'),
+(225, 1, 1, '/themes/citymotors/css/global.css.map', '', '2018-09-15 17:35:00'),
+(226, 1, 1, '/themes/citymotors/css/autoload/uniform.default.css.map', '', '2018-09-15 17:35:02'),
+(227, 1, 1, '/themes/citymotors/css/modules/blockbestsellers/blockbestsellers.css.map', '', '2018-09-15 17:35:03'),
+(228, 1, 1, '/themes/citymotors/css/product_list.css.map', '', '2018-09-15 17:35:03'),
+(229, 1, 1, '/themes/citymotors/css/modules/blockcart/blockcart.css.map', '', '2018-09-15 17:35:04'),
+(230, 1, 1, '/themes/citymotors/css/modules/blockcategories/blockcategories.css.map', '', '2018-09-15 17:35:06'),
+(231, 1, 1, '/themes/citymotors/css/modules/blockmyaccountfooter/blockmyaccount.css.map', '', '2018-09-15 17:35:08'),
+(232, 1, 1, '/themes/citymotors/css/modules/blocknewproducts/blocknewproducts.css.map', '', '2018-09-15 17:35:08'),
+(233, 1, 1, '/themes/citymotors/css/modules/blocknewsletter/blocknewsletter.css.map', '', '2018-09-15 17:35:08'),
+(234, 1, 1, '/themes/citymotors/css/modules/blockcontact/blockcontact.css.map', '', '2018-09-15 17:35:08'),
+(235, 1, 1, '/themes/citymotors/css/modules/blocklanguages/blocklanguages.css.map', '', '2018-09-15 17:35:08'),
+(236, 1, 1, '/themes/citymotors/css/modules/blocksearch/blocksearch.css.map', '', '2018-09-15 17:35:08'),
+(237, 1, 1, '/themes/citymotors/css/modules/blockspecials/blockspecials.css.map', '', '2018-09-15 17:35:10'),
+(238, 1, 1, '/themes/citymotors/css/modules/blockviewed/blockviewed.css.map', '', '2018-09-15 17:35:11'),
+(239, 1, 1, '/themes/citymotors/css/modules/homeslider/homeslider.css.map', '', '2018-09-15 17:35:11'),
+(240, 1, 1, '/themes/citymotors/css/modules/blocktags/blocktags.css.map', '', '2018-09-15 17:35:11'),
+(241, 1, 1, '/themes/citymotors/css/modules/blockuserinfo/blockuserinfo.css.map', '', '2018-09-15 17:35:12'),
+(242, 1, 1, '/themes/citymotors/css/modules/homefeatured/homefeatured.css.map', '', '2018-09-15 17:35:12'),
+(243, 1, 1, '/themes/citymotors/css/modules/blocktopmenu/css/blocktopmenu.css.map', '', '2018-09-15 17:35:12'),
+(244, 1, 1, '/themes/citymotors/css/modules/blocktopmenu/css/superfish-modified.css.map', '', '2018-09-15 17:35:13'),
+(245, 1, 1, '/themes/citymotors/css/autoload/uniform.default.css.map', '', '2018-09-15 17:35:28'),
+(246, 1, 1, '/themes/citymotors/css/modules/blockcategories/blockcategories.css.map', '', '2018-09-15 17:35:29'),
+(247, 1, 1, '/themes/citymotors/css/modules/blockbestsellers/blockbestsellers.css.map', '', '2018-09-15 17:35:29'),
+(248, 1, 1, '/themes/citymotors/css/product_list.css.map', '', '2018-09-15 17:35:29'),
+(249, 1, 1, '/themes/citymotors/css/modules/blockcart/blockcart.css.map', '', '2018-09-15 17:35:30'),
+(250, 1, 1, '/themes/citymotors/css/modules/blocklanguages/blocklanguages.css.map', '', '2018-09-15 17:35:31'),
+(251, 1, 1, '/themes/citymotors/css/modules/blockmyaccountfooter/blockmyaccount.css.map', '', '2018-09-15 17:35:35'),
+(252, 1, 1, '/themes/citymotors/css/modules/blocknewsletter/blocknewsletter.css.map', '', '2018-09-15 17:35:35'),
+(253, 1, 1, '/themes/citymotors/css/modules/blockcontact/blockcontact.css.map', '', '2018-09-15 17:35:36'),
+(254, 1, 1, '/themes/citymotors/css/modules/blocknewproducts/blocknewproducts.css.map', '', '2018-09-15 17:35:36'),
+(255, 1, 1, '/themes/citymotors/css/modules/blockspecials/blockspecials.css.map', '', '2018-09-15 17:35:36'),
+(256, 1, 1, '/themes/citymotors/css/modules/blocksearch/blocksearch.css.map', '', '2018-09-15 17:35:36'),
+(257, 1, 1, '/themes/citymotors/css/modules/blocktags/blocktags.css.map', '', '2018-09-15 17:35:37'),
+(258, 1, 1, '/themes/citymotors/css/modules/blockuserinfo/blockuserinfo.css.map', '', '2018-09-15 17:35:38'),
+(259, 1, 1, '/themes/citymotors/css/modules/homefeatured/homefeatured.css.map', '', '2018-09-15 17:35:39'),
+(260, 1, 1, '/themes/citymotors/css/modules/blockviewed/blockviewed.css.map', '', '2018-09-15 17:35:39'),
+(261, 1, 1, '/themes/citymotors/css/modules/homeslider/homeslider.css.map', '', '2018-09-15 17:35:39'),
+(262, 1, 1, '/themes/citymotors/css/modules/blocktopmenu/css/blocktopmenu.css.map', '', '2018-09-15 17:35:39'),
+(263, 1, 1, '/themes/citymotors/css/global.css.map', '', '2018-09-15 17:35:40'),
+(264, 1, 1, '/themes/citymotors/css/modules/blocktopmenu/css/superfish-modified.css.map', '', '2018-09-15 17:35:40'),
+(265, 1, 1, '/themes/citymotors/css/product_list.css.map', '', '2018-09-15 17:43:22'),
+(266, 1, 1, '/themes/citymotors/css/global.css.map', '', '2018-09-15 17:43:23'),
+(267, 1, 1, '/themes/citymotors/css/autoload/uniform.default.css.map', '', '2018-09-15 17:43:24'),
+(268, 1, 1, '/themes/citymotors/css/modules/blockcart/blockcart.css.map', '', '2018-09-15 17:43:25'),
+(269, 1, 1, '/themes/citymotors/css/modules/blockbestsellers/blockbestsellers.css.map', '', '2018-09-15 17:43:25'),
+(270, 1, 1, '/themes/citymotors/css/modules/blockmyaccountfooter/blockmyaccount.css.map', '', '2018-09-15 17:43:27'),
+(271, 1, 1, '/themes/citymotors/css/modules/blocklanguages/blocklanguages.css.map', '', '2018-09-15 17:43:27'),
+(272, 1, 1, '/themes/citymotors/css/modules/blockcategories/blockcategories.css.map', '', '2018-09-15 17:43:28'),
+(273, 1, 1, '/themes/citymotors/css/modules/blockcontact/blockcontact.css.map', '', '2018-09-15 17:43:28'),
+(274, 1, 1, '/themes/citymotors/css/modules/blocknewsletter/blocknewsletter.css.map', '', '2018-09-15 17:43:28'),
+(275, 1, 1, '/themes/citymotors/css/modules/blocknewproducts/blocknewproducts.css.map', '', '2018-09-15 17:43:29'),
+(276, 1, 1, '/themes/citymotors/css/modules/blocksearch/blocksearch.css.map', '', '2018-09-15 17:43:30'),
+(277, 1, 1, '/themes/citymotors/css/modules/blockspecials/blockspecials.css.map', '', '2018-09-15 17:43:30'),
+(278, 1, 1, '/themes/citymotors/css/modules/homeslider/homeslider.css.map', '', '2018-09-15 17:43:31'),
+(279, 1, 1, '/themes/citymotors/css/modules/blocktags/blocktags.css.map', '', '2018-09-15 17:43:31'),
+(280, 1, 1, '/themes/citymotors/css/modules/blockviewed/blockviewed.css.map', '', '2018-09-15 17:43:31'),
+(281, 1, 1, '/themes/citymotors/css/modules/blockuserinfo/blockuserinfo.css.map', '', '2018-09-15 17:43:31'),
+(282, 1, 1, '/themes/citymotors/css/modules/homefeatured/homefeatured.css.map', '', '2018-09-15 17:43:32'),
+(283, 1, 1, '/themes/citymotors/css/modules/blocktopmenu/css/blocktopmenu.css.map', '', '2018-09-15 17:43:32'),
+(284, 1, 1, '/themes/citymotors/css/modules/blocktopmenu/css/superfish-modified.css.map', '', '2018-09-15 17:43:33'),
+(285, 1, 1, '/themes/citymotors/css/product_list.css.map', '', '2018-09-15 17:48:00'),
+(286, 1, 1, '/themes/citymotors/css/global.css.map', '', '2018-09-15 17:48:01'),
+(287, 1, 1, '/themes/citymotors/css/autoload/uniform.default.css.map', '', '2018-09-15 17:48:02'),
+(288, 1, 1, '/themes/citymotors/css/modules/blockcategories/blockcategories.css.map', '', '2018-09-15 17:48:02'),
+(289, 1, 1, '/themes/citymotors/css/modules/blockcart/blockcart.css.map', '', '2018-09-15 17:48:03'),
+(290, 1, 1, '/themes/citymotors/css/modules/blockbestsellers/blockbestsellers.css.map', '', '2018-09-15 17:48:04'),
+(291, 1, 1, '/themes/citymotors/css/modules/blocklanguages/blocklanguages.css.map', '', '2018-09-15 17:48:04'),
+(292, 1, 1, '/themes/citymotors/css/modules/blocknewsletter/blocknewsletter.css.map', '', '2018-09-15 17:48:05'),
+(293, 1, 1, '/themes/citymotors/css/modules/blocknewproducts/blocknewproducts.css.map', '', '2018-09-15 17:48:06'),
+(294, 1, 1, '/themes/citymotors/css/modules/blockmyaccountfooter/blockmyaccount.css.map', '', '2018-09-15 17:48:06'),
+(295, 1, 1, '/themes/citymotors/css/modules/blockcontact/blockcontact.css.map', '', '2018-09-15 17:48:06'),
+(296, 1, 1, '/themes/citymotors/css/modules/blocksearch/blocksearch.css.map', '', '2018-09-15 17:48:08'),
+(297, 1, 1, '/themes/citymotors/css/modules/blockuserinfo/blockuserinfo.css.map', '', '2018-09-15 17:48:08'),
+(298, 1, 1, '/themes/citymotors/css/modules/blockspecials/blockspecials.css.map', '', '2018-09-15 17:48:08'),
+(299, 1, 1, '/themes/citymotors/css/modules/blockviewed/blockviewed.css.map', '', '2018-09-15 17:48:09'),
+(300, 1, 1, '/themes/citymotors/css/modules/homeslider/homeslider.css.map', '', '2018-09-15 17:48:09'),
+(301, 1, 1, '/themes/citymotors/css/modules/blocktags/blocktags.css.map', '', '2018-09-15 17:48:10'),
+(302, 1, 1, '/themes/citymotors/css/modules/homefeatured/homefeatured.css.map', '', '2018-09-15 17:48:11'),
+(303, 1, 1, '/themes/citymotors/css/modules/blocktopmenu/css/superfish-modified.css.map', '', '2018-09-15 17:48:11'),
+(304, 1, 1, '/themes/citymotors/css/modules/blocktopmenu/css/blocktopmenu.css.map', '', '2018-09-15 17:48:12'),
+(305, 1, 1, '/robots.txt', '', '2018-09-15 17:52:02'),
+(306, 1, 1, '/themes/citymotors/css/global.css.map', '', '2018-09-15 17:52:59'),
+(307, 1, 1, '/themes/citymotors/css/autoload/uniform.default.css.map', '', '2018-09-15 17:53:02'),
+(308, 1, 1, '/themes/citymotors/css/product_list.css.map', '', '2018-09-15 17:53:02'),
+(309, 1, 1, '/themes/citymotors/css/modules/blockcart/blockcart.css.map', '', '2018-09-15 17:53:02'),
+(310, 1, 1, '/themes/citymotors/css/modules/blockcategories/blockcategories.css.map', '', '2018-09-15 17:53:02'),
+(311, 1, 1, '/themes/citymotors/css/modules/blockbestsellers/blockbestsellers.css.map', '', '2018-09-15 17:53:03'),
+(312, 1, 1, '/themes/citymotors/css/modules/blockmyaccountfooter/blockmyaccount.css.map', '', '2018-09-15 17:53:05'),
+(313, 1, 1, '/themes/citymotors/css/modules/blockcontact/blockcontact.css.map', '', '2018-09-15 17:53:06'),
+(314, 1, 1, '/themes/citymotors/css/modules/blocklanguages/blocklanguages.css.map', '', '2018-09-15 17:53:06'),
+(315, 1, 1, '/themes/citymotors/css/modules/blocksearch/blocksearch.css.map', '', '2018-09-15 17:53:06'),
+(316, 1, 1, '/themes/citymotors/css/modules/blocknewproducts/blocknewproducts.css.map', '', '2018-09-15 17:53:06'),
+(317, 1, 1, '/themes/citymotors/css/modules/blocknewsletter/blocknewsletter.css.map', '', '2018-09-15 17:53:06'),
+(318, 1, 1, '/themes/citymotors/css/modules/blockspecials/blockspecials.css.map', '', '2018-09-15 17:53:09'),
+(319, 1, 1, '/themes/citymotors/css/modules/blocktags/blocktags.css.map', '', '2018-09-15 17:53:09'),
+(320, 1, 1, '/themes/citymotors/css/modules/blockuserinfo/blockuserinfo.css.map', '', '2018-09-15 17:53:09'),
+(321, 1, 1, '/themes/citymotors/css/modules/homeslider/homeslider.css.map', '', '2018-09-15 17:53:09'),
+(322, 1, 1, '/themes/citymotors/css/modules/blockviewed/blockviewed.css.map', '', '2018-09-15 17:53:09'),
+(323, 1, 1, '/themes/citymotors/css/modules/homefeatured/homefeatured.css.map', '', '2018-09-15 17:53:10'),
+(324, 1, 1, '/themes/citymotors/css/modules/blocktopmenu/css/blocktopmenu.css.map', '', '2018-09-15 17:53:11'),
+(325, 1, 1, '/themes/citymotors/css/modules/blocktopmenu/css/superfish-modified.css.map', '', '2018-09-15 17:53:11'),
+(326, 1, 1, '/themes/citymotors/css/global.css.map', '', '2018-09-15 18:01:17'),
+(327, 1, 1, '/themes/citymotors/css/product_list.css.map', '', '2018-09-15 18:01:20'),
+(328, 1, 1, '/themes/citymotors/css/autoload/uniform.default.css.map', '', '2018-09-15 18:01:20'),
+(329, 1, 1, '/themes/citymotors/css/modules/blockbestsellers/blockbestsellers.css.map', '', '2018-09-15 18:01:20'),
+(330, 1, 1, '/themes/citymotors/css/modules/blockcart/blockcart.css.map', '', '2018-09-15 18:01:20'),
+(331, 1, 1, '/themes/citymotors/css/modules/blockcategories/blockcategories.css.map', '', '2018-09-15 18:01:21'),
+(332, 1, 1, '/themes/citymotors/css/modules/blocklanguages/blocklanguages.css.map', '', '2018-09-15 18:01:22'),
+(333, 1, 1, '/themes/citymotors/css/modules/blockmyaccountfooter/blockmyaccount.css.map', '', '2018-09-15 18:01:24'),
+(334, 1, 1, '/themes/citymotors/css/modules/blocknewsletter/blocknewsletter.css.map', '', '2018-09-15 18:01:24'),
+(335, 1, 1, '/themes/citymotors/css/modules/blocknewproducts/blocknewproducts.css.map', '', '2018-09-15 18:01:24'),
+(336, 1, 1, '/themes/citymotors/css/modules/blockcontact/blockcontact.css.map', '', '2018-09-15 18:01:24'),
+(337, 1, 1, '/themes/citymotors/css/modules/blockspecials/blockspecials.css.map', '', '2018-09-15 18:01:25'),
+(338, 1, 1, '/themes/citymotors/css/modules/blocksearch/blocksearch.css.map', '', '2018-09-15 18:01:25'),
+(339, 1, 1, '/themes/citymotors/css/modules/blocktags/blocktags.css.map', '', '2018-09-15 18:01:27'),
+(340, 1, 1, '/themes/citymotors/css/modules/blockuserinfo/blockuserinfo.css.map', '', '2018-09-15 18:01:27'),
+(341, 1, 1, '/themes/citymotors/css/modules/homefeatured/homefeatured.css.map', '', '2018-09-15 18:01:27'),
+(342, 1, 1, '/themes/citymotors/css/modules/blockviewed/blockviewed.css.map', '', '2018-09-15 18:01:27'),
+(343, 1, 1, '/themes/citymotors/css/modules/homeslider/homeslider.css.map', '', '2018-09-15 18:01:28'),
+(344, 1, 1, '/themes/citymotors/css/modules/blocktopmenu/css/blocktopmenu.css.map', '', '2018-09-15 18:01:28'),
+(345, 1, 1, '/themes/citymotors/css/modules/blocktopmenu/css/superfish-modified.css.map', '', '2018-09-15 18:01:29'),
+(346, 1, 1, '/themes/citymotors/css/global.css.map', '', '2018-09-15 18:07:19'),
+(347, 1, 1, '/themes/citymotors/css/autoload/uniform.default.css.map', '', '2018-09-15 18:07:19'),
+(348, 1, 1, '/themes/citymotors/css/product_list.css.map', '', '2018-09-15 18:07:19'),
+(349, 1, 1, '/themes/citymotors/css/modules/blockbestsellers/blockbestsellers.css.map', '', '2018-09-15 18:07:19'),
+(350, 1, 1, '/themes/citymotors/css/modules/blockcart/blockcart.css.map', '', '2018-09-15 18:07:20'),
+(351, 1, 1, '/themes/citymotors/css/modules/blockcategories/blockcategories.css.map', '', '2018-09-15 18:07:21'),
+(352, 1, 1, '/themes/citymotors/css/modules/blockcontact/blockcontact.css.map', '', '2018-09-15 18:07:24'),
+(353, 1, 1, '/themes/citymotors/css/modules/blockmyaccountfooter/blockmyaccount.css.map', '', '2018-09-15 18:07:24'),
+(354, 1, 1, '/themes/citymotors/css/modules/blocklanguages/blocklanguages.css.map', '', '2018-09-15 18:07:24'),
+(355, 1, 1, '/themes/citymotors/css/modules/blocknewproducts/blocknewproducts.css.map', '', '2018-09-15 18:07:25'),
+(356, 1, 1, '/themes/citymotors/css/modules/blocknewsletter/blocknewsletter.css.map', '', '2018-09-15 18:07:26'),
+(357, 1, 1, '/themes/citymotors/css/modules/blocksearch/blocksearch.css.map', '', '2018-09-15 18:07:27'),
+(358, 1, 1, '/themes/citymotors/css/modules/blockviewed/blockviewed.css.map', '', '2018-09-15 18:07:27'),
+(359, 1, 1, '/themes/citymotors/css/modules/blockspecials/blockspecials.css.map', '', '2018-09-15 18:07:27'),
+(360, 1, 1, '/themes/citymotors/css/modules/blocktags/blocktags.css.map', '', '2018-09-15 18:07:28'),
+(361, 1, 1, '/themes/citymotors/css/modules/blockuserinfo/blockuserinfo.css.map', '', '2018-09-15 18:07:28'),
+(362, 1, 1, '/themes/citymotors/css/modules/homeslider/homeslider.css.map', '', '2018-09-15 18:07:28'),
+(363, 1, 1, '/themes/citymotors/css/modules/homefeatured/homefeatured.css.map', '', '2018-09-15 18:07:29'),
+(364, 1, 1, '/themes/citymotors/css/modules/blocktopmenu/css/superfish-modified.css.map', '', '2018-09-15 18:07:29'),
+(365, 1, 1, '/themes/citymotors/css/modules/blocktopmenu/css/blocktopmenu.css.map', '', '2018-09-15 18:07:30'),
+(366, 1, 1, '/robots.txt', '', '2018-09-15 18:15:08'),
+(367, 1, 1, '/themes/citymotors/css/modules/blockcart/blockcart.css.map', '', '2018-09-15 18:23:25'),
+(368, 1, 1, '/themes/citymotors/css/modules/blockcategories/blockcategories.css.map', '', '2018-09-15 18:23:25'),
+(369, 1, 1, '/themes/citymotors/css/autoload/uniform.default.css.map', '', '2018-09-15 18:23:26'),
+(370, 1, 1, '/themes/citymotors/css/modules/blockbestsellers/blockbestsellers.css.map', '', '2018-09-15 18:23:26'),
+(371, 1, 1, '/themes/citymotors/css/product_list.css.map', '', '2018-09-15 18:23:26'),
+(372, 1, 1, '/themes/citymotors/css/global.css.map', '', '2018-09-15 18:23:26'),
+(373, 1, 1, '/themes/citymotors/css/modules/blockcontact/blockcontact.css.map', '', '2018-09-15 18:23:29'),
+(374, 1, 1, '/themes/citymotors/css/modules/blocksearch/blocksearch.css.map', '', '2018-09-15 18:23:29'),
+(375, 1, 1, '/themes/citymotors/css/modules/blockmyaccountfooter/blockmyaccount.css.map', '', '2018-09-15 18:23:29'),
+(376, 1, 1, '/themes/citymotors/css/modules/blocklanguages/blocklanguages.css.map', '', '2018-09-15 18:23:30'),
+(377, 1, 1, '/themes/citymotors/css/modules/blocknewsletter/blocknewsletter.css.map', '', '2018-09-15 18:23:30'),
+(378, 1, 1, '/themes/citymotors/css/modules/blocknewproducts/blocknewproducts.css.map', '', '2018-09-15 18:23:30'),
+(379, 1, 1, '/themes/citymotors/css/modules/blockspecials/blockspecials.css.map', '', '2018-09-15 18:23:31'),
+(380, 1, 1, '/themes/citymotors/css/modules/blocktags/blocktags.css.map', '', '2018-09-15 18:23:32'),
+(381, 1, 1, '/themes/citymotors/css/modules/blockuserinfo/blockuserinfo.css.map', '', '2018-09-15 18:23:32'),
+(382, 1, 1, '/themes/citymotors/css/modules/homeslider/homeslider.css.map', '', '2018-09-15 18:23:32'),
+(383, 1, 1, '/themes/citymotors/css/modules/blockviewed/blockviewed.css.map', '', '2018-09-15 18:23:33'),
+(384, 1, 1, '/themes/citymotors/css/modules/homefeatured/homefeatured.css.map', '', '2018-09-15 18:23:33'),
+(385, 1, 1, '/themes/citymotors/css/modules/blocktopmenu/css/blocktopmenu.css.map', '', '2018-09-15 18:23:33'),
+(386, 1, 1, '/themes/citymotors/css/modules/blocktopmenu/css/superfish-modified.css.map', '', '2018-09-15 18:23:34'),
+(387, 1, 1, '/themes/citymotors/css/product_list.css.map', '', '2018-09-15 18:28:27'),
+(388, 1, 1, '/themes/citymotors/css/modules/blockbestsellers/blockbestsellers.css.map', '', '2018-09-15 18:28:27'),
+(389, 1, 1, '/themes/citymotors/css/autoload/uniform.default.css.map', '', '2018-09-15 18:28:27'),
+(390, 1, 1, '/themes/citymotors/css/global.css.map', '', '2018-09-15 18:28:27'),
+(391, 1, 1, '/themes/citymotors/css/modules/blockcategories/blockcategories.css.map', '', '2018-09-15 18:28:28'),
+(392, 1, 1, '/themes/citymotors/css/modules/blockcart/blockcart.css.map', '', '2018-09-15 18:28:29'),
+(393, 1, 1, '/themes/citymotors/css/modules/blocklanguages/blocklanguages.css.map', '', '2018-09-15 18:28:30'),
+(394, 1, 1, '/themes/citymotors/css/modules/blockmyaccountfooter/blockmyaccount.css.map', '', '2018-09-15 18:28:30'),
+(395, 1, 1, '/themes/citymotors/css/modules/blockcontact/blockcontact.css.map', '', '2018-09-15 18:28:31'),
+(396, 1, 1, '/themes/citymotors/css/modules/blocknewproducts/blocknewproducts.css.map', '', '2018-09-15 18:28:31'),
+(397, 1, 1, '/themes/citymotors/css/modules/blocknewsletter/blocknewsletter.css.map', '', '2018-09-15 18:28:32'),
+(398, 1, 1, '/themes/citymotors/css/modules/blocksearch/blocksearch.css.map', '', '2018-09-15 18:28:32'),
+(399, 1, 1, '/themes/citymotors/css/modules/blockspecials/blockspecials.css.map', '', '2018-09-15 18:28:33'),
+(400, 1, 1, '/themes/citymotors/css/modules/blocktags/blocktags.css.map', '', '2018-09-15 18:28:33'),
+(401, 1, 1, '/themes/citymotors/css/modules/blockuserinfo/blockuserinfo.css.map', '', '2018-09-15 18:28:33'),
+(402, 1, 1, '/themes/citymotors/css/modules/blockviewed/blockviewed.css.map', '', '2018-09-15 18:28:33'),
+(403, 1, 1, '/themes/citymotors/css/modules/homeslider/homeslider.css.map', '', '2018-09-15 18:28:33'),
+(404, 1, 1, '/themes/citymotors/css/modules/homefeatured/homefeatured.css.map', '', '2018-09-15 18:28:34'),
+(405, 1, 1, '/themes/citymotors/css/modules/blocktopmenu/css/blocktopmenu.css.map', '', '2018-09-15 18:28:34'),
+(406, 1, 1, '/themes/citymotors/css/modules/blocktopmenu/css/superfish-modified.css.map', '', '2018-09-15 18:28:34'),
+(407, 1, 1, '/themes/citymotors/css/global.css.map', '', '2018-09-15 18:32:15'),
+(408, 1, 1, '/themes/citymotors/css/product_list.css.map', '', '2018-09-15 18:32:15'),
+(409, 1, 1, '/themes/citymotors/css/autoload/uniform.default.css.map', '', '2018-09-15 18:32:16'),
+(410, 1, 1, '/themes/citymotors/css/modules/blockbestsellers/blockbestsellers.css.map', '', '2018-09-15 18:32:16'),
+(411, 1, 1, '/themes/citymotors/css/modules/blockcart/blockcart.css.map', '', '2018-09-15 18:32:17'),
+(412, 1, 1, '/themes/citymotors/css/modules/blockcategories/blockcategories.css.map', '', '2018-09-15 18:32:17'),
+(413, 1, 1, '/themes/citymotors/css/modules/blockcontact/blockcontact.css.map', '', '2018-09-15 18:32:18'),
+(414, 1, 1, '/themes/citymotors/css/modules/blocklanguages/blocklanguages.css.map', '', '2018-09-15 18:32:19'),
+(415, 1, 1, '/themes/citymotors/css/modules/blocknewsletter/blocknewsletter.css.map', '', '2018-09-15 18:32:19'),
+(416, 1, 1, '/themes/citymotors/css/modules/blockmyaccountfooter/blockmyaccount.css.map', '', '2018-09-15 18:32:19'),
+(417, 1, 1, '/themes/citymotors/css/modules/blocknewproducts/blocknewproducts.css.map', '', '2018-09-15 18:32:20'),
+(418, 1, 1, '/themes/citymotors/css/modules/blockuserinfo/blockuserinfo.css.map', '', '2018-09-15 18:32:21'),
+(419, 1, 1, '/themes/citymotors/css/modules/blocksearch/blocksearch.css.map', '', '2018-09-15 18:32:21'),
+(420, 1, 1, '/themes/citymotors/css/modules/blockspecials/blockspecials.css.map', '', '2018-09-15 18:32:21'),
+(421, 1, 1, '/themes/citymotors/css/modules/blockviewed/blockviewed.css.map', '', '2018-09-15 18:32:21'),
+(422, 1, 1, '/themes/citymotors/css/modules/blocktags/blocktags.css.map', '', '2018-09-15 18:32:21'),
+(423, 1, 1, '/themes/citymotors/css/modules/homefeatured/homefeatured.css.map', '', '2018-09-15 18:32:23'),
+(424, 1, 1, '/themes/citymotors/css/modules/blocktopmenu/css/superfish-modified.css.map', '', '2018-09-15 18:32:23'),
+(425, 1, 1, '/themes/citymotors/css/modules/blocktopmenu/css/blocktopmenu.css.map', '', '2018-09-15 18:32:23'),
+(426, 1, 1, '/themes/citymotors/css/modules/homeslider/homeslider.css.map', '', '2018-09-15 18:32:23'),
+(427, 1, 1, '/themes/citymotors/css/global.css.map', '', '2018-09-15 18:35:03'),
+(428, 1, 1, '/themes/citymotors/css/modules/blockcart/blockcart.css.map', '', '2018-09-15 18:35:04'),
+(429, 1, 1, '/themes/citymotors/css/autoload/uniform.default.css.map', '', '2018-09-15 18:35:05'),
+(430, 1, 1, '/themes/citymotors/css/modules/blockcategories/blockcategories.css.map', '', '2018-09-15 18:35:06'),
+(431, 1, 1, '/themes/citymotors/css/modules/blockbestsellers/blockbestsellers.css.map', '', '2018-09-15 18:35:06'),
+(432, 1, 1, '/themes/citymotors/css/product_list.css.map', '', '2018-09-15 18:35:06'),
+(433, 1, 1, '/themes/citymotors/css/modules/blocklanguages/blocklanguages.css.map', '', '2018-09-15 18:35:08'),
+(434, 1, 1, '/themes/citymotors/css/modules/blockcontact/blockcontact.css.map', '', '2018-09-15 18:35:08'),
+(435, 1, 1, '/themes/citymotors/css/modules/blockmyaccountfooter/blockmyaccount.css.map', '', '2018-09-15 18:35:08'),
+(436, 1, 1, '/themes/citymotors/css/modules/blocknewsletter/blocknewsletter.css.map', '', '2018-09-15 18:35:09'),
+(437, 1, 1, '/themes/citymotors/css/modules/blocknewproducts/blocknewproducts.css.map', '', '2018-09-15 18:35:09'),
+(438, 1, 1, '/themes/citymotors/css/modules/blocksearch/blocksearch.css.map', '', '2018-09-15 18:35:09'),
+(439, 1, 1, '/themes/citymotors/css/modules/blockspecials/blockspecials.css.map', '', '2018-09-15 18:35:10'),
+(440, 1, 1, '/themes/citymotors/css/modules/blockviewed/blockviewed.css.map', '', '2018-09-15 18:35:11'),
+(441, 1, 1, '/themes/citymotors/css/modules/homefeatured/homefeatured.css.map', '', '2018-09-15 18:35:11'),
+(442, 1, 1, '/themes/citymotors/css/modules/homeslider/homeslider.css.map', '', '2018-09-15 18:35:12'),
+(443, 1, 1, '/themes/citymotors/css/modules/blocktags/blocktags.css.map', '', '2018-09-15 18:35:12'),
+(444, 1, 1, '/themes/citymotors/css/modules/blockuserinfo/blockuserinfo.css.map', '', '2018-09-15 18:35:13'),
+(445, 1, 1, '/themes/citymotors/css/modules/blocktopmenu/css/blocktopmenu.css.map', '', '2018-09-15 18:35:13'),
+(446, 1, 1, '/themes/citymotors/css/modules/blocktopmenu/css/superfish-modified.css.map', '', '2018-09-15 18:35:14'),
+(447, 1, 1, '/themes/citymotors/css/modules/blockcart/blockcart.css.map', '', '2018-09-15 18:35:41'),
+(448, 1, 1, '/themes/citymotors/css/product_list.css.map', '', '2018-09-15 18:35:41'),
+(449, 1, 1, '/themes/citymotors/css/global.css.map', '', '2018-09-15 18:35:41'),
+(450, 1, 1, '/themes/citymotors/css/autoload/uniform.default.css.map', '', '2018-09-15 18:35:41'),
+(451, 1, 1, '/themes/citymotors/css/modules/blockbestsellers/blockbestsellers.css.map', '', '2018-09-15 18:35:42'),
+(452, 1, 1, '/themes/citymotors/css/modules/blockcategories/blockcategories.css.map', '', '2018-09-15 18:35:43'),
+(453, 1, 1, '/themes/citymotors/css/modules/blockmyaccountfooter/blockmyaccount.css.map', '', '2018-09-15 18:35:45'),
+(454, 1, 1, '/themes/citymotors/css/modules/blocklanguages/blocklanguages.css.map', '', '2018-09-15 18:35:45'),
+(455, 1, 1, '/themes/citymotors/css/modules/blocknewsletter/blocknewsletter.css.map', '', '2018-09-15 18:35:46'),
+(456, 1, 1, '/themes/citymotors/css/modules/blocksearch/blocksearch.css.map', '', '2018-09-15 18:35:46'),
+(457, 1, 1, '/themes/citymotors/css/modules/blockcontact/blockcontact.css.map', '', '2018-09-15 18:35:47'),
+(458, 1, 1, '/themes/citymotors/css/modules/blocknewproducts/blocknewproducts.css.map', '', '2018-09-15 18:35:47'),
+(459, 1, 1, '/themes/citymotors/css/modules/blocktags/blocktags.css.map', '', '2018-09-15 18:35:48'),
+(460, 1, 1, '/themes/citymotors/css/modules/blockspecials/blockspecials.css.map', '', '2018-09-15 18:35:48'),
+(461, 1, 1, '/themes/citymotors/css/modules/blockuserinfo/blockuserinfo.css.map', '', '2018-09-15 18:35:49'),
+(462, 1, 1, '/themes/citymotors/css/modules/blockviewed/blockviewed.css.map', '', '2018-09-15 18:35:49'),
+(463, 1, 1, '/themes/citymotors/css/modules/blocktopmenu/css/superfish-modified.css.map', '', '2018-09-15 18:35:49'),
+(464, 1, 1, '/themes/citymotors/css/modules/homefeatured/homefeatured.css.map', '', '2018-09-15 18:35:49'),
+(465, 1, 1, '/themes/citymotors/css/modules/blocktopmenu/css/blocktopmenu.css.map', '', '2018-09-15 18:35:49'),
+(466, 1, 1, '/themes/citymotors/css/modules/homeslider/homeslider.css.map', '', '2018-09-15 18:35:50'),
+(467, 1, 1, '/themes/citymotors/css/global.css.map', '', '2018-09-15 18:39:59'),
+(468, 1, 1, '/themes/citymotors/css/autoload/uniform.default.css.map', '', '2018-09-15 18:40:02'),
+(469, 1, 1, '/themes/citymotors/css/modules/blockbestsellers/blockbestsellers.css.map', '', '2018-09-15 18:40:02'),
+(470, 1, 1, '/themes/citymotors/css/product_list.css.map', '', '2018-09-15 18:40:03'),
+(471, 1, 1, '/themes/citymotors/css/modules/blockcart/blockcart.css.map', '', '2018-09-15 18:40:03'),
+(472, 1, 1, '/themes/citymotors/css/modules/blocklanguages/blocklanguages.css.map', '', '2018-09-15 18:40:04'),
+(473, 1, 1, '/themes/citymotors/css/modules/blockcategories/blockcategories.css.map', '', '2018-09-15 18:40:05'),
+(474, 1, 1, '/themes/citymotors/css/modules/blockcontact/blockcontact.css.map', '', '2018-09-15 18:40:05'),
+(475, 1, 1, '/themes/citymotors/css/modules/blockmyaccountfooter/blockmyaccount.css.map', '', '2018-09-15 18:40:08'),
+(476, 1, 1, '/themes/citymotors/css/modules/blocknewproducts/blocknewproducts.css.map', '', '2018-09-15 18:40:08'),
+(477, 1, 1, '/themes/citymotors/css/modules/blockspecials/blockspecials.css.map', '', '2018-09-15 18:40:09'),
+(478, 1, 1, '/themes/citymotors/css/modules/blocknewsletter/blocknewsletter.css.map', '', '2018-09-15 18:40:09'),
+(479, 1, 1, '/themes/citymotors/css/modules/blocksearch/blocksearch.css.map', '', '2018-09-15 18:40:10'),
+(480, 1, 1, '/themes/citymotors/css/modules/blocktags/blocktags.css.map', '', '2018-09-15 18:40:10');
+INSERT INTO `ps_pagenotfound` (`id_pagenotfound`, `id_shop`, `id_shop_group`, `request_uri`, `http_referer`, `date_add`) VALUES
+(481, 1, 1, '/themes/citymotors/css/modules/blockviewed/blockviewed.css.map', '', '2018-09-15 18:40:11'),
+(482, 1, 1, '/themes/citymotors/css/modules/blockuserinfo/blockuserinfo.css.map', '', '2018-09-15 18:40:12'),
+(483, 1, 1, '/themes/citymotors/css/modules/homefeatured/homefeatured.css.map', '', '2018-09-15 18:40:12'),
+(484, 1, 1, '/themes/citymotors/css/modules/homeslider/homeslider.css.map', '', '2018-09-15 18:40:13'),
+(485, 1, 1, '/themes/citymotors/css/modules/blocktopmenu/css/superfish-modified.css.map', '', '2018-09-15 18:40:13'),
+(486, 1, 1, '/themes/citymotors/css/modules/blocktopmenu/css/blocktopmenu.css.map', '', '2018-09-15 18:40:13'),
+(487, 1, 1, '/themes/citymotors/css/product_list.css.map', '', '2018-09-15 18:43:16'),
+(488, 1, 1, '/themes/citymotors/css/autoload/uniform.default.css.map', '', '2018-09-15 18:43:16'),
+(489, 1, 1, '/themes/citymotors/css/modules/blockbestsellers/blockbestsellers.css.map', '', '2018-09-15 18:43:17'),
+(490, 1, 1, '/themes/citymotors/css/modules/blockcategories/blockcategories.css.map', '', '2018-09-15 18:43:17'),
+(491, 1, 1, '/themes/citymotors/css/modules/blocklanguages/blocklanguages.css.map', '', '2018-09-15 18:43:17'),
+(492, 1, 1, '/themes/citymotors/css/modules/blockcart/blockcart.css.map', '', '2018-09-15 18:43:18'),
+(493, 1, 1, '/themes/citymotors/css/modules/blockmyaccountfooter/blockmyaccount.css.map', '', '2018-09-15 18:43:21'),
+(494, 1, 1, '/themes/citymotors/css/modules/blocknewsletter/blocknewsletter.css.map', '', '2018-09-15 18:43:21'),
+(495, 1, 1, '/themes/citymotors/css/modules/blockspecials/blockspecials.css.map', '', '2018-09-15 18:43:22'),
+(496, 1, 1, '/themes/citymotors/css/modules/blockcontact/blockcontact.css.map', '', '2018-09-15 18:43:22'),
+(497, 1, 1, '/themes/citymotors/css/modules/blocksearch/blocksearch.css.map', '', '2018-09-15 18:43:23'),
+(498, 1, 1, '/themes/citymotors/css/modules/blocknewproducts/blocknewproducts.css.map', '', '2018-09-15 18:43:23'),
+(499, 1, 1, '/themes/citymotors/css/modules/blocktags/blocktags.css.map', '', '2018-09-15 18:43:24'),
+(500, 1, 1, '/themes/citymotors/css/modules/homeslider/homeslider.css.map', '', '2018-09-15 18:43:25'),
+(501, 1, 1, '/themes/citymotors/css/modules/blockviewed/blockviewed.css.map', '', '2018-09-15 18:43:25'),
+(502, 1, 1, '/themes/citymotors/css/modules/blockuserinfo/blockuserinfo.css.map', '', '2018-09-15 18:43:25'),
+(503, 1, 1, '/themes/citymotors/css/modules/homefeatured/homefeatured.css.map', '', '2018-09-15 18:43:25'),
+(504, 1, 1, '/themes/citymotors/css/modules/blocktopmenu/css/blocktopmenu.css.map', '', '2018-09-15 18:43:26'),
+(505, 1, 1, '/themes/citymotors/css/global.css.map', '', '2018-09-15 18:43:27'),
+(506, 1, 1, '/themes/citymotors/css/modules/blocktopmenu/css/superfish-modified.css.map', '', '2018-09-15 18:43:27'),
+(507, 1, 1, '/themes/citymotors/css/modules/blockcart/blockcart.css.map', '', '2018-09-15 18:44:17'),
+(508, 1, 1, '/themes/citymotors/css/product_list.css.map', '', '2018-09-15 18:44:18'),
+(509, 1, 1, '/themes/citymotors/css/global.css.map', '', '2018-09-15 18:44:18'),
+(510, 1, 1, '/themes/citymotors/css/autoload/uniform.default.css.map', '', '2018-09-15 18:44:19'),
+(511, 1, 1, '/themes/citymotors/css/modules/blockbestsellers/blockbestsellers.css.map', '', '2018-09-15 18:44:20'),
+(512, 1, 1, '/themes/citymotors/css/modules/blockcategories/blockcategories.css.map', '', '2018-09-15 18:44:20'),
+(513, 1, 1, '/themes/citymotors/css/modules/blockmyaccountfooter/blockmyaccount.css.map', '', '2018-09-15 18:44:21'),
+(514, 1, 1, '/themes/citymotors/css/modules/blocklanguages/blocklanguages.css.map', '', '2018-09-15 18:44:21'),
+(515, 1, 1, '/themes/citymotors/css/modules/blocknewproducts/blocknewproducts.css.map', '', '2018-09-15 18:44:22'),
+(516, 1, 1, '/themes/citymotors/css/modules/blockcontact/blockcontact.css.map', '', '2018-09-15 18:44:22'),
+(517, 1, 1, '/themes/citymotors/css/modules/blocksearch/blocksearch.css.map', '', '2018-09-15 18:44:23'),
+(518, 1, 1, '/themes/citymotors/css/modules/blocknewsletter/blocknewsletter.css.map', '', '2018-09-15 18:44:23'),
+(519, 1, 1, '/themes/citymotors/css/modules/blocktags/blocktags.css.map', '', '2018-09-15 18:44:23'),
+(520, 1, 1, '/themes/citymotors/css/modules/blockuserinfo/blockuserinfo.css.map', '', '2018-09-15 18:44:24'),
+(521, 1, 1, '/themes/citymotors/css/modules/blockspecials/blockspecials.css.map', '', '2018-09-15 18:44:24'),
+(522, 1, 1, '/themes/citymotors/css/modules/blockviewed/blockviewed.css.map', '', '2018-09-15 18:44:24'),
+(523, 1, 1, '/themes/citymotors/css/modules/homeslider/homeslider.css.map', '', '2018-09-15 18:44:25'),
+(524, 1, 1, '/themes/citymotors/css/modules/homefeatured/homefeatured.css.map', '', '2018-09-15 18:44:25'),
+(525, 1, 1, '/themes/citymotors/css/modules/blocktopmenu/css/blocktopmenu.css.map', '', '2018-09-15 18:44:26'),
+(526, 1, 1, '/themes/citymotors/css/modules/blocktopmenu/css/superfish-modified.css.map', '', '2018-09-15 18:44:26'),
+(527, 1, 1, '/themes/citymotors/css/product_list.css.map', '', '2018-09-15 18:47:21'),
+(528, 1, 1, '/themes/citymotors/css/autoload/uniform.default.css.map', '', '2018-09-15 18:47:21'),
+(529, 1, 1, '/themes/citymotors/css/global.css.map', '', '2018-09-15 18:47:21'),
+(530, 1, 1, '/themes/citymotors/css/modules/blockcart/blockcart.css.map', '', '2018-09-15 18:47:22'),
+(531, 1, 1, '/themes/citymotors/css/modules/blockbestsellers/blockbestsellers.css.map', '', '2018-09-15 18:47:23'),
+(532, 1, 1, '/themes/citymotors/css/modules/blockcategories/blockcategories.css.map', '', '2018-09-15 18:47:24'),
+(533, 1, 1, '/themes/citymotors/css/modules/blocklanguages/blocklanguages.css.map', '', '2018-09-15 18:47:24'),
+(534, 1, 1, '/themes/citymotors/css/modules/blockmyaccountfooter/blockmyaccount.css.map', '', '2018-09-15 18:47:24'),
+(535, 1, 1, '/themes/citymotors/css/modules/blocknewproducts/blocknewproducts.css.map', '', '2018-09-15 18:47:25'),
+(536, 1, 1, '/themes/citymotors/css/modules/blockcontact/blockcontact.css.map', '', '2018-09-15 18:47:26'),
+(537, 1, 1, '/themes/citymotors/css/modules/blocksearch/blocksearch.css.map', '', '2018-09-15 18:47:26'),
+(538, 1, 1, '/themes/citymotors/css/modules/blocknewsletter/blocknewsletter.css.map', '', '2018-09-15 18:47:27'),
+(539, 1, 1, '/themes/citymotors/css/modules/blockspecials/blockspecials.css.map', '', '2018-09-15 18:47:28'),
+(540, 1, 1, '/themes/citymotors/css/modules/blocktags/blocktags.css.map', '', '2018-09-15 18:47:28'),
+(541, 1, 1, '/themes/citymotors/css/modules/blockuserinfo/blockuserinfo.css.map', '', '2018-09-15 18:47:28'),
+(542, 1, 1, '/themes/citymotors/css/modules/blockviewed/blockviewed.css.map', '', '2018-09-15 18:47:29'),
+(543, 1, 1, '/themes/citymotors/css/modules/homefeatured/homefeatured.css.map', '', '2018-09-15 18:47:29'),
+(544, 1, 1, '/themes/citymotors/css/modules/homeslider/homeslider.css.map', '', '2018-09-15 18:47:29'),
+(545, 1, 1, '/themes/citymotors/css/modules/blocktopmenu/css/superfish-modified.css.map', '', '2018-09-15 18:47:30'),
+(546, 1, 1, '/themes/citymotors/css/modules/blocktopmenu/css/blocktopmenu.css.map', '', '2018-09-15 18:47:30'),
+(547, 1, 1, '/robots.txt', '', '2018-09-15 18:47:33'),
+(548, 1, 1, '/themes/citymotors/css/category.css.map', '', '2018-09-15 18:51:23'),
+(549, 1, 1, '/themes/citymotors/css/modules/blockbestsellers/blockbestsellers.css.map', '', '2018-09-15 18:51:23'),
+(550, 1, 1, '/themes/citymotors/css/autoload/uniform.default.css.map', '', '2018-09-15 18:51:23'),
+(551, 1, 1, '/themes/citymotors/css/product_list.css.map', '', '2018-09-15 18:51:23'),
+(552, 1, 1, '/themes/citymotors/css/global.css.map', '', '2018-09-15 18:51:23'),
+(553, 1, 1, '/themes/citymotors/css/scenes.css.map', '', '2018-09-15 18:51:24'),
+(554, 1, 1, '/themes/citymotors/css/modules/blocklanguages/blocklanguages.css.map', '', '2018-09-15 18:51:25'),
+(555, 1, 1, '/themes/citymotors/css/modules/blockcategories/blockcategories.css.map', '', '2018-09-15 18:51:25'),
+(556, 1, 1, '/themes/citymotors/css/modules/blockcart/blockcart.css.map', '', '2018-09-15 18:51:25'),
+(557, 1, 1, '/themes/citymotors/css/modules/blockcontact/blockcontact.css.map', '', '2018-09-15 18:51:25'),
+(558, 1, 1, '/themes/citymotors/css/modules/blocklayered/blocklayered.css.map', '', '2018-09-15 18:51:26'),
+(559, 1, 1, '/themes/citymotors/css/modules/blocknewsletter/blocknewsletter.css.map', '', '2018-09-15 18:51:26'),
+(560, 1, 1, '/themes/citymotors/css/modules/blockmyaccountfooter/blockmyaccount.css.map', '', '2018-09-15 18:51:26'),
+(561, 1, 1, '/themes/citymotors/css/modules/blocknewproducts/blocknewproducts.css.map', '', '2018-09-15 18:51:27'),
+(562, 1, 1, '/themes/citymotors/css/modules/blocksearch/blocksearch.css.map', '', '2018-09-15 18:51:27'),
+(563, 1, 1, '/themes/citymotors/css/modules/blockspecials/blockspecials.css.map', '', '2018-09-15 18:51:27'),
+(564, 1, 1, '/themes/citymotors/css/modules/blocktags/blocktags.css.map', '', '2018-09-15 18:51:27'),
+(565, 1, 1, '/themes/citymotors/css/modules/blockviewed/blockviewed.css.map', '', '2018-09-15 18:51:28'),
+(566, 1, 1, '/themes/citymotors/css/modules/blockuserinfo/blockuserinfo.css.map', '', '2018-09-15 18:51:28'),
+(567, 1, 1, '/themes/citymotors/css/modules/homefeatured/homefeatured.css.map', '', '2018-09-15 18:51:28'),
+(568, 1, 1, '/themes/citymotors/css/modules/blocktopmenu/css/blocktopmenu.css.map', '', '2018-09-15 18:51:28'),
+(569, 1, 1, '/themes/citymotors/css/modules/blocktopmenu/css/superfish-modified.css.map', '', '2018-09-15 18:51:28'),
+(570, 1, 1, '/themes/citymotors/css/modules/blockbestsellers/blockbestsellers.css.map', '', '2018-09-15 18:55:18'),
+(571, 1, 1, '/themes/citymotors/css/product_list.css.map', '', '2018-09-15 18:55:19'),
+(572, 1, 1, '/themes/citymotors/css/modules/blockcart/blockcart.css.map', '', '2018-09-15 18:55:20'),
+(573, 1, 1, '/themes/citymotors/css/global.css.map', '', '2018-09-15 18:55:21'),
+(574, 1, 1, '/themes/citymotors/css/autoload/uniform.default.css.map', '', '2018-09-15 18:55:21'),
+(575, 1, 1, '/themes/citymotors/css/modules/blocklanguages/blocklanguages.css.map', '', '2018-09-15 18:55:22'),
+(576, 1, 1, '/themes/citymotors/css/modules/blockcategories/blockcategories.css.map', '', '2018-09-15 18:55:24'),
+(577, 1, 1, '/themes/citymotors/css/modules/blockmyaccountfooter/blockmyaccount.css.map', '', '2018-09-15 18:55:24'),
+(578, 1, 1, '/themes/citymotors/css/modules/blockcontact/blockcontact.css.map', '', '2018-09-15 18:55:24'),
+(579, 1, 1, '/themes/citymotors/css/modules/blocksearch/blocksearch.css.map', '', '2018-09-15 18:55:26'),
+(580, 1, 1, '/themes/citymotors/css/modules/blocknewproducts/blocknewproducts.css.map', '', '2018-09-15 18:55:26'),
+(581, 1, 1, '/themes/citymotors/css/modules/blocknewsletter/blocknewsletter.css.map', '', '2018-09-15 18:55:26'),
+(582, 1, 1, '/themes/citymotors/css/modules/blocktags/blocktags.css.map', '', '2018-09-15 18:55:27'),
+(583, 1, 1, '/themes/citymotors/css/modules/blockuserinfo/blockuserinfo.css.map', '', '2018-09-15 18:55:28'),
+(584, 1, 1, '/themes/citymotors/css/modules/homefeatured/homefeatured.css.map', '', '2018-09-15 18:55:28'),
+(585, 1, 1, '/themes/citymotors/css/modules/blockspecials/blockspecials.css.map', '', '2018-09-15 18:55:29'),
+(586, 1, 1, '/themes/citymotors/css/modules/blockviewed/blockviewed.css.map', '', '2018-09-15 18:55:29'),
+(587, 1, 1, '/themes/citymotors/css/modules/homeslider/homeslider.css.map', '', '2018-09-15 18:55:29'),
+(588, 1, 1, '/themes/citymotors/css/modules/blocktopmenu/css/blocktopmenu.css.map', '', '2018-09-15 18:55:36'),
+(589, 1, 1, '/themes/citymotors/css/modules/blocktopmenu/css/superfish-modified.css.map', '', '2018-09-15 18:55:37'),
+(590, 1, 1, '/themes/citymotors/css/autoload/uniform.default.css.map', '', '2018-09-15 18:56:43'),
+(591, 1, 1, '/themes/citymotors/css/global.css.map', '', '2018-09-15 18:56:44'),
+(592, 1, 1, '/themes/citymotors/css/modules/blockbestsellers/blockbestsellers.css.map', '', '2018-09-15 18:56:44'),
+(593, 1, 1, '/themes/citymotors/css/product_list.css.map', '', '2018-09-15 18:56:44'),
+(594, 1, 1, '/themes/citymotors/css/modules/blockcategories/blockcategories.css.map', '', '2018-09-15 18:56:46'),
+(595, 1, 1, '/themes/citymotors/css/modules/blockcart/blockcart.css.map', '', '2018-09-15 18:56:46'),
+(596, 1, 1, '/themes/citymotors/css/modules/blocklanguages/blocklanguages.css.map', '', '2018-09-15 18:56:47'),
+(597, 1, 1, '/themes/citymotors/css/modules/blockmyaccountfooter/blockmyaccount.css.map', '', '2018-09-15 18:56:48'),
+(598, 1, 1, '/themes/citymotors/css/modules/blocknewproducts/blocknewproducts.css.map', '', '2018-09-15 18:56:48'),
+(599, 1, 1, '/themes/citymotors/css/modules/blockcontact/blockcontact.css.map', '', '2018-09-15 18:56:49'),
+(600, 1, 1, '/themes/citymotors/css/modules/blocknewsletter/blocknewsletter.css.map', '', '2018-09-15 18:56:49'),
+(601, 1, 1, '/themes/citymotors/css/modules/blocksearch/blocksearch.css.map', '', '2018-09-15 18:56:49'),
+(602, 1, 1, '/themes/citymotors/css/modules/blockspecials/blockspecials.css.map', '', '2018-09-15 18:56:51'),
+(603, 1, 1, '/themes/citymotors/css/modules/blocktags/blocktags.css.map', '', '2018-09-15 18:56:51'),
+(604, 1, 1, '/themes/citymotors/css/modules/blockviewed/blockviewed.css.map', '', '2018-09-15 18:56:51'),
+(605, 1, 1, '/themes/citymotors/css/modules/blockuserinfo/blockuserinfo.css.map', '', '2018-09-15 18:56:51'),
+(606, 1, 1, '/themes/citymotors/css/modules/homeslider/homeslider.css.map', '', '2018-09-15 18:56:52'),
+(607, 1, 1, '/themes/citymotors/css/modules/homefeatured/homefeatured.css.map', '', '2018-09-15 18:56:52'),
+(608, 1, 1, '/themes/citymotors/css/modules/blocktopmenu/css/superfish-modified.css.map', '', '2018-09-15 18:56:53'),
+(609, 1, 1, '/themes/citymotors/css/modules/blocktopmenu/css/blocktopmenu.css.map', '', '2018-09-15 18:56:53'),
+(610, 1, 1, '/themes/citymotors/css/modules/blockcategories/blockcategories.css.map', '', '2018-09-15 18:57:31'),
+(611, 1, 1, '/themes/citymotors/css/product_list.css.map', '', '2018-09-15 18:57:31'),
+(612, 1, 1, '/themes/citymotors/css/global.css.map', '', '2018-09-15 18:57:32'),
+(613, 1, 1, '/themes/citymotors/css/autoload/uniform.default.css.map', '', '2018-09-15 18:57:32'),
+(614, 1, 1, '/themes/citymotors/css/modules/blockbestsellers/blockbestsellers.css.map', '', '2018-09-15 18:57:32'),
+(615, 1, 1, '/themes/citymotors/css/modules/blockcart/blockcart.css.map', '', '2018-09-15 18:57:33'),
+(616, 1, 1, '/themes/citymotors/css/modules/blocklanguages/blocklanguages.css.map', '', '2018-09-15 18:57:35'),
+(617, 1, 1, '/themes/citymotors/css/modules/blockmyaccountfooter/blockmyaccount.css.map', '', '2018-09-15 18:57:35'),
+(618, 1, 1, '/themes/citymotors/css/modules/blocknewproducts/blocknewproducts.css.map', '', '2018-09-15 18:57:35'),
+(619, 1, 1, '/themes/citymotors/css/modules/blockcontact/blockcontact.css.map', '', '2018-09-15 18:57:35'),
+(620, 1, 1, '/themes/citymotors/css/modules/blocksearch/blocksearch.css.map', '', '2018-09-15 18:57:36'),
+(621, 1, 1, '/themes/citymotors/css/modules/blocknewsletter/blocknewsletter.css.map', '', '2018-09-15 18:57:37'),
+(622, 1, 1, '/themes/citymotors/css/modules/blocktags/blocktags.css.map', '', '2018-09-15 18:57:37'),
+(623, 1, 1, '/themes/citymotors/css/modules/blockviewed/blockviewed.css.map', '', '2018-09-15 18:57:37'),
+(624, 1, 1, '/themes/citymotors/css/modules/blockuserinfo/blockuserinfo.css.map', '', '2018-09-15 18:57:37'),
+(625, 1, 1, '/themes/citymotors/css/modules/blockspecials/blockspecials.css.map', '', '2018-09-15 18:57:37'),
+(626, 1, 1, '/themes/citymotors/css/modules/homefeatured/homefeatured.css.map', '', '2018-09-15 18:57:38'),
+(627, 1, 1, '/themes/citymotors/css/modules/homeslider/homeslider.css.map', '', '2018-09-15 18:57:38'),
+(628, 1, 1, '/themes/citymotors/css/modules/blocktopmenu/css/superfish-modified.css.map', '', '2018-09-15 18:57:44'),
+(629, 1, 1, '/themes/citymotors/css/modules/blocktopmenu/css/blocktopmenu.css.map', '', '2018-09-15 18:57:44'),
+(630, 1, 1, '/themes/citymotors/css/autoload/uniform.default.css.map', '', '2018-09-15 18:58:44'),
+(631, 1, 1, '/themes/citymotors/css/modules/blockbestsellers/blockbestsellers.css.map', '', '2018-09-15 18:58:44'),
+(632, 1, 1, '/themes/citymotors/css/modules/blockcart/blockcart.css.map', '', '2018-09-15 18:58:44'),
+(633, 1, 1, '/themes/citymotors/css/product_list.css.map', '', '2018-09-15 18:58:45'),
+(634, 1, 1, '/themes/citymotors/css/global.css.map', '', '2018-09-15 18:58:45'),
+(635, 1, 1, '/themes/citymotors/css/modules/blockcategories/blockcategories.css.map', '', '2018-09-15 18:58:46'),
+(636, 1, 1, '/themes/citymotors/css/modules/blocklanguages/blocklanguages.css.map', '', '2018-09-15 18:58:47'),
+(637, 1, 1, '/themes/citymotors/css/modules/blockcontact/blockcontact.css.map', '', '2018-09-15 18:58:48'),
+(638, 1, 1, '/themes/citymotors/css/modules/blockmyaccountfooter/blockmyaccount.css.map', '', '2018-09-15 18:58:48'),
+(639, 1, 1, '/themes/citymotors/css/modules/blocknewsletter/blocknewsletter.css.map', '', '2018-09-15 18:58:48'),
+(640, 1, 1, '/themes/citymotors/css/modules/blocksearch/blocksearch.css.map', '', '2018-09-15 18:58:48'),
+(641, 1, 1, '/themes/citymotors/css/modules/blocknewproducts/blocknewproducts.css.map', '', '2018-09-15 18:58:48'),
+(642, 1, 1, '/themes/citymotors/css/modules/blockspecials/blockspecials.css.map', '', '2018-09-15 18:58:49'),
+(643, 1, 1, '/themes/citymotors/css/modules/blocktags/blocktags.css.map', '', '2018-09-15 18:58:49'),
+(644, 1, 1, '/themes/citymotors/css/modules/homeslider/homeslider.css.map', '', '2018-09-15 18:58:51'),
+(645, 1, 1, '/themes/citymotors/css/modules/blockuserinfo/blockuserinfo.css.map', '', '2018-09-15 18:58:51'),
+(646, 1, 1, '/themes/citymotors/css/modules/blocktopmenu/css/superfish-modified.css.map', '', '2018-09-15 18:58:52'),
+(647, 1, 1, '/themes/citymotors/css/modules/blocktopmenu/css/blocktopmenu.css.map', '', '2018-09-15 18:58:52'),
+(648, 1, 1, '/themes/citymotors/css/modules/homefeatured/homefeatured.css.map', '', '2018-09-15 18:58:52'),
+(649, 1, 1, '/themes/citymotors/css/modules/blockviewed/blockviewed.css.map', '', '2018-09-15 18:58:52'),
+(650, 1, 1, '/themes/citymotors/css/global.css.map', '', '2018-09-15 19:01:42'),
+(651, 1, 1, '/themes/citymotors/css/product_list.css.map', '', '2018-09-15 19:01:42'),
+(652, 1, 1, '/themes/citymotors/css/modules/blockbestsellers/blockbestsellers.css.map', '', '2018-09-15 19:01:42'),
+(653, 1, 1, '/themes/citymotors/css/autoload/uniform.default.css.map', '', '2018-09-15 19:01:43'),
+(654, 1, 1, '/themes/citymotors/css/modules/blockcart/blockcart.css.map', '', '2018-09-15 19:01:44'),
+(655, 1, 1, '/themes/citymotors/css/modules/blockcategories/blockcategories.css.map', '', '2018-09-15 19:01:44'),
+(656, 1, 1, '/themes/citymotors/css/modules/blockmyaccountfooter/blockmyaccount.css.map', '', '2018-09-15 19:01:46'),
+(657, 1, 1, '/themes/citymotors/css/modules/blocknewsletter/blocknewsletter.css.map', '', '2018-09-15 19:01:46'),
+(658, 1, 1, '/themes/citymotors/css/modules/blocklanguages/blocklanguages.css.map', '', '2018-09-15 19:01:46'),
+(659, 1, 1, '/themes/citymotors/css/modules/blockcontact/blockcontact.css.map', '', '2018-09-15 19:01:47'),
+(660, 1, 1, '/themes/citymotors/css/modules/blocknewproducts/blocknewproducts.css.map', '', '2018-09-15 19:01:47'),
+(661, 1, 1, '/themes/citymotors/css/modules/blocksearch/blocksearch.css.map', '', '2018-09-15 19:01:47'),
+(662, 1, 1, '/themes/citymotors/css/modules/blockspecials/blockspecials.css.map', '', '2018-09-15 19:01:47'),
+(663, 1, 1, '/themes/citymotors/css/modules/homeslider/homeslider.css.map', '', '2018-09-15 19:01:50'),
+(664, 1, 1, '/themes/citymotors/css/modules/homefeatured/homefeatured.css.map', '', '2018-09-15 19:01:50'),
+(665, 1, 1, '/themes/citymotors/css/modules/blockuserinfo/blockuserinfo.css.map', '', '2018-09-15 19:01:51'),
+(666, 1, 1, '/themes/citymotors/css/modules/blocktopmenu/css/blocktopmenu.css.map', '', '2018-09-15 19:01:51'),
+(667, 1, 1, '/themes/citymotors/css/modules/blockviewed/blockviewed.css.map', '', '2018-09-15 19:01:51'),
+(668, 1, 1, '/themes/citymotors/css/modules/blocktags/blocktags.css.map', '', '2018-09-15 19:01:51'),
+(669, 1, 1, '/themes/citymotors/css/modules/blocktopmenu/css/superfish-modified.css.map', '', '2018-09-15 19:01:52'),
+(670, 1, 1, '/themes/citymotors/css/global.css.map', '', '2018-09-15 19:02:07'),
+(671, 1, 1, '/themes/citymotors/css/modules/blockbestsellers/blockbestsellers.css.map', '', '2018-09-15 19:02:10'),
+(672, 1, 1, '/themes/citymotors/css/autoload/uniform.default.css.map', '', '2018-09-15 19:02:10'),
+(673, 1, 1, '/themes/citymotors/css/modules/blockcategories/blockcategories.css.map', '', '2018-09-15 19:02:10'),
+(674, 1, 1, '/themes/citymotors/css/modules/blockcart/blockcart.css.map', '', '2018-09-15 19:02:10'),
+(675, 1, 1, '/themes/citymotors/css/product_list.css.map', '', '2018-09-15 19:02:11'),
+(676, 1, 1, '/themes/citymotors/css/modules/blockcontact/blockcontact.css.map', '', '2018-09-15 19:02:14'),
+(677, 1, 1, '/themes/citymotors/css/modules/blockmyaccountfooter/blockmyaccount.css.map', '', '2018-09-15 19:02:14'),
+(678, 1, 1, '/themes/citymotors/css/modules/blocklanguages/blocklanguages.css.map', '', '2018-09-15 19:02:15'),
+(679, 1, 1, '/themes/citymotors/css/modules/blocknewproducts/blocknewproducts.css.map', '', '2018-09-15 19:02:15'),
+(680, 1, 1, '/themes/citymotors/css/modules/blocksearch/blocksearch.css.map', '', '2018-09-15 19:02:16'),
+(681, 1, 1, '/themes/citymotors/css/modules/blocknewsletter/blocknewsletter.css.map', '', '2018-09-15 19:02:16'),
+(682, 1, 1, '/themes/citymotors/css/modules/blocktags/blocktags.css.map', '', '2018-09-15 19:02:16'),
+(683, 1, 1, '/themes/citymotors/css/modules/blockuserinfo/blockuserinfo.css.map', '', '2018-09-15 19:02:17'),
+(684, 1, 1, '/themes/citymotors/css/modules/blockspecials/blockspecials.css.map', '', '2018-09-15 19:02:17'),
+(685, 1, 1, '/themes/citymotors/css/modules/blockviewed/blockviewed.css.map', '', '2018-09-15 19:02:17'),
+(686, 1, 1, '/themes/citymotors/css/modules/homeslider/homeslider.css.map', '', '2018-09-15 19:02:18'),
+(687, 1, 1, '/themes/citymotors/css/modules/homefeatured/homefeatured.css.map', '', '2018-09-15 19:02:19'),
+(688, 1, 1, '/themes/citymotors/css/modules/blocktopmenu/css/blocktopmenu.css.map', '', '2018-09-15 19:02:19'),
+(689, 1, 1, '/themes/citymotors/css/modules/blocktopmenu/css/superfish-modified.css.map', '', '2018-09-15 19:02:19'),
+(690, 1, 1, '/themes/citymotors/css/autoload/uniform.default.css.map', '', '2018-09-15 19:03:48'),
+(691, 1, 1, '/themes/citymotors/css/global.css.map', '', '2018-09-15 19:03:49'),
+(692, 1, 1, '/themes/citymotors/css/modules/blockbestsellers/blockbestsellers.css.map', '', '2018-09-15 19:03:49'),
+(693, 1, 1, '/themes/citymotors/css/modules/blockcart/blockcart.css.map', '', '2018-09-15 19:03:49'),
+(694, 1, 1, '/themes/citymotors/css/product_list.css.map', '', '2018-09-15 19:03:50'),
+(695, 1, 1, '/themes/citymotors/css/modules/blockcategories/blockcategories.css.map', '', '2018-09-15 19:03:50'),
+(696, 1, 1, '/themes/citymotors/css/modules/blocklanguages/blocklanguages.css.map', '', '2018-09-15 19:03:52'),
+(697, 1, 1, '/themes/citymotors/css/modules/blockmyaccountfooter/blockmyaccount.css.map', '', '2018-09-15 19:03:53'),
+(698, 1, 1, '/themes/citymotors/css/modules/blockcontact/blockcontact.css.map', '', '2018-09-15 19:03:53'),
+(699, 1, 1, '/themes/citymotors/css/modules/blocknewsletter/blocknewsletter.css.map', '', '2018-09-15 19:03:53'),
+(700, 1, 1, '/themes/citymotors/css/modules/blocknewproducts/blocknewproducts.css.map', '', '2018-09-15 19:03:54'),
+(701, 1, 1, '/themes/citymotors/css/modules/blocksearch/blocksearch.css.map', '', '2018-09-15 19:03:55'),
+(702, 1, 1, '/themes/citymotors/css/modules/blockspecials/blockspecials.css.map', '', '2018-09-15 19:03:55'),
+(703, 1, 1, '/themes/citymotors/css/modules/blockviewed/blockviewed.css.map', '', '2018-09-15 19:03:56'),
+(704, 1, 1, '/themes/citymotors/css/modules/blocktags/blocktags.css.map', '', '2018-09-15 19:03:56'),
+(705, 1, 1, '/themes/citymotors/css/modules/blockuserinfo/blockuserinfo.css.map', '', '2018-09-15 19:03:56'),
+(706, 1, 1, '/themes/citymotors/css/modules/homeslider/homeslider.css.map', '', '2018-09-15 19:03:57'),
+(707, 1, 1, '/themes/citymotors/css/modules/blocktopmenu/css/blocktopmenu.css.map', '', '2018-09-15 19:03:58'),
+(708, 1, 1, '/themes/citymotors/css/modules/blocktopmenu/css/superfish-modified.css.map', '', '2018-09-15 19:03:58'),
+(709, 1, 1, '/themes/citymotors/css/modules/homefeatured/homefeatured.css.map', '', '2018-09-15 19:03:58'),
+(710, 1, 1, '/citymotors.com.ua', 'http://citynew.loc/', '2018-09-15 22:24:53'),
+(711, 1, 1, '/robots.txt', '', '2018-09-17 11:17:10'),
+(712, 1, 1, '/robots.txt', '', '2018-09-17 11:17:10'),
+(713, 1, 1, '/robots.txt', '', '2018-09-17 11:17:10'),
+(714, 1, 1, '/themes/citymotors/css/modules/blockcategories/blockcategories.css.map', '', '2018-09-17 11:28:33'),
+(715, 1, 1, '/themes/citymotors/css/product_list.css.map', '', '2018-09-17 11:28:33'),
+(716, 1, 1, '/themes/citymotors/css/modules/blockcart/blockcart.css.map', '', '2018-09-17 11:28:33'),
+(717, 1, 1, '/themes/citymotors/css/modules/blockbestsellers/blockbestsellers.css.map', '', '2018-09-17 11:28:33'),
+(718, 1, 1, '/themes/citymotors/css/global.css.map', '', '2018-09-17 11:28:33'),
+(719, 1, 1, '/themes/citymotors/css/autoload/uniform.default.css.map', '', '2018-09-17 11:28:34'),
+(720, 1, 1, '/themes/citymotors/css/modules/blocklanguages/blocklanguages.css.map', '', '2018-09-17 11:28:35'),
+(721, 1, 1, '/themes/citymotors/css/modules/blocknewproducts/blocknewproducts.css.map', '', '2018-09-17 11:28:36'),
+(722, 1, 1, '/themes/citymotors/css/modules/blockcontact/blockcontact.css.map', '', '2018-09-17 11:28:36'),
+(723, 1, 1, '/themes/citymotors/css/modules/blocknewsletter/blocknewsletter.css.map', '', '2018-09-17 11:28:36'),
+(724, 1, 1, '/themes/citymotors/css/modules/blockmyaccountfooter/blockmyaccount.css.map', '', '2018-09-17 11:28:36'),
+(725, 1, 1, '/themes/citymotors/css/modules/blocksearch/blocksearch.css.map', '', '2018-09-17 11:28:36'),
+(726, 1, 1, '/themes/citymotors/css/modules/blockspecials/blockspecials.css.map', '', '2018-09-17 11:28:37'),
+(727, 1, 1, '/themes/citymotors/css/modules/blockviewed/blockviewed.css.map', '', '2018-09-17 11:28:38'),
+(728, 1, 1, '/themes/citymotors/css/modules/homeslider/homeslider.css.map', '', '2018-09-17 11:28:38'),
+(729, 1, 1, '/themes/citymotors/css/modules/blocktags/blocktags.css.map', '', '2018-09-17 11:28:38'),
+(730, 1, 1, '/themes/citymotors/css/modules/blockuserinfo/blockuserinfo.css.map', '', '2018-09-17 11:28:38'),
+(731, 1, 1, '/themes/citymotors/css/modules/homefeatured/homefeatured.css.map', '', '2018-09-17 11:28:39'),
+(732, 1, 1, '/themes/citymotors/css/modules/blocktopmenu/css/blocktopmenu.css.map', '', '2018-09-17 11:28:39'),
+(733, 1, 1, '/themes/citymotors/css/modules/blocktopmenu/css/superfish-modified.css.map', '', '2018-09-17 11:28:40'),
+(734, 1, 1, '/robots.txt', '', '2018-09-17 11:40:18'),
+(735, 1, 1, '/themes/citymotors/css/product_list.css.map', '', '2018-09-17 12:03:36'),
+(736, 1, 1, '/themes/citymotors/css/autoload/uniform.default.css.map', '', '2018-09-17 12:03:37'),
+(737, 1, 1, '/themes/citymotors/css/modules/blockbestsellers/blockbestsellers.css.map', '', '2018-09-17 12:03:37'),
+(738, 1, 1, '/themes/citymotors/css/modules/blockcart/blockcart.css.map', '', '2018-09-17 12:03:38'),
+(739, 1, 1, '/themes/citymotors/css/global.css.map', '', '2018-09-17 12:03:38'),
+(740, 1, 1, '/themes/citymotors/css/modules/blockcategories/blockcategories.css.map', '', '2018-09-17 12:03:39'),
+(741, 1, 1, '/themes/citymotors/css/modules/blocklanguages/blocklanguages.css.map', '', '2018-09-17 12:03:39'),
+(742, 1, 1, '/themes/citymotors/css/modules/blockmyaccountfooter/blockmyaccount.css.map', '', '2018-09-17 12:03:40'),
+(743, 1, 1, '/themes/citymotors/css/modules/blockcontact/blockcontact.css.map', '', '2018-09-17 12:03:40'),
+(744, 1, 1, '/themes/citymotors/css/modules/blocknewproducts/blocknewproducts.css.map', '', '2018-09-17 12:03:41'),
+(745, 1, 1, '/themes/citymotors/css/modules/blocknewsletter/blocknewsletter.css.map', '', '2018-09-17 12:03:41'),
+(746, 1, 1, '/themes/citymotors/css/modules/blocksearch/blocksearch.css.map', '', '2018-09-17 12:03:42'),
+(747, 1, 1, '/themes/citymotors/css/modules/blockspecials/blockspecials.css.map', '', '2018-09-17 12:03:42'),
+(748, 1, 1, '/themes/citymotors/css/modules/blocktags/blocktags.css.map', '', '2018-09-17 12:03:43'),
+(749, 1, 1, '/themes/citymotors/css/modules/blockuserinfo/blockuserinfo.css.map', '', '2018-09-17 12:03:43'),
+(750, 1, 1, '/themes/citymotors/css/modules/homeslider/homeslider.css.map', '', '2018-09-17 12:03:43'),
+(751, 1, 1, '/themes/citymotors/css/modules/blockviewed/blockviewed.css.map', '', '2018-09-17 12:03:43'),
+(752, 1, 1, '/themes/citymotors/css/modules/homefeatured/homefeatured.css.map', '', '2018-09-17 12:03:44'),
+(753, 1, 1, '/themes/citymotors/css/modules/blocktopmenu/css/blocktopmenu.css.map', '', '2018-09-17 12:03:45'),
+(754, 1, 1, '/themes/citymotors/css/modules/blocktopmenu/css/superfish-modified.css.map', '', '2018-09-17 12:03:45'),
+(755, 1, 1, '/themes/citymotors/css/autoload/uniform.default.css.map', '', '2018-09-17 12:09:45'),
+(756, 1, 1, '/themes/citymotors/css/modules/blockbestsellers/blockbestsellers.css.map', '', '2018-09-17 12:09:45'),
+(757, 1, 1, '/themes/citymotors/css/product_list.css.map', '', '2018-09-17 12:09:45'),
+(758, 1, 1, '/themes/citymotors/css/global.css.map', '', '2018-09-17 12:09:45'),
+(759, 1, 1, '/themes/citymotors/css/modules/blockcart/blockcart.css.map', '', '2018-09-17 12:09:46'),
+(760, 1, 1, '/themes/citymotors/css/modules/blockcategories/blockcategories.css.map', '', '2018-09-17 12:09:46'),
+(761, 1, 1, '/themes/citymotors/css/modules/blockmyaccountfooter/blockmyaccount.css.map', '', '2018-09-17 12:09:47'),
+(762, 1, 1, '/themes/citymotors/css/modules/blocklanguages/blocklanguages.css.map', '', '2018-09-17 12:09:48'),
+(763, 1, 1, '/themes/citymotors/css/modules/blockcontact/blockcontact.css.map', '', '2018-09-17 12:09:48'),
+(764, 1, 1, '/themes/citymotors/css/modules/blocknewproducts/blocknewproducts.css.map', '', '2018-09-17 12:09:48'),
+(765, 1, 1, '/themes/citymotors/css/modules/blocknewsletter/blocknewsletter.css.map', '', '2018-09-17 12:09:48'),
+(766, 1, 1, '/themes/citymotors/css/modules/blocksearch/blocksearch.css.map', '', '2018-09-17 12:09:49'),
+(767, 1, 1, '/themes/citymotors/css/modules/blockspecials/blockspecials.css.map', '', '2018-09-17 12:09:50'),
+(768, 1, 1, '/themes/citymotors/css/modules/homeslider/homeslider.css.map', '', '2018-09-17 12:09:50'),
+(769, 1, 1, '/themes/citymotors/css/modules/blockviewed/blockviewed.css.map', '', '2018-09-17 12:09:51'),
+(770, 1, 1, '/themes/citymotors/css/modules/blocktags/blocktags.css.map', '', '2018-09-17 12:09:51'),
+(771, 1, 1, '/themes/citymotors/css/modules/homefeatured/homefeatured.css.map', '', '2018-09-17 12:09:52'),
+(772, 1, 1, '/themes/citymotors/css/modules/blockuserinfo/blockuserinfo.css.map', '', '2018-09-17 12:09:52'),
+(773, 1, 1, '/themes/citymotors/css/modules/blocktopmenu/css/blocktopmenu.css.map', '', '2018-09-17 12:09:52'),
+(774, 1, 1, '/themes/citymotors/css/modules/blocktopmenu/css/superfish-modified.css.map', '', '2018-09-17 12:09:54'),
+(775, 1, 1, '/themes/citymotors/css/product_list.css.map', '', '2018-09-17 12:11:49'),
+(776, 1, 1, '/themes/citymotors/css/global.css.map', '', '2018-09-17 12:11:49'),
+(777, 1, 1, '/themes/citymotors/css/autoload/uniform.default.css.map', '', '2018-09-17 12:11:50'),
+(778, 1, 1, '/themes/citymotors/css/modules/blockbestsellers/blockbestsellers.css.map', '', '2018-09-17 12:11:50'),
+(779, 1, 1, '/themes/citymotors/css/modules/blockcategories/blockcategories.css.map', '', '2018-09-17 12:11:51'),
+(780, 1, 1, '/themes/citymotors/css/modules/blockcart/blockcart.css.map', '', '2018-09-17 12:11:51'),
+(781, 1, 1, '/themes/citymotors/css/modules/blockcontact/blockcontact.css.map', '', '2018-09-17 12:11:52'),
+(782, 1, 1, '/themes/citymotors/css/modules/blocklanguages/blocklanguages.css.map', '', '2018-09-17 12:11:52'),
+(783, 1, 1, '/themes/citymotors/css/modules/blockmyaccountfooter/blockmyaccount.css.map', '', '2018-09-17 12:11:52'),
+(784, 1, 1, '/themes/citymotors/css/modules/blocknewproducts/blocknewproducts.css.map', '', '2018-09-17 12:11:53'),
+(785, 1, 1, '/themes/citymotors/css/modules/blocksearch/blocksearch.css.map', '', '2018-09-17 12:11:53'),
+(786, 1, 1, '/themes/citymotors/css/modules/blocknewsletter/blocknewsletter.css.map', '', '2018-09-17 12:11:53'),
+(787, 1, 1, '/themes/citymotors/css/modules/blockspecials/blockspecials.css.map', '', '2018-09-17 12:11:54'),
+(788, 1, 1, '/themes/citymotors/css/modules/blocktags/blocktags.css.map', '', '2018-09-17 12:11:54'),
+(789, 1, 1, '/themes/citymotors/css/modules/blockuserinfo/blockuserinfo.css.map', '', '2018-09-17 12:11:55'),
+(790, 1, 1, '/themes/citymotors/css/modules/homefeatured/homefeatured.css.map', '', '2018-09-17 12:11:55'),
+(791, 1, 1, '/themes/citymotors/css/modules/blockviewed/blockviewed.css.map', '', '2018-09-17 12:11:55'),
+(792, 1, 1, '/themes/citymotors/css/modules/blocktopmenu/css/blocktopmenu.css.map', '', '2018-09-17 12:11:55'),
+(793, 1, 1, '/themes/citymotors/css/modules/blocktopmenu/css/superfish-modified.css.map', '', '2018-09-17 12:11:55'),
+(794, 1, 1, '/themes/citymotors/css/modules/blockcategories/blockcategories.css.map', '', '2018-09-17 12:14:14'),
+(795, 1, 1, '/themes/citymotors/css/autoload/uniform.default.css.map', '', '2018-09-17 12:14:14'),
+(796, 1, 1, '/themes/citymotors/css/global.css.map', '', '2018-09-17 12:14:14'),
+(797, 1, 1, '/themes/citymotors/css/modules/blockcart/blockcart.css.map', '', '2018-09-17 12:14:15'),
+(798, 1, 1, '/themes/citymotors/css/product_list.css.map', '', '2018-09-17 12:14:15'),
+(799, 1, 1, '/themes/citymotors/css/modules/blockbestsellers/blockbestsellers.css.map', '', '2018-09-17 12:14:15'),
+(800, 1, 1, '/themes/citymotors/css/modules/blockcontact/blockcontact.css.map', '', '2018-09-17 12:14:16'),
+(801, 1, 1, '/themes/citymotors/css/modules/blockmyaccountfooter/blockmyaccount.css.map', '', '2018-09-17 12:14:17'),
+(802, 1, 1, '/themes/citymotors/css/modules/blocknewproducts/blocknewproducts.css.map', '', '2018-09-17 12:14:17'),
+(803, 1, 1, '/themes/citymotors/css/modules/blocknewsletter/blocknewsletter.css.map', '', '2018-09-17 12:14:18'),
+(804, 1, 1, '/themes/citymotors/css/modules/blocklanguages/blocklanguages.css.map', '', '2018-09-17 12:14:18'),
+(805, 1, 1, '/themes/citymotors/css/modules/blocksearch/blocksearch.css.map', '', '2018-09-17 12:14:19'),
+(806, 1, 1, '/themes/citymotors/css/modules/blockuserinfo/blockuserinfo.css.map', '', '2018-09-17 12:14:19'),
+(807, 1, 1, '/themes/citymotors/css/modules/blockspecials/blockspecials.css.map', '', '2018-09-17 12:14:20'),
+(808, 1, 1, '/themes/citymotors/css/modules/blocktags/blocktags.css.map', '', '2018-09-17 12:14:20'),
+(809, 1, 1, '/themes/citymotors/css/modules/blockviewed/blockviewed.css.map', '', '2018-09-17 12:14:20'),
+(810, 1, 1, '/themes/citymotors/css/modules/homefeatured/homefeatured.css.map', '', '2018-09-17 12:14:21'),
+(811, 1, 1, '/themes/citymotors/css/modules/homeslider/homeslider.css.map', '', '2018-09-17 12:14:21'),
+(812, 1, 1, '/themes/citymotors/css/modules/blocktopmenu/css/superfish-modified.css.map', '', '2018-09-17 12:14:22'),
+(813, 1, 1, '/themes/citymotors/css/modules/blocktopmenu/css/blocktopmenu.css.map', '', '2018-09-17 12:14:22'),
+(814, 1, 1, '/themes/citymotors/css/product_list.css.map', '', '2018-09-17 12:15:51'),
+(815, 1, 1, '/themes/citymotors/css/autoload/uniform.default.css.map', '', '2018-09-17 12:15:51'),
+(816, 1, 1, '/themes/citymotors/css/modules/blockcategories/blockcategories.css.map', '', '2018-09-17 12:15:51'),
+(817, 1, 1, '/themes/citymotors/css/modules/blockcart/blockcart.css.map', '', '2018-09-17 12:15:52'),
+(818, 1, 1, '/themes/citymotors/css/global.css.map', '', '2018-09-17 12:15:52'),
+(819, 1, 1, '/themes/citymotors/css/modules/blockbestsellers/blockbestsellers.css.map', '', '2018-09-17 12:15:52'),
+(820, 1, 1, '/themes/citymotors/css/modules/blockcontact/blockcontact.css.map', '', '2018-09-17 12:15:53'),
+(821, 1, 1, '/themes/citymotors/css/modules/blockmyaccountfooter/blockmyaccount.css.map', '', '2018-09-17 12:15:53'),
+(822, 1, 1, '/themes/citymotors/css/modules/blocklanguages/blocklanguages.css.map', '', '2018-09-17 12:15:54'),
+(823, 1, 1, '/themes/citymotors/css/modules/blocknewsletter/blocknewsletter.css.map', '', '2018-09-17 12:15:54'),
+(824, 1, 1, '/themes/citymotors/css/modules/blocknewproducts/blocknewproducts.css.map', '', '2018-09-17 12:15:54'),
+(825, 1, 1, '/themes/citymotors/css/modules/blocksearch/blocksearch.css.map', '', '2018-09-17 12:15:54'),
+(826, 1, 1, '/themes/citymotors/css/modules/blockuserinfo/blockuserinfo.css.map', '', '2018-09-17 12:15:55'),
+(827, 1, 1, '/themes/citymotors/css/modules/blocktags/blocktags.css.map', '', '2018-09-17 12:15:55'),
+(828, 1, 1, '/themes/citymotors/css/modules/blockspecials/blockspecials.css.map', '', '2018-09-17 12:15:55'),
+(829, 1, 1, '/themes/citymotors/css/modules/blockviewed/blockviewed.css.map', '', '2018-09-17 12:15:55'),
+(830, 1, 1, '/themes/citymotors/css/modules/homeslider/homeslider.css.map', '', '2018-09-17 12:15:56'),
+(831, 1, 1, '/themes/citymotors/css/modules/homefeatured/homefeatured.css.map', '', '2018-09-17 12:15:56'),
+(832, 1, 1, '/themes/citymotors/css/modules/blocktopmenu/css/blocktopmenu.css.map', '', '2018-09-17 12:15:56'),
+(833, 1, 1, '/themes/citymotors/css/modules/blocktopmenu/css/superfish-modified.css.map', '', '2018-09-17 12:15:57'),
+(834, 1, 1, '/themes/citymotors/css/product_list.css.map', '', '2018-09-17 12:18:09'),
+(835, 1, 1, '/themes/citymotors/css/modules/blockbestsellers/blockbestsellers.css.map', '', '2018-09-17 12:18:09'),
+(836, 1, 1, '/themes/citymotors/css/modules/blockcategories/blockcategories.css.map', '', '2018-09-17 12:18:09'),
+(837, 1, 1, '/themes/citymotors/css/modules/blockcart/blockcart.css.map', '', '2018-09-17 12:18:09'),
+(838, 1, 1, '/themes/citymotors/css/global.css.map', '', '2018-09-17 12:18:09'),
+(839, 1, 1, '/themes/citymotors/css/autoload/uniform.default.css.map', '', '2018-09-17 12:18:10'),
+(840, 1, 1, '/themes/citymotors/css/modules/blockcontact/blockcontact.css.map', '', '2018-09-17 12:18:11'),
+(841, 1, 1, '/themes/citymotors/css/modules/blocknewsletter/blocknewsletter.css.map', '', '2018-09-17 12:18:12'),
+(842, 1, 1, '/themes/citymotors/css/modules/blocksearch/blocksearch.css.map', '', '2018-09-17 12:18:12'),
+(843, 1, 1, '/themes/citymotors/css/modules/blockmyaccountfooter/blockmyaccount.css.map', '', '2018-09-17 12:18:12'),
+(844, 1, 1, '/themes/citymotors/css/modules/blocknewproducts/blocknewproducts.css.map', '', '2018-09-17 12:18:12'),
+(845, 1, 1, '/themes/citymotors/css/modules/blocklanguages/blocklanguages.css.map', '', '2018-09-17 12:18:12'),
+(846, 1, 1, '/themes/citymotors/css/modules/blocktags/blocktags.css.map', '', '2018-09-17 12:18:14'),
+(847, 1, 1, '/themes/citymotors/css/modules/blockuserinfo/blockuserinfo.css.map', '', '2018-09-17 12:18:14'),
+(848, 1, 1, '/themes/citymotors/css/modules/blockspecials/blockspecials.css.map', '', '2018-09-17 12:18:14'),
+(849, 1, 1, '/themes/citymotors/css/modules/homefeatured/homefeatured.css.map', '', '2018-09-17 12:18:14'),
+(850, 1, 1, '/themes/citymotors/css/modules/blockviewed/blockviewed.css.map', '', '2018-09-17 12:18:15'),
+(851, 1, 1, '/themes/citymotors/css/modules/homeslider/homeslider.css.map', '', '2018-09-17 12:18:15'),
+(852, 1, 1, '/themes/citymotors/css/modules/blocktopmenu/css/blocktopmenu.css.map', '', '2018-09-17 12:18:16'),
+(853, 1, 1, '/themes/citymotors/css/modules/blocktopmenu/css/superfish-modified.css.map', '', '2018-09-17 12:18:16'),
+(854, 1, 1, '/robots.txt', '', '2018-09-17 12:18:20'),
+(855, 1, 1, '/themes/citymotors/css/modules/blockbestsellers/blockbestsellers.css.map', '', '2018-09-17 12:22:14'),
+(856, 1, 1, '/themes/citymotors/css/product_list.css.map', '', '2018-09-17 12:22:14'),
+(857, 1, 1, '/themes/citymotors/css/autoload/uniform.default.css.map', '', '2018-09-17 12:22:14'),
+(858, 1, 1, '/themes/citymotors/css/global.css.map', '', '2018-09-17 12:22:15'),
+(859, 1, 1, '/themes/citymotors/css/modules/blockcart/blockcart.css.map', '', '2018-09-17 12:22:15'),
+(860, 1, 1, '/themes/citymotors/css/modules/blockcategories/blockcategories.css.map', '', '2018-09-17 12:22:15'),
+(861, 1, 1, '/themes/citymotors/css/modules/blockcontact/blockcontact.css.map', '', '2018-09-17 12:22:17'),
+(862, 1, 1, '/themes/citymotors/css/modules/blockmyaccountfooter/blockmyaccount.css.map', '', '2018-09-17 12:22:17'),
+(863, 1, 1, '/themes/citymotors/css/modules/blocklanguages/blocklanguages.css.map', '', '2018-09-17 12:22:18'),
+(864, 1, 1, '/themes/citymotors/css/modules/blocknewproducts/blocknewproducts.css.map', '', '2018-09-17 12:22:18'),
+(865, 1, 1, '/themes/citymotors/css/modules/blocknewsletter/blocknewsletter.css.map', '', '2018-09-17 12:22:18'),
+(866, 1, 1, '/themes/citymotors/css/modules/blocksearch/blocksearch.css.map', '', '2018-09-17 12:22:18'),
+(867, 1, 1, '/themes/citymotors/css/modules/blockspecials/blockspecials.css.map', '', '2018-09-17 12:22:19'),
+(868, 1, 1, '/themes/citymotors/css/modules/blocktags/blocktags.css.map', '', '2018-09-17 12:22:20'),
+(869, 1, 1, '/themes/citymotors/css/modules/homeslider/homeslider.css.map', '', '2018-09-17 12:22:20'),
+(870, 1, 1, '/themes/citymotors/css/modules/blockviewed/blockviewed.css.map', '', '2018-09-17 12:22:20'),
+(871, 1, 1, '/themes/citymotors/css/modules/blockuserinfo/blockuserinfo.css.map', '', '2018-09-17 12:22:21'),
+(872, 1, 1, '/themes/citymotors/css/modules/homefeatured/homefeatured.css.map', '', '2018-09-17 12:22:21'),
+(873, 1, 1, '/themes/citymotors/css/modules/blocktopmenu/css/blocktopmenu.css.map', '', '2018-09-17 12:22:21'),
+(874, 1, 1, '/themes/citymotors/css/modules/blocktopmenu/css/superfish-modified.css.map', '', '2018-09-17 12:22:21'),
+(875, 1, 1, '/themes/citymotors/css/global.css.map', '', '2018-09-17 12:22:36'),
+(876, 1, 1, '/themes/citymotors/css/autoload/uniform.default.css.map', '', '2018-09-17 12:22:36'),
+(877, 1, 1, '/themes/citymotors/css/product_list.css.map', '', '2018-09-17 12:22:36'),
+(878, 1, 1, '/themes/citymotors/css/modules/blockbestsellers/blockbestsellers.css.map', '', '2018-09-17 12:22:36'),
+(879, 1, 1, '/themes/citymotors/css/modules/blockcart/blockcart.css.map', '', '2018-09-17 12:22:37'),
+(880, 1, 1, '/themes/citymotors/css/modules/blockcategories/blockcategories.css.map', '', '2018-09-17 12:22:37'),
+(881, 1, 1, '/themes/citymotors/css/modules/blocklanguages/blocklanguages.css.map', '', '2018-09-17 12:22:37'),
+(882, 1, 1, '/themes/citymotors/css/modules/blockcontact/blockcontact.css.map', '', '2018-09-17 12:22:38'),
+(883, 1, 1, '/themes/citymotors/css/modules/blockmyaccountfooter/blockmyaccount.css.map', '', '2018-09-17 12:22:38'),
+(884, 1, 1, '/themes/citymotors/css/modules/blocknewproducts/blocknewproducts.css.map', '', '2018-09-17 12:22:38'),
+(885, 1, 1, '/themes/citymotors/css/modules/blocknewsletter/blocknewsletter.css.map', '', '2018-09-17 12:22:39'),
+(886, 1, 1, '/themes/citymotors/css/modules/blocksearch/blocksearch.css.map', '', '2018-09-17 12:22:39'),
+(887, 1, 1, '/themes/citymotors/css/modules/blockspecials/blockspecials.css.map', '', '2018-09-17 12:22:39'),
+(888, 1, 1, '/themes/citymotors/css/modules/blocktags/blocktags.css.map', '', '2018-09-17 12:22:40'),
+(889, 1, 1, '/themes/citymotors/css/modules/blockuserinfo/blockuserinfo.css.map', '', '2018-09-17 12:22:40'),
+(890, 1, 1, '/themes/citymotors/css/modules/blockviewed/blockviewed.css.map', '', '2018-09-17 12:22:41'),
+(891, 1, 1, '/themes/citymotors/css/modules/homeslider/homeslider.css.map', '', '2018-09-17 12:22:41'),
+(892, 1, 1, '/themes/citymotors/css/modules/homefeatured/homefeatured.css.map', '', '2018-09-17 12:22:41'),
+(893, 1, 1, '/themes/citymotors/css/modules/blocktopmenu/css/blocktopmenu.css.map', '', '2018-09-17 12:22:42'),
+(894, 1, 1, '/themes/citymotors/css/modules/blocktopmenu/css/superfish-modified.css.map', '', '2018-09-17 12:22:42'),
+(895, 1, 1, '/themes/citymotors/css/modules/blockcart/blockcart.css.map', '', '2018-09-17 12:25:31'),
+(896, 1, 1, '/themes/citymotors/css/global.css.map', '', '2018-09-17 12:25:31'),
+(897, 1, 1, '/themes/citymotors/css/autoload/uniform.default.css.map', '', '2018-09-17 12:25:32'),
+(898, 1, 1, '/themes/citymotors/css/modules/blockcategories/blockcategories.css.map', '', '2018-09-17 12:25:32'),
+(899, 1, 1, '/themes/citymotors/css/modules/blockbestsellers/blockbestsellers.css.map', '', '2018-09-17 12:25:32'),
+(900, 1, 1, '/themes/citymotors/css/product_list.css.map', '', '2018-09-17 12:25:33'),
+(901, 1, 1, '/themes/citymotors/css/modules/blocklanguages/blocklanguages.css.map', '', '2018-09-17 12:25:34'),
+(902, 1, 1, '/themes/citymotors/css/modules/blockcontact/blockcontact.css.map', '', '2018-09-17 12:25:34'),
+(903, 1, 1, '/themes/citymotors/css/modules/blockmyaccountfooter/blockmyaccount.css.map', '', '2018-09-17 12:25:35'),
+(904, 1, 1, '/themes/citymotors/css/modules/blocknewproducts/blocknewproducts.css.map', '', '2018-09-17 12:25:35'),
+(905, 1, 1, '/themes/citymotors/css/modules/blocknewsletter/blocknewsletter.css.map', '', '2018-09-17 12:25:35'),
+(906, 1, 1, '/themes/citymotors/css/modules/blocksearch/blocksearch.css.map', '', '2018-09-17 12:25:36'),
+(907, 1, 1, '/themes/citymotors/css/modules/blockspecials/blockspecials.css.map', '', '2018-09-17 12:25:37'),
+(908, 1, 1, '/themes/citymotors/css/modules/blocktags/blocktags.css.map', '', '2018-09-17 12:25:37'),
+(909, 1, 1, '/themes/citymotors/css/modules/homefeatured/homefeatured.css.map', '', '2018-09-17 12:25:38'),
+(910, 1, 1, '/themes/citymotors/css/modules/blockviewed/blockviewed.css.map', '', '2018-09-17 12:25:38'),
+(911, 1, 1, '/themes/citymotors/css/modules/blockuserinfo/blockuserinfo.css.map', '', '2018-09-17 12:25:38'),
+(912, 1, 1, '/themes/citymotors/css/modules/homeslider/homeslider.css.map', '', '2018-09-17 12:25:38'),
+(913, 1, 1, '/themes/citymotors/css/modules/blocktopmenu/css/blocktopmenu.css.map', '', '2018-09-17 12:25:38'),
+(914, 1, 1, '/themes/citymotors/css/modules/blocktopmenu/css/superfish-modified.css.map', '', '2018-09-17 12:25:39'),
+(915, 1, 1, '/themes/citymotors/css/modules/blockbestsellers/blockbestsellers.css.map', '', '2018-09-17 12:27:48'),
+(916, 1, 1, '/themes/citymotors/css/global.css.map', '', '2018-09-17 12:27:48'),
+(917, 1, 1, '/themes/citymotors/css/modules/blockcart/blockcart.css.map', '', '2018-09-17 12:27:48'),
+(918, 1, 1, '/themes/citymotors/css/product_list.css.map', '', '2018-09-17 12:27:48'),
+(919, 1, 1, '/themes/citymotors/css/autoload/uniform.default.css.map', '', '2018-09-17 12:27:48'),
+(920, 1, 1, '/themes/citymotors/css/modules/blockcategories/blockcategories.css.map', '', '2018-09-17 12:27:49'),
+(921, 1, 1, '/themes/citymotors/css/modules/blockcontact/blockcontact.css.map', '', '2018-09-17 12:27:51'),
+(922, 1, 1, '/themes/citymotors/css/modules/blocklanguages/blocklanguages.css.map', '', '2018-09-17 12:27:51'),
+(923, 1, 1, '/themes/citymotors/css/modules/blockmyaccountfooter/blockmyaccount.css.map', '', '2018-09-17 12:27:51'),
+(924, 1, 1, '/themes/citymotors/css/modules/blocknewproducts/blocknewproducts.css.map', '', '2018-09-17 12:27:52'),
+(925, 1, 1, '/themes/citymotors/css/modules/blocksearch/blocksearch.css.map', '', '2018-09-17 12:27:52'),
+(926, 1, 1, '/themes/citymotors/css/modules/blockspecials/blockspecials.css.map', '', '2018-09-17 12:27:53'),
+(927, 1, 1, '/themes/citymotors/css/modules/blocknewsletter/blocknewsletter.css.map', '', '2018-09-17 12:27:53'),
+(928, 1, 1, '/themes/citymotors/css/modules/blocktags/blocktags.css.map', '', '2018-09-17 12:27:54'),
+(929, 1, 1, '/themes/citymotors/css/modules/blockuserinfo/blockuserinfo.css.map', '', '2018-09-17 12:27:54'),
+(930, 1, 1, '/themes/citymotors/css/modules/blockviewed/blockviewed.css.map', '', '2018-09-17 12:27:55'),
+(931, 1, 1, '/themes/citymotors/css/modules/homeslider/homeslider.css.map', '', '2018-09-17 12:27:55'),
+(932, 1, 1, '/themes/citymotors/css/modules/blocktopmenu/css/blocktopmenu.css.map', '', '2018-09-17 12:27:55'),
+(933, 1, 1, '/themes/citymotors/css/modules/homefeatured/homefeatured.css.map', '', '2018-09-17 12:27:55'),
+(934, 1, 1, '/themes/citymotors/css/modules/blocktopmenu/css/superfish-modified.css.map', '', '2018-09-17 12:27:56'),
+(935, 1, 1, '/themes/citymotors/css/modules/blockbestsellers/blockbestsellers.css.map', '', '2018-09-17 12:28:22'),
+(936, 1, 1, '/themes/citymotors/css/product_list.css.map', '', '2018-09-17 12:28:22'),
+(937, 1, 1, '/themes/citymotors/css/autoload/uniform.default.css.map', '', '2018-09-17 12:28:22'),
+(938, 1, 1, '/themes/citymotors/css/global.css.map', '', '2018-09-17 12:28:23'),
+(939, 1, 1, '/themes/citymotors/css/modules/blockcart/blockcart.css.map', '', '2018-09-17 12:28:23'),
+(940, 1, 1, '/themes/citymotors/css/modules/blockcategories/blockcategories.css.map', '', '2018-09-17 12:28:24'),
+(941, 1, 1, '/themes/citymotors/css/modules/blockcontact/blockcontact.css.map', '', '2018-09-17 12:28:25'),
+(942, 1, 1, '/themes/citymotors/css/modules/blocklanguages/blocklanguages.css.map', '', '2018-09-17 12:28:25'),
+(943, 1, 1, '/themes/citymotors/css/modules/blocknewproducts/blocknewproducts.css.map', '', '2018-09-17 12:28:26'),
+(944, 1, 1, '/themes/citymotors/css/modules/blocknewsletter/blocknewsletter.css.map', '', '2018-09-17 12:28:26'),
+(945, 1, 1, '/themes/citymotors/css/modules/blockmyaccountfooter/blockmyaccount.css.map', '', '2018-09-17 12:28:26'),
+(946, 1, 1, '/themes/citymotors/css/modules/blocksearch/blocksearch.css.map', '', '2018-09-17 12:28:26'),
+(947, 1, 1, '/themes/citymotors/css/modules/blockspecials/blockspecials.css.map', '', '2018-09-17 12:28:27'),
+(948, 1, 1, '/themes/citymotors/css/modules/blocktags/blocktags.css.map', '', '2018-09-17 12:28:27'),
+(949, 1, 1, '/themes/citymotors/css/modules/blockviewed/blockviewed.css.map', '', '2018-09-17 12:28:28'),
+(950, 1, 1, '/themes/citymotors/css/modules/blockuserinfo/blockuserinfo.css.map', '', '2018-09-17 12:28:28'),
+(951, 1, 1, '/themes/citymotors/css/modules/homeslider/homeslider.css.map', '', '2018-09-17 12:28:29'),
+(952, 1, 1, '/themes/citymotors/css/modules/homefeatured/homefeatured.css.map', '', '2018-09-17 12:28:29'),
+(953, 1, 1, '/themes/citymotors/css/modules/blocktopmenu/css/blocktopmenu.css.map', '', '2018-09-17 12:28:29'),
+(954, 1, 1, '/themes/citymotors/css/modules/blocktopmenu/css/superfish-modified.css.map', '', '2018-09-17 12:28:29'),
+(955, 1, 1, '/themes/citymotors/css/global.css.map', '', '2018-09-17 13:02:17'),
+(956, 1, 1, '/themes/citymotors/css/modules/blockcategories/blockcategories.css.map', '', '2018-09-17 13:02:17'),
+(957, 1, 1, '/themes/citymotors/css/autoload/uniform.default.css.map', '', '2018-09-17 13:02:17');
+INSERT INTO `ps_pagenotfound` (`id_pagenotfound`, `id_shop`, `id_shop_group`, `request_uri`, `http_referer`, `date_add`) VALUES
+(958, 1, 1, '/themes/citymotors/css/modules/blockbestsellers/blockbestsellers.css.map', '', '2018-09-17 13:02:17'),
+(959, 1, 1, '/themes/citymotors/css/product_list.css.map', '', '2018-09-17 13:02:18'),
+(960, 1, 1, '/themes/citymotors/css/modules/blockcart/blockcart.css.map', '', '2018-09-17 13:02:18'),
+(961, 1, 1, '/themes/citymotors/css/modules/blocknewproducts/blocknewproducts.css.map', '', '2018-09-17 13:02:19'),
+(962, 1, 1, '/themes/citymotors/css/modules/blockmyaccountfooter/blockmyaccount.css.map', '', '2018-09-17 13:02:19'),
+(963, 1, 1, '/themes/citymotors/css/modules/blockcontact/blockcontact.css.map', '', '2018-09-17 13:02:20'),
+(964, 1, 1, '/themes/citymotors/css/modules/blocknewsletter/blocknewsletter.css.map', '', '2018-09-17 13:02:20'),
+(965, 1, 1, '/themes/citymotors/css/modules/blocklanguages/blocklanguages.css.map', '', '2018-09-17 13:02:20'),
+(966, 1, 1, '/themes/citymotors/css/modules/blocksearch/blocksearch.css.map', '', '2018-09-17 13:02:20'),
+(967, 1, 1, '/themes/citymotors/css/modules/blockuserinfo/blockuserinfo.css.map', '', '2018-09-17 13:02:21'),
+(968, 1, 1, '/themes/citymotors/css/modules/blocktags/blocktags.css.map', '', '2018-09-17 13:02:21'),
+(969, 1, 1, '/themes/citymotors/css/modules/blockspecials/blockspecials.css.map', '', '2018-09-17 13:02:21'),
+(970, 1, 1, '/themes/citymotors/css/modules/homeslider/homeslider.css.map', '', '2018-09-17 13:02:21'),
+(971, 1, 1, '/themes/citymotors/css/modules/blockviewed/blockviewed.css.map', '', '2018-09-17 13:02:21'),
+(972, 1, 1, '/themes/citymotors/css/modules/homefeatured/homefeatured.css.map', '', '2018-09-17 13:02:22'),
+(973, 1, 1, '/themes/citymotors/css/modules/blocktopmenu/css/blocktopmenu.css.map', '', '2018-09-17 13:02:22'),
+(974, 1, 1, '/themes/citymotors/css/modules/blocktopmenu/css/superfish-modified.css.map', '', '2018-09-17 13:02:22'),
+(975, 1, 1, '/themes/citymotors/css/autoload/uniform.default.css.map', '', '2018-09-17 13:05:26'),
+(976, 1, 1, '/themes/citymotors/css/product_list.css.map', '', '2018-09-17 13:05:26'),
+(977, 1, 1, '/themes/citymotors/css/modules/blockbestsellers/blockbestsellers.css.map', '', '2018-09-17 13:05:26'),
+(978, 1, 1, '/themes/citymotors/css/global.css.map', '', '2018-09-17 13:05:26'),
+(979, 1, 1, '/themes/citymotors/css/modules/blockcart/blockcart.css.map', '', '2018-09-17 13:05:27'),
+(980, 1, 1, '/themes/citymotors/css/modules/blockcategories/blockcategories.css.map', '', '2018-09-17 13:05:27'),
+(981, 1, 1, '/themes/citymotors/css/modules/blockcontact/blockcontact.css.map', '', '2018-09-17 13:05:29'),
+(982, 1, 1, '/themes/citymotors/css/modules/blockmyaccountfooter/blockmyaccount.css.map', '', '2018-09-17 13:05:29'),
+(983, 1, 1, '/themes/citymotors/css/modules/blocksearch/blocksearch.css.map', '', '2018-09-17 13:05:29'),
+(984, 1, 1, '/themes/citymotors/css/modules/blocklanguages/blocklanguages.css.map', '', '2018-09-17 13:05:29'),
+(985, 1, 1, '/themes/citymotors/css/modules/blocknewproducts/blocknewproducts.css.map', '', '2018-09-17 13:05:30'),
+(986, 1, 1, '/themes/citymotors/css/modules/blocknewsletter/blocknewsletter.css.map', '', '2018-09-17 13:05:30'),
+(987, 1, 1, '/themes/citymotors/css/modules/blockspecials/blockspecials.css.map', '', '2018-09-17 13:05:31'),
+(988, 1, 1, '/themes/citymotors/css/modules/blocktags/blocktags.css.map', '', '2018-09-17 13:05:31'),
+(989, 1, 1, '/themes/citymotors/css/modules/homeslider/homeslider.css.map', '', '2018-09-17 13:05:31'),
+(990, 1, 1, '/themes/citymotors/css/modules/blockuserinfo/blockuserinfo.css.map', '', '2018-09-17 13:05:32'),
+(991, 1, 1, '/themes/citymotors/css/modules/blockviewed/blockviewed.css.map', '', '2018-09-17 13:05:32'),
+(992, 1, 1, '/themes/citymotors/css/modules/homefeatured/homefeatured.css.map', '', '2018-09-17 13:05:32'),
+(993, 1, 1, '/themes/citymotors/css/modules/blocktopmenu/css/blocktopmenu.css.map', '', '2018-09-17 13:05:33'),
+(994, 1, 1, '/themes/citymotors/css/modules/blocktopmenu/css/superfish-modified.css.map', '', '2018-09-17 13:05:33'),
+(995, 1, 1, '/themes/citymotors/css/autoload/uniform.default.css.map', '', '2018-09-17 13:06:37'),
+(996, 1, 1, '/themes/citymotors/css/global.css.map', '', '2018-09-17 13:06:37'),
+(997, 1, 1, '/themes/citymotors/css/product_list.css.map', '', '2018-09-17 13:06:38'),
+(998, 1, 1, '/themes/citymotors/css/modules/blockcart/blockcart.css.map', '', '2018-09-17 13:06:38'),
+(999, 1, 1, '/themes/citymotors/css/modules/blockbestsellers/blockbestsellers.css.map', '', '2018-09-17 13:06:38'),
+(1000, 1, 1, '/themes/citymotors/css/modules/blockcategories/blockcategories.css.map', '', '2018-09-17 13:06:38'),
+(1001, 1, 1, '/themes/citymotors/css/modules/blockcontact/blockcontact.css.map', '', '2018-09-17 13:06:39'),
+(1002, 1, 1, '/themes/citymotors/css/modules/blocklanguages/blocklanguages.css.map', '', '2018-09-17 13:06:40'),
+(1003, 1, 1, '/themes/citymotors/css/modules/blocknewproducts/blocknewproducts.css.map', '', '2018-09-17 13:06:40'),
+(1004, 1, 1, '/themes/citymotors/css/modules/blockmyaccountfooter/blockmyaccount.css.map', '', '2018-09-17 13:06:41'),
+(1005, 1, 1, '/themes/citymotors/css/modules/blocknewsletter/blocknewsletter.css.map', '', '2018-09-17 13:06:41'),
+(1006, 1, 1, '/themes/citymotors/css/modules/blocksearch/blocksearch.css.map', '', '2018-09-17 13:06:42'),
+(1007, 1, 1, '/themes/citymotors/css/modules/blockspecials/blockspecials.css.map', '', '2018-09-17 13:06:42'),
+(1008, 1, 1, '/themes/citymotors/css/modules/blockuserinfo/blockuserinfo.css.map', '', '2018-09-17 13:06:42'),
+(1009, 1, 1, '/themes/citymotors/css/modules/blocktags/blocktags.css.map', '', '2018-09-17 13:06:43'),
+(1010, 1, 1, '/themes/citymotors/css/modules/homeslider/homeslider.css.map', '', '2018-09-17 13:06:44'),
+(1011, 1, 1, '/themes/citymotors/css/modules/blockviewed/blockviewed.css.map', '', '2018-09-17 13:06:44'),
+(1012, 1, 1, '/themes/citymotors/css/modules/homefeatured/homefeatured.css.map', '', '2018-09-17 13:06:44'),
+(1013, 1, 1, '/themes/citymotors/css/modules/blocktopmenu/css/blocktopmenu.css.map', '', '2018-09-17 13:06:44'),
+(1014, 1, 1, '/themes/citymotors/css/modules/blocktopmenu/css/superfish-modified.css.map', '', '2018-09-17 13:06:44'),
+(1015, 1, 1, '/themes/citymotors/css/modules/blockbestsellers/blockbestsellers.css.map', '', '2018-09-17 13:07:04'),
+(1016, 1, 1, '/themes/citymotors/css/autoload/uniform.default.css.map', '', '2018-09-17 13:07:05'),
+(1017, 1, 1, '/themes/citymotors/css/product_list.css.map', '', '2018-09-17 13:07:05'),
+(1018, 1, 1, '/themes/citymotors/css/global.css.map', '', '2018-09-17 13:07:05'),
+(1019, 1, 1, '/themes/citymotors/css/modules/blockcart/blockcart.css.map', '', '2018-09-17 13:07:05'),
+(1020, 1, 1, '/themes/citymotors/css/modules/blockcategories/blockcategories.css.map', '', '2018-09-17 13:07:06'),
+(1021, 1, 1, '/themes/citymotors/css/modules/blockmyaccountfooter/blockmyaccount.css.map', '', '2018-09-17 13:07:07'),
+(1022, 1, 1, '/themes/citymotors/css/modules/blocklanguages/blocklanguages.css.map', '', '2018-09-17 13:07:07'),
+(1023, 1, 1, '/themes/citymotors/css/modules/blocknewproducts/blocknewproducts.css.map', '', '2018-09-17 13:07:07'),
+(1024, 1, 1, '/themes/citymotors/css/modules/blockcontact/blockcontact.css.map', '', '2018-09-17 13:07:08'),
+(1025, 1, 1, '/themes/citymotors/css/modules/blocknewsletter/blocknewsletter.css.map', '', '2018-09-17 13:07:08'),
+(1026, 1, 1, '/themes/citymotors/css/modules/blocksearch/blocksearch.css.map', '', '2018-09-17 13:07:09'),
+(1027, 1, 1, '/themes/citymotors/css/modules/blocktags/blocktags.css.map', '', '2018-09-17 13:07:09'),
+(1028, 1, 1, '/themes/citymotors/css/modules/blockspecials/blockspecials.css.map', '', '2018-09-17 13:07:09'),
+(1029, 1, 1, '/themes/citymotors/css/modules/blockuserinfo/blockuserinfo.css.map', '', '2018-09-17 13:07:09'),
+(1030, 1, 1, '/themes/citymotors/css/modules/blockviewed/blockviewed.css.map', '', '2018-09-17 13:07:09'),
+(1031, 1, 1, '/themes/citymotors/css/modules/homefeatured/homefeatured.css.map', '', '2018-09-17 13:07:10'),
+(1032, 1, 1, '/themes/citymotors/css/modules/blocktopmenu/css/blocktopmenu.css.map', '', '2018-09-17 13:07:10'),
+(1033, 1, 1, '/themes/citymotors/css/modules/blocktopmenu/css/superfish-modified.css.map', '', '2018-09-17 13:07:10'),
+(1034, 1, 1, '/themes/citymotors/css/modules/blockbestsellers/blockbestsellers.css.map', '', '2018-09-17 13:07:29'),
+(1035, 1, 1, '/themes/citymotors/css/autoload/uniform.default.css.map', '', '2018-09-17 13:07:29'),
+(1036, 1, 1, '/themes/citymotors/css/global.css.map', '', '2018-09-17 13:07:30'),
+(1037, 1, 1, '/themes/citymotors/css/product_list.css.map', '', '2018-09-17 13:07:30'),
+(1038, 1, 1, '/themes/citymotors/css/modules/blockcategories/blockcategories.css.map', '', '2018-09-17 13:07:30'),
+(1039, 1, 1, '/themes/citymotors/css/modules/blockcart/blockcart.css.map', '', '2018-09-17 13:07:30'),
+(1040, 1, 1, '/themes/citymotors/css/modules/blocklanguages/blocklanguages.css.map', '', '2018-09-17 13:07:32'),
+(1041, 1, 1, '/themes/citymotors/css/modules/blockmyaccountfooter/blockmyaccount.css.map', '', '2018-09-17 13:07:32'),
+(1042, 1, 1, '/themes/citymotors/css/modules/blockcontact/blockcontact.css.map', '', '2018-09-17 13:07:32'),
+(1043, 1, 1, '/themes/citymotors/css/modules/blocknewsletter/blocknewsletter.css.map', '', '2018-09-17 13:07:33'),
+(1044, 1, 1, '/themes/citymotors/css/modules/blocksearch/blocksearch.css.map', '', '2018-09-17 13:07:33'),
+(1045, 1, 1, '/themes/citymotors/css/modules/blocknewproducts/blocknewproducts.css.map', '', '2018-09-17 13:07:34'),
+(1046, 1, 1, '/themes/citymotors/css/modules/blockspecials/blockspecials.css.map', '', '2018-09-17 13:07:34'),
+(1047, 1, 1, '/themes/citymotors/css/modules/blocktags/blocktags.css.map', '', '2018-09-17 13:07:35'),
+(1048, 1, 1, '/themes/citymotors/css/modules/blockuserinfo/blockuserinfo.css.map', '', '2018-09-17 13:07:35'),
+(1049, 1, 1, '/themes/citymotors/css/modules/homeslider/homeslider.css.map', '', '2018-09-17 13:07:35'),
+(1050, 1, 1, '/themes/citymotors/css/modules/homefeatured/homefeatured.css.map', '', '2018-09-17 13:07:35'),
+(1051, 1, 1, '/themes/citymotors/css/modules/blockviewed/blockviewed.css.map', '', '2018-09-17 13:07:35'),
+(1052, 1, 1, '/themes/citymotors/css/modules/blocktopmenu/css/blocktopmenu.css.map', '', '2018-09-17 13:07:36'),
+(1053, 1, 1, '/themes/citymotors/css/modules/blocktopmenu/css/superfish-modified.css.map', '', '2018-09-17 13:07:36'),
+(1054, 1, 1, '/themes/citymotors/css/modules/blockbestsellers/blockbestsellers.css.map', '', '2018-09-17 13:10:11'),
+(1055, 1, 1, '/themes/citymotors/css/modules/blockcart/blockcart.css.map', '', '2018-09-17 13:10:11'),
+(1056, 1, 1, '/themes/citymotors/css/product_list.css.map', '', '2018-09-17 13:10:11'),
+(1057, 1, 1, '/themes/citymotors/css/global.css.map', '', '2018-09-17 13:10:11'),
+(1058, 1, 1, '/themes/citymotors/css/autoload/uniform.default.css.map', '', '2018-09-17 13:10:12'),
+(1059, 1, 1, '/themes/citymotors/css/modules/blockcategories/blockcategories.css.map', '', '2018-09-17 13:10:13'),
+(1060, 1, 1, '/themes/citymotors/css/modules/blockcontact/blockcontact.css.map', '', '2018-09-17 13:10:14'),
+(1061, 1, 1, '/themes/citymotors/css/modules/blockmyaccountfooter/blockmyaccount.css.map', '', '2018-09-17 13:10:14'),
+(1062, 1, 1, '/themes/citymotors/css/modules/blocklanguages/blocklanguages.css.map', '', '2018-09-17 13:10:14'),
+(1063, 1, 1, '/themes/citymotors/css/modules/blocknewproducts/blocknewproducts.css.map', '', '2018-09-17 13:10:14'),
+(1064, 1, 1, '/themes/citymotors/css/modules/blocknewsletter/blocknewsletter.css.map', '', '2018-09-17 13:10:15'),
+(1065, 1, 1, '/themes/citymotors/css/modules/blocktags/blocktags.css.map', '', '2018-09-17 13:10:15'),
+(1066, 1, 1, '/themes/citymotors/css/modules/blocksearch/blocksearch.css.map', '', '2018-09-17 13:10:16'),
+(1067, 1, 1, '/themes/citymotors/css/modules/blockspecials/blockspecials.css.map', '', '2018-09-17 13:10:16'),
+(1068, 1, 1, '/themes/citymotors/css/modules/blockviewed/blockviewed.css.map', '', '2018-09-17 13:10:16'),
+(1069, 1, 1, '/themes/citymotors/css/modules/blockuserinfo/blockuserinfo.css.map', '', '2018-09-17 13:10:17'),
+(1070, 1, 1, '/themes/citymotors/css/modules/homeslider/homeslider.css.map', '', '2018-09-17 13:10:17'),
+(1071, 1, 1, '/themes/citymotors/css/modules/homefeatured/homefeatured.css.map', '', '2018-09-17 13:10:18'),
+(1072, 1, 1, '/themes/citymotors/css/modules/blocktopmenu/css/blocktopmenu.css.map', '', '2018-09-17 13:10:18'),
+(1073, 1, 1, '/themes/citymotors/css/modules/blocktopmenu/css/superfish-modified.css.map', '', '2018-09-17 13:10:18'),
+(1074, 1, 1, '/themes/citymotors/css/global.css.map', '', '2018-09-17 13:11:30'),
+(1075, 1, 1, '/themes/citymotors/css/autoload/uniform.default.css.map', '', '2018-09-17 13:11:30'),
+(1076, 1, 1, '/themes/citymotors/css/modules/blockcart/blockcart.css.map', '', '2018-09-17 13:11:31'),
+(1077, 1, 1, '/themes/citymotors/css/modules/blockcategories/blockcategories.css.map', '', '2018-09-17 13:11:31'),
+(1078, 1, 1, '/themes/citymotors/css/product_list.css.map', '', '2018-09-17 13:11:31'),
+(1079, 1, 1, '/themes/citymotors/css/modules/blockbestsellers/blockbestsellers.css.map', '', '2018-09-17 13:11:32'),
+(1080, 1, 1, '/themes/citymotors/css/modules/blockcontact/blockcontact.css.map', '', '2018-09-17 13:11:33'),
+(1081, 1, 1, '/themes/citymotors/css/modules/blocknewsletter/blocknewsletter.css.map', '', '2018-09-17 13:11:34'),
+(1082, 1, 1, '/themes/citymotors/css/modules/blocknewproducts/blocknewproducts.css.map', '', '2018-09-17 13:11:34'),
+(1083, 1, 1, '/themes/citymotors/css/modules/blocklanguages/blocklanguages.css.map', '', '2018-09-17 13:11:34'),
+(1084, 1, 1, '/themes/citymotors/css/modules/blockmyaccountfooter/blockmyaccount.css.map', '', '2018-09-17 13:11:34'),
+(1085, 1, 1, '/themes/citymotors/css/modules/blocksearch/blocksearch.css.map', '', '2018-09-17 13:11:34'),
+(1086, 1, 1, '/themes/citymotors/css/modules/blockspecials/blockspecials.css.map', '', '2018-09-17 13:11:36'),
+(1087, 1, 1, '/themes/citymotors/css/modules/blocktags/blocktags.css.map', '', '2018-09-17 13:11:36'),
+(1088, 1, 1, '/themes/citymotors/css/modules/homefeatured/homefeatured.css.map', '', '2018-09-17 13:11:36'),
+(1089, 1, 1, '/themes/citymotors/css/modules/homeslider/homeslider.css.map', '', '2018-09-17 13:11:36'),
+(1090, 1, 1, '/themes/citymotors/css/modules/blockviewed/blockviewed.css.map', '', '2018-09-17 13:11:36'),
+(1091, 1, 1, '/themes/citymotors/css/modules/blockuserinfo/blockuserinfo.css.map', '', '2018-09-17 13:11:36'),
+(1092, 1, 1, '/themes/citymotors/css/modules/blocktopmenu/css/blocktopmenu.css.map', '', '2018-09-17 13:11:37'),
+(1093, 1, 1, '/themes/citymotors/css/modules/blocktopmenu/css/superfish-modified.css.map', '', '2018-09-17 13:11:37'),
+(1094, 1, 1, '/themes/citymotors/css/autoload/uniform.default.css.map', '', '2018-09-17 13:17:53'),
+(1095, 1, 1, '/themes/citymotors/css/global.css.map', '', '2018-09-17 13:17:53'),
+(1096, 1, 1, '/themes/citymotors/css/product_list.css.map', '', '2018-09-17 13:17:53'),
+(1097, 1, 1, '/themes/citymotors/css/modules/blockbestsellers/blockbestsellers.css.map', '', '2018-09-17 13:17:54'),
+(1098, 1, 1, '/themes/citymotors/css/modules/blockcategories/blockcategories.css.map', '', '2018-09-17 13:17:54'),
+(1099, 1, 1, '/themes/citymotors/css/modules/blockcart/blockcart.css.map', '', '2018-09-17 13:17:54'),
+(1100, 1, 1, '/themes/citymotors/css/modules/blocklanguages/blocklanguages.css.map', '', '2018-09-17 13:17:56'),
+(1101, 1, 1, '/themes/citymotors/css/modules/blockcontact/blockcontact.css.map', '', '2018-09-17 13:17:56'),
+(1102, 1, 1, '/themes/citymotors/css/modules/blocknewsletter/blocknewsletter.css.map', '', '2018-09-17 13:17:56'),
+(1103, 1, 1, '/themes/citymotors/css/modules/blocksearch/blocksearch.css.map', '', '2018-09-17 13:17:56'),
+(1104, 1, 1, '/themes/citymotors/css/modules/blocknewproducts/blocknewproducts.css.map', '', '2018-09-17 13:17:56'),
+(1105, 1, 1, '/themes/citymotors/css/modules/blockmyaccountfooter/blockmyaccount.css.map', '', '2018-09-17 13:17:57'),
+(1106, 1, 1, '/themes/citymotors/css/modules/blocktags/blocktags.css.map', '', '2018-09-17 13:17:58'),
+(1107, 1, 1, '/themes/citymotors/css/modules/blockviewed/blockviewed.css.map', '', '2018-09-17 13:17:58'),
+(1108, 1, 1, '/themes/citymotors/css/modules/blockuserinfo/blockuserinfo.css.map', '', '2018-09-17 13:17:58'),
+(1109, 1, 1, '/themes/citymotors/css/modules/blockspecials/blockspecials.css.map', '', '2018-09-17 13:17:58'),
+(1110, 1, 1, '/themes/citymotors/css/modules/homeslider/homeslider.css.map', '', '2018-09-17 13:17:59'),
+(1111, 1, 1, '/themes/citymotors/css/modules/homefeatured/homefeatured.css.map', '', '2018-09-17 13:17:59'),
+(1112, 1, 1, '/themes/citymotors/css/modules/blocktopmenu/css/blocktopmenu.css.map', '', '2018-09-17 13:17:59'),
+(1113, 1, 1, '/themes/citymotors/css/modules/blocktopmenu/css/superfish-modified.css.map', '', '2018-09-17 13:17:59'),
+(1114, 1, 1, '/themes/citymotors/css/modules/blockbestsellers/blockbestsellers.css.map', '', '2018-09-17 13:19:42'),
+(1115, 1, 1, '/themes/citymotors/css/global.css.map', '', '2018-09-17 13:19:42'),
+(1116, 1, 1, '/themes/citymotors/css/autoload/uniform.default.css.map', '', '2018-09-17 13:19:42'),
+(1117, 1, 1, '/themes/citymotors/css/modules/blockcart/blockcart.css.map', '', '2018-09-17 13:19:42'),
+(1118, 1, 1, '/themes/citymotors/css/product_list.css.map', '', '2018-09-17 13:19:42'),
+(1119, 1, 1, '/themes/citymotors/css/modules/blockcategories/blockcategories.css.map', '', '2018-09-17 13:19:43'),
+(1120, 1, 1, '/themes/citymotors/css/modules/blockmyaccountfooter/blockmyaccount.css.map', '', '2018-09-17 13:19:44'),
+(1121, 1, 1, '/themes/citymotors/css/modules/blocknewproducts/blocknewproducts.css.map', '', '2018-09-17 13:19:44'),
+(1122, 1, 1, '/themes/citymotors/css/modules/blocksearch/blocksearch.css.map', '', '2018-09-17 13:19:45'),
+(1123, 1, 1, '/themes/citymotors/css/modules/blockcontact/blockcontact.css.map', '', '2018-09-17 13:19:45'),
+(1124, 1, 1, '/themes/citymotors/css/modules/blocknewsletter/blocknewsletter.css.map', '', '2018-09-17 13:19:45'),
+(1125, 1, 1, '/themes/citymotors/css/modules/blocklanguages/blocklanguages.css.map', '', '2018-09-17 13:19:45'),
+(1126, 1, 1, '/themes/citymotors/css/modules/blocktags/blocktags.css.map', '', '2018-09-17 13:19:46'),
+(1127, 1, 1, '/themes/citymotors/css/modules/blockspecials/blockspecials.css.map', '', '2018-09-17 13:19:47'),
+(1128, 1, 1, '/themes/citymotors/css/modules/blockuserinfo/blockuserinfo.css.map', '', '2018-09-17 13:19:47'),
+(1129, 1, 1, '/themes/citymotors/css/modules/blockviewed/blockviewed.css.map', '', '2018-09-17 13:19:47'),
+(1130, 1, 1, '/themes/citymotors/css/modules/homeslider/homeslider.css.map', '', '2018-09-17 13:19:48'),
+(1131, 1, 1, '/themes/citymotors/css/modules/blocktopmenu/css/blocktopmenu.css.map', '', '2018-09-17 13:19:48'),
+(1132, 1, 1, '/themes/citymotors/css/modules/homefeatured/homefeatured.css.map', '', '2018-09-17 13:19:48'),
+(1133, 1, 1, '/themes/citymotors/css/modules/blocktopmenu/css/superfish-modified.css.map', '', '2018-09-17 13:19:48'),
+(1134, 1, 1, '/themes/citymotors/css/autoload/uniform.default.css.map', '', '2018-09-17 13:21:58'),
+(1135, 1, 1, '/themes/citymotors/css/product_list.css.map', '', '2018-09-17 13:21:58'),
+(1136, 1, 1, '/themes/citymotors/css/global.css.map', '', '2018-09-17 13:21:58'),
+(1137, 1, 1, '/themes/citymotors/css/modules/blockbestsellers/blockbestsellers.css.map', '', '2018-09-17 13:21:59'),
+(1138, 1, 1, '/themes/citymotors/css/modules/blockcart/blockcart.css.map', '', '2018-09-17 13:21:59'),
+(1139, 1, 1, '/themes/citymotors/css/modules/blocklanguages/blocklanguages.css.map', '', '2018-09-17 13:21:59'),
+(1140, 1, 1, '/themes/citymotors/css/modules/blockcategories/blockcategories.css.map', '', '2018-09-17 13:22:00'),
+(1141, 1, 1, '/themes/citymotors/css/modules/blockcontact/blockcontact.css.map', '', '2018-09-17 13:22:00'),
+(1142, 1, 1, '/themes/citymotors/css/modules/blocknewproducts/blocknewproducts.css.map', '', '2018-09-17 13:22:00'),
+(1143, 1, 1, '/themes/citymotors/css/modules/blockmyaccountfooter/blockmyaccount.css.map', '', '2018-09-17 13:22:00'),
+(1144, 1, 1, '/themes/citymotors/css/modules/blocknewsletter/blocknewsletter.css.map', '', '2018-09-17 13:22:01'),
+(1145, 1, 1, '/themes/citymotors/css/modules/blocksearch/blocksearch.css.map', '', '2018-09-17 13:22:01'),
+(1146, 1, 1, '/themes/citymotors/css/modules/blockspecials/blockspecials.css.map', '', '2018-09-17 13:22:01'),
+(1147, 1, 1, '/themes/citymotors/css/modules/blocktags/blocktags.css.map', '', '2018-09-17 13:22:02'),
+(1148, 1, 1, '/themes/citymotors/css/modules/blockuserinfo/blockuserinfo.css.map', '', '2018-09-17 13:22:02'),
+(1149, 1, 1, '/themes/citymotors/css/modules/blockviewed/blockviewed.css.map', '', '2018-09-17 13:22:03'),
+(1150, 1, 1, '/themes/citymotors/css/modules/homeslider/homeslider.css.map', '', '2018-09-17 13:22:04'),
+(1151, 1, 1, '/themes/citymotors/css/modules/homefeatured/homefeatured.css.map', '', '2018-09-17 13:22:04'),
+(1152, 1, 1, '/themes/citymotors/css/modules/blocktopmenu/css/blocktopmenu.css.map', '', '2018-09-17 13:22:04'),
+(1153, 1, 1, '/themes/citymotors/css/modules/blocktopmenu/css/superfish-modified.css.map', '', '2018-09-17 13:22:05'),
+(1154, 1, 1, '/robots.txt', '', '2018-09-17 13:22:15'),
+(1155, 1, 1, '/themes/citymotors/css/product_list.css.map', '', '2018-09-17 13:25:17'),
+(1156, 1, 1, '/themes/citymotors/css/modules/blocklanguages/blocklanguages.css.map', '', '2018-09-17 13:25:17'),
+(1157, 1, 1, '/themes/citymotors/css/modules/blockcart/blockcart.css.map', '', '2018-09-17 13:25:17'),
+(1158, 1, 1, '/themes/citymotors/css/autoload/uniform.default.css.map', '', '2018-09-17 13:25:17'),
+(1159, 1, 1, '/themes/citymotors/css/modules/blockbestsellers/blockbestsellers.css.map', '', '2018-09-17 13:25:17'),
+(1160, 1, 1, '/themes/citymotors/css/modules/blockcategories/blockcategories.css.map', '', '2018-09-17 13:25:18'),
+(1161, 1, 1, '/themes/citymotors/css/modules/blockmyaccountfooter/blockmyaccount.css.map', '', '2018-09-17 13:25:19'),
+(1162, 1, 1, '/themes/citymotors/css/modules/blockcontact/blockcontact.css.map', '', '2018-09-17 13:25:19'),
+(1163, 1, 1, '/themes/citymotors/css/modules/blocknewproducts/blocknewproducts.css.map', '', '2018-09-17 13:25:19'),
+(1164, 1, 1, '/themes/citymotors/css/modules/blocknewsletter/blocknewsletter.css.map', '', '2018-09-17 13:25:19'),
+(1165, 1, 1, '/themes/citymotors/css/modules/blocksearch/blocksearch.css.map', '', '2018-09-17 13:25:20'),
+(1166, 1, 1, '/themes/citymotors/css/modules/blockspecials/blockspecials.css.map', '', '2018-09-17 13:25:21'),
+(1167, 1, 1, '/themes/citymotors/css/modules/homeslider/homeslider.css.map', '', '2018-09-17 13:25:22'),
+(1168, 1, 1, '/themes/citymotors/css/modules/blocktags/blocktags.css.map', '', '2018-09-17 13:25:22'),
+(1169, 1, 1, '/themes/citymotors/css/modules/blocktopmenu/css/blocktopmenu.css.map', '', '2018-09-17 13:25:23'),
+(1170, 1, 1, '/themes/citymotors/css/modules/blockuserinfo/blockuserinfo.css.map', '', '2018-09-17 13:25:23'),
+(1171, 1, 1, '/themes/citymotors/css/modules/homefeatured/homefeatured.css.map', '', '2018-09-17 13:25:23'),
+(1172, 1, 1, '/themes/citymotors/css/modules/blockviewed/blockviewed.css.map', '', '2018-09-17 13:25:23'),
+(1173, 1, 1, '/themes/citymotors/css/global.css.map', '', '2018-09-17 13:25:24'),
+(1174, 1, 1, '/themes/citymotors/css/modules/blocktopmenu/css/superfish-modified.css.map', '', '2018-09-17 13:25:25'),
+(1175, 1, 1, '/themes/citymotors/css/autoload/uniform.default.css.map', '', '2018-09-17 13:27:06'),
+(1176, 1, 1, '/themes/citymotors/css/modules/blockbestsellers/blockbestsellers.css.map', '', '2018-09-17 13:27:06'),
+(1177, 1, 1, '/themes/citymotors/css/modules/blockcart/blockcart.css.map', '', '2018-09-17 13:27:06'),
+(1178, 1, 1, '/themes/citymotors/css/product_list.css.map', '', '2018-09-17 13:27:06'),
+(1179, 1, 1, '/themes/citymotors/css/modules/blocklanguages/blocklanguages.css.map', '', '2018-09-17 13:27:07'),
+(1180, 1, 1, '/themes/citymotors/css/modules/blockcategories/blockcategories.css.map', '', '2018-09-17 13:27:07'),
+(1181, 1, 1, '/themes/citymotors/css/modules/blockmyaccountfooter/blockmyaccount.css.map', '', '2018-09-17 13:27:07'),
+(1182, 1, 1, '/themes/citymotors/css/modules/blocknewsletter/blocknewsletter.css.map', '', '2018-09-17 13:27:08'),
+(1183, 1, 1, '/themes/citymotors/css/modules/blockcontact/blockcontact.css.map', '', '2018-09-17 13:27:08'),
+(1184, 1, 1, '/themes/citymotors/css/modules/blocknewproducts/blocknewproducts.css.map', '', '2018-09-17 13:27:08'),
+(1185, 1, 1, '/themes/citymotors/css/modules/blocktags/blocktags.css.map', '', '2018-09-17 13:27:09'),
+(1186, 1, 1, '/themes/citymotors/css/modules/blocksearch/blocksearch.css.map', '', '2018-09-17 13:27:09'),
+(1187, 1, 1, '/themes/citymotors/css/modules/blockspecials/blockspecials.css.map', '', '2018-09-17 13:27:10'),
+(1188, 1, 1, '/themes/citymotors/css/modules/blockuserinfo/blockuserinfo.css.map', '', '2018-09-17 13:27:11'),
+(1189, 1, 1, '/themes/citymotors/css/modules/blockviewed/blockviewed.css.map', '', '2018-09-17 13:27:11'),
+(1190, 1, 1, '/themes/citymotors/css/modules/homeslider/homeslider.css.map', '', '2018-09-17 13:27:11'),
+(1191, 1, 1, '/themes/citymotors/css/modules/blocktopmenu/css/blocktopmenu.css.map', '', '2018-09-17 13:27:12'),
+(1192, 1, 1, '/themes/citymotors/css/modules/homefeatured/homefeatured.css.map', '', '2018-09-17 13:27:12'),
+(1193, 1, 1, '/themes/citymotors/css/modules/blocktopmenu/css/superfish-modified.css.map', '', '2018-09-17 13:27:12'),
+(1194, 1, 1, '/themes/citymotors/css/global.css.map', '', '2018-09-17 13:27:13'),
+(1195, 1, 1, '/themes/citymotors/css/modules/blockcategories/blockcategories.css.map', '', '2018-09-17 13:28:55'),
+(1196, 1, 1, '/themes/citymotors/css/modules/blockcart/blockcart.css.map', '', '2018-09-17 13:28:55'),
+(1197, 1, 1, '/themes/citymotors/css/autoload/uniform.default.css.map', '', '2018-09-17 13:28:55'),
+(1198, 1, 1, '/themes/citymotors/css/modules/blocklanguages/blocklanguages.css.map', '', '2018-09-17 13:28:56'),
+(1199, 1, 1, '/themes/citymotors/css/product_list.css.map', '', '2018-09-17 13:28:56'),
+(1200, 1, 1, '/themes/citymotors/css/modules/blockbestsellers/blockbestsellers.css.map', '', '2018-09-17 13:28:56'),
+(1201, 1, 1, '/themes/citymotors/css/modules/blockcontact/blockcontact.css.map', '', '2018-09-17 13:28:57'),
+(1202, 1, 1, '/themes/citymotors/css/modules/blocknewproducts/blocknewproducts.css.map', '', '2018-09-17 13:28:57'),
+(1203, 1, 1, '/themes/citymotors/css/modules/blockmyaccountfooter/blockmyaccount.css.map', '', '2018-09-17 13:28:58'),
+(1204, 1, 1, '/themes/citymotors/css/modules/blocknewsletter/blocknewsletter.css.map', '', '2018-09-17 13:28:58'),
+(1205, 1, 1, '/themes/citymotors/css/modules/blockspecials/blockspecials.css.map', '', '2018-09-17 13:28:58'),
+(1206, 1, 1, '/themes/citymotors/css/modules/blocksearch/blocksearch.css.map', '', '2018-09-17 13:28:59'),
+(1207, 1, 1, '/themes/citymotors/css/modules/blockuserinfo/blockuserinfo.css.map', '', '2018-09-17 13:28:59'),
+(1208, 1, 1, '/themes/citymotors/css/modules/blocktags/blocktags.css.map', '', '2018-09-17 13:29:00'),
+(1209, 1, 1, '/themes/citymotors/css/modules/homeslider/homeslider.css.map', '', '2018-09-17 13:29:00'),
+(1210, 1, 1, '/themes/citymotors/css/modules/homefeatured/homefeatured.css.map', '', '2018-09-17 13:29:01'),
+(1211, 1, 1, '/themes/citymotors/css/modules/blocktopmenu/css/blocktopmenu.css.map', '', '2018-09-17 13:29:01'),
+(1212, 1, 1, '/themes/citymotors/css/modules/blockviewed/blockviewed.css.map', '', '2018-09-17 13:29:02'),
+(1213, 1, 1, '/themes/citymotors/css/modules/blocktopmenu/css/superfish-modified.css.map', '', '2018-09-17 13:29:02'),
+(1214, 1, 1, '/themes/citymotors/css/global.css.map', '', '2018-09-17 13:29:02'),
+(1215, 1, 1, '/themes/citymotors/css/product_list.css.map', '', '2018-09-17 13:34:28'),
+(1216, 1, 1, '/themes/citymotors/css/modules/blockbestsellers/blockbestsellers.css.map', '', '2018-09-17 13:34:28'),
+(1217, 1, 1, '/themes/citymotors/css/autoload/uniform.default.css.map', '', '2018-09-17 13:34:28'),
+(1218, 1, 1, '/themes/citymotors/css/modules/blockcart/blockcart.css.map', '', '2018-09-17 13:34:28'),
+(1219, 1, 1, '/themes/citymotors/css/modules/blocklanguages/blocklanguages.css.map', '', '2018-09-17 13:34:28'),
+(1220, 1, 1, '/themes/citymotors/css/modules/blockcategories/blockcategories.css.map', '', '2018-09-17 13:34:29'),
+(1221, 1, 1, '/themes/citymotors/css/modules/blocknewproducts/blocknewproducts.css.map', '', '2018-09-17 13:34:30'),
+(1222, 1, 1, '/themes/citymotors/css/modules/blockcontact/blockcontact.css.map', '', '2018-09-17 13:34:30'),
+(1223, 1, 1, '/themes/citymotors/css/modules/blockspecials/blockspecials.css.map', '', '2018-09-17 13:34:30'),
+(1224, 1, 1, '/themes/citymotors/css/modules/blockmyaccountfooter/blockmyaccount.css.map', '', '2018-09-17 13:34:30'),
+(1225, 1, 1, '/themes/citymotors/css/modules/blocknewsletter/blocknewsletter.css.map', '', '2018-09-17 13:34:31'),
+(1226, 1, 1, '/themes/citymotors/css/modules/blocktags/blocktags.css.map', '', '2018-09-17 13:34:32'),
+(1227, 1, 1, '/themes/citymotors/css/modules/blocksearch/blocksearch.css.map', '', '2018-09-17 13:34:32'),
+(1228, 1, 1, '/themes/citymotors/css/modules/blockuserinfo/blockuserinfo.css.map', '', '2018-09-17 13:34:32'),
+(1229, 1, 1, '/themes/citymotors/css/modules/blockviewed/blockviewed.css.map', '', '2018-09-17 13:34:33'),
+(1230, 1, 1, '/themes/citymotors/css/modules/homefeatured/homefeatured.css.map', '', '2018-09-17 13:34:33'),
+(1231, 1, 1, '/themes/citymotors/css/modules/homeslider/homeslider.css.map', '', '2018-09-17 13:34:34'),
+(1232, 1, 1, '/themes/citymotors/css/modules/blocktopmenu/css/blocktopmenu.css.map', '', '2018-09-17 13:34:34'),
+(1233, 1, 1, '/themes/citymotors/css/modules/blocktopmenu/css/superfish-modified.css.map', '', '2018-09-17 13:34:34'),
+(1234, 1, 1, '/themes/citymotors/css/global.css.map', '', '2018-09-17 13:34:34'),
+(1235, 1, 1, '/themes/citymotors/css/modules/blockcart/blockcart.css.map', '', '2018-09-17 13:40:08'),
+(1236, 1, 1, '/themes/citymotors/css/product_list.css.map', '', '2018-09-17 13:40:08'),
+(1237, 1, 1, '/themes/citymotors/css/global.css.map', '', '2018-09-17 13:40:08'),
+(1238, 1, 1, '/themes/citymotors/css/modules/blockcategories/blockcategories.css.map', '', '2018-09-17 13:40:08'),
+(1239, 1, 1, '/themes/citymotors/css/autoload/uniform.default.css.map', '', '2018-09-17 13:40:08'),
+(1240, 1, 1, '/themes/citymotors/css/modules/blockbestsellers/blockbestsellers.css.map', '', '2018-09-17 13:40:09'),
+(1241, 1, 1, '/themes/citymotors/css/modules/blocknewsletter/blocknewsletter.css.map', '', '2018-09-17 13:40:10'),
+(1242, 1, 1, '/themes/citymotors/css/modules/blockmyaccountfooter/blockmyaccount.css.map', '', '2018-09-17 13:40:10'),
+(1243, 1, 1, '/themes/citymotors/css/modules/blockcontact/blockcontact.css.map', '', '2018-09-17 13:40:10'),
+(1244, 1, 1, '/themes/citymotors/css/modules/blocknewproducts/blocknewproducts.css.map', '', '2018-09-17 13:40:10'),
+(1245, 1, 1, '/themes/citymotors/css/modules/blocklanguages/blocklanguages.css.map', '', '2018-09-17 13:40:11'),
+(1246, 1, 1, '/themes/citymotors/css/modules/blocksearch/blocksearch.css.map', '', '2018-09-17 13:40:11'),
+(1247, 1, 1, '/themes/citymotors/css/modules/blocktags/blocktags.css.map', '', '2018-09-17 13:40:12'),
+(1248, 1, 1, '/themes/citymotors/css/modules/blockuserinfo/blockuserinfo.css.map', '', '2018-09-17 13:40:12'),
+(1249, 1, 1, '/themes/citymotors/css/modules/blockspecials/blockspecials.css.map', '', '2018-09-17 13:40:12'),
+(1250, 1, 1, '/themes/citymotors/css/modules/homeslider/homeslider.css.map', '', '2018-09-17 13:40:13'),
+(1251, 1, 1, '/themes/citymotors/css/modules/blockviewed/blockviewed.css.map', '', '2018-09-17 13:40:13'),
+(1252, 1, 1, '/themes/citymotors/css/modules/homefeatured/homefeatured.css.map', '', '2018-09-17 13:40:13'),
+(1253, 1, 1, '/themes/citymotors/css/modules/blocktopmenu/css/blocktopmenu.css.map', '', '2018-09-17 13:40:14'),
+(1254, 1, 1, '/themes/citymotors/css/modules/blocktopmenu/css/superfish-modified.css.map', '', '2018-09-17 13:40:14'),
+(1255, 1, 1, '/themes/citymotors/css/autoload/uniform.default.css.map', '', '2018-09-17 13:40:37'),
+(1256, 1, 1, '/themes/citymotors/css/modules/blockbestsellers/blockbestsellers.css.map', '', '2018-09-17 13:40:38'),
+(1257, 1, 1, '/themes/citymotors/css/global.css.map', '', '2018-09-17 13:40:38'),
+(1258, 1, 1, '/themes/citymotors/css/modules/blockcart/blockcart.css.map', '', '2018-09-17 13:40:38'),
+(1259, 1, 1, '/themes/citymotors/css/modules/blockcategories/blockcategories.css.map', '', '2018-09-17 13:40:38'),
+(1260, 1, 1, '/themes/citymotors/css/product_list.css.map', '', '2018-09-17 13:40:39'),
+(1261, 1, 1, '/themes/citymotors/css/modules/blocklanguages/blocklanguages.css.map', '', '2018-09-17 13:40:40'),
+(1262, 1, 1, '/themes/citymotors/css/modules/blockmyaccountfooter/blockmyaccount.css.map', '', '2018-09-17 13:40:40'),
+(1263, 1, 1, '/themes/citymotors/css/modules/blockcontact/blockcontact.css.map', '', '2018-09-17 13:40:41'),
+(1264, 1, 1, '/themes/citymotors/css/modules/blocksearch/blocksearch.css.map', '', '2018-09-17 13:40:41'),
+(1265, 1, 1, '/themes/citymotors/css/modules/blocknewproducts/blocknewproducts.css.map', '', '2018-09-17 13:40:41'),
+(1266, 1, 1, '/themes/citymotors/css/modules/blocknewsletter/blocknewsletter.css.map', '', '2018-09-17 13:40:41'),
+(1267, 1, 1, '/themes/citymotors/css/modules/blockspecials/blockspecials.css.map', '', '2018-09-17 13:40:42'),
+(1268, 1, 1, '/themes/citymotors/css/modules/blocktags/blocktags.css.map', '', '2018-09-17 13:40:42'),
+(1269, 1, 1, '/themes/citymotors/css/modules/homefeatured/homefeatured.css.map', '', '2018-09-17 13:40:43'),
+(1270, 1, 1, '/themes/citymotors/css/modules/blockviewed/blockviewed.css.map', '', '2018-09-17 13:40:43'),
+(1271, 1, 1, '/themes/citymotors/css/modules/blockuserinfo/blockuserinfo.css.map', '', '2018-09-17 13:40:43'),
+(1272, 1, 1, '/themes/citymotors/css/modules/homeslider/homeslider.css.map', '', '2018-09-17 13:40:43'),
+(1273, 1, 1, '/themes/citymotors/css/modules/blocktopmenu/css/blocktopmenu.css.map', '', '2018-09-17 13:40:43'),
+(1274, 1, 1, '/themes/citymotors/css/modules/blocktopmenu/css/superfish-modified.css.map', '', '2018-09-17 13:40:44'),
+(1275, 1, 1, '/themes/citymotors/css/product_list.css.map', '', '2018-09-17 13:45:11'),
+(1276, 1, 1, '/themes/citymotors/css/autoload/uniform.default.css.map', '', '2018-09-17 13:45:11'),
+(1277, 1, 1, '/themes/citymotors/css/modules/blockcart/blockcart.css.map', '', '2018-09-17 13:45:12'),
+(1278, 1, 1, '/themes/citymotors/css/modules/blockcategories/blockcategories.css.map', '', '2018-09-17 13:45:12'),
+(1279, 1, 1, '/themes/citymotors/css/modules/blockbestsellers/blockbestsellers.css.map', '', '2018-09-17 13:45:12'),
+(1280, 1, 1, '/themes/citymotors/css/global.css.map', '', '2018-09-17 13:45:12'),
+(1281, 1, 1, '/themes/citymotors/css/modules/blockcontact/blockcontact.css.map', '', '2018-09-17 13:45:13'),
+(1282, 1, 1, '/themes/citymotors/css/modules/blockmyaccountfooter/blockmyaccount.css.map', '', '2018-09-17 13:45:13'),
+(1283, 1, 1, '/themes/citymotors/css/modules/blocklanguages/blocklanguages.css.map', '', '2018-09-17 13:45:14'),
+(1284, 1, 1, '/themes/citymotors/css/modules/blocksearch/blocksearch.css.map', '', '2018-09-17 13:45:14'),
+(1285, 1, 1, '/themes/citymotors/css/modules/blocknewsletter/blocknewsletter.css.map', '', '2018-09-17 13:45:14'),
+(1286, 1, 1, '/themes/citymotors/css/modules/blocknewproducts/blocknewproducts.css.map', '', '2018-09-17 13:45:15'),
+(1287, 1, 1, '/themes/citymotors/css/modules/blockspecials/blockspecials.css.map', '', '2018-09-17 13:45:15'),
+(1288, 1, 1, '/themes/citymotors/css/modules/blocktags/blocktags.css.map', '', '2018-09-17 13:45:15'),
+(1289, 1, 1, '/themes/citymotors/css/modules/blockuserinfo/blockuserinfo.css.map', '', '2018-09-17 13:45:15'),
+(1290, 1, 1, '/themes/citymotors/css/modules/blockviewed/blockviewed.css.map', '', '2018-09-17 13:45:16'),
+(1291, 1, 1, '/themes/citymotors/css/modules/homeslider/homeslider.css.map', '', '2018-09-17 13:45:16'),
+(1292, 1, 1, '/themes/citymotors/css/modules/homefeatured/homefeatured.css.map', '', '2018-09-17 13:45:17'),
+(1293, 1, 1, '/themes/citymotors/css/modules/blocktopmenu/css/superfish-modified.css.map', '', '2018-09-17 13:45:17'),
+(1294, 1, 1, '/themes/citymotors/css/modules/blocktopmenu/css/blocktopmenu.css.map', '', '2018-09-17 13:45:17'),
+(1295, 1, 1, '/themes/citymotors/css/modules/blockbestsellers/blockbestsellers.css.map', '', '2018-09-17 15:40:33'),
+(1296, 1, 1, '/themes/citymotors/css/global.css.map', '', '2018-09-17 15:40:34'),
+(1297, 1, 1, '/themes/citymotors/css/autoload/uniform.default.css.map', '', '2018-09-17 15:40:34'),
+(1298, 1, 1, '/themes/citymotors/css/modules/blockcart/blockcart.css.map', '', '2018-09-17 15:40:35'),
+(1299, 1, 1, '/themes/citymotors/css/product_list.css.map', '', '2018-09-17 15:40:35'),
+(1300, 1, 1, '/themes/citymotors/css/modules/blockcategories/blockcategories.css.map', '', '2018-09-17 15:40:36'),
+(1301, 1, 1, '/themes/citymotors/css/modules/blocklanguages/blocklanguages.css.map', '', '2018-09-17 15:40:37'),
+(1302, 1, 1, '/themes/citymotors/css/modules/blockmyaccountfooter/blockmyaccount.css.map', '', '2018-09-17 15:40:37'),
+(1303, 1, 1, '/themes/citymotors/css/modules/blockcontact/blockcontact.css.map', '', '2018-09-17 15:40:37'),
+(1304, 1, 1, '/themes/citymotors/css/modules/blocknewproducts/blocknewproducts.css.map', '', '2018-09-17 15:40:38'),
+(1305, 1, 1, '/themes/citymotors/css/modules/blocksearch/blocksearch.css.map', '', '2018-09-17 15:40:38'),
+(1306, 1, 1, '/themes/citymotors/css/modules/blockspecials/blockspecials.css.map', '', '2018-09-17 15:40:38'),
+(1307, 1, 1, '/themes/citymotors/css/modules/blocknewsletter/blocknewsletter.css.map', '', '2018-09-17 15:40:39'),
+(1308, 1, 1, '/themes/citymotors/css/modules/blocktags/blocktags.css.map', '', '2018-09-17 15:40:39'),
+(1309, 1, 1, '/themes/citymotors/css/modules/blockuserinfo/blockuserinfo.css.map', '', '2018-09-17 15:40:40'),
+(1310, 1, 1, '/themes/citymotors/css/modules/blockviewed/blockviewed.css.map', '', '2018-09-17 15:40:41'),
+(1311, 1, 1, '/themes/citymotors/css/modules/homeslider/homeslider.css.map', '', '2018-09-17 15:40:41'),
+(1312, 1, 1, '/themes/citymotors/css/modules/homefeatured/homefeatured.css.map', '', '2018-09-17 15:40:41'),
+(1313, 1, 1, '/themes/citymotors/css/modules/blocktopmenu/css/blocktopmenu.css.map', '', '2018-09-17 15:40:42'),
+(1314, 1, 1, '/themes/citymotors/css/modules/blocktopmenu/css/superfish-modified.css.map', '', '2018-09-17 15:40:42'),
+(1315, 1, 1, '/themes/citymotors/css/global.css.map', '', '2018-09-17 15:47:52'),
+(1316, 1, 1, '/themes/citymotors/css/modules/blockbestsellers/blockbestsellers.css.map', '', '2018-09-17 15:47:52'),
+(1317, 1, 1, '/themes/citymotors/css/product_list.css.map', '', '2018-09-17 15:47:52'),
+(1318, 1, 1, '/themes/citymotors/css/autoload/uniform.default.css.map', '', '2018-09-17 15:47:53'),
+(1319, 1, 1, '/themes/citymotors/css/modules/blockcart/blockcart.css.map', '', '2018-09-17 15:47:53'),
+(1320, 1, 1, '/themes/citymotors/css/modules/blockcategories/blockcategories.css.map', '', '2018-09-17 15:47:54'),
+(1321, 1, 1, '/themes/citymotors/css/modules/blocklanguages/blocklanguages.css.map', '', '2018-09-17 15:47:55'),
+(1322, 1, 1, '/themes/citymotors/css/modules/blockcontact/blockcontact.css.map', '', '2018-09-17 15:47:55'),
+(1323, 1, 1, '/themes/citymotors/css/modules/blockmyaccountfooter/blockmyaccount.css.map', '', '2018-09-17 15:47:55'),
+(1324, 1, 1, '/themes/citymotors/css/modules/blocknewsletter/blocknewsletter.css.map', '', '2018-09-17 15:47:56'),
+(1325, 1, 1, '/themes/citymotors/css/modules/blocknewproducts/blocknewproducts.css.map', '', '2018-09-17 15:47:56'),
+(1326, 1, 1, '/themes/citymotors/css/modules/blocksearch/blocksearch.css.map', '', '2018-09-17 15:47:57'),
+(1327, 1, 1, '/themes/citymotors/css/modules/blocktags/blocktags.css.map', '', '2018-09-17 15:47:57'),
+(1328, 1, 1, '/themes/citymotors/css/modules/blockspecials/blockspecials.css.map', '', '2018-09-17 15:47:57'),
+(1329, 1, 1, '/themes/citymotors/css/modules/blockuserinfo/blockuserinfo.css.map', '', '2018-09-17 15:47:57'),
+(1330, 1, 1, '/themes/citymotors/css/modules/homeslider/homeslider.css.map', '', '2018-09-17 15:47:58'),
+(1331, 1, 1, '/themes/citymotors/css/modules/blockviewed/blockviewed.css.map', '', '2018-09-17 15:47:58'),
+(1332, 1, 1, '/themes/citymotors/css/modules/blocktopmenu/css/superfish-modified.css.map', '', '2018-09-17 15:47:59'),
+(1333, 1, 1, '/themes/citymotors/css/modules/blocktopmenu/css/blocktopmenu.css.map', '', '2018-09-17 15:47:59'),
+(1334, 1, 1, '/themes/citymotors/css/modules/homefeatured/homefeatured.css.map', '', '2018-09-17 15:47:59'),
+(1335, 1, 1, '/themes/citymotors/css/product_list.css.map', '', '2018-09-17 15:50:55'),
+(1336, 1, 1, '/themes/citymotors/css/global.css.map', '', '2018-09-17 15:50:55'),
+(1337, 1, 1, '/themes/citymotors/css/modules/blockcart/blockcart.css.map', '', '2018-09-17 15:50:55'),
+(1338, 1, 1, '/themes/citymotors/css/modules/blockcategories/blockcategories.css.map', '', '2018-09-17 15:50:56'),
+(1339, 1, 1, '/themes/citymotors/css/autoload/uniform.default.css.map', '', '2018-09-17 15:50:56'),
+(1340, 1, 1, '/themes/citymotors/css/modules/blockbestsellers/blockbestsellers.css.map', '', '2018-09-17 15:50:57'),
+(1341, 1, 1, '/themes/citymotors/css/modules/blocklanguages/blocklanguages.css.map', '', '2018-09-17 15:50:58'),
+(1342, 1, 1, '/themes/citymotors/css/modules/blockcontact/blockcontact.css.map', '', '2018-09-17 15:50:58'),
+(1343, 1, 1, '/themes/citymotors/css/modules/blocknewsletter/blocknewsletter.css.map', '', '2018-09-17 15:50:58'),
+(1344, 1, 1, '/themes/citymotors/css/modules/blocknewproducts/blocknewproducts.css.map', '', '2018-09-17 15:50:59'),
+(1345, 1, 1, '/themes/citymotors/css/modules/blockmyaccountfooter/blockmyaccount.css.map', '', '2018-09-17 15:50:59'),
+(1346, 1, 1, '/themes/citymotors/css/modules/blocksearch/blocksearch.css.map', '', '2018-09-17 15:51:00'),
+(1347, 1, 1, '/themes/citymotors/css/modules/blockspecials/blockspecials.css.map', '', '2018-09-17 15:51:00'),
+(1348, 1, 1, '/themes/citymotors/css/modules/blocktags/blocktags.css.map', '', '2018-09-17 15:51:01'),
+(1349, 1, 1, '/themes/citymotors/css/modules/homeslider/homeslider.css.map', '', '2018-09-17 15:51:01'),
+(1350, 1, 1, '/themes/citymotors/css/modules/blockviewed/blockviewed.css.map', '', '2018-09-17 15:51:01'),
+(1351, 1, 1, '/themes/citymotors/css/modules/blockuserinfo/blockuserinfo.css.map', '', '2018-09-17 15:51:02'),
+(1352, 1, 1, '/themes/citymotors/css/modules/homefeatured/homefeatured.css.map', '', '2018-09-17 15:51:02'),
+(1353, 1, 1, '/themes/citymotors/css/modules/blocktopmenu/css/blocktopmenu.css.map', '', '2018-09-17 15:51:02'),
+(1354, 1, 1, '/themes/citymotors/css/modules/blocktopmenu/css/superfish-modified.css.map', '', '2018-09-17 15:51:02'),
+(1355, 1, 1, '/themes/citymotors/css/product_list.css.map', '', '2018-09-17 15:52:02'),
+(1356, 1, 1, '/themes/citymotors/css/global.css.map', '', '2018-09-17 15:52:02'),
+(1357, 1, 1, '/themes/citymotors/css/modules/blockcategories/blockcategories.css.map', '', '2018-09-17 15:52:02'),
+(1358, 1, 1, '/themes/citymotors/css/modules/blockcart/blockcart.css.map', '', '2018-09-17 15:52:02'),
+(1359, 1, 1, '/themes/citymotors/css/modules/blockbestsellers/blockbestsellers.css.map', '', '2018-09-17 15:52:02'),
+(1360, 1, 1, '/themes/citymotors/css/autoload/uniform.default.css.map', '', '2018-09-17 15:52:03'),
+(1361, 1, 1, '/themes/citymotors/css/modules/blockcontact/blockcontact.css.map', '', '2018-09-17 15:52:04'),
+(1362, 1, 1, '/themes/citymotors/css/modules/blockmyaccountfooter/blockmyaccount.css.map', '', '2018-09-17 15:52:05'),
+(1363, 1, 1, '/themes/citymotors/css/modules/blocklanguages/blocklanguages.css.map', '', '2018-09-17 15:52:05'),
+(1364, 1, 1, '/themes/citymotors/css/modules/blocknewsletter/blocknewsletter.css.map', '', '2018-09-17 15:52:05'),
+(1365, 1, 1, '/themes/citymotors/css/modules/blocksearch/blocksearch.css.map', '', '2018-09-17 15:52:06'),
+(1366, 1, 1, '/themes/citymotors/css/modules/blocknewproducts/blocknewproducts.css.map', '', '2018-09-17 15:52:06'),
+(1367, 1, 1, '/themes/citymotors/css/modules/blockspecials/blockspecials.css.map', '', '2018-09-17 15:52:07'),
+(1368, 1, 1, '/themes/citymotors/css/modules/blocktags/blocktags.css.map', '', '2018-09-17 15:52:07'),
+(1369, 1, 1, '/themes/citymotors/css/modules/blockuserinfo/blockuserinfo.css.map', '', '2018-09-17 15:52:07'),
+(1370, 1, 1, '/themes/citymotors/css/modules/blockviewed/blockviewed.css.map', '', '2018-09-17 15:52:08'),
+(1371, 1, 1, '/themes/citymotors/css/modules/homeslider/homeslider.css.map', '', '2018-09-17 15:52:08'),
+(1372, 1, 1, '/themes/citymotors/css/modules/homefeatured/homefeatured.css.map', '', '2018-09-17 15:52:08'),
+(1373, 1, 1, '/themes/citymotors/css/modules/blocktopmenu/css/blocktopmenu.css.map', '', '2018-09-17 15:52:08'),
+(1374, 1, 1, '/themes/citymotors/css/modules/blocktopmenu/css/superfish-modified.css.map', '', '2018-09-17 15:52:09'),
+(1375, 1, 1, '/themes/citymotors/css/global.css.map', '', '2018-09-17 15:59:04'),
+(1376, 1, 1, '/themes/citymotors/css/product_list.css.map', '', '2018-09-17 15:59:04'),
+(1377, 1, 1, '/themes/citymotors/css/modules/blockbestsellers/blockbestsellers.css.map', '', '2018-09-17 15:59:04'),
+(1378, 1, 1, '/themes/citymotors/css/modules/blockcart/blockcart.css.map', '', '2018-09-17 15:59:05'),
+(1379, 1, 1, '/themes/citymotors/css/autoload/uniform.default.css.map', '', '2018-09-17 15:59:05'),
+(1380, 1, 1, '/themes/citymotors/css/modules/blockcategories/blockcategories.css.map', '', '2018-09-17 15:59:05'),
+(1381, 1, 1, '/themes/citymotors/css/modules/blocklanguages/blocklanguages.css.map', '', '2018-09-17 15:59:07'),
+(1382, 1, 1, '/themes/citymotors/css/modules/blockmyaccountfooter/blockmyaccount.css.map', '', '2018-09-17 15:59:07'),
+(1383, 1, 1, '/themes/citymotors/css/modules/blockcontact/blockcontact.css.map', '', '2018-09-17 15:59:07'),
+(1384, 1, 1, '/themes/citymotors/css/modules/blocknewproducts/blocknewproducts.css.map', '', '2018-09-17 15:59:08'),
+(1385, 1, 1, '/themes/citymotors/css/modules/blocknewsletter/blocknewsletter.css.map', '', '2018-09-17 15:59:08'),
+(1386, 1, 1, '/themes/citymotors/css/modules/blocksearch/blocksearch.css.map', '', '2018-09-17 15:59:08'),
+(1387, 1, 1, '/themes/citymotors/css/modules/blockuserinfo/blockuserinfo.css.map', '', '2018-09-17 15:59:09'),
+(1388, 1, 1, '/themes/citymotors/css/modules/blocktags/blocktags.css.map', '', '2018-09-17 15:59:10'),
+(1389, 1, 1, '/themes/citymotors/css/modules/blockspecials/blockspecials.css.map', '', '2018-09-17 15:59:10'),
+(1390, 1, 1, '/themes/citymotors/css/modules/blockviewed/blockviewed.css.map', '', '2018-09-17 15:59:10'),
+(1391, 1, 1, '/themes/citymotors/css/modules/homeslider/homeslider.css.map', '', '2018-09-17 15:59:10'),
+(1392, 1, 1, '/themes/citymotors/css/modules/homefeatured/homefeatured.css.map', '', '2018-09-17 15:59:11'),
+(1393, 1, 1, '/themes/citymotors/css/modules/blocktopmenu/css/blocktopmenu.css.map', '', '2018-09-17 15:59:11'),
+(1394, 1, 1, '/themes/citymotors/css/modules/blocktopmenu/css/superfish-modified.css.map', '', '2018-09-17 15:59:11'),
+(1395, 1, 1, '/themes/citymotors/css/product_list.css.map', '', '2018-09-17 15:59:58'),
+(1396, 1, 1, '/themes/citymotors/css/autoload/uniform.default.css.map', '', '2018-09-17 15:59:58'),
+(1397, 1, 1, '/themes/citymotors/css/global.css.map', '', '2018-09-17 15:59:59'),
+(1398, 1, 1, '/themes/citymotors/css/modules/blockcart/blockcart.css.map', '', '2018-09-17 15:59:59'),
+(1399, 1, 1, '/themes/citymotors/css/modules/blockbestsellers/blockbestsellers.css.map', '', '2018-09-17 15:59:59'),
+(1400, 1, 1, '/themes/citymotors/css/modules/blockcategories/blockcategories.css.map', '', '2018-09-17 16:00:00'),
+(1401, 1, 1, '/themes/citymotors/css/modules/blocklanguages/blocklanguages.css.map', '', '2018-09-17 16:00:01'),
+(1402, 1, 1, '/themes/citymotors/css/modules/blockcontact/blockcontact.css.map', '', '2018-09-17 16:00:01'),
+(1403, 1, 1, '/themes/citymotors/css/modules/blocknewsletter/blocknewsletter.css.map', '', '2018-09-17 16:00:01'),
+(1404, 1, 1, '/themes/citymotors/css/modules/blockmyaccountfooter/blockmyaccount.css.map', '', '2018-09-17 16:00:02'),
+(1405, 1, 1, '/themes/citymotors/css/modules/blocknewproducts/blocknewproducts.css.map', '', '2018-09-17 16:00:02'),
+(1406, 1, 1, '/themes/citymotors/css/modules/blocksearch/blocksearch.css.map', '', '2018-09-17 16:00:04'),
+(1407, 1, 1, '/themes/citymotors/css/modules/blocktags/blocktags.css.map', '', '2018-09-17 16:00:04'),
+(1408, 1, 1, '/themes/citymotors/css/modules/blockspecials/blockspecials.css.map', '', '2018-09-17 16:00:04'),
+(1409, 1, 1, '/themes/citymotors/css/modules/blockuserinfo/blockuserinfo.css.map', '', '2018-09-17 16:00:04'),
+(1410, 1, 1, '/themes/citymotors/css/modules/homeslider/homeslider.css.map', '', '2018-09-17 16:00:04'),
+(1411, 1, 1, '/themes/citymotors/css/modules/blockviewed/blockviewed.css.map', '', '2018-09-17 16:00:05'),
+(1412, 1, 1, '/themes/citymotors/css/modules/blocktopmenu/css/superfish-modified.css.map', '', '2018-09-17 16:00:05'),
+(1413, 1, 1, '/themes/citymotors/css/modules/homefeatured/homefeatured.css.map', '', '2018-09-17 16:00:05'),
+(1414, 1, 1, '/themes/citymotors/css/modules/blocktopmenu/css/blocktopmenu.css.map', '', '2018-09-17 16:00:05'),
+(1415, 1, 1, '/robots.txt', '', '2018-09-17 16:04:00'),
+(1416, 1, 1, '/themes/citymotors/css/product_list.css.map', '', '2018-09-17 16:04:02'),
+(1417, 1, 1, '/themes/citymotors/css/modules/blockbestsellers/blockbestsellers.css.map', '', '2018-09-17 16:04:02'),
+(1418, 1, 1, '/themes/citymotors/css/global.css.map', '', '2018-09-17 16:04:02'),
+(1419, 1, 1, '/themes/citymotors/css/modules/blockcart/blockcart.css.map', '', '2018-09-17 16:04:02'),
+(1420, 1, 1, '/themes/citymotors/css/modules/blockcategories/blockcategories.css.map', '', '2018-09-17 16:04:03'),
+(1421, 1, 1, '/themes/citymotors/css/autoload/uniform.default.css.map', '', '2018-09-17 16:04:04'),
+(1422, 1, 1, '/themes/citymotors/css/modules/blockcontact/blockcontact.css.map', '', '2018-09-17 16:04:05'),
+(1423, 1, 1, '/themes/citymotors/css/modules/blockmyaccountfooter/blockmyaccount.css.map', '', '2018-09-17 16:04:05'),
+(1424, 1, 1, '/themes/citymotors/css/modules/blocknewsletter/blocknewsletter.css.map', '', '2018-09-17 16:04:05'),
+(1425, 1, 1, '/themes/citymotors/css/modules/blocknewproducts/blocknewproducts.css.map', '', '2018-09-17 16:04:05'),
+(1426, 1, 1, '/themes/citymotors/css/modules/blocklanguages/blocklanguages.css.map', '', '2018-09-17 16:04:06'),
+(1427, 1, 1, '/themes/citymotors/css/modules/blockspecials/blockspecials.css.map', '', '2018-09-17 16:04:07'),
+(1428, 1, 1, '/themes/citymotors/css/modules/blocksearch/blocksearch.css.map', '', '2018-09-17 16:04:07');
+INSERT INTO `ps_pagenotfound` (`id_pagenotfound`, `id_shop`, `id_shop_group`, `request_uri`, `http_referer`, `date_add`) VALUES
+(1429, 1, 1, '/themes/citymotors/css/modules/blockuserinfo/blockuserinfo.css.map', '', '2018-09-17 16:04:07'),
+(1430, 1, 1, '/themes/citymotors/css/modules/blocktags/blocktags.css.map', '', '2018-09-17 16:04:08'),
+(1431, 1, 1, '/themes/citymotors/css/modules/blockviewed/blockviewed.css.map', '', '2018-09-17 16:04:08'),
+(1432, 1, 1, '/themes/citymotors/css/modules/homeslider/homeslider.css.map', '', '2018-09-17 16:04:08'),
+(1433, 1, 1, '/themes/citymotors/css/modules/homefeatured/homefeatured.css.map', '', '2018-09-17 16:04:08'),
+(1434, 1, 1, '/themes/citymotors/css/modules/blocktopmenu/css/superfish-modified.css.map', '', '2018-09-17 16:04:08'),
+(1435, 1, 1, '/themes/citymotors/css/modules/blocktopmenu/css/blocktopmenu.css.map', '', '2018-09-17 16:04:09'),
+(1436, 1, 1, '/themes/citymotors/css/autoload/uniform.default.css.map', '', '2018-09-17 16:06:08'),
+(1437, 1, 1, '/themes/citymotors/css/product_list.css.map', '', '2018-09-17 16:06:09'),
+(1438, 1, 1, '/themes/citymotors/css/modules/blockcart/blockcart.css.map', '', '2018-09-17 16:06:09'),
+(1439, 1, 1, '/themes/citymotors/css/modules/blockbestsellers/blockbestsellers.css.map', '', '2018-09-17 16:06:09'),
+(1440, 1, 1, '/themes/citymotors/css/modules/blocklanguages/blocklanguages.css.map', '', '2018-09-17 16:06:10'),
+(1441, 1, 1, '/themes/citymotors/css/modules/blockcategories/blockcategories.css.map', '', '2018-09-17 16:06:10'),
+(1442, 1, 1, '/themes/citymotors/css/modules/blockcontact/blockcontact.css.map', '', '2018-09-17 16:06:11'),
+(1443, 1, 1, '/themes/citymotors/css/modules/blocknewproducts/blocknewproducts.css.map', '', '2018-09-17 16:06:12'),
+(1444, 1, 1, '/themes/citymotors/css/modules/blockspecials/blockspecials.css.map', '', '2018-09-17 16:06:12'),
+(1445, 1, 1, '/themes/citymotors/css/modules/blocknewsletter/blocknewsletter.css.map', '', '2018-09-17 16:06:13'),
+(1446, 1, 1, '/themes/citymotors/css/modules/blocksearch/blocksearch.css.map', '', '2018-09-17 16:06:13'),
+(1447, 1, 1, '/themes/citymotors/css/modules/blockmyaccountfooter/blockmyaccount.css.map', '', '2018-09-17 16:06:13'),
+(1448, 1, 1, '/themes/citymotors/css/modules/blocktags/blocktags.css.map', '', '2018-09-17 16:06:15'),
+(1449, 1, 1, '/themes/citymotors/css/modules/blockuserinfo/blockuserinfo.css.map', '', '2018-09-17 16:06:15'),
+(1450, 1, 1, '/themes/citymotors/css/modules/blockviewed/blockviewed.css.map', '', '2018-09-17 16:06:15'),
+(1451, 1, 1, '/themes/citymotors/css/modules/blocktopmenu/css/blocktopmenu.css.map', '', '2018-09-17 16:06:15'),
+(1452, 1, 1, '/themes/citymotors/css/modules/homeslider/homeslider.css.map', '', '2018-09-17 16:06:16'),
+(1453, 1, 1, '/themes/citymotors/css/modules/homefeatured/homefeatured.css.map', '', '2018-09-17 16:06:16'),
+(1454, 1, 1, '/themes/citymotors/css/modules/blocktopmenu/css/superfish-modified.css.map', '', '2018-09-17 16:06:16'),
+(1455, 1, 1, '/themes/citymotors/css/global.css.map', '', '2018-09-17 16:06:16'),
+(1456, 1, 1, '/themes/citymotors/css/autoload/uniform.default.css.map', '', '2018-09-17 16:06:44'),
+(1457, 1, 1, '/themes/citymotors/css/product_list.css.map', '', '2018-09-17 16:06:44'),
+(1458, 1, 1, '/themes/citymotors/css/modules/blockbestsellers/blockbestsellers.css.map', '', '2018-09-17 16:06:45'),
+(1459, 1, 1, '/themes/citymotors/css/category.css.map', '', '2018-09-17 16:06:45'),
+(1460, 1, 1, '/themes/citymotors/css/scenes.css.map', '', '2018-09-17 16:06:45'),
+(1461, 1, 1, '/themes/citymotors/css/global.css.map', '', '2018-09-17 16:06:46'),
+(1462, 1, 1, '/themes/citymotors/css/modules/blockcart/blockcart.css.map', '', '2018-09-17 16:06:47'),
+(1463, 1, 1, '/themes/citymotors/css/modules/blocklayered/blocklayered.css.map', '', '2018-09-17 16:06:47'),
+(1464, 1, 1, '/themes/citymotors/css/modules/blockcontact/blockcontact.css.map', '', '2018-09-17 16:06:48'),
+(1465, 1, 1, '/themes/citymotors/css/modules/blocklanguages/blocklanguages.css.map', '', '2018-09-17 16:06:48'),
+(1466, 1, 1, '/themes/citymotors/css/modules/blockcategories/blockcategories.css.map', '', '2018-09-17 16:06:48'),
+(1467, 1, 1, '/themes/citymotors/css/modules/blockmyaccountfooter/blockmyaccount.css.map', '', '2018-09-17 16:06:48'),
+(1468, 1, 1, '/themes/citymotors/css/modules/blocksearch/blocksearch.css.map', '', '2018-09-17 16:06:50'),
+(1469, 1, 1, '/themes/citymotors/css/modules/blocknewsletter/blocknewsletter.css.map', '', '2018-09-17 16:06:50'),
+(1470, 1, 1, '/themes/citymotors/css/modules/blocknewproducts/blocknewproducts.css.map', '', '2018-09-17 16:06:50'),
+(1471, 1, 1, '/themes/citymotors/css/modules/blocktags/blocktags.css.map', '', '2018-09-17 16:06:50'),
+(1472, 1, 1, '/themes/citymotors/css/modules/blockspecials/blockspecials.css.map', '', '2018-09-17 16:06:51'),
+(1473, 1, 1, '/themes/citymotors/css/modules/blockuserinfo/blockuserinfo.css.map', '', '2018-09-17 16:06:51'),
+(1474, 1, 1, '/themes/citymotors/css/modules/blockviewed/blockviewed.css.map', '', '2018-09-17 16:06:52'),
+(1475, 1, 1, '/themes/citymotors/css/modules/blocktopmenu/css/superfish-modified.css.map', '', '2018-09-17 16:06:52'),
+(1476, 1, 1, '/themes/citymotors/css/modules/homefeatured/homefeatured.css.map', '', '2018-09-17 16:06:52'),
+(1477, 1, 1, '/themes/citymotors/css/modules/blocktopmenu/css/blocktopmenu.css.map', '', '2018-09-17 16:06:52'),
+(1478, 1, 1, '/themes/citymotors/css/autoload/uniform.default.css.map', '', '2018-09-17 16:07:13'),
+(1479, 1, 1, '/themes/citymotors/css/global.css.map', '', '2018-09-17 16:07:13'),
+(1480, 1, 1, '/themes/citymotors/css/scenes.css.map', '', '2018-09-17 16:07:14'),
+(1481, 1, 1, '/themes/citymotors/css/product_list.css.map', '', '2018-09-17 16:07:14'),
+(1482, 1, 1, '/themes/citymotors/css/category.css.map', '', '2018-09-17 16:07:14'),
+(1483, 1, 1, '/themes/citymotors/css/modules/blockbestsellers/blockbestsellers.css.map', '', '2018-09-17 16:07:14'),
+(1484, 1, 1, '/themes/citymotors/css/modules/blocklanguages/blocklanguages.css.map', '', '2018-09-17 16:07:16'),
+(1485, 1, 1, '/themes/citymotors/css/modules/blockcart/blockcart.css.map', '', '2018-09-17 16:07:16'),
+(1486, 1, 1, '/themes/citymotors/css/modules/blockcategories/blockcategories.css.map', '', '2018-09-17 16:07:16'),
+(1487, 1, 1, '/themes/citymotors/css/modules/blockcontact/blockcontact.css.map', '', '2018-09-17 16:07:16'),
+(1488, 1, 1, '/themes/citymotors/css/modules/blocklayered/blocklayered.css.map', '', '2018-09-17 16:07:17'),
+(1489, 1, 1, '/themes/citymotors/css/modules/blockmyaccountfooter/blockmyaccount.css.map', '', '2018-09-17 16:07:17'),
+(1490, 1, 1, '/themes/citymotors/css/modules/blocknewsletter/blocknewsletter.css.map', '', '2018-09-17 16:07:18'),
+(1491, 1, 1, '/themes/citymotors/css/modules/blockspecials/blockspecials.css.map', '', '2018-09-17 16:07:18'),
+(1492, 1, 1, '/themes/citymotors/css/modules/blocknewproducts/blocknewproducts.css.map', '', '2018-09-17 16:07:18'),
+(1493, 1, 1, '/themes/citymotors/css/modules/blockuserinfo/blockuserinfo.css.map', '', '2018-09-17 16:07:18'),
+(1494, 1, 1, '/themes/citymotors/css/modules/blocksearch/blocksearch.css.map', '', '2018-09-17 16:07:19'),
+(1495, 1, 1, '/themes/citymotors/css/modules/blocktags/blocktags.css.map', '', '2018-09-17 16:07:19'),
+(1496, 1, 1, '/themes/citymotors/css/modules/blocktopmenu/css/blocktopmenu.css.map', '', '2018-09-17 16:07:20'),
+(1497, 1, 1, '/themes/citymotors/css/modules/blockviewed/blockviewed.css.map', '', '2018-09-17 16:07:20'),
+(1498, 1, 1, '/themes/citymotors/css/modules/homefeatured/homefeatured.css.map', '', '2018-09-17 16:07:20'),
+(1499, 1, 1, '/themes/citymotors/css/modules/blocktopmenu/css/superfish-modified.css.map', '', '2018-09-17 16:07:20'),
+(1500, 1, 1, '/themes/citymotors/css/modules/blocklanguages/blocklanguages.css.map', '', '2018-09-17 16:14:09'),
+(1501, 1, 1, '/themes/citymotors/css/modules/blockcategories/blockcategories.css.map', '', '2018-09-17 16:14:10'),
+(1502, 1, 1, '/themes/citymotors/css/product_list.css.map', '', '2018-09-17 16:14:10'),
+(1503, 1, 1, '/themes/citymotors/css/autoload/uniform.default.css.map', '', '2018-09-17 16:14:10'),
+(1504, 1, 1, '/themes/citymotors/css/modules/blockcart/blockcart.css.map', '', '2018-09-17 16:14:11'),
+(1505, 1, 1, '/themes/citymotors/css/modules/blockbestsellers/blockbestsellers.css.map', '', '2018-09-17 16:14:11'),
+(1506, 1, 1, '/themes/citymotors/css/modules/blocknewsletter/blocknewsletter.css.map', '', '2018-09-17 16:14:14'),
+(1507, 1, 1, '/themes/citymotors/css/modules/blocknewproducts/blocknewproducts.css.map', '', '2018-09-17 16:14:14'),
+(1508, 1, 1, '/themes/citymotors/css/modules/blocksearch/blocksearch.css.map', '', '2018-09-17 16:14:15'),
+(1509, 1, 1, '/themes/citymotors/css/modules/blockmyaccountfooter/blockmyaccount.css.map', '', '2018-09-17 16:14:15'),
+(1510, 1, 1, '/themes/citymotors/css/modules/blockcontact/blockcontact.css.map', '', '2018-09-17 16:14:16'),
+(1511, 1, 1, '/themes/citymotors/css/modules/blockspecials/blockspecials.css.map', '', '2018-09-17 16:14:16'),
+(1512, 1, 1, '/themes/citymotors/css/modules/blockuserinfo/blockuserinfo.css.map', '', '2018-09-17 16:14:18'),
+(1513, 1, 1, '/themes/citymotors/css/modules/blockviewed/blockviewed.css.map', '', '2018-09-17 16:14:18'),
+(1514, 1, 1, '/themes/citymotors/css/modules/homeslider/homeslider.css.map', '', '2018-09-17 16:14:19'),
+(1515, 1, 1, '/themes/citymotors/css/modules/blocktags/blocktags.css.map', '', '2018-09-17 16:14:19'),
+(1516, 1, 1, '/themes/citymotors/css/modules/homefeatured/homefeatured.css.map', '', '2018-09-17 16:14:19'),
+(1517, 1, 1, '/themes/citymotors/css/modules/blocktopmenu/css/superfish-modified.css.map', '', '2018-09-17 16:14:21'),
+(1518, 1, 1, '/themes/citymotors/css/modules/blocktopmenu/css/blocktopmenu.css.map', '', '2018-09-17 16:14:21'),
+(1519, 1, 1, '/themes/citymotors/css/global.css.map', '', '2018-09-17 16:14:22'),
+(1520, 1, 1, '/themes/citymotors/css/global.css.map', '', '2018-09-17 16:14:24'),
+(1521, 1, 1, '/themes/citymotors/css/autoload/uniform.default.css.map', '', '2018-09-17 16:14:25'),
+(1522, 1, 1, '/themes/citymotors/css/category.css.map', '', '2018-09-17 16:14:25'),
+(1523, 1, 1, '/themes/citymotors/css/modules/blockbestsellers/blockbestsellers.css.map', '', '2018-09-17 16:14:25'),
+(1524, 1, 1, '/themes/citymotors/css/product_list.css.map', '', '2018-09-17 16:14:26'),
+(1525, 1, 1, '/themes/citymotors/css/scenes.css.map', '', '2018-09-17 16:14:26'),
+(1526, 1, 1, '/themes/citymotors/css/modules/blockcart/blockcart.css.map', '', '2018-09-17 16:14:28'),
+(1527, 1, 1, '/themes/citymotors/css/modules/blocklayered/blocklayered.css.map', '', '2018-09-17 16:14:28'),
+(1528, 1, 1, '/themes/citymotors/css/modules/blocklanguages/blocklanguages.css.map', '', '2018-09-17 16:14:28'),
+(1529, 1, 1, '/themes/citymotors/css/modules/blockcategories/blockcategories.css.map', '', '2018-09-17 16:14:29'),
+(1530, 1, 1, '/themes/citymotors/css/modules/blockcontact/blockcontact.css.map', '', '2018-09-17 16:14:29'),
+(1531, 1, 1, '/themes/citymotors/css/modules/blockmyaccountfooter/blockmyaccount.css.map', '', '2018-09-17 16:14:30'),
+(1532, 1, 1, '/themes/citymotors/css/modules/blocknewsletter/blocknewsletter.css.map', '', '2018-09-17 16:14:30'),
+(1533, 1, 1, '/themes/citymotors/css/modules/blocknewproducts/blocknewproducts.css.map', '', '2018-09-17 16:14:31'),
+(1534, 1, 1, '/themes/citymotors/css/modules/blockspecials/blockspecials.css.map', '', '2018-09-17 16:14:31'),
+(1535, 1, 1, '/themes/citymotors/css/modules/blocksearch/blocksearch.css.map', '', '2018-09-17 16:14:32'),
+(1536, 1, 1, '/themes/citymotors/css/modules/blocktags/blocktags.css.map', '', '2018-09-17 16:14:32'),
+(1537, 1, 1, '/themes/citymotors/css/modules/blockuserinfo/blockuserinfo.css.map', '', '2018-09-17 16:14:32'),
+(1538, 1, 1, '/themes/citymotors/css/modules/blockviewed/blockviewed.css.map', '', '2018-09-17 16:14:32'),
+(1539, 1, 1, '/themes/citymotors/css/modules/homefeatured/homefeatured.css.map', '', '2018-09-17 16:14:32'),
+(1540, 1, 1, '/themes/citymotors/css/modules/blocktopmenu/css/blocktopmenu.css.map', '', '2018-09-17 16:14:34'),
+(1541, 1, 1, '/themes/citymotors/css/modules/blocktopmenu/css/superfish-modified.css.map', '', '2018-09-17 16:14:34');
 
 -- --------------------------------------------------------
 
@@ -15507,10 +17046,10 @@ INSERT INTO `ps_pagenotfound` (`id_pagenotfound`, `id_shop`, `id_shop_group`, `r
 -- Структура таблицы `ps_page_type`
 --
 
-CREATE TABLE `ps_page_type` (
-  `id_page_type` int(10) UNSIGNED NOT NULL,
+CREATE TABLE IF NOT EXISTS `ps_page_type` (
+  `id_page_type` int(10) unsigned NOT NULL,
   `name` varchar(255) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=11 DEFAULT CHARSET=utf8;
 
 --
 -- Дамп данных таблицы `ps_page_type`
@@ -15534,12 +17073,12 @@ INSERT INTO `ps_page_type` (`id_page_type`, `name`) VALUES
 -- Структура таблицы `ps_page_viewed`
 --
 
-CREATE TABLE `ps_page_viewed` (
-  `id_page` int(10) UNSIGNED NOT NULL,
-  `id_shop_group` int(10) UNSIGNED NOT NULL DEFAULT '1',
-  `id_shop` int(10) UNSIGNED NOT NULL DEFAULT '1',
-  `id_date_range` int(10) UNSIGNED NOT NULL,
-  `counter` int(10) UNSIGNED NOT NULL
+CREATE TABLE IF NOT EXISTS `ps_page_viewed` (
+  `id_page` int(10) unsigned NOT NULL,
+  `id_shop_group` int(10) unsigned NOT NULL DEFAULT '1',
+  `id_shop` int(10) unsigned NOT NULL DEFAULT '1',
+  `id_date_range` int(10) unsigned NOT NULL,
+  `counter` int(10) unsigned NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- --------------------------------------------------------
@@ -15548,20 +17087,20 @@ CREATE TABLE `ps_page_viewed` (
 -- Структура таблицы `ps_product`
 --
 
-CREATE TABLE `ps_product` (
-  `id_product` int(10) UNSIGNED NOT NULL,
-  `id_supplier` int(10) UNSIGNED DEFAULT NULL,
-  `id_manufacturer` int(10) UNSIGNED DEFAULT NULL,
-  `id_category_default` int(10) UNSIGNED DEFAULT NULL,
-  `id_shop_default` int(10) UNSIGNED NOT NULL DEFAULT '1',
-  `id_tax_rules_group` int(11) UNSIGNED NOT NULL,
-  `on_sale` tinyint(1) UNSIGNED NOT NULL DEFAULT '0',
-  `online_only` tinyint(1) UNSIGNED NOT NULL DEFAULT '0',
+CREATE TABLE IF NOT EXISTS `ps_product` (
+  `id_product` int(10) unsigned NOT NULL,
+  `id_supplier` int(10) unsigned DEFAULT NULL,
+  `id_manufacturer` int(10) unsigned DEFAULT NULL,
+  `id_category_default` int(10) unsigned DEFAULT NULL,
+  `id_shop_default` int(10) unsigned NOT NULL DEFAULT '1',
+  `id_tax_rules_group` int(11) unsigned NOT NULL,
+  `on_sale` tinyint(1) unsigned NOT NULL DEFAULT '0',
+  `online_only` tinyint(1) unsigned NOT NULL DEFAULT '0',
   `ean13` varchar(13) DEFAULT NULL,
   `upc` varchar(12) DEFAULT NULL,
   `ecotax` decimal(17,6) NOT NULL DEFAULT '0.000000',
   `quantity` int(10) NOT NULL DEFAULT '0',
-  `minimal_quantity` int(10) UNSIGNED NOT NULL DEFAULT '1',
+  `minimal_quantity` int(10) unsigned NOT NULL DEFAULT '1',
   `price` decimal(20,6) NOT NULL DEFAULT '0.000000',
   `wholesale_price` decimal(20,6) NOT NULL DEFAULT '0.000000',
   `unity` varchar(255) DEFAULT NULL,
@@ -15574,14 +17113,14 @@ CREATE TABLE `ps_product` (
   `height` decimal(20,6) NOT NULL DEFAULT '0.000000',
   `depth` decimal(20,6) NOT NULL DEFAULT '0.000000',
   `weight` decimal(20,6) NOT NULL DEFAULT '0.000000',
-  `out_of_stock` int(10) UNSIGNED NOT NULL DEFAULT '2',
+  `out_of_stock` int(10) unsigned NOT NULL DEFAULT '2',
   `quantity_discount` tinyint(1) DEFAULT '0',
   `customizable` tinyint(2) NOT NULL DEFAULT '0',
   `uploadable_files` tinyint(4) NOT NULL DEFAULT '0',
   `text_fields` tinyint(4) NOT NULL DEFAULT '0',
-  `active` tinyint(1) UNSIGNED NOT NULL DEFAULT '0',
+  `active` tinyint(1) unsigned NOT NULL DEFAULT '0',
   `redirect_type` enum('','404','301','302') NOT NULL DEFAULT '',
-  `id_product_redirected` int(10) UNSIGNED NOT NULL DEFAULT '0',
+  `id_product_redirected` int(10) unsigned NOT NULL DEFAULT '0',
   `available_for_order` tinyint(1) NOT NULL DEFAULT '1',
   `available_date` date NOT NULL DEFAULT '0000-00-00',
   `condition` enum('new','used','refurbished') NOT NULL DEFAULT 'new',
@@ -15591,12 +17130,12 @@ CREATE TABLE `ps_product` (
   `cache_is_pack` tinyint(1) NOT NULL DEFAULT '0',
   `cache_has_attachments` tinyint(1) NOT NULL DEFAULT '0',
   `is_virtual` tinyint(1) NOT NULL DEFAULT '0',
-  `cache_default_attribute` int(10) UNSIGNED DEFAULT NULL,
+  `cache_default_attribute` int(10) unsigned DEFAULT NULL,
   `date_add` datetime NOT NULL,
   `date_upd` datetime NOT NULL,
   `advanced_stock_management` tinyint(1) NOT NULL DEFAULT '0',
-  `pack_stock_type` int(11) UNSIGNED NOT NULL DEFAULT '3'
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+  `pack_stock_type` int(11) unsigned NOT NULL DEFAULT '3'
+) ENGINE=InnoDB AUTO_INCREMENT=560 DEFAULT CHARSET=utf8;
 
 --
 -- Дамп данных таблицы `ps_product`
@@ -16172,9 +17711,9 @@ INSERT INTO `ps_product` (`id_product`, `id_supplier`, `id_manufacturer`, `id_ca
 -- Структура таблицы `ps_product_attachment`
 --
 
-CREATE TABLE `ps_product_attachment` (
-  `id_product` int(10) UNSIGNED NOT NULL,
-  `id_attachment` int(10) UNSIGNED NOT NULL
+CREATE TABLE IF NOT EXISTS `ps_product_attachment` (
+  `id_product` int(10) unsigned NOT NULL,
+  `id_attachment` int(10) unsigned NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- --------------------------------------------------------
@@ -16183,9 +17722,9 @@ CREATE TABLE `ps_product_attachment` (
 -- Структура таблицы `ps_product_attribute`
 --
 
-CREATE TABLE `ps_product_attribute` (
-  `id_product_attribute` int(10) UNSIGNED NOT NULL,
-  `id_product` int(10) UNSIGNED NOT NULL,
+CREATE TABLE IF NOT EXISTS `ps_product_attribute` (
+  `id_product_attribute` int(10) unsigned NOT NULL,
+  `id_product` int(10) unsigned NOT NULL,
   `reference` varchar(32) DEFAULT NULL,
   `supplier_reference` varchar(32) DEFAULT NULL,
   `location` varchar(64) DEFAULT NULL,
@@ -16197,8 +17736,8 @@ CREATE TABLE `ps_product_attribute` (
   `quantity` int(10) NOT NULL DEFAULT '0',
   `weight` decimal(20,6) NOT NULL DEFAULT '0.000000',
   `unit_price_impact` decimal(20,6) NOT NULL DEFAULT '0.000000',
-  `default_on` tinyint(1) UNSIGNED DEFAULT NULL,
-  `minimal_quantity` int(10) UNSIGNED NOT NULL DEFAULT '1',
+  `default_on` tinyint(1) unsigned DEFAULT NULL,
+  `minimal_quantity` int(10) unsigned NOT NULL DEFAULT '1',
   `available_date` date NOT NULL DEFAULT '0000-00-00'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
@@ -16208,9 +17747,9 @@ CREATE TABLE `ps_product_attribute` (
 -- Структура таблицы `ps_product_attribute_combination`
 --
 
-CREATE TABLE `ps_product_attribute_combination` (
-  `id_attribute` int(10) UNSIGNED NOT NULL,
-  `id_product_attribute` int(10) UNSIGNED NOT NULL
+CREATE TABLE IF NOT EXISTS `ps_product_attribute_combination` (
+  `id_attribute` int(10) unsigned NOT NULL,
+  `id_product_attribute` int(10) unsigned NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- --------------------------------------------------------
@@ -16219,9 +17758,9 @@ CREATE TABLE `ps_product_attribute_combination` (
 -- Структура таблицы `ps_product_attribute_image`
 --
 
-CREATE TABLE `ps_product_attribute_image` (
-  `id_product_attribute` int(10) UNSIGNED NOT NULL,
-  `id_image` int(10) UNSIGNED NOT NULL
+CREATE TABLE IF NOT EXISTS `ps_product_attribute_image` (
+  `id_product_attribute` int(10) unsigned NOT NULL,
+  `id_image` int(10) unsigned NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- --------------------------------------------------------
@@ -16230,17 +17769,17 @@ CREATE TABLE `ps_product_attribute_image` (
 -- Структура таблицы `ps_product_attribute_shop`
 --
 
-CREATE TABLE `ps_product_attribute_shop` (
-  `id_product` int(10) UNSIGNED NOT NULL,
-  `id_product_attribute` int(10) UNSIGNED NOT NULL,
-  `id_shop` int(10) UNSIGNED NOT NULL,
+CREATE TABLE IF NOT EXISTS `ps_product_attribute_shop` (
+  `id_product` int(10) unsigned NOT NULL,
+  `id_product_attribute` int(10) unsigned NOT NULL,
+  `id_shop` int(10) unsigned NOT NULL,
   `wholesale_price` decimal(20,6) NOT NULL DEFAULT '0.000000',
   `price` decimal(20,6) NOT NULL DEFAULT '0.000000',
   `ecotax` decimal(17,6) NOT NULL DEFAULT '0.000000',
   `weight` decimal(20,6) NOT NULL DEFAULT '0.000000',
   `unit_price_impact` decimal(20,6) NOT NULL DEFAULT '0.000000',
-  `default_on` tinyint(1) UNSIGNED DEFAULT NULL,
-  `minimal_quantity` int(10) UNSIGNED NOT NULL DEFAULT '1',
+  `default_on` tinyint(1) unsigned DEFAULT NULL,
+  `minimal_quantity` int(10) unsigned NOT NULL DEFAULT '1',
   `available_date` date NOT NULL DEFAULT '0000-00-00'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
@@ -16250,10 +17789,10 @@ CREATE TABLE `ps_product_attribute_shop` (
 -- Структура таблицы `ps_product_carrier`
 --
 
-CREATE TABLE `ps_product_carrier` (
-  `id_product` int(10) UNSIGNED NOT NULL,
-  `id_carrier_reference` int(10) UNSIGNED NOT NULL,
-  `id_shop` int(10) UNSIGNED NOT NULL
+CREATE TABLE IF NOT EXISTS `ps_product_carrier` (
+  `id_product` int(10) unsigned NOT NULL,
+  `id_carrier_reference` int(10) unsigned NOT NULL,
+  `id_shop` int(10) unsigned NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- --------------------------------------------------------
@@ -16262,7 +17801,7 @@ CREATE TABLE `ps_product_carrier` (
 -- Структура таблицы `ps_product_country_tax`
 --
 
-CREATE TABLE `ps_product_country_tax` (
+CREATE TABLE IF NOT EXISTS `ps_product_country_tax` (
   `id_product` int(11) NOT NULL,
   `id_country` int(11) NOT NULL,
   `id_tax` int(11) NOT NULL
@@ -16274,17 +17813,17 @@ CREATE TABLE `ps_product_country_tax` (
 -- Структура таблицы `ps_product_download`
 --
 
-CREATE TABLE `ps_product_download` (
-  `id_product_download` int(10) UNSIGNED NOT NULL,
-  `id_product` int(10) UNSIGNED NOT NULL,
+CREATE TABLE IF NOT EXISTS `ps_product_download` (
+  `id_product_download` int(10) unsigned NOT NULL,
+  `id_product` int(10) unsigned NOT NULL,
   `display_filename` varchar(255) DEFAULT NULL,
   `filename` varchar(255) DEFAULT NULL,
   `date_add` datetime NOT NULL,
   `date_expiration` datetime DEFAULT NULL,
-  `nb_days_accessible` int(10) UNSIGNED DEFAULT NULL,
-  `nb_downloadable` int(10) UNSIGNED DEFAULT '1',
-  `active` tinyint(1) UNSIGNED NOT NULL DEFAULT '1',
-  `is_shareable` tinyint(1) UNSIGNED NOT NULL DEFAULT '0'
+  `nb_days_accessible` int(10) unsigned DEFAULT NULL,
+  `nb_downloadable` int(10) unsigned DEFAULT '1',
+  `active` tinyint(1) unsigned NOT NULL DEFAULT '1',
+  `is_shareable` tinyint(1) unsigned NOT NULL DEFAULT '0'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- --------------------------------------------------------
@@ -16293,9 +17832,9 @@ CREATE TABLE `ps_product_download` (
 -- Структура таблицы `ps_product_group_reduction_cache`
 --
 
-CREATE TABLE `ps_product_group_reduction_cache` (
-  `id_product` int(10) UNSIGNED NOT NULL,
-  `id_group` int(10) UNSIGNED NOT NULL,
+CREATE TABLE IF NOT EXISTS `ps_product_group_reduction_cache` (
+  `id_product` int(10) unsigned NOT NULL,
+  `id_group` int(10) unsigned NOT NULL,
   `reduction` decimal(4,3) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
@@ -16305,10 +17844,10 @@ CREATE TABLE `ps_product_group_reduction_cache` (
 -- Структура таблицы `ps_product_lang`
 --
 
-CREATE TABLE `ps_product_lang` (
-  `id_product` int(10) UNSIGNED NOT NULL,
-  `id_shop` int(11) UNSIGNED NOT NULL DEFAULT '1',
-  `id_lang` int(10) UNSIGNED NOT NULL,
+CREATE TABLE IF NOT EXISTS `ps_product_lang` (
+  `id_product` int(10) unsigned NOT NULL,
+  `id_shop` int(11) unsigned NOT NULL DEFAULT '1',
+  `id_lang` int(10) unsigned NOT NULL,
   `description` text,
   `description_short` text,
   `link_rewrite` varchar(128) NOT NULL,
@@ -16416,7 +17955,7 @@ INSERT INTO `ps_product_lang` (`id_product`, `id_shop`, `id_lang`, `description`
 (89, 1, 1, '', '', 'kolco-centrovochnoe-666-571', '', '', '', 'БОЛТ M12X1,25X30 ХРОМ КОНУС КЛЮЧ 19 ММ', '', ''),
 (90, 1, 1, '', '', 'prostavka-kolesnaya-5mm-5kh100-112-571', '', '', '', 'БОЛТ M14X1,5X30 ХРОМ КОНУС КЛЮЧ 19 ММ', '', ''),
 (91, 1, 1, '', '', 'techline-526s-w55-pcd4x100-et45-dia601', '', '', '', 'БОЛТ M14X1,5X33 ХРОМ КОНУС КЛЮЧ 19 ММ', '', ''),
-(92, 1, 1, '', '', 'nabor-instrumentov-alloid-1-2-i-1-4-6-gr-94-predmeta-ng-4094p-6-', '', '', '', 'Набор инструментов Alloid 1/2 и 1/4\" 6-гр. 94 предмета (НГ-4094П-6) \"', '', ''),
+(92, 1, 1, '', '', 'nabor-instrumentov-alloid-1-2-i-1-4-6-gr-94-predmeta-ng-4094p-6-', '', '', '', 'Набор инструментов Alloid 1/2 и 1/4" 6-гр. 94 предмета (НГ-4094П-6) "', '', ''),
 (93, 1, 1, '', '', 'gajka-m12x125x30-khrom-konus-vnshestigrannik-12mm', '', '', '', 'БОЛТ M16X1,5X34 ЦИНК КОНУС КЛЮЧ 22 ММ', '', ''),
 (94, 1, 1, '', '', 'gajki-sekretnye-1-2-20-vysota-36mm-khrom-konus-vrkolco-kl17-19mm', '', '', '', 'БОЛТ M12X1,25X28 ХРОМ КОНУС КЛЮЧ ВН.ШЕСТИГРАННИК 12ММ', '', ''),
 (95, 1, 1, '', '', 'techline-305bd-w45-pcd4x1143-et43-dia691', '', '', '', 'БОЛТ M12X1,25X39 ХРОМ ПРЕССШАЙБА КЛЮЧ 17 ММ', '', ''),
@@ -16447,7 +17986,7 @@ INSERT INTO `ps_product_lang` (`id_product`, `id_shop`, `id_lang`, `description`
 (120, 1, 1, '', '', 'kolco-centrovochnoe-716-586', '', '', '', 'ГАЙКА M14X1,5X25 ХРОМ КОНУС КЛЮЧ 19ММ', '', ''),
 (121, 1, 1, '', '', 'kolco-centrovochnoe-691-601', '', '', '', 'ГАЙКА M12X1,25X22 ЦИНК КОНУС КЛЮЧ 19ММ', '', ''),
 (122, 1, 1, '', '', 'shpilka-kolesnaya-zabivnaya-dlya-honda-m12x15x75', '', '', '', 'ГАЙКА M12X1,5X27 ХРОМ СФЕРА КЛЮЧ 19ММ', '', ''),
-(123, 1, 1, '', '', 'techline-539s-w6-pcd4x100-et40-dia601', '', '', '', 'ГАЙКА 1/2-20 UNF X35 ХРОМ КОНУС КЛЮЧ 19ММ\"', '', ''),
+(123, 1, 1, '', '', 'techline-539s-w6-pcd4x100-et40-dia601', '', '', '', 'ГАЙКА 1/2-20 UNF X35 ХРОМ КОНУС КЛЮЧ 19ММ"', '', ''),
 (124, 1, 1, '', '', 'naklejka-chevrolet-d56-mm-alyuminij-zolotistyj-s-chernoj-okantovkoj-logotip-na-serebristom-fone', '', '', '', 'Наклейка Chevrolet D56 мм алюминий (Золотистый с черной окантовкой логотип на серебристом фоне)', '', ''),
 (125, 1, 1, '', '', 'gajki-sekretnye-m12x15x28-konus-vrkolco-kl19-21mm', '', '', '', 'ГАЙКА M12X1,5X35 ХРОМ КОНУС КЛЮЧ 19ММ', '', ''),
 (126, 1, 1, '', '', 'shhetka-stekloochistitelya-heyner-hybrid-graphit-380-mm-beskarkasnaya-dvorniki', '', '', '', 'ГАЙКА M14X1,5X35 ХРОМ КОНУС КЛЮЧ 19ММ', '', ''),
@@ -16612,7 +18151,7 @@ INSERT INTO `ps_product_lang` (`id_product`, `id_shop`, `id_lang`, `description`
 (285, 1, 1, '', '', 'gajki-sekretnye-m12x15x33-konus-vrkolco-kl19-21mm', '', '', '', 'Гайки секретные M12X1,5X33 Конус Вр.кольцо кл.19-21мм', '', ''),
 (286, 1, 1, '', '', 'prostavka-kolesnaya-15mm-ynivers-671', '', '', '', 'Гайки секретные M12X1,5X33 Тройной никель/хром Конус Форд кл.19-21мм', '', ''),
 (287, 1, 1, '', '', 'techline-423grd-w55-pcd4x100-et49-dia566', '', '', '', 'Techline 423GRD  W5.5 PCD4x100 ET49 DIA56.6', '', ''),
-(288, 1, 1, '', '', 'techline-1604s-w65-pcd4x108-et31-dia651', '', '', '', 'Гайки секретные 1/2-20 Высота 36мм Хром Конус кл.19-21мм\"', '', ''),
+(288, 1, 1, '', '', 'techline-1604s-w65-pcd4x108-et31-dia651', '', '', '', 'Гайки секретные 1/2-20 Высота 36мм Хром Конус кл.19-21мм"', '', ''),
 (289, 1, 1, '', '', 'kolco-centrovochnoe-741-651', '', '', '', 'Гайки секретные M12X1,25X36 Тройной никель/хром Конус кл.19-21мм', '', ''),
 (290, 1, 1, '', '', 'shpilka-kolesnaya-zabivnaya-dlya-nissan-m12x125x65', '', '', '', 'Шпилька колесная забивная для Nissan M12x1.25x65', '', ''),
 (291, 1, 1, '', '', 'techline-618bd-w65-pcd5x1397-et40-dia98', '', '', '', 'Гайки секретные M12X1,5X36 Тройной никель/хром Конус Вр.кольцо кл.19-21мм', '', ''),
@@ -16725,7 +18264,7 @@ INSERT INTO `ps_product_lang` (`id_product`, `id_shop`, `id_lang`, `description`
 (397, 1, 1, '', '', 'techline-545s-w6-pcd5x100-et40-dia571', '', '', '', 'Techline 545S W6 PCD5x100 ET40 DIA57.1', '', ''),
 (398, 1, 1, '', '', 'prostavka-kolesnaya-5mm-5kh120-741', '', '', '', 'Проставка колесная 5мм 5х120 74,1', '', ''),
 (399, 1, 1, '', '', 'techline-526s-w55-pcd5x1143-et45-dia671', '', '', '', 'Гайки секретные M14X1,5X23,5 Конус Вр.кольцо кл.19-21мм', '', ''),
-(400, 1, 1, '', '', 'nabor-instrumentov-werker-1-2-1-4-94-predmetov-un-1094p-6', '', '', '', 'Набор инструментов Werker 1/2, 1/4\" 94 предметов (UN-1094П-6)\"', '', ''),
+(400, 1, 1, '', '', 'nabor-instrumentov-werker-1-2-1-4-94-predmetov-un-1094p-6', '', '', '', 'Набор инструментов Werker 1/2, 1/4" 94 предметов (UN-1094П-6)"', '', ''),
 (401, 1, 1, '', '', 'prostavka-kolesnaya-3mm-ynivers', '', '', '', 'Проставка колесная 3мм. (yниверс.)', '', ''),
 (402, 1, 1, '', '', 'techline-406bd-w55-pcd4x108-et35-dia671', '', '', '', 'Techline 406BD W5.5 PCD4x108 ET35 DIA67.1', '', ''),
 (403, 1, 1, '', '', 'techline-531s-w6-pcd4x100-et48-dia541', '', '', '', 'КОЛЬЦО ЦЕНТРОВОЧНОЕ 73,1-57,1', '', ''),
@@ -16884,7 +18423,7 @@ INSERT INTO `ps_product_lang` (`id_product`, `id_shop`, `id_lang`, `description`
 (556, 1, 1, '', '', 'kolpachki-zaglushki-dlya-litykh-diskov-75mm', '', '', '', 'Колпачки для колесных гаек и болтов 21', '', ''),
 (557, 1, 1, '', '', 'bolty-sekretnye-farad-sicurit-14x15x30-konus', '', '', '', 'Болты секретные Farad Sicurit 14x1.5x30 конус', '', ''),
 (558, 1, 1, '', '', 'bolty-sekretnye-farad-sicurit-12x125x28-konus', '', '', '', 'Болты секретные Farad Sicurit 12x1.25x28 конус', '', ''),
-(559, 1, 1, '', '', 'nabor-instrumentov-werker-1-2-1-4-108-predmetov-un-1108p-6-', '', '', '', 'Набор инструментов Werker 1/2, 1/4\" 108 предметов (UN-1108П-6) \"', '', '');
+(559, 1, 1, '', '', 'nabor-instrumentov-werker-1-2-1-4-108-predmetov-un-1108p-6-', '', '', '', 'Набор инструментов Werker 1/2, 1/4" 108 предметов (UN-1108П-6) "', '', '');
 
 -- --------------------------------------------------------
 
@@ -16892,10 +18431,10 @@ INSERT INTO `ps_product_lang` (`id_product`, `id_shop`, `id_lang`, `description`
 -- Структура таблицы `ps_product_sale`
 --
 
-CREATE TABLE `ps_product_sale` (
-  `id_product` int(10) UNSIGNED NOT NULL,
-  `quantity` int(10) UNSIGNED NOT NULL DEFAULT '0',
-  `sale_nbr` int(10) UNSIGNED NOT NULL DEFAULT '0',
+CREATE TABLE IF NOT EXISTS `ps_product_sale` (
+  `id_product` int(10) unsigned NOT NULL,
+  `quantity` int(10) unsigned NOT NULL DEFAULT '0',
+  `sale_nbr` int(10) unsigned NOT NULL DEFAULT '0',
   `date_upd` date NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
@@ -16913,15 +18452,15 @@ INSERT INTO `ps_product_sale` (`id_product`, `quantity`, `sale_nbr`, `date_upd`)
 -- Структура таблицы `ps_product_shop`
 --
 
-CREATE TABLE `ps_product_shop` (
-  `id_product` int(10) UNSIGNED NOT NULL,
-  `id_shop` int(10) UNSIGNED NOT NULL,
-  `id_category_default` int(10) UNSIGNED DEFAULT NULL,
-  `id_tax_rules_group` int(11) UNSIGNED NOT NULL,
-  `on_sale` tinyint(1) UNSIGNED NOT NULL DEFAULT '0',
-  `online_only` tinyint(1) UNSIGNED NOT NULL DEFAULT '0',
+CREATE TABLE IF NOT EXISTS `ps_product_shop` (
+  `id_product` int(10) unsigned NOT NULL,
+  `id_shop` int(10) unsigned NOT NULL,
+  `id_category_default` int(10) unsigned DEFAULT NULL,
+  `id_tax_rules_group` int(11) unsigned NOT NULL,
+  `on_sale` tinyint(1) unsigned NOT NULL DEFAULT '0',
+  `online_only` tinyint(1) unsigned NOT NULL DEFAULT '0',
   `ecotax` decimal(17,6) NOT NULL DEFAULT '0.000000',
-  `minimal_quantity` int(10) UNSIGNED NOT NULL DEFAULT '1',
+  `minimal_quantity` int(10) unsigned NOT NULL DEFAULT '1',
   `price` decimal(20,6) NOT NULL DEFAULT '0.000000',
   `wholesale_price` decimal(20,6) NOT NULL DEFAULT '0.000000',
   `unity` varchar(255) DEFAULT NULL,
@@ -16930,20 +18469,20 @@ CREATE TABLE `ps_product_shop` (
   `customizable` tinyint(2) NOT NULL DEFAULT '0',
   `uploadable_files` tinyint(4) NOT NULL DEFAULT '0',
   `text_fields` tinyint(4) NOT NULL DEFAULT '0',
-  `active` tinyint(1) UNSIGNED NOT NULL DEFAULT '0',
+  `active` tinyint(1) unsigned NOT NULL DEFAULT '0',
   `redirect_type` enum('','404','301','302') NOT NULL DEFAULT '',
-  `id_product_redirected` int(10) UNSIGNED NOT NULL DEFAULT '0',
+  `id_product_redirected` int(10) unsigned NOT NULL DEFAULT '0',
   `available_for_order` tinyint(1) NOT NULL DEFAULT '1',
   `available_date` date NOT NULL DEFAULT '0000-00-00',
   `condition` enum('new','used','refurbished') NOT NULL DEFAULT 'new',
   `show_price` tinyint(1) NOT NULL DEFAULT '1',
   `indexed` tinyint(1) NOT NULL DEFAULT '0',
   `visibility` enum('both','catalog','search','none') NOT NULL DEFAULT 'both',
-  `cache_default_attribute` int(10) UNSIGNED DEFAULT NULL,
+  `cache_default_attribute` int(10) unsigned DEFAULT NULL,
   `advanced_stock_management` tinyint(1) NOT NULL DEFAULT '0',
   `date_add` datetime NOT NULL,
   `date_upd` datetime NOT NULL,
-  `pack_stock_type` int(11) UNSIGNED NOT NULL DEFAULT '3'
+  `pack_stock_type` int(11) unsigned NOT NULL DEFAULT '3'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
@@ -17519,15 +19058,15 @@ INSERT INTO `ps_product_shop` (`id_product`, `id_shop`, `id_category_default`, `
 -- Структура таблицы `ps_product_supplier`
 --
 
-CREATE TABLE `ps_product_supplier` (
-  `id_product_supplier` int(11) UNSIGNED NOT NULL,
-  `id_product` int(11) UNSIGNED NOT NULL,
-  `id_product_attribute` int(11) UNSIGNED NOT NULL DEFAULT '0',
-  `id_supplier` int(11) UNSIGNED NOT NULL,
+CREATE TABLE IF NOT EXISTS `ps_product_supplier` (
+  `id_product_supplier` int(11) unsigned NOT NULL,
+  `id_product` int(11) unsigned NOT NULL,
+  `id_product_attribute` int(11) unsigned NOT NULL DEFAULT '0',
+  `id_supplier` int(11) unsigned NOT NULL,
   `product_supplier_reference` varchar(32) DEFAULT NULL,
   `product_supplier_price_te` decimal(20,6) NOT NULL DEFAULT '0.000000',
-  `id_currency` int(11) UNSIGNED NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+  `id_currency` int(11) unsigned NOT NULL
+) ENGINE=InnoDB AUTO_INCREMENT=307 DEFAULT CHARSET=utf8;
 
 --
 -- Дамп данных таблицы `ps_product_supplier`
@@ -17846,10 +19385,10 @@ INSERT INTO `ps_product_supplier` (`id_product_supplier`, `id_product`, `id_prod
 -- Структура таблицы `ps_product_tag`
 --
 
-CREATE TABLE `ps_product_tag` (
-  `id_product` int(10) UNSIGNED NOT NULL,
-  `id_tag` int(10) UNSIGNED NOT NULL,
-  `id_lang` int(10) UNSIGNED NOT NULL
+CREATE TABLE IF NOT EXISTS `ps_product_tag` (
+  `id_product` int(10) unsigned NOT NULL,
+  `id_tag` int(10) unsigned NOT NULL,
+  `id_lang` int(10) unsigned NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- --------------------------------------------------------
@@ -17858,9 +19397,9 @@ CREATE TABLE `ps_product_tag` (
 -- Структура таблицы `ps_profile`
 --
 
-CREATE TABLE `ps_profile` (
-  `id_profile` int(10) UNSIGNED NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+CREATE TABLE IF NOT EXISTS `ps_profile` (
+  `id_profile` int(10) unsigned NOT NULL
+) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8;
 
 --
 -- Дамп данных таблицы `ps_profile`
@@ -17878,9 +19417,9 @@ INSERT INTO `ps_profile` (`id_profile`) VALUES
 -- Структура таблицы `ps_profile_lang`
 --
 
-CREATE TABLE `ps_profile_lang` (
-  `id_lang` int(10) UNSIGNED NOT NULL,
-  `id_profile` int(10) UNSIGNED NOT NULL,
+CREATE TABLE IF NOT EXISTS `ps_profile_lang` (
+  `id_lang` int(10) unsigned NOT NULL,
+  `id_profile` int(10) unsigned NOT NULL,
   `name` varchar(128) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
@@ -17900,11 +19439,11 @@ INSERT INTO `ps_profile_lang` (`id_lang`, `id_profile`, `name`) VALUES
 -- Структура таблицы `ps_quick_access`
 --
 
-CREATE TABLE `ps_quick_access` (
-  `id_quick_access` int(10) UNSIGNED NOT NULL,
+CREATE TABLE IF NOT EXISTS `ps_quick_access` (
+  `id_quick_access` int(10) unsigned NOT NULL,
   `new_window` tinyint(1) NOT NULL DEFAULT '0',
   `link` varchar(255) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8;
 
 --
 -- Дамп данных таблицы `ps_quick_access`
@@ -17921,9 +19460,9 @@ INSERT INTO `ps_quick_access` (`id_quick_access`, `new_window`, `link`) VALUES
 -- Структура таблицы `ps_quick_access_lang`
 --
 
-CREATE TABLE `ps_quick_access_lang` (
-  `id_quick_access` int(10) UNSIGNED NOT NULL,
-  `id_lang` int(10) UNSIGNED NOT NULL,
+CREATE TABLE IF NOT EXISTS `ps_quick_access_lang` (
+  `id_quick_access` int(10) unsigned NOT NULL,
+  `id_lang` int(10) unsigned NOT NULL,
   `name` varchar(32) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
@@ -17942,12 +19481,12 @@ INSERT INTO `ps_quick_access_lang` (`id_quick_access`, `id_lang`, `name`) VALUES
 -- Структура таблицы `ps_range_price`
 --
 
-CREATE TABLE `ps_range_price` (
-  `id_range_price` int(10) UNSIGNED NOT NULL,
-  `id_carrier` int(10) UNSIGNED NOT NULL,
+CREATE TABLE IF NOT EXISTS `ps_range_price` (
+  `id_range_price` int(10) unsigned NOT NULL,
+  `id_carrier` int(10) unsigned NOT NULL,
   `delimiter1` decimal(20,6) NOT NULL,
   `delimiter2` decimal(20,6) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
 
 --
 -- Дамп данных таблицы `ps_range_price`
@@ -17962,12 +19501,12 @@ INSERT INTO `ps_range_price` (`id_range_price`, `id_carrier`, `delimiter1`, `del
 -- Структура таблицы `ps_range_weight`
 --
 
-CREATE TABLE `ps_range_weight` (
-  `id_range_weight` int(10) UNSIGNED NOT NULL,
-  `id_carrier` int(10) UNSIGNED NOT NULL,
+CREATE TABLE IF NOT EXISTS `ps_range_weight` (
+  `id_range_weight` int(10) unsigned NOT NULL,
+  `id_carrier` int(10) unsigned NOT NULL,
   `delimiter1` decimal(20,6) NOT NULL,
   `delimiter2` decimal(20,6) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8;
 
 --
 -- Дамп данных таблицы `ps_range_weight`
@@ -17983,8 +19522,8 @@ INSERT INTO `ps_range_weight` (`id_range_weight`, `id_carrier`, `delimiter1`, `d
 -- Структура таблицы `ps_referrer`
 --
 
-CREATE TABLE `ps_referrer` (
-  `id_referrer` int(10) UNSIGNED NOT NULL,
+CREATE TABLE IF NOT EXISTS `ps_referrer` (
+  `id_referrer` int(10) unsigned NOT NULL,
   `name` varchar(64) NOT NULL,
   `passwd` varchar(32) DEFAULT NULL,
   `http_referer_regexp` varchar(64) DEFAULT NULL,
@@ -18007,9 +19546,9 @@ CREATE TABLE `ps_referrer` (
 -- Структура таблицы `ps_referrer_cache`
 --
 
-CREATE TABLE `ps_referrer_cache` (
-  `id_connections_source` int(11) UNSIGNED NOT NULL,
-  `id_referrer` int(11) UNSIGNED NOT NULL
+CREATE TABLE IF NOT EXISTS `ps_referrer_cache` (
+  `id_connections_source` int(11) unsigned NOT NULL,
+  `id_referrer` int(11) unsigned NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- --------------------------------------------------------
@@ -18018,9 +19557,9 @@ CREATE TABLE `ps_referrer_cache` (
 -- Структура таблицы `ps_referrer_shop`
 --
 
-CREATE TABLE `ps_referrer_shop` (
-  `id_referrer` int(10) UNSIGNED NOT NULL,
-  `id_shop` int(10) UNSIGNED NOT NULL DEFAULT '1',
+CREATE TABLE IF NOT EXISTS `ps_referrer_shop` (
+  `id_referrer` int(10) unsigned NOT NULL,
+  `id_shop` int(10) unsigned NOT NULL DEFAULT '1',
   `cache_visitors` int(11) DEFAULT NULL,
   `cache_visits` int(11) DEFAULT NULL,
   `cache_pages` int(11) DEFAULT NULL,
@@ -18037,7 +19576,7 @@ CREATE TABLE `ps_referrer_shop` (
 -- Структура таблицы `ps_request_sql`
 --
 
-CREATE TABLE `ps_request_sql` (
+CREATE TABLE IF NOT EXISTS `ps_request_sql` (
   `id_request_sql` int(11) NOT NULL,
   `name` varchar(200) NOT NULL,
   `sql` text NOT NULL
@@ -18049,7 +19588,7 @@ CREATE TABLE `ps_request_sql` (
 -- Структура таблицы `ps_required_field`
 --
 
-CREATE TABLE `ps_required_field` (
+CREATE TABLE IF NOT EXISTS `ps_required_field` (
   `id_required_field` int(11) NOT NULL,
   `object_name` varchar(32) NOT NULL,
   `field_name` varchar(32) NOT NULL
@@ -18061,11 +19600,11 @@ CREATE TABLE `ps_required_field` (
 -- Структура таблицы `ps_risk`
 --
 
-CREATE TABLE `ps_risk` (
-  `id_risk` int(11) UNSIGNED NOT NULL,
+CREATE TABLE IF NOT EXISTS `ps_risk` (
+  `id_risk` int(11) unsigned NOT NULL,
   `percent` tinyint(3) NOT NULL,
   `color` varchar(32) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8;
 
 --
 -- Дамп данных таблицы `ps_risk`
@@ -18083,9 +19622,9 @@ INSERT INTO `ps_risk` (`id_risk`, `percent`, `color`) VALUES
 -- Структура таблицы `ps_risk_lang`
 --
 
-CREATE TABLE `ps_risk_lang` (
-  `id_risk` int(10) UNSIGNED NOT NULL,
-  `id_lang` int(10) UNSIGNED NOT NULL,
+CREATE TABLE IF NOT EXISTS `ps_risk_lang` (
+  `id_risk` int(10) unsigned NOT NULL,
+  `id_lang` int(10) unsigned NOT NULL,
   `name` varchar(20) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
@@ -18105,8 +19644,8 @@ INSERT INTO `ps_risk_lang` (`id_risk`, `id_lang`, `name`) VALUES
 -- Структура таблицы `ps_scene`
 --
 
-CREATE TABLE `ps_scene` (
-  `id_scene` int(10) UNSIGNED NOT NULL,
+CREATE TABLE IF NOT EXISTS `ps_scene` (
+  `id_scene` int(10) unsigned NOT NULL,
   `active` tinyint(1) NOT NULL DEFAULT '1'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
@@ -18116,9 +19655,9 @@ CREATE TABLE `ps_scene` (
 -- Структура таблицы `ps_scene_category`
 --
 
-CREATE TABLE `ps_scene_category` (
-  `id_scene` int(10) UNSIGNED NOT NULL,
-  `id_category` int(10) UNSIGNED NOT NULL
+CREATE TABLE IF NOT EXISTS `ps_scene_category` (
+  `id_scene` int(10) unsigned NOT NULL,
+  `id_category` int(10) unsigned NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- --------------------------------------------------------
@@ -18127,9 +19666,9 @@ CREATE TABLE `ps_scene_category` (
 -- Структура таблицы `ps_scene_lang`
 --
 
-CREATE TABLE `ps_scene_lang` (
-  `id_scene` int(10) UNSIGNED NOT NULL,
-  `id_lang` int(10) UNSIGNED NOT NULL,
+CREATE TABLE IF NOT EXISTS `ps_scene_lang` (
+  `id_scene` int(10) unsigned NOT NULL,
+  `id_lang` int(10) unsigned NOT NULL,
   `name` varchar(100) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
@@ -18139,9 +19678,9 @@ CREATE TABLE `ps_scene_lang` (
 -- Структура таблицы `ps_scene_products`
 --
 
-CREATE TABLE `ps_scene_products` (
-  `id_scene` int(10) UNSIGNED NOT NULL,
-  `id_product` int(10) UNSIGNED NOT NULL,
+CREATE TABLE IF NOT EXISTS `ps_scene_products` (
+  `id_scene` int(10) unsigned NOT NULL,
+  `id_product` int(10) unsigned NOT NULL,
   `x_axis` int(4) NOT NULL,
   `y_axis` int(4) NOT NULL,
   `zone_width` int(3) NOT NULL,
@@ -18154,9 +19693,9 @@ CREATE TABLE `ps_scene_products` (
 -- Структура таблицы `ps_scene_shop`
 --
 
-CREATE TABLE `ps_scene_shop` (
-  `id_scene` int(11) UNSIGNED NOT NULL,
-  `id_shop` int(11) UNSIGNED NOT NULL
+CREATE TABLE IF NOT EXISTS `ps_scene_shop` (
+  `id_scene` int(11) unsigned NOT NULL,
+  `id_shop` int(11) unsigned NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- --------------------------------------------------------
@@ -18165,11 +19704,11 @@ CREATE TABLE `ps_scene_shop` (
 -- Структура таблицы `ps_search_engine`
 --
 
-CREATE TABLE `ps_search_engine` (
-  `id_search_engine` int(10) UNSIGNED NOT NULL,
+CREATE TABLE IF NOT EXISTS `ps_search_engine` (
+  `id_search_engine` int(10) unsigned NOT NULL,
   `server` varchar(64) NOT NULL,
   `getvar` varchar(16) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=39 DEFAULT CHARSET=utf8;
 
 --
 -- Дамп данных таблицы `ps_search_engine`
@@ -18221,10 +19760,10 @@ INSERT INTO `ps_search_engine` (`id_search_engine`, `server`, `getvar`) VALUES
 -- Структура таблицы `ps_search_index`
 --
 
-CREATE TABLE `ps_search_index` (
-  `id_product` int(11) UNSIGNED NOT NULL,
-  `id_word` int(11) UNSIGNED NOT NULL,
-  `weight` smallint(4) UNSIGNED NOT NULL DEFAULT '1'
+CREATE TABLE IF NOT EXISTS `ps_search_index` (
+  `id_product` int(11) unsigned NOT NULL,
+  `id_word` int(11) unsigned NOT NULL,
+  `weight` smallint(4) unsigned NOT NULL DEFAULT '1'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
@@ -18660,12 +20199,12 @@ INSERT INTO `ps_search_index` (`id_product`, `id_word`, `weight`) VALUES
 -- Структура таблицы `ps_search_word`
 --
 
-CREATE TABLE `ps_search_word` (
-  `id_word` int(10) UNSIGNED NOT NULL,
-  `id_shop` int(11) UNSIGNED NOT NULL DEFAULT '1',
-  `id_lang` int(10) UNSIGNED NOT NULL,
+CREATE TABLE IF NOT EXISTS `ps_search_word` (
+  `id_word` int(10) unsigned NOT NULL,
+  `id_shop` int(11) unsigned NOT NULL DEFAULT '1',
+  `id_lang` int(10) unsigned NOT NULL,
   `word` varchar(15) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=598 DEFAULT CHARSET=utf8;
 
 --
 -- Дамп данных таблицы `ps_search_word`
@@ -18840,10 +20379,10 @@ INSERT INTO `ps_search_word` (`id_word`, `id_shop`, `id_lang`, `word`) VALUES
 -- Структура таблицы `ps_sekeyword`
 --
 
-CREATE TABLE `ps_sekeyword` (
-  `id_sekeyword` int(10) UNSIGNED NOT NULL,
-  `id_shop` int(10) UNSIGNED NOT NULL DEFAULT '1',
-  `id_shop_group` int(10) UNSIGNED NOT NULL DEFAULT '1',
+CREATE TABLE IF NOT EXISTS `ps_sekeyword` (
+  `id_sekeyword` int(10) unsigned NOT NULL,
+  `id_shop` int(10) unsigned NOT NULL DEFAULT '1',
+  `id_shop_group` int(10) unsigned NOT NULL DEFAULT '1',
   `keyword` varchar(256) NOT NULL,
   `date_add` datetime NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
@@ -18854,15 +20393,15 @@ CREATE TABLE `ps_sekeyword` (
 -- Структура таблицы `ps_shop`
 --
 
-CREATE TABLE `ps_shop` (
-  `id_shop` int(11) UNSIGNED NOT NULL,
-  `id_shop_group` int(11) UNSIGNED NOT NULL,
+CREATE TABLE IF NOT EXISTS `ps_shop` (
+  `id_shop` int(11) unsigned NOT NULL,
+  `id_shop_group` int(11) unsigned NOT NULL,
   `name` varchar(64) NOT NULL,
-  `id_category` int(11) UNSIGNED NOT NULL DEFAULT '1',
-  `id_theme` int(1) UNSIGNED NOT NULL,
+  `id_category` int(11) unsigned NOT NULL DEFAULT '1',
+  `id_theme` int(1) unsigned NOT NULL,
   `active` tinyint(1) NOT NULL DEFAULT '1',
   `deleted` tinyint(1) NOT NULL DEFAULT '0'
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
 
 --
 -- Дамп данных таблицы `ps_shop`
@@ -18877,15 +20416,15 @@ INSERT INTO `ps_shop` (`id_shop`, `id_shop_group`, `name`, `id_category`, `id_th
 -- Структура таблицы `ps_shop_group`
 --
 
-CREATE TABLE `ps_shop_group` (
-  `id_shop_group` int(11) UNSIGNED NOT NULL,
+CREATE TABLE IF NOT EXISTS `ps_shop_group` (
+  `id_shop_group` int(11) unsigned NOT NULL,
   `name` varchar(64) NOT NULL,
   `share_customer` tinyint(1) NOT NULL,
   `share_order` tinyint(1) NOT NULL,
   `share_stock` tinyint(1) NOT NULL,
   `active` tinyint(1) NOT NULL DEFAULT '1',
   `deleted` tinyint(1) NOT NULL DEFAULT '0'
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
 
 --
 -- Дамп данных таблицы `ps_shop_group`
@@ -18900,16 +20439,16 @@ INSERT INTO `ps_shop_group` (`id_shop_group`, `name`, `share_customer`, `share_o
 -- Структура таблицы `ps_shop_url`
 --
 
-CREATE TABLE `ps_shop_url` (
-  `id_shop_url` int(11) UNSIGNED NOT NULL,
-  `id_shop` int(11) UNSIGNED NOT NULL,
+CREATE TABLE IF NOT EXISTS `ps_shop_url` (
+  `id_shop_url` int(11) unsigned NOT NULL,
+  `id_shop` int(11) unsigned NOT NULL,
   `domain` varchar(150) NOT NULL,
   `domain_ssl` varchar(150) NOT NULL,
   `physical_uri` varchar(64) NOT NULL,
   `virtual_uri` varchar(64) NOT NULL,
   `main` tinyint(1) NOT NULL,
   `active` tinyint(1) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
 
 --
 -- Дамп данных таблицы `ps_shop_url`
@@ -18924,7 +20463,7 @@ INSERT INTO `ps_shop_url` (`id_shop_url`, `id_shop`, `domain`, `domain_ssl`, `ph
 -- Структура таблицы `ps_smarty_cache`
 --
 
-CREATE TABLE `ps_smarty_cache` (
+CREATE TABLE IF NOT EXISTS `ps_smarty_cache` (
   `id_smarty_cache` char(40) NOT NULL,
   `name` char(40) NOT NULL,
   `cache_id` varchar(254) DEFAULT NULL,
@@ -18938,7 +20477,7 @@ CREATE TABLE `ps_smarty_cache` (
 -- Структура таблицы `ps_smarty_last_flush`
 --
 
-CREATE TABLE `ps_smarty_last_flush` (
+CREATE TABLE IF NOT EXISTS `ps_smarty_last_flush` (
   `type` enum('compile','template') NOT NULL,
   `last_flush` datetime NOT NULL DEFAULT '0000-00-00 00:00:00'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
@@ -18949,7 +20488,7 @@ CREATE TABLE `ps_smarty_last_flush` (
 
 INSERT INTO `ps_smarty_last_flush` (`type`, `last_flush`) VALUES
 ('compile', '2018-09-14 22:59:38'),
-('template', '2018-09-14 22:59:37');
+('template', '2018-09-17 13:04:22');
 
 -- --------------------------------------------------------
 
@@ -18957,7 +20496,7 @@ INSERT INTO `ps_smarty_last_flush` (`type`, `last_flush`) VALUES
 -- Структура таблицы `ps_smarty_lazy_cache`
 --
 
-CREATE TABLE `ps_smarty_lazy_cache` (
+CREATE TABLE IF NOT EXISTS `ps_smarty_lazy_cache` (
   `template_hash` varchar(32) NOT NULL DEFAULT '',
   `cache_id` varchar(255) NOT NULL DEFAULT '',
   `compile_id` varchar(32) NOT NULL DEFAULT '',
@@ -18971,26 +20510,26 @@ CREATE TABLE `ps_smarty_lazy_cache` (
 -- Структура таблицы `ps_specific_price`
 --
 
-CREATE TABLE `ps_specific_price` (
-  `id_specific_price` int(10) UNSIGNED NOT NULL,
-  `id_specific_price_rule` int(11) UNSIGNED NOT NULL,
-  `id_cart` int(11) UNSIGNED NOT NULL,
-  `id_product` int(10) UNSIGNED NOT NULL,
-  `id_shop` int(11) UNSIGNED NOT NULL DEFAULT '1',
-  `id_shop_group` int(11) UNSIGNED NOT NULL,
-  `id_currency` int(10) UNSIGNED NOT NULL,
-  `id_country` int(10) UNSIGNED NOT NULL,
-  `id_group` int(10) UNSIGNED NOT NULL,
-  `id_customer` int(10) UNSIGNED NOT NULL,
-  `id_product_attribute` int(10) UNSIGNED NOT NULL,
+CREATE TABLE IF NOT EXISTS `ps_specific_price` (
+  `id_specific_price` int(10) unsigned NOT NULL,
+  `id_specific_price_rule` int(11) unsigned NOT NULL,
+  `id_cart` int(11) unsigned NOT NULL,
+  `id_product` int(10) unsigned NOT NULL,
+  `id_shop` int(11) unsigned NOT NULL DEFAULT '1',
+  `id_shop_group` int(11) unsigned NOT NULL,
+  `id_currency` int(10) unsigned NOT NULL,
+  `id_country` int(10) unsigned NOT NULL,
+  `id_group` int(10) unsigned NOT NULL,
+  `id_customer` int(10) unsigned NOT NULL,
+  `id_product_attribute` int(10) unsigned NOT NULL,
   `price` decimal(20,6) NOT NULL,
-  `from_quantity` mediumint(8) UNSIGNED NOT NULL,
+  `from_quantity` mediumint(8) unsigned NOT NULL,
   `reduction` decimal(20,6) NOT NULL,
   `reduction_tax` tinyint(1) NOT NULL DEFAULT '1',
   `reduction_type` enum('amount','percentage') NOT NULL,
   `from` datetime NOT NULL,
   `to` datetime NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=653 DEFAULT CHARSET=utf8;
 
 --
 -- Дамп данных таблицы `ps_specific_price`
@@ -19326,11 +20865,11 @@ INSERT INTO `ps_specific_price` (`id_specific_price`, `id_specific_price_rule`, 
 -- Структура таблицы `ps_specific_price_priority`
 --
 
-CREATE TABLE `ps_specific_price_priority` (
+CREATE TABLE IF NOT EXISTS `ps_specific_price_priority` (
   `id_specific_price_priority` int(11) NOT NULL,
   `id_product` int(11) NOT NULL,
   `priority` varchar(80) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8;
 
 --
 -- Дамп данных таблицы `ps_specific_price_priority`
@@ -19347,21 +20886,21 @@ INSERT INTO `ps_specific_price_priority` (`id_specific_price_priority`, `id_prod
 -- Структура таблицы `ps_specific_price_rule`
 --
 
-CREATE TABLE `ps_specific_price_rule` (
-  `id_specific_price_rule` int(10) UNSIGNED NOT NULL,
+CREATE TABLE IF NOT EXISTS `ps_specific_price_rule` (
+  `id_specific_price_rule` int(10) unsigned NOT NULL,
   `name` varchar(255) NOT NULL,
-  `id_shop` int(11) UNSIGNED NOT NULL DEFAULT '1',
-  `id_currency` int(10) UNSIGNED NOT NULL,
-  `id_country` int(10) UNSIGNED NOT NULL,
-  `id_group` int(10) UNSIGNED NOT NULL,
-  `from_quantity` mediumint(8) UNSIGNED NOT NULL,
+  `id_shop` int(11) unsigned NOT NULL DEFAULT '1',
+  `id_currency` int(10) unsigned NOT NULL,
+  `id_country` int(10) unsigned NOT NULL,
+  `id_group` int(10) unsigned NOT NULL,
+  `from_quantity` mediumint(8) unsigned NOT NULL,
   `price` decimal(20,6) DEFAULT NULL,
   `reduction` decimal(20,6) NOT NULL,
   `reduction_tax` tinyint(1) NOT NULL DEFAULT '1',
   `reduction_type` enum('amount','percentage') NOT NULL,
   `from` datetime NOT NULL,
   `to` datetime NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8;
 
 --
 -- Дамп данных таблицы `ps_specific_price_rule`
@@ -19377,12 +20916,12 @@ INSERT INTO `ps_specific_price_rule` (`id_specific_price_rule`, `name`, `id_shop
 -- Структура таблицы `ps_specific_price_rule_condition`
 --
 
-CREATE TABLE `ps_specific_price_rule_condition` (
-  `id_specific_price_rule_condition` int(11) UNSIGNED NOT NULL,
-  `id_specific_price_rule_condition_group` int(11) UNSIGNED NOT NULL,
+CREATE TABLE IF NOT EXISTS `ps_specific_price_rule_condition` (
+  `id_specific_price_rule_condition` int(11) unsigned NOT NULL,
+  `id_specific_price_rule_condition_group` int(11) unsigned NOT NULL,
   `type` varchar(255) NOT NULL,
   `value` varchar(255) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8;
 
 --
 -- Дамп данных таблицы `ps_specific_price_rule_condition`
@@ -19398,10 +20937,10 @@ INSERT INTO `ps_specific_price_rule_condition` (`id_specific_price_rule_conditio
 -- Структура таблицы `ps_specific_price_rule_condition_group`
 --
 
-CREATE TABLE `ps_specific_price_rule_condition_group` (
-  `id_specific_price_rule_condition_group` int(11) UNSIGNED NOT NULL,
-  `id_specific_price_rule` int(11) UNSIGNED NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+CREATE TABLE IF NOT EXISTS `ps_specific_price_rule_condition_group` (
+  `id_specific_price_rule_condition_group` int(11) unsigned NOT NULL,
+  `id_specific_price_rule` int(11) unsigned NOT NULL
+) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8;
 
 --
 -- Дамп данных таблицы `ps_specific_price_rule_condition_group`
@@ -19417,15 +20956,15 @@ INSERT INTO `ps_specific_price_rule_condition_group` (`id_specific_price_rule_co
 -- Структура таблицы `ps_state`
 --
 
-CREATE TABLE `ps_state` (
-  `id_state` int(10) UNSIGNED NOT NULL,
-  `id_country` int(11) UNSIGNED NOT NULL,
-  `id_zone` int(11) UNSIGNED NOT NULL,
+CREATE TABLE IF NOT EXISTS `ps_state` (
+  `id_state` int(10) unsigned NOT NULL,
+  `id_country` int(11) unsigned NOT NULL,
+  `id_zone` int(11) unsigned NOT NULL,
   `name` varchar(64) NOT NULL,
   `iso_code` varchar(7) NOT NULL,
   `tax_behavior` smallint(1) NOT NULL DEFAULT '0',
   `active` tinyint(1) NOT NULL DEFAULT '0'
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=338 DEFAULT CHARSET=utf8;
 
 --
 -- Дамп данных таблицы `ps_state`
@@ -19597,7 +21136,7 @@ INSERT INTO `ps_state` (`id_state`, `id_country`, `id_zone`, `name`, `iso_code`,
 (163, 10, 1, 'Grosseto', 'GR', 0, 1),
 (164, 10, 1, 'Imperia', 'IM', 0, 1),
 (165, 10, 1, 'Isernia', 'IS', 0, 1),
-(166, 10, 1, 'L\'Aquila', 'AQ', 0, 1),
+(166, 10, 1, 'L''Aquila', 'AQ', 0, 1),
 (167, 10, 1, 'La Spezia', 'SP', 0, 1),
 (168, 10, 1, 'Latina', 'LT', 0, 1),
 (169, 10, 1, 'Lecce', 'LE', 0, 1),
@@ -19776,14 +21315,24 @@ INSERT INTO `ps_state` (`id_state`, `id_country`, `id_zone`, `name`, `iso_code`,
 -- Структура таблицы `ps_statssearch`
 --
 
-CREATE TABLE `ps_statssearch` (
-  `id_statssearch` int(10) UNSIGNED NOT NULL,
-  `id_shop` int(10) UNSIGNED NOT NULL DEFAULT '1',
-  `id_shop_group` int(10) UNSIGNED NOT NULL DEFAULT '1',
+CREATE TABLE IF NOT EXISTS `ps_statssearch` (
+  `id_statssearch` int(10) unsigned NOT NULL,
+  `id_shop` int(10) unsigned NOT NULL DEFAULT '1',
+  `id_shop_group` int(10) unsigned NOT NULL DEFAULT '1',
   `keywords` varchar(255) NOT NULL,
   `results` int(6) NOT NULL DEFAULT '0',
   `date_add` datetime NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8;
+
+--
+-- Дамп данных таблицы `ps_statssearch`
+--
+
+INSERT INTO `ps_statssearch` (`id_statssearch`, `id_shop`, `id_shop_group`, `keywords`, `results`, `date_add`) VALUES
+(1, 1, 1, 'gaj', 1, '2018-09-17 11:35:51'),
+(2, 1, 1, 'gajka', 1, '2018-09-17 11:35:51'),
+(3, 1, 1, 'gajka', 1, '2018-09-17 13:07:00'),
+(4, 1, 1, 'gajk', 1, '2018-09-17 13:33:05');
 
 -- --------------------------------------------------------
 
@@ -19791,16 +21340,16 @@ CREATE TABLE `ps_statssearch` (
 -- Структура таблицы `ps_stock`
 --
 
-CREATE TABLE `ps_stock` (
-  `id_stock` int(11) UNSIGNED NOT NULL,
-  `id_warehouse` int(11) UNSIGNED NOT NULL,
-  `id_product` int(11) UNSIGNED NOT NULL,
-  `id_product_attribute` int(11) UNSIGNED NOT NULL,
+CREATE TABLE IF NOT EXISTS `ps_stock` (
+  `id_stock` int(11) unsigned NOT NULL,
+  `id_warehouse` int(11) unsigned NOT NULL,
+  `id_product` int(11) unsigned NOT NULL,
+  `id_product_attribute` int(11) unsigned NOT NULL,
   `reference` varchar(32) NOT NULL,
   `ean13` varchar(13) DEFAULT NULL,
   `upc` varchar(12) DEFAULT NULL,
-  `physical_quantity` int(11) UNSIGNED NOT NULL,
-  `usable_quantity` int(11) UNSIGNED NOT NULL,
+  `physical_quantity` int(11) unsigned NOT NULL,
+  `usable_quantity` int(11) unsigned NOT NULL,
   `price_te` decimal(20,6) DEFAULT '0.000000'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
@@ -19810,16 +21359,16 @@ CREATE TABLE `ps_stock` (
 -- Структура таблицы `ps_stock_available`
 --
 
-CREATE TABLE `ps_stock_available` (
-  `id_stock_available` int(11) UNSIGNED NOT NULL,
-  `id_product` int(11) UNSIGNED NOT NULL,
-  `id_product_attribute` int(11) UNSIGNED NOT NULL,
-  `id_shop` int(11) UNSIGNED NOT NULL,
-  `id_shop_group` int(11) UNSIGNED NOT NULL,
+CREATE TABLE IF NOT EXISTS `ps_stock_available` (
+  `id_stock_available` int(11) unsigned NOT NULL,
+  `id_product` int(11) unsigned NOT NULL,
+  `id_product_attribute` int(11) unsigned NOT NULL,
+  `id_shop` int(11) unsigned NOT NULL,
+  `id_shop_group` int(11) unsigned NOT NULL,
   `quantity` int(10) NOT NULL DEFAULT '0',
-  `depends_on_stock` tinyint(1) UNSIGNED NOT NULL DEFAULT '0',
-  `out_of_stock` tinyint(1) UNSIGNED NOT NULL DEFAULT '0'
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+  `depends_on_stock` tinyint(1) unsigned NOT NULL DEFAULT '0',
+  `out_of_stock` tinyint(1) unsigned NOT NULL DEFAULT '0'
+) ENGINE=InnoDB AUTO_INCREMENT=560 DEFAULT CHARSET=utf8;
 
 --
 -- Дамп данных таблицы `ps_stock_available`
@@ -20392,22 +21941,22 @@ INSERT INTO `ps_stock_available` (`id_stock_available`, `id_product`, `id_produc
 -- Структура таблицы `ps_stock_mvt`
 --
 
-CREATE TABLE `ps_stock_mvt` (
-  `id_stock_mvt` bigint(20) UNSIGNED NOT NULL,
-  `id_stock` int(11) UNSIGNED NOT NULL,
-  `id_order` int(11) UNSIGNED DEFAULT NULL,
-  `id_supply_order` int(11) UNSIGNED DEFAULT NULL,
-  `id_stock_mvt_reason` int(11) UNSIGNED NOT NULL,
-  `id_employee` int(11) UNSIGNED NOT NULL,
+CREATE TABLE IF NOT EXISTS `ps_stock_mvt` (
+  `id_stock_mvt` bigint(20) unsigned NOT NULL,
+  `id_stock` int(11) unsigned NOT NULL,
+  `id_order` int(11) unsigned DEFAULT NULL,
+  `id_supply_order` int(11) unsigned DEFAULT NULL,
+  `id_stock_mvt_reason` int(11) unsigned NOT NULL,
+  `id_employee` int(11) unsigned NOT NULL,
   `employee_lastname` varchar(32) DEFAULT '',
   `employee_firstname` varchar(32) DEFAULT '',
-  `physical_quantity` int(11) UNSIGNED NOT NULL,
+  `physical_quantity` int(11) unsigned NOT NULL,
   `date_add` datetime NOT NULL,
   `sign` tinyint(1) NOT NULL DEFAULT '1',
   `price_te` decimal(20,6) DEFAULT '0.000000',
   `last_wa` decimal(20,6) DEFAULT '0.000000',
   `current_wa` decimal(20,6) DEFAULT '0.000000',
-  `referer` bigint(20) UNSIGNED DEFAULT NULL
+  `referer` bigint(20) unsigned DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- --------------------------------------------------------
@@ -20416,13 +21965,13 @@ CREATE TABLE `ps_stock_mvt` (
 -- Структура таблицы `ps_stock_mvt_reason`
 --
 
-CREATE TABLE `ps_stock_mvt_reason` (
-  `id_stock_mvt_reason` int(11) UNSIGNED NOT NULL,
+CREATE TABLE IF NOT EXISTS `ps_stock_mvt_reason` (
+  `id_stock_mvt_reason` int(11) unsigned NOT NULL,
   `sign` tinyint(1) NOT NULL DEFAULT '1',
   `date_add` datetime NOT NULL,
   `date_upd` datetime NOT NULL,
-  `deleted` tinyint(1) UNSIGNED NOT NULL DEFAULT '0'
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+  `deleted` tinyint(1) unsigned NOT NULL DEFAULT '0'
+) ENGINE=InnoDB AUTO_INCREMENT=9 DEFAULT CHARSET=utf8;
 
 --
 -- Дамп данных таблицы `ps_stock_mvt_reason`
@@ -20444,9 +21993,9 @@ INSERT INTO `ps_stock_mvt_reason` (`id_stock_mvt_reason`, `sign`, `date_add`, `d
 -- Структура таблицы `ps_stock_mvt_reason_lang`
 --
 
-CREATE TABLE `ps_stock_mvt_reason_lang` (
-  `id_stock_mvt_reason` int(11) UNSIGNED NOT NULL,
-  `id_lang` int(11) UNSIGNED NOT NULL,
+CREATE TABLE IF NOT EXISTS `ps_stock_mvt_reason_lang` (
+  `id_stock_mvt_reason` int(11) unsigned NOT NULL,
+  `id_lang` int(11) unsigned NOT NULL,
   `name` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
@@ -20470,10 +22019,10 @@ INSERT INTO `ps_stock_mvt_reason_lang` (`id_stock_mvt_reason`, `id_lang`, `name`
 -- Структура таблицы `ps_store`
 --
 
-CREATE TABLE `ps_store` (
-  `id_store` int(10) UNSIGNED NOT NULL,
-  `id_country` int(10) UNSIGNED NOT NULL,
-  `id_state` int(10) UNSIGNED DEFAULT NULL,
+CREATE TABLE IF NOT EXISTS `ps_store` (
+  `id_store` int(10) unsigned NOT NULL,
+  `id_country` int(10) unsigned NOT NULL,
+  `id_state` int(10) unsigned DEFAULT NULL,
   `name` varchar(128) NOT NULL,
   `address1` varchar(128) NOT NULL,
   `address2` varchar(128) DEFAULT NULL,
@@ -20486,21 +22035,21 @@ CREATE TABLE `ps_store` (
   `fax` varchar(16) DEFAULT NULL,
   `email` varchar(128) DEFAULT NULL,
   `note` text,
-  `active` tinyint(1) UNSIGNED NOT NULL DEFAULT '0',
+  `active` tinyint(1) unsigned NOT NULL DEFAULT '0',
   `date_add` datetime NOT NULL,
   `date_upd` datetime NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8;
 
 --
 -- Дамп данных таблицы `ps_store`
 --
 
 INSERT INTO `ps_store` (`id_store`, `id_country`, `id_state`, `name`, `address1`, `address2`, `city`, `postcode`, `latitude`, `longitude`, `hours`, `phone`, `fax`, `email`, `note`, `active`, `date_add`, `date_upd`) VALUES
-(1, 21, 9, 'Dade County', '3030 SW 8th St Miami', '', 'Miami', ' 33135', '25.76500500', '-80.24379700', 'a:7:{i:0;s:13:\"09:00 - 19:00\";i:1;s:13:\"09:00 - 19:00\";i:2;s:13:\"09:00 - 19:00\";i:3;s:13:\"09:00 - 19:00\";i:4;s:13:\"09:00 - 19:00\";i:5;s:13:\"10:00 - 16:00\";i:6;s:13:\"10:00 - 16:00\";}', '', '', '', '', 1, '2018-08-10 15:51:45', '2018-08-10 15:51:45'),
-(2, 21, 9, 'E Fort Lauderdale', '1000 Northeast 4th Ave Fort Lauderdale', '', 'Miami', ' 33304', '26.13793600', '-80.13943500', 'a:7:{i:0;s:13:\"09:00 - 19:00\";i:1;s:13:\"09:00 - 19:00\";i:2;s:13:\"09:00 - 19:00\";i:3;s:13:\"09:00 - 19:00\";i:4;s:13:\"09:00 - 19:00\";i:5;s:13:\"10:00 - 16:00\";i:6;s:13:\"10:00 - 16:00\";}', '', '', '', '', 1, '2018-08-10 15:51:45', '2018-08-10 15:51:45'),
-(3, 21, 9, 'Pembroke Pines', '11001 Pines Blvd Pembroke Pines', '', 'Miami', '33026', '26.00998700', '-80.29447200', 'a:7:{i:0;s:13:\"09:00 - 19:00\";i:1;s:13:\"09:00 - 19:00\";i:2;s:13:\"09:00 - 19:00\";i:3;s:13:\"09:00 - 19:00\";i:4;s:13:\"09:00 - 19:00\";i:5;s:13:\"10:00 - 16:00\";i:6;s:13:\"10:00 - 16:00\";}', '', '', '', '', 1, '2018-08-10 15:51:45', '2018-08-10 15:51:45'),
-(4, 21, 9, 'Coconut Grove', '2999 SW 32nd Avenue', '', 'Miami', ' 33133', '25.73629600', '-80.24479700', 'a:7:{i:0;s:13:\"09:00 - 19:00\";i:1;s:13:\"09:00 - 19:00\";i:2;s:13:\"09:00 - 19:00\";i:3;s:13:\"09:00 - 19:00\";i:4;s:13:\"09:00 - 19:00\";i:5;s:13:\"10:00 - 16:00\";i:6;s:13:\"10:00 - 16:00\";}', '', '', '', '', 1, '2018-08-10 15:51:45', '2018-08-10 15:51:45'),
-(5, 21, 9, 'N Miami/Biscayne', '12055 Biscayne Blvd', '', 'Miami', '33181', '25.88674000', '-80.16329200', 'a:7:{i:0;s:13:\"09:00 - 19:00\";i:1;s:13:\"09:00 - 19:00\";i:2;s:13:\"09:00 - 19:00\";i:3;s:13:\"09:00 - 19:00\";i:4;s:13:\"09:00 - 19:00\";i:5;s:13:\"10:00 - 16:00\";i:6;s:13:\"10:00 - 16:00\";}', '', '', '', '', 1, '2018-08-10 15:51:45', '2018-08-10 15:51:45');
+(1, 21, 9, 'Dade County', '3030 SW 8th St Miami', '', 'Miami', ' 33135', '25.76500500', '-80.24379700', 'a:7:{i:0;s:13:"09:00 - 19:00";i:1;s:13:"09:00 - 19:00";i:2;s:13:"09:00 - 19:00";i:3;s:13:"09:00 - 19:00";i:4;s:13:"09:00 - 19:00";i:5;s:13:"10:00 - 16:00";i:6;s:13:"10:00 - 16:00";}', '', '', '', '', 1, '2018-08-10 15:51:45', '2018-08-10 15:51:45'),
+(2, 21, 9, 'E Fort Lauderdale', '1000 Northeast 4th Ave Fort Lauderdale', '', 'Miami', ' 33304', '26.13793600', '-80.13943500', 'a:7:{i:0;s:13:"09:00 - 19:00";i:1;s:13:"09:00 - 19:00";i:2;s:13:"09:00 - 19:00";i:3;s:13:"09:00 - 19:00";i:4;s:13:"09:00 - 19:00";i:5;s:13:"10:00 - 16:00";i:6;s:13:"10:00 - 16:00";}', '', '', '', '', 1, '2018-08-10 15:51:45', '2018-08-10 15:51:45'),
+(3, 21, 9, 'Pembroke Pines', '11001 Pines Blvd Pembroke Pines', '', 'Miami', '33026', '26.00998700', '-80.29447200', 'a:7:{i:0;s:13:"09:00 - 19:00";i:1;s:13:"09:00 - 19:00";i:2;s:13:"09:00 - 19:00";i:3;s:13:"09:00 - 19:00";i:4;s:13:"09:00 - 19:00";i:5;s:13:"10:00 - 16:00";i:6;s:13:"10:00 - 16:00";}', '', '', '', '', 1, '2018-08-10 15:51:45', '2018-08-10 15:51:45'),
+(4, 21, 9, 'Coconut Grove', '2999 SW 32nd Avenue', '', 'Miami', ' 33133', '25.73629600', '-80.24479700', 'a:7:{i:0;s:13:"09:00 - 19:00";i:1;s:13:"09:00 - 19:00";i:2;s:13:"09:00 - 19:00";i:3;s:13:"09:00 - 19:00";i:4;s:13:"09:00 - 19:00";i:5;s:13:"10:00 - 16:00";i:6;s:13:"10:00 - 16:00";}', '', '', '', '', 1, '2018-08-10 15:51:45', '2018-08-10 15:51:45'),
+(5, 21, 9, 'N Miami/Biscayne', '12055 Biscayne Blvd', '', 'Miami', '33181', '25.88674000', '-80.16329200', 'a:7:{i:0;s:13:"09:00 - 19:00";i:1;s:13:"09:00 - 19:00";i:2;s:13:"09:00 - 19:00";i:3;s:13:"09:00 - 19:00";i:4;s:13:"09:00 - 19:00";i:5;s:13:"10:00 - 16:00";i:6;s:13:"10:00 - 16:00";}', '', '', '', '', 1, '2018-08-10 15:51:45', '2018-08-10 15:51:45');
 
 -- --------------------------------------------------------
 
@@ -20508,9 +22057,9 @@ INSERT INTO `ps_store` (`id_store`, `id_country`, `id_state`, `name`, `address1`
 -- Структура таблицы `ps_store_shop`
 --
 
-CREATE TABLE `ps_store_shop` (
-  `id_store` int(11) UNSIGNED NOT NULL,
-  `id_shop` int(11) UNSIGNED NOT NULL
+CREATE TABLE IF NOT EXISTS `ps_store_shop` (
+  `id_store` int(11) unsigned NOT NULL,
+  `id_shop` int(11) unsigned NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
@@ -20530,13 +22079,13 @@ INSERT INTO `ps_store_shop` (`id_store`, `id_shop`) VALUES
 -- Структура таблицы `ps_supplier`
 --
 
-CREATE TABLE `ps_supplier` (
-  `id_supplier` int(10) UNSIGNED NOT NULL,
+CREATE TABLE IF NOT EXISTS `ps_supplier` (
+  `id_supplier` int(10) unsigned NOT NULL,
   `name` varchar(64) NOT NULL,
   `date_add` datetime NOT NULL,
   `date_upd` datetime NOT NULL,
   `active` tinyint(1) NOT NULL DEFAULT '0'
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
 
 --
 -- Дамп данных таблицы `ps_supplier`
@@ -20551,9 +22100,9 @@ INSERT INTO `ps_supplier` (`id_supplier`, `name`, `date_add`, `date_upd`, `activ
 -- Структура таблицы `ps_supplier_lang`
 --
 
-CREATE TABLE `ps_supplier_lang` (
-  `id_supplier` int(10) UNSIGNED NOT NULL,
-  `id_lang` int(10) UNSIGNED NOT NULL,
+CREATE TABLE IF NOT EXISTS `ps_supplier_lang` (
+  `id_supplier` int(10) unsigned NOT NULL,
+  `id_lang` int(10) unsigned NOT NULL,
   `description` text,
   `meta_title` varchar(128) DEFAULT NULL,
   `meta_keywords` varchar(255) DEFAULT NULL,
@@ -20573,9 +22122,9 @@ INSERT INTO `ps_supplier_lang` (`id_supplier`, `id_lang`, `description`, `meta_t
 -- Структура таблицы `ps_supplier_shop`
 --
 
-CREATE TABLE `ps_supplier_shop` (
-  `id_supplier` int(11) UNSIGNED NOT NULL,
-  `id_shop` int(11) UNSIGNED NOT NULL
+CREATE TABLE IF NOT EXISTS `ps_supplier_shop` (
+  `id_supplier` int(11) unsigned NOT NULL,
+  `id_shop` int(11) unsigned NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
@@ -20591,15 +22140,15 @@ INSERT INTO `ps_supplier_shop` (`id_supplier`, `id_shop`) VALUES
 -- Структура таблицы `ps_supply_order`
 --
 
-CREATE TABLE `ps_supply_order` (
-  `id_supply_order` int(11) UNSIGNED NOT NULL,
-  `id_supplier` int(11) UNSIGNED NOT NULL,
+CREATE TABLE IF NOT EXISTS `ps_supply_order` (
+  `id_supply_order` int(11) unsigned NOT NULL,
+  `id_supplier` int(11) unsigned NOT NULL,
   `supplier_name` varchar(64) NOT NULL,
-  `id_lang` int(11) UNSIGNED NOT NULL,
-  `id_warehouse` int(11) UNSIGNED NOT NULL,
-  `id_supply_order_state` int(11) UNSIGNED NOT NULL,
-  `id_currency` int(11) UNSIGNED NOT NULL,
-  `id_ref_currency` int(11) UNSIGNED NOT NULL,
+  `id_lang` int(11) unsigned NOT NULL,
+  `id_warehouse` int(11) unsigned NOT NULL,
+  `id_supply_order_state` int(11) unsigned NOT NULL,
+  `id_currency` int(11) unsigned NOT NULL,
+  `id_ref_currency` int(11) unsigned NOT NULL,
   `reference` varchar(64) NOT NULL,
   `date_add` datetime NOT NULL,
   `date_upd` datetime NOT NULL,
@@ -20619,12 +22168,12 @@ CREATE TABLE `ps_supply_order` (
 -- Структура таблицы `ps_supply_order_detail`
 --
 
-CREATE TABLE `ps_supply_order_detail` (
-  `id_supply_order_detail` int(11) UNSIGNED NOT NULL,
-  `id_supply_order` int(11) UNSIGNED NOT NULL,
-  `id_currency` int(11) UNSIGNED NOT NULL,
-  `id_product` int(11) UNSIGNED NOT NULL,
-  `id_product_attribute` int(11) UNSIGNED NOT NULL,
+CREATE TABLE IF NOT EXISTS `ps_supply_order_detail` (
+  `id_supply_order_detail` int(11) unsigned NOT NULL,
+  `id_supply_order` int(11) unsigned NOT NULL,
+  `id_currency` int(11) unsigned NOT NULL,
+  `id_product` int(11) unsigned NOT NULL,
+  `id_product_attribute` int(11) unsigned NOT NULL,
   `reference` varchar(32) NOT NULL,
   `supplier_reference` varchar(32) NOT NULL,
   `name` varchar(128) NOT NULL,
@@ -20632,8 +22181,8 @@ CREATE TABLE `ps_supply_order_detail` (
   `upc` varchar(12) DEFAULT NULL,
   `exchange_rate` decimal(20,6) DEFAULT '0.000000',
   `unit_price_te` decimal(20,6) DEFAULT '0.000000',
-  `quantity_expected` int(11) UNSIGNED NOT NULL,
-  `quantity_received` int(11) UNSIGNED NOT NULL,
+  `quantity_expected` int(11) unsigned NOT NULL,
+  `quantity_received` int(11) unsigned NOT NULL,
   `price_te` decimal(20,6) DEFAULT '0.000000',
   `discount_rate` decimal(20,6) DEFAULT '0.000000',
   `discount_value_te` decimal(20,6) DEFAULT '0.000000',
@@ -20651,13 +22200,13 @@ CREATE TABLE `ps_supply_order_detail` (
 -- Структура таблицы `ps_supply_order_history`
 --
 
-CREATE TABLE `ps_supply_order_history` (
-  `id_supply_order_history` int(11) UNSIGNED NOT NULL,
-  `id_supply_order` int(11) UNSIGNED NOT NULL,
-  `id_employee` int(11) UNSIGNED NOT NULL,
+CREATE TABLE IF NOT EXISTS `ps_supply_order_history` (
+  `id_supply_order_history` int(11) unsigned NOT NULL,
+  `id_supply_order` int(11) unsigned NOT NULL,
+  `id_employee` int(11) unsigned NOT NULL,
   `employee_lastname` varchar(32) DEFAULT '',
   `employee_firstname` varchar(32) DEFAULT '',
-  `id_state` int(11) UNSIGNED NOT NULL,
+  `id_state` int(11) unsigned NOT NULL,
   `date_add` datetime NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
@@ -20667,14 +22216,14 @@ CREATE TABLE `ps_supply_order_history` (
 -- Структура таблицы `ps_supply_order_receipt_history`
 --
 
-CREATE TABLE `ps_supply_order_receipt_history` (
-  `id_supply_order_receipt_history` int(11) UNSIGNED NOT NULL,
-  `id_supply_order_detail` int(11) UNSIGNED NOT NULL,
-  `id_employee` int(11) UNSIGNED NOT NULL,
+CREATE TABLE IF NOT EXISTS `ps_supply_order_receipt_history` (
+  `id_supply_order_receipt_history` int(11) unsigned NOT NULL,
+  `id_supply_order_detail` int(11) unsigned NOT NULL,
+  `id_employee` int(11) unsigned NOT NULL,
   `employee_lastname` varchar(32) DEFAULT '',
   `employee_firstname` varchar(32) DEFAULT '',
-  `id_supply_order_state` int(11) UNSIGNED NOT NULL,
-  `quantity` int(11) UNSIGNED NOT NULL,
+  `id_supply_order_state` int(11) unsigned NOT NULL,
+  `quantity` int(11) unsigned NOT NULL,
   `date_add` datetime NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
@@ -20684,15 +22233,15 @@ CREATE TABLE `ps_supply_order_receipt_history` (
 -- Структура таблицы `ps_supply_order_state`
 --
 
-CREATE TABLE `ps_supply_order_state` (
-  `id_supply_order_state` int(11) UNSIGNED NOT NULL,
+CREATE TABLE IF NOT EXISTS `ps_supply_order_state` (
+  `id_supply_order_state` int(11) unsigned NOT NULL,
   `delivery_note` tinyint(1) NOT NULL DEFAULT '0',
   `editable` tinyint(1) NOT NULL DEFAULT '0',
   `receipt_state` tinyint(1) NOT NULL DEFAULT '0',
   `pending_receipt` tinyint(1) NOT NULL DEFAULT '0',
   `enclosed` tinyint(1) NOT NULL DEFAULT '0',
   `color` varchar(32) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8;
 
 --
 -- Дамп данных таблицы `ps_supply_order_state`
@@ -20712,9 +22261,9 @@ INSERT INTO `ps_supply_order_state` (`id_supply_order_state`, `delivery_note`, `
 -- Структура таблицы `ps_supply_order_state_lang`
 --
 
-CREATE TABLE `ps_supply_order_state_lang` (
-  `id_supply_order_state` int(11) UNSIGNED NOT NULL,
-  `id_lang` int(11) UNSIGNED NOT NULL,
+CREATE TABLE IF NOT EXISTS `ps_supply_order_state_lang` (
+  `id_supply_order_state` int(11) unsigned NOT NULL,
+  `id_lang` int(11) unsigned NOT NULL,
   `name` varchar(128) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
@@ -20736,15 +22285,15 @@ INSERT INTO `ps_supply_order_state_lang` (`id_supply_order_state`, `id_lang`, `n
 -- Структура таблицы `ps_tab`
 --
 
-CREATE TABLE `ps_tab` (
-  `id_tab` int(10) UNSIGNED NOT NULL,
+CREATE TABLE IF NOT EXISTS `ps_tab` (
+  `id_tab` int(10) unsigned NOT NULL,
   `id_parent` int(11) NOT NULL,
   `class_name` varchar(64) NOT NULL,
   `module` varchar(64) DEFAULT NULL,
-  `position` int(10) UNSIGNED NOT NULL,
+  `position` int(10) unsigned NOT NULL,
   `active` tinyint(1) NOT NULL DEFAULT '1',
   `hide_host_mode` tinyint(1) NOT NULL DEFAULT '0'
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=105 DEFAULT CHARSET=utf8;
 
 --
 -- Дамп данных таблицы `ps_tab`
@@ -20862,9 +22411,9 @@ INSERT INTO `ps_tab` (`id_tab`, `id_parent`, `class_name`, `module`, `position`,
 -- Структура таблицы `ps_tab_lang`
 --
 
-CREATE TABLE `ps_tab_lang` (
-  `id_tab` int(10) UNSIGNED NOT NULL,
-  `id_lang` int(10) UNSIGNED NOT NULL,
+CREATE TABLE IF NOT EXISTS `ps_tab_lang` (
+  `id_tab` int(10) unsigned NOT NULL,
+  `id_lang` int(10) unsigned NOT NULL,
   `name` varchar(64) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
@@ -20984,7 +22533,7 @@ INSERT INTO `ps_tab_lang` (`id_tab`, `id_lang`, `name`) VALUES
 -- Структура таблицы `ps_tab_module_preference`
 --
 
-CREATE TABLE `ps_tab_module_preference` (
+CREATE TABLE IF NOT EXISTS `ps_tab_module_preference` (
   `id_tab_module_preference` int(11) NOT NULL,
   `id_employee` int(11) NOT NULL,
   `id_tab` int(11) NOT NULL,
@@ -20997,9 +22546,9 @@ CREATE TABLE `ps_tab_module_preference` (
 -- Структура таблицы `ps_tag`
 --
 
-CREATE TABLE `ps_tag` (
-  `id_tag` int(10) UNSIGNED NOT NULL,
-  `id_lang` int(10) UNSIGNED NOT NULL,
+CREATE TABLE IF NOT EXISTS `ps_tag` (
+  `id_tag` int(10) unsigned NOT NULL,
+  `id_lang` int(10) unsigned NOT NULL,
   `name` varchar(32) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
@@ -21009,12 +22558,12 @@ CREATE TABLE `ps_tag` (
 -- Структура таблицы `ps_tag_count`
 --
 
-CREATE TABLE `ps_tag_count` (
-  `id_group` int(10) UNSIGNED NOT NULL DEFAULT '0',
-  `id_tag` int(10) UNSIGNED NOT NULL DEFAULT '0',
-  `id_lang` int(10) UNSIGNED NOT NULL DEFAULT '0',
-  `id_shop` int(11) UNSIGNED NOT NULL DEFAULT '0',
-  `counter` int(10) UNSIGNED NOT NULL DEFAULT '0'
+CREATE TABLE IF NOT EXISTS `ps_tag_count` (
+  `id_group` int(10) unsigned NOT NULL DEFAULT '0',
+  `id_tag` int(10) unsigned NOT NULL DEFAULT '0',
+  `id_lang` int(10) unsigned NOT NULL DEFAULT '0',
+  `id_shop` int(11) unsigned NOT NULL DEFAULT '0',
+  `counter` int(10) unsigned NOT NULL DEFAULT '0'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- --------------------------------------------------------
@@ -21023,11 +22572,11 @@ CREATE TABLE `ps_tag_count` (
 -- Структура таблицы `ps_tax`
 --
 
-CREATE TABLE `ps_tax` (
-  `id_tax` int(10) UNSIGNED NOT NULL,
+CREATE TABLE IF NOT EXISTS `ps_tax` (
+  `id_tax` int(10) unsigned NOT NULL,
   `rate` decimal(10,3) NOT NULL,
-  `active` tinyint(1) UNSIGNED NOT NULL DEFAULT '1',
-  `deleted` tinyint(1) UNSIGNED NOT NULL DEFAULT '0'
+  `active` tinyint(1) unsigned NOT NULL DEFAULT '1',
+  `deleted` tinyint(1) unsigned NOT NULL DEFAULT '0'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- --------------------------------------------------------
@@ -21036,9 +22585,9 @@ CREATE TABLE `ps_tax` (
 -- Структура таблицы `ps_tax_lang`
 --
 
-CREATE TABLE `ps_tax_lang` (
-  `id_tax` int(10) UNSIGNED NOT NULL,
-  `id_lang` int(10) UNSIGNED NOT NULL,
+CREATE TABLE IF NOT EXISTS `ps_tax_lang` (
+  `id_tax` int(10) unsigned NOT NULL,
+  `id_lang` int(10) unsigned NOT NULL,
   `name` varchar(32) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
@@ -21048,7 +22597,7 @@ CREATE TABLE `ps_tax_lang` (
 -- Структура таблицы `ps_tax_rule`
 --
 
-CREATE TABLE `ps_tax_rule` (
+CREATE TABLE IF NOT EXISTS `ps_tax_rule` (
   `id_tax_rule` int(11) NOT NULL,
   `id_tax_rules_group` int(11) NOT NULL,
   `id_country` int(11) NOT NULL,
@@ -21066,11 +22615,11 @@ CREATE TABLE `ps_tax_rule` (
 -- Структура таблицы `ps_tax_rules_group`
 --
 
-CREATE TABLE `ps_tax_rules_group` (
+CREATE TABLE IF NOT EXISTS `ps_tax_rules_group` (
   `id_tax_rules_group` int(11) NOT NULL,
   `name` varchar(50) NOT NULL,
   `active` int(11) NOT NULL,
-  `deleted` tinyint(1) UNSIGNED NOT NULL,
+  `deleted` tinyint(1) unsigned NOT NULL,
   `date_add` datetime NOT NULL,
   `date_upd` datetime NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
@@ -21081,9 +22630,9 @@ CREATE TABLE `ps_tax_rules_group` (
 -- Структура таблицы `ps_tax_rules_group_shop`
 --
 
-CREATE TABLE `ps_tax_rules_group_shop` (
-  `id_tax_rules_group` int(11) UNSIGNED NOT NULL,
-  `id_shop` int(11) UNSIGNED NOT NULL
+CREATE TABLE IF NOT EXISTS `ps_tax_rules_group_shop` (
+  `id_tax_rules_group` int(11) unsigned NOT NULL,
+  `id_shop` int(11) unsigned NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- --------------------------------------------------------
@@ -21092,15 +22641,15 @@ CREATE TABLE `ps_tax_rules_group_shop` (
 -- Структура таблицы `ps_theme`
 --
 
-CREATE TABLE `ps_theme` (
+CREATE TABLE IF NOT EXISTS `ps_theme` (
   `id_theme` int(11) NOT NULL,
   `name` varchar(64) NOT NULL,
   `directory` varchar(64) NOT NULL,
   `responsive` tinyint(1) NOT NULL DEFAULT '0',
   `default_left_column` tinyint(1) NOT NULL DEFAULT '0',
   `default_right_column` tinyint(1) NOT NULL DEFAULT '0',
-  `product_per_page` int(10) UNSIGNED NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+  `product_per_page` int(10) unsigned NOT NULL
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8;
 
 --
 -- Дамп данных таблицы `ps_theme`
@@ -21116,22 +22665,22 @@ INSERT INTO `ps_theme` (`id_theme`, `name`, `directory`, `responsive`, `default_
 -- Структура таблицы `ps_themeconfigurator`
 --
 
-CREATE TABLE `ps_themeconfigurator` (
-  `id_item` int(10) UNSIGNED NOT NULL,
-  `id_shop` int(10) UNSIGNED NOT NULL,
-  `id_lang` int(10) UNSIGNED NOT NULL,
-  `item_order` int(10) UNSIGNED NOT NULL,
+CREATE TABLE IF NOT EXISTS `ps_themeconfigurator` (
+  `id_item` int(10) unsigned NOT NULL,
+  `id_shop` int(10) unsigned NOT NULL,
+  `id_lang` int(10) unsigned NOT NULL,
+  `item_order` int(10) unsigned NOT NULL,
   `title` varchar(100) DEFAULT NULL,
-  `title_use` tinyint(1) UNSIGNED NOT NULL DEFAULT '0',
+  `title_use` tinyint(1) unsigned NOT NULL DEFAULT '0',
   `hook` varchar(100) DEFAULT NULL,
   `url` text,
-  `target` tinyint(1) UNSIGNED NOT NULL DEFAULT '0',
+  `target` tinyint(1) unsigned NOT NULL DEFAULT '0',
   `image` varchar(100) DEFAULT NULL,
   `image_w` varchar(10) DEFAULT NULL,
   `image_h` varchar(10) DEFAULT NULL,
   `html` text,
-  `active` tinyint(1) UNSIGNED NOT NULL DEFAULT '1'
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+  `active` tinyint(1) unsigned NOT NULL DEFAULT '1'
+) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8;
 
 --
 -- Дамп данных таблицы `ps_themeconfigurator`
@@ -21150,13 +22699,13 @@ INSERT INTO `ps_themeconfigurator` (`id_item`, `id_shop`, `id_lang`, `item_order
 -- Структура таблицы `ps_theme_meta`
 --
 
-CREATE TABLE `ps_theme_meta` (
+CREATE TABLE IF NOT EXISTS `ps_theme_meta` (
   `id_theme_meta` int(11) NOT NULL,
   `id_theme` int(11) NOT NULL,
-  `id_meta` int(10) UNSIGNED NOT NULL,
+  `id_meta` int(10) unsigned NOT NULL,
   `left_column` tinyint(1) NOT NULL DEFAULT '1',
   `right_column` tinyint(1) NOT NULL DEFAULT '1'
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=72 DEFAULT CHARSET=utf8;
 
 --
 -- Дамп данных таблицы `ps_theme_meta`
@@ -21210,7 +22759,7 @@ INSERT INTO `ps_theme_meta` (`id_theme_meta`, `id_theme`, `id_meta`, `left_colum
 (45, 2, 25, 1, 0),
 (46, 2, 16, 1, 0),
 (47, 2, 17, 1, 0),
-(48, 2, 4, 1, 0),
+(48, 2, 4, 0, 0),
 (49, 2, 5, 1, 0),
 (50, 2, 33, 1, 0),
 (51, 2, 32, 1, 0),
@@ -21241,11 +22790,11 @@ INSERT INTO `ps_theme_meta` (`id_theme_meta`, `id_theme`, `id_meta`, `left_colum
 -- Структура таблицы `ps_theme_specific`
 --
 
-CREATE TABLE `ps_theme_specific` (
-  `id_theme` int(11) UNSIGNED NOT NULL,
-  `id_shop` int(11) UNSIGNED NOT NULL,
-  `entity` int(11) UNSIGNED NOT NULL,
-  `id_object` int(11) UNSIGNED NOT NULL
+CREATE TABLE IF NOT EXISTS `ps_theme_specific` (
+  `id_theme` int(11) unsigned NOT NULL,
+  `id_shop` int(11) unsigned NOT NULL,
+  `entity` int(11) unsigned NOT NULL,
+  `id_object` int(11) unsigned NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- --------------------------------------------------------
@@ -21254,10 +22803,10 @@ CREATE TABLE `ps_theme_specific` (
 -- Структура таблицы `ps_timezone`
 --
 
-CREATE TABLE `ps_timezone` (
-  `id_timezone` int(10) UNSIGNED NOT NULL,
+CREATE TABLE IF NOT EXISTS `ps_timezone` (
+  `id_timezone` int(10) unsigned NOT NULL,
   `name` varchar(32) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=561 DEFAULT CHARSET=utf8;
 
 --
 -- Дамп данных таблицы `ps_timezone`
@@ -21831,15 +23380,15 @@ INSERT INTO `ps_timezone` (`id_timezone`, `name`) VALUES
 -- Структура таблицы `ps_warehouse`
 --
 
-CREATE TABLE `ps_warehouse` (
-  `id_warehouse` int(11) UNSIGNED NOT NULL,
-  `id_currency` int(11) UNSIGNED NOT NULL,
-  `id_address` int(11) UNSIGNED NOT NULL,
-  `id_employee` int(11) UNSIGNED NOT NULL,
+CREATE TABLE IF NOT EXISTS `ps_warehouse` (
+  `id_warehouse` int(11) unsigned NOT NULL,
+  `id_currency` int(11) unsigned NOT NULL,
+  `id_address` int(11) unsigned NOT NULL,
+  `id_employee` int(11) unsigned NOT NULL,
   `reference` varchar(32) DEFAULT NULL,
   `name` varchar(45) NOT NULL,
   `management_type` enum('WA','FIFO','LIFO') NOT NULL DEFAULT 'WA',
-  `deleted` tinyint(1) UNSIGNED NOT NULL DEFAULT '0'
+  `deleted` tinyint(1) unsigned NOT NULL DEFAULT '0'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- --------------------------------------------------------
@@ -21848,9 +23397,9 @@ CREATE TABLE `ps_warehouse` (
 -- Структура таблицы `ps_warehouse_carrier`
 --
 
-CREATE TABLE `ps_warehouse_carrier` (
-  `id_carrier` int(11) UNSIGNED NOT NULL,
-  `id_warehouse` int(11) UNSIGNED NOT NULL
+CREATE TABLE IF NOT EXISTS `ps_warehouse_carrier` (
+  `id_carrier` int(11) unsigned NOT NULL,
+  `id_warehouse` int(11) unsigned NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- --------------------------------------------------------
@@ -21859,11 +23408,11 @@ CREATE TABLE `ps_warehouse_carrier` (
 -- Структура таблицы `ps_warehouse_product_location`
 --
 
-CREATE TABLE `ps_warehouse_product_location` (
-  `id_warehouse_product_location` int(11) UNSIGNED NOT NULL,
-  `id_product` int(11) UNSIGNED NOT NULL,
-  `id_product_attribute` int(11) UNSIGNED NOT NULL,
-  `id_warehouse` int(11) UNSIGNED NOT NULL,
+CREATE TABLE IF NOT EXISTS `ps_warehouse_product_location` (
+  `id_warehouse_product_location` int(11) unsigned NOT NULL,
+  `id_product` int(11) unsigned NOT NULL,
+  `id_product_attribute` int(11) unsigned NOT NULL,
+  `id_warehouse` int(11) unsigned NOT NULL,
   `location` varchar(64) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
@@ -21873,9 +23422,9 @@ CREATE TABLE `ps_warehouse_product_location` (
 -- Структура таблицы `ps_warehouse_shop`
 --
 
-CREATE TABLE `ps_warehouse_shop` (
-  `id_shop` int(11) UNSIGNED NOT NULL,
-  `id_warehouse` int(11) UNSIGNED NOT NULL
+CREATE TABLE IF NOT EXISTS `ps_warehouse_shop` (
+  `id_shop` int(11) unsigned NOT NULL,
+  `id_warehouse` int(11) unsigned NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- --------------------------------------------------------
@@ -21884,7 +23433,7 @@ CREATE TABLE `ps_warehouse_shop` (
 -- Структура таблицы `ps_webservice_account`
 --
 
-CREATE TABLE `ps_webservice_account` (
+CREATE TABLE IF NOT EXISTS `ps_webservice_account` (
   `id_webservice_account` int(11) NOT NULL,
   `key` varchar(32) NOT NULL,
   `description` text,
@@ -21900,9 +23449,9 @@ CREATE TABLE `ps_webservice_account` (
 -- Структура таблицы `ps_webservice_account_shop`
 --
 
-CREATE TABLE `ps_webservice_account_shop` (
-  `id_webservice_account` int(11) UNSIGNED NOT NULL,
-  `id_shop` int(11) UNSIGNED NOT NULL
+CREATE TABLE IF NOT EXISTS `ps_webservice_account_shop` (
+  `id_webservice_account` int(11) unsigned NOT NULL,
+  `id_shop` int(11) unsigned NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- --------------------------------------------------------
@@ -21911,7 +23460,7 @@ CREATE TABLE `ps_webservice_account_shop` (
 -- Структура таблицы `ps_webservice_permission`
 --
 
-CREATE TABLE `ps_webservice_permission` (
+CREATE TABLE IF NOT EXISTS `ps_webservice_permission` (
   `id_webservice_permission` int(11) NOT NULL,
   `resource` varchar(50) NOT NULL,
   `method` enum('GET','POST','PUT','DELETE','HEAD') NOT NULL,
@@ -21924,10 +23473,10 @@ CREATE TABLE `ps_webservice_permission` (
 -- Структура таблицы `ps_web_browser`
 --
 
-CREATE TABLE `ps_web_browser` (
-  `id_web_browser` int(10) UNSIGNED NOT NULL,
+CREATE TABLE IF NOT EXISTS `ps_web_browser` (
+  `id_web_browser` int(10) unsigned NOT NULL,
   `name` varchar(64) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=12 DEFAULT CHARSET=utf8;
 
 --
 -- Дамп данных таблицы `ps_web_browser`
@@ -21952,11 +23501,11 @@ INSERT INTO `ps_web_browser` (`id_web_browser`, `name`) VALUES
 -- Структура таблицы `ps_zone`
 --
 
-CREATE TABLE `ps_zone` (
-  `id_zone` int(10) UNSIGNED NOT NULL,
+CREATE TABLE IF NOT EXISTS `ps_zone` (
+  `id_zone` int(10) unsigned NOT NULL,
   `name` varchar(64) NOT NULL,
-  `active` tinyint(1) UNSIGNED NOT NULL DEFAULT '0'
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+  `active` tinyint(1) unsigned NOT NULL DEFAULT '0'
+) ENGINE=InnoDB AUTO_INCREMENT=9 DEFAULT CHARSET=utf8;
 
 --
 -- Дамп данных таблицы `ps_zone`
@@ -21978,9 +23527,9 @@ INSERT INTO `ps_zone` (`id_zone`, `name`, `active`) VALUES
 -- Структура таблицы `ps_zone_shop`
 --
 
-CREATE TABLE `ps_zone_shop` (
-  `id_zone` int(11) UNSIGNED NOT NULL,
-  `id_shop` int(11) UNSIGNED NOT NULL
+CREATE TABLE IF NOT EXISTS `ps_zone_shop` (
+  `id_zone` int(11) unsigned NOT NULL,
+  `id_shop` int(11) unsigned NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
@@ -23889,837 +25438,697 @@ ALTER TABLE `ps_zone_shop`
 -- AUTO_INCREMENT для таблицы `ps_address`
 --
 ALTER TABLE `ps_address`
-  MODIFY `id_address` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=52;
-
+  MODIFY `id_address` int(10) unsigned NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=52;
 --
 -- AUTO_INCREMENT для таблицы `ps_alias`
 --
 ALTER TABLE `ps_alias`
-  MODIFY `id_alias` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
-
+  MODIFY `id_alias` int(10) unsigned NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=3;
 --
 -- AUTO_INCREMENT для таблицы `ps_attachment`
 --
 ALTER TABLE `ps_attachment`
-  MODIFY `id_attachment` int(10) UNSIGNED NOT NULL AUTO_INCREMENT;
-
+  MODIFY `id_attachment` int(10) unsigned NOT NULL AUTO_INCREMENT;
 --
 -- AUTO_INCREMENT для таблицы `ps_attachment_lang`
 --
 ALTER TABLE `ps_attachment_lang`
-  MODIFY `id_attachment` int(10) UNSIGNED NOT NULL AUTO_INCREMENT;
-
+  MODIFY `id_attachment` int(10) unsigned NOT NULL AUTO_INCREMENT;
 --
 -- AUTO_INCREMENT для таблицы `ps_attribute`
 --
 ALTER TABLE `ps_attribute`
-  MODIFY `id_attribute` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=25;
-
+  MODIFY `id_attribute` int(10) unsigned NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=25;
 --
 -- AUTO_INCREMENT для таблицы `ps_attribute_group`
 --
 ALTER TABLE `ps_attribute_group`
-  MODIFY `id_attribute_group` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
-
+  MODIFY `id_attribute_group` int(10) unsigned NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=4;
 --
 -- AUTO_INCREMENT для таблицы `ps_attribute_impact`
 --
 ALTER TABLE `ps_attribute_impact`
-  MODIFY `id_attribute_impact` int(10) UNSIGNED NOT NULL AUTO_INCREMENT;
-
+  MODIFY `id_attribute_impact` int(10) unsigned NOT NULL AUTO_INCREMENT;
 --
 -- AUTO_INCREMENT для таблицы `ps_carrier`
 --
 ALTER TABLE `ps_carrier`
-  MODIFY `id_carrier` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
-
+  MODIFY `id_carrier` int(10) unsigned NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=12;
 --
 -- AUTO_INCREMENT для таблицы `ps_cart`
 --
 ALTER TABLE `ps_cart`
-  MODIFY `id_cart` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=51;
-
+  MODIFY `id_cart` int(10) unsigned NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=51;
 --
 -- AUTO_INCREMENT для таблицы `ps_cart_rule`
 --
 ALTER TABLE `ps_cart_rule`
-  MODIFY `id_cart_rule` int(10) UNSIGNED NOT NULL AUTO_INCREMENT;
-
+  MODIFY `id_cart_rule` int(10) unsigned NOT NULL AUTO_INCREMENT;
 --
 -- AUTO_INCREMENT для таблицы `ps_cart_rule_product_rule`
 --
 ALTER TABLE `ps_cart_rule_product_rule`
-  MODIFY `id_product_rule` int(10) UNSIGNED NOT NULL AUTO_INCREMENT;
-
+  MODIFY `id_product_rule` int(10) unsigned NOT NULL AUTO_INCREMENT;
 --
 -- AUTO_INCREMENT для таблицы `ps_cart_rule_product_rule_group`
 --
 ALTER TABLE `ps_cart_rule_product_rule_group`
-  MODIFY `id_product_rule_group` int(10) UNSIGNED NOT NULL AUTO_INCREMENT;
-
+  MODIFY `id_product_rule_group` int(10) unsigned NOT NULL AUTO_INCREMENT;
 --
 -- AUTO_INCREMENT для таблицы `ps_category`
 --
 ALTER TABLE `ps_category`
-  MODIFY `id_category` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
-
+  MODIFY `id_category` int(10) unsigned NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=17;
 --
 -- AUTO_INCREMENT для таблицы `ps_cms`
 --
 ALTER TABLE `ps_cms`
-  MODIFY `id_cms` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
-
+  MODIFY `id_cms` int(10) unsigned NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=6;
 --
 -- AUTO_INCREMENT для таблицы `ps_cms_block`
 --
 ALTER TABLE `ps_cms_block`
-  MODIFY `id_cms_block` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
-
+  MODIFY `id_cms_block` int(10) unsigned NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=2;
 --
 -- AUTO_INCREMENT для таблицы `ps_cms_block_page`
 --
 ALTER TABLE `ps_cms_block_page`
-  MODIFY `id_cms_block_page` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
-
+  MODIFY `id_cms_block_page` int(10) unsigned NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=6;
 --
 -- AUTO_INCREMENT для таблицы `ps_cms_block_shop`
 --
 ALTER TABLE `ps_cms_block_shop`
-  MODIFY `id_cms_block` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
-
+  MODIFY `id_cms_block` int(10) unsigned NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=2;
 --
 -- AUTO_INCREMENT для таблицы `ps_cms_category`
 --
 ALTER TABLE `ps_cms_category`
-  MODIFY `id_cms_category` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
-
+  MODIFY `id_cms_category` int(10) unsigned NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=2;
 --
 -- AUTO_INCREMENT для таблицы `ps_cms_category_shop`
 --
 ALTER TABLE `ps_cms_category_shop`
-  MODIFY `id_cms_category` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
-
+  MODIFY `id_cms_category` int(10) unsigned NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=2;
 --
 -- AUTO_INCREMENT для таблицы `ps_cms_role`
 --
 ALTER TABLE `ps_cms_role`
-  MODIFY `id_cms_role` int(11) UNSIGNED NOT NULL AUTO_INCREMENT;
-
+  MODIFY `id_cms_role` int(11) unsigned NOT NULL AUTO_INCREMENT;
 --
 -- AUTO_INCREMENT для таблицы `ps_compare`
 --
 ALTER TABLE `ps_compare`
-  MODIFY `id_compare` int(10) UNSIGNED NOT NULL AUTO_INCREMENT;
-
+  MODIFY `id_compare` int(10) unsigned NOT NULL AUTO_INCREMENT;
 --
 -- AUTO_INCREMENT для таблицы `ps_configuration`
 --
 ALTER TABLE `ps_configuration`
-  MODIFY `id_configuration` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=489;
-
+  MODIFY `id_configuration` int(10) unsigned NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=493;
 --
 -- AUTO_INCREMENT для таблицы `ps_configuration_kpi`
 --
 ALTER TABLE `ps_configuration_kpi`
-  MODIFY `id_configuration_kpi` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=38;
-
+  MODIFY `id_configuration_kpi` int(10) unsigned NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=38;
 --
 -- AUTO_INCREMENT для таблицы `ps_connections`
 --
 ALTER TABLE `ps_connections`
-  MODIFY `id_connections` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=59;
-
+  MODIFY `id_connections` int(10) unsigned NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=78;
 --
 -- AUTO_INCREMENT для таблицы `ps_connections_source`
 --
 ALTER TABLE `ps_connections_source`
-  MODIFY `id_connections_source` int(10) UNSIGNED NOT NULL AUTO_INCREMENT;
-
+  MODIFY `id_connections_source` int(10) unsigned NOT NULL AUTO_INCREMENT;
 --
 -- AUTO_INCREMENT для таблицы `ps_contact`
 --
 ALTER TABLE `ps_contact`
-  MODIFY `id_contact` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
-
+  MODIFY `id_contact` int(10) unsigned NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=3;
 --
 -- AUTO_INCREMENT для таблицы `ps_contentbox`
 --
 ALTER TABLE `ps_contentbox`
-  MODIFY `content_id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
-
+  MODIFY `content_id` int(10) unsigned NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=2;
 --
 -- AUTO_INCREMENT для таблицы `ps_contentbox_files`
 --
 ALTER TABLE `ps_contentbox_files`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
-
+  MODIFY `id` int(10) unsigned NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=2;
 --
 -- AUTO_INCREMENT для таблицы `ps_country`
 --
 ALTER TABLE `ps_country`
-  MODIFY `id_country` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=246;
-
+  MODIFY `id_country` int(10) unsigned NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=246;
 --
 -- AUTO_INCREMENT для таблицы `ps_currency`
 --
 ALTER TABLE `ps_currency`
-  MODIFY `id_currency` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
-
+  MODIFY `id_currency` int(10) unsigned NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=4;
 --
 -- AUTO_INCREMENT для таблицы `ps_customer`
 --
 ALTER TABLE `ps_customer`
-  MODIFY `id_customer` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=31;
-
+  MODIFY `id_customer` int(10) unsigned NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=31;
 --
 -- AUTO_INCREMENT для таблицы `ps_customer_message`
 --
 ALTER TABLE `ps_customer_message`
-  MODIFY `id_customer_message` int(10) UNSIGNED NOT NULL AUTO_INCREMENT;
-
+  MODIFY `id_customer_message` int(10) unsigned NOT NULL AUTO_INCREMENT;
 --
 -- AUTO_INCREMENT для таблицы `ps_customer_thread`
 --
 ALTER TABLE `ps_customer_thread`
-  MODIFY `id_customer_thread` int(11) UNSIGNED NOT NULL AUTO_INCREMENT;
-
+  MODIFY `id_customer_thread` int(11) unsigned NOT NULL AUTO_INCREMENT;
 --
 -- AUTO_INCREMENT для таблицы `ps_customization`
 --
 ALTER TABLE `ps_customization`
-  MODIFY `id_customization` int(10) UNSIGNED NOT NULL AUTO_INCREMENT;
-
+  MODIFY `id_customization` int(10) unsigned NOT NULL AUTO_INCREMENT;
 --
 -- AUTO_INCREMENT для таблицы `ps_customization_field`
 --
 ALTER TABLE `ps_customization_field`
-  MODIFY `id_customization_field` int(10) UNSIGNED NOT NULL AUTO_INCREMENT;
-
+  MODIFY `id_customization_field` int(10) unsigned NOT NULL AUTO_INCREMENT;
 --
 -- AUTO_INCREMENT для таблицы `ps_date_range`
 --
 ALTER TABLE `ps_date_range`
-  MODIFY `id_date_range` int(10) UNSIGNED NOT NULL AUTO_INCREMENT;
-
+  MODIFY `id_date_range` int(10) unsigned NOT NULL AUTO_INCREMENT;
 --
 -- AUTO_INCREMENT для таблицы `ps_delivery`
 --
 ALTER TABLE `ps_delivery`
-  MODIFY `id_delivery` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=18;
-
+  MODIFY `id_delivery` int(10) unsigned NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=18;
 --
 -- AUTO_INCREMENT для таблицы `ps_employee`
 --
 ALTER TABLE `ps_employee`
-  MODIFY `id_employee` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
-
+  MODIFY `id_employee` int(10) unsigned NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=2;
 --
 -- AUTO_INCREMENT для таблицы `ps_feature`
 --
 ALTER TABLE `ps_feature`
-  MODIFY `id_feature` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
-
+  MODIFY `id_feature` int(10) unsigned NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=8;
 --
 -- AUTO_INCREMENT для таблицы `ps_feature_value`
 --
 ALTER TABLE `ps_feature_value`
-  MODIFY `id_feature_value` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=34;
-
+  MODIFY `id_feature_value` int(10) unsigned NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=34;
 --
 -- AUTO_INCREMENT для таблицы `ps_gender`
 --
 ALTER TABLE `ps_gender`
-  MODIFY `id_gender` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
-
+  MODIFY `id_gender` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=3;
 --
 -- AUTO_INCREMENT для таблицы `ps_group`
 --
 ALTER TABLE `ps_group`
-  MODIFY `id_group` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
-
+  MODIFY `id_group` int(10) unsigned NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=5;
 --
 -- AUTO_INCREMENT для таблицы `ps_group_reduction`
 --
 ALTER TABLE `ps_group_reduction`
-  MODIFY `id_group_reduction` mediumint(8) UNSIGNED NOT NULL AUTO_INCREMENT;
-
+  MODIFY `id_group_reduction` mediumint(8) unsigned NOT NULL AUTO_INCREMENT;
 --
 -- AUTO_INCREMENT для таблицы `ps_guest`
 --
 ALTER TABLE `ps_guest`
-  MODIFY `id_guest` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=31;
-
+  MODIFY `id_guest` int(10) unsigned NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=31;
 --
 -- AUTO_INCREMENT для таблицы `ps_homeslider`
 --
 ALTER TABLE `ps_homeslider`
-  MODIFY `id_homeslider_slides` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
-
+  MODIFY `id_homeslider_slides` int(10) unsigned NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=9;
 --
 -- AUTO_INCREMENT для таблицы `ps_homeslider_slides`
 --
 ALTER TABLE `ps_homeslider_slides`
-  MODIFY `id_homeslider_slides` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
-
+  MODIFY `id_homeslider_slides` int(10) unsigned NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=9;
 --
 -- AUTO_INCREMENT для таблицы `ps_hook`
 --
 ALTER TABLE `ps_hook`
-  MODIFY `id_hook` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=149;
-
+  MODIFY `id_hook` int(10) unsigned NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=149;
 --
 -- AUTO_INCREMENT для таблицы `ps_hook_alias`
 --
 ALTER TABLE `ps_hook_alias`
-  MODIFY `id_hook_alias` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=87;
-
+  MODIFY `id_hook_alias` int(10) unsigned NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=87;
 --
 -- AUTO_INCREMENT для таблицы `ps_hook_module_exceptions`
 --
 ALTER TABLE `ps_hook_module_exceptions`
-  MODIFY `id_hook_module_exceptions` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
-
+  MODIFY `id_hook_module_exceptions` int(10) unsigned NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=12;
 --
 -- AUTO_INCREMENT для таблицы `ps_image`
 --
 ALTER TABLE `ps_image`
-  MODIFY `id_image` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=866;
-
+  MODIFY `id_image` int(10) unsigned NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=866;
 --
 -- AUTO_INCREMENT для таблицы `ps_image_type`
 --
 ALTER TABLE `ps_image_type`
-  MODIFY `id_image_type` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=19;
-
+  MODIFY `id_image_type` int(10) unsigned NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=19;
 --
 -- AUTO_INCREMENT для таблицы `ps_import_match`
 --
 ALTER TABLE `ps_import_match`
   MODIFY `id_import_match` int(10) NOT NULL AUTO_INCREMENT;
-
 --
 -- AUTO_INCREMENT для таблицы `ps_info`
 --
 ALTER TABLE `ps_info`
-  MODIFY `id_info` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
-
+  MODIFY `id_info` int(10) unsigned NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=3;
 --
 -- AUTO_INCREMENT для таблицы `ps_lang`
 --
 ALTER TABLE `ps_lang`
-  MODIFY `id_lang` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
-
+  MODIFY `id_lang` int(10) unsigned NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=2;
 --
 -- AUTO_INCREMENT для таблицы `ps_layered_category`
 --
 ALTER TABLE `ps_layered_category`
-  MODIFY `id_layered_category` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=100;
-
+  MODIFY `id_layered_category` int(10) unsigned NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=89;
 --
 -- AUTO_INCREMENT для таблицы `ps_layered_filter`
 --
 ALTER TABLE `ps_layered_filter`
-  MODIFY `id_layered_filter` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
-
+  MODIFY `id_layered_filter` int(10) unsigned NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=10;
 --
 -- AUTO_INCREMENT для таблицы `ps_layered_friendly_url`
 --
 ALTER TABLE `ps_layered_friendly_url`
-  MODIFY `id_layered_friendly_url` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=56;
-
+  MODIFY `id_layered_friendly_url` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=56;
 --
 -- AUTO_INCREMENT для таблицы `ps_linksmenutop`
 --
 ALTER TABLE `ps_linksmenutop`
-  MODIFY `id_linksmenutop` int(10) UNSIGNED NOT NULL AUTO_INCREMENT;
-
+  MODIFY `id_linksmenutop` int(10) unsigned NOT NULL AUTO_INCREMENT;
 --
 -- AUTO_INCREMENT для таблицы `ps_log`
 --
 ALTER TABLE `ps_log`
-  MODIFY `id_log` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=88;
-
+  MODIFY `id_log` int(10) unsigned NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=111;
 --
 -- AUTO_INCREMENT для таблицы `ps_magiczoomplus_settings`
 --
 ALTER TABLE `ps_magiczoomplus_settings`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=596;
-
+  MODIFY `id` int(10) unsigned NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=596;
 --
 -- AUTO_INCREMENT для таблицы `ps_mail`
 --
 ALTER TABLE `ps_mail`
-  MODIFY `id_mail` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=76;
-
+  MODIFY `id_mail` int(11) unsigned NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=76;
 --
 -- AUTO_INCREMENT для таблицы `ps_manufacturer`
 --
 ALTER TABLE `ps_manufacturer`
-  MODIFY `id_manufacturer` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
-
+  MODIFY `id_manufacturer` int(10) unsigned NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=5;
 --
 -- AUTO_INCREMENT для таблицы `ps_memcached_servers`
 --
 ALTER TABLE `ps_memcached_servers`
-  MODIFY `id_memcached_server` int(11) UNSIGNED NOT NULL AUTO_INCREMENT;
-
+  MODIFY `id_memcached_server` int(11) unsigned NOT NULL AUTO_INCREMENT;
 --
 -- AUTO_INCREMENT для таблицы `ps_message`
 --
 ALTER TABLE `ps_message`
-  MODIFY `id_message` int(10) UNSIGNED NOT NULL AUTO_INCREMENT;
-
+  MODIFY `id_message` int(10) unsigned NOT NULL AUTO_INCREMENT;
 --
 -- AUTO_INCREMENT для таблицы `ps_meta`
 --
 ALTER TABLE `ps_meta`
-  MODIFY `id_meta` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=37;
-
+  MODIFY `id_meta` int(10) unsigned NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=37;
 --
 -- AUTO_INCREMENT для таблицы `ps_module`
 --
 ALTER TABLE `ps_module`
-  MODIFY `id_module` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=74;
-
+  MODIFY `id_module` int(10) unsigned NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=74;
 --
 -- AUTO_INCREMENT для таблицы `ps_modules_perfs`
 --
 ALTER TABLE `ps_modules_perfs`
-  MODIFY `id_modules_perfs` int(11) UNSIGNED NOT NULL AUTO_INCREMENT;
-
+  MODIFY `id_modules_perfs` int(11) unsigned NOT NULL AUTO_INCREMENT;
 --
 -- AUTO_INCREMENT для таблицы `ps_module_preference`
 --
 ALTER TABLE `ps_module_preference`
   MODIFY `id_module_preference` int(11) NOT NULL AUTO_INCREMENT;
-
 --
 -- AUTO_INCREMENT для таблицы `ps_newsletter`
 --
 ALTER TABLE `ps_newsletter`
   MODIFY `id` int(6) NOT NULL AUTO_INCREMENT;
-
 --
 -- AUTO_INCREMENT для таблицы `ps_operating_system`
 --
 ALTER TABLE `ps_operating_system`
-  MODIFY `id_operating_system` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
-
+  MODIFY `id_operating_system` int(10) unsigned NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=8;
 --
 -- AUTO_INCREMENT для таблицы `ps_orders`
 --
 ALTER TABLE `ps_orders`
-  MODIFY `id_order` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=39;
-
+  MODIFY `id_order` int(10) unsigned NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=39;
 --
 -- AUTO_INCREMENT для таблицы `ps_order_carrier`
 --
 ALTER TABLE `ps_order_carrier`
-  MODIFY `id_order_carrier` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=39;
-
+  MODIFY `id_order_carrier` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=39;
 --
 -- AUTO_INCREMENT для таблицы `ps_order_cart_rule`
 --
 ALTER TABLE `ps_order_cart_rule`
-  MODIFY `id_order_cart_rule` int(10) UNSIGNED NOT NULL AUTO_INCREMENT;
-
+  MODIFY `id_order_cart_rule` int(10) unsigned NOT NULL AUTO_INCREMENT;
 --
 -- AUTO_INCREMENT для таблицы `ps_order_detail`
 --
 ALTER TABLE `ps_order_detail`
-  MODIFY `id_order_detail` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=47;
-
+  MODIFY `id_order_detail` int(10) unsigned NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=47;
 --
 -- AUTO_INCREMENT для таблицы `ps_order_history`
 --
 ALTER TABLE `ps_order_history`
-  MODIFY `id_order_history` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=43;
-
+  MODIFY `id_order_history` int(10) unsigned NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=43;
 --
 -- AUTO_INCREMENT для таблицы `ps_order_invoice`
 --
 ALTER TABLE `ps_order_invoice`
-  MODIFY `id_order_invoice` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=28;
-
+  MODIFY `id_order_invoice` int(11) unsigned NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=28;
 --
 -- AUTO_INCREMENT для таблицы `ps_order_message`
 --
 ALTER TABLE `ps_order_message`
-  MODIFY `id_order_message` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
-
+  MODIFY `id_order_message` int(10) unsigned NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=2;
 --
 -- AUTO_INCREMENT для таблицы `ps_order_payment`
 --
 ALTER TABLE `ps_order_payment`
-  MODIFY `id_order_payment` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=26;
-
+  MODIFY `id_order_payment` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=26;
 --
 -- AUTO_INCREMENT для таблицы `ps_order_return`
 --
 ALTER TABLE `ps_order_return`
-  MODIFY `id_order_return` int(10) UNSIGNED NOT NULL AUTO_INCREMENT;
-
+  MODIFY `id_order_return` int(10) unsigned NOT NULL AUTO_INCREMENT;
 --
 -- AUTO_INCREMENT для таблицы `ps_order_return_state`
 --
 ALTER TABLE `ps_order_return_state`
-  MODIFY `id_order_return_state` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
-
+  MODIFY `id_order_return_state` int(10) unsigned NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=6;
 --
 -- AUTO_INCREMENT для таблицы `ps_order_slip`
 --
 ALTER TABLE `ps_order_slip`
-  MODIFY `id_order_slip` int(10) UNSIGNED NOT NULL AUTO_INCREMENT;
-
+  MODIFY `id_order_slip` int(10) unsigned NOT NULL AUTO_INCREMENT;
 --
 -- AUTO_INCREMENT для таблицы `ps_order_state`
 --
 ALTER TABLE `ps_order_state`
-  MODIFY `id_order_state` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
-
+  MODIFY `id_order_state` int(10) unsigned NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=16;
 --
 -- AUTO_INCREMENT для таблицы `ps_page`
 --
 ALTER TABLE `ps_page`
-  MODIFY `id_page` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
-
+  MODIFY `id_page` int(10) unsigned NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=11;
 --
 -- AUTO_INCREMENT для таблицы `ps_pagenotfound`
 --
 ALTER TABLE `ps_pagenotfound`
-  MODIFY `id_pagenotfound` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=37;
-
+  MODIFY `id_pagenotfound` int(10) unsigned NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=1542;
 --
 -- AUTO_INCREMENT для таблицы `ps_page_type`
 --
 ALTER TABLE `ps_page_type`
-  MODIFY `id_page_type` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
-
+  MODIFY `id_page_type` int(10) unsigned NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=11;
 --
 -- AUTO_INCREMENT для таблицы `ps_product`
 --
 ALTER TABLE `ps_product`
-  MODIFY `id_product` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=560;
-
+  MODIFY `id_product` int(10) unsigned NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=560;
 --
 -- AUTO_INCREMENT для таблицы `ps_product_attribute`
 --
 ALTER TABLE `ps_product_attribute`
-  MODIFY `id_product_attribute` int(10) UNSIGNED NOT NULL AUTO_INCREMENT;
-
+  MODIFY `id_product_attribute` int(10) unsigned NOT NULL AUTO_INCREMENT;
 --
 -- AUTO_INCREMENT для таблицы `ps_product_download`
 --
 ALTER TABLE `ps_product_download`
-  MODIFY `id_product_download` int(10) UNSIGNED NOT NULL AUTO_INCREMENT;
-
+  MODIFY `id_product_download` int(10) unsigned NOT NULL AUTO_INCREMENT;
 --
 -- AUTO_INCREMENT для таблицы `ps_product_supplier`
 --
 ALTER TABLE `ps_product_supplier`
-  MODIFY `id_product_supplier` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=307;
-
+  MODIFY `id_product_supplier` int(11) unsigned NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=307;
 --
 -- AUTO_INCREMENT для таблицы `ps_profile`
 --
 ALTER TABLE `ps_profile`
-  MODIFY `id_profile` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
-
+  MODIFY `id_profile` int(10) unsigned NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=5;
 --
 -- AUTO_INCREMENT для таблицы `ps_quick_access`
 --
 ALTER TABLE `ps_quick_access`
-  MODIFY `id_quick_access` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
-
+  MODIFY `id_quick_access` int(10) unsigned NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=4;
 --
 -- AUTO_INCREMENT для таблицы `ps_range_price`
 --
 ALTER TABLE `ps_range_price`
-  MODIFY `id_range_price` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
-
+  MODIFY `id_range_price` int(10) unsigned NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=2;
 --
 -- AUTO_INCREMENT для таблицы `ps_range_weight`
 --
 ALTER TABLE `ps_range_weight`
-  MODIFY `id_range_weight` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
-
+  MODIFY `id_range_weight` int(10) unsigned NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=3;
 --
 -- AUTO_INCREMENT для таблицы `ps_referrer`
 --
 ALTER TABLE `ps_referrer`
-  MODIFY `id_referrer` int(10) UNSIGNED NOT NULL AUTO_INCREMENT;
-
+  MODIFY `id_referrer` int(10) unsigned NOT NULL AUTO_INCREMENT;
 --
 -- AUTO_INCREMENT для таблицы `ps_referrer_shop`
 --
 ALTER TABLE `ps_referrer_shop`
-  MODIFY `id_referrer` int(10) UNSIGNED NOT NULL AUTO_INCREMENT;
-
+  MODIFY `id_referrer` int(10) unsigned NOT NULL AUTO_INCREMENT;
 --
 -- AUTO_INCREMENT для таблицы `ps_request_sql`
 --
 ALTER TABLE `ps_request_sql`
   MODIFY `id_request_sql` int(11) NOT NULL AUTO_INCREMENT;
-
 --
 -- AUTO_INCREMENT для таблицы `ps_required_field`
 --
 ALTER TABLE `ps_required_field`
   MODIFY `id_required_field` int(11) NOT NULL AUTO_INCREMENT;
-
 --
 -- AUTO_INCREMENT для таблицы `ps_risk`
 --
 ALTER TABLE `ps_risk`
-  MODIFY `id_risk` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
-
+  MODIFY `id_risk` int(11) unsigned NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=5;
 --
 -- AUTO_INCREMENT для таблицы `ps_scene`
 --
 ALTER TABLE `ps_scene`
-  MODIFY `id_scene` int(10) UNSIGNED NOT NULL AUTO_INCREMENT;
-
+  MODIFY `id_scene` int(10) unsigned NOT NULL AUTO_INCREMENT;
 --
 -- AUTO_INCREMENT для таблицы `ps_search_engine`
 --
 ALTER TABLE `ps_search_engine`
-  MODIFY `id_search_engine` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=39;
-
+  MODIFY `id_search_engine` int(10) unsigned NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=39;
 --
 -- AUTO_INCREMENT для таблицы `ps_search_word`
 --
 ALTER TABLE `ps_search_word`
-  MODIFY `id_word` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=598;
-
+  MODIFY `id_word` int(10) unsigned NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=598;
 --
 -- AUTO_INCREMENT для таблицы `ps_sekeyword`
 --
 ALTER TABLE `ps_sekeyword`
-  MODIFY `id_sekeyword` int(10) UNSIGNED NOT NULL AUTO_INCREMENT;
-
+  MODIFY `id_sekeyword` int(10) unsigned NOT NULL AUTO_INCREMENT;
 --
 -- AUTO_INCREMENT для таблицы `ps_shop`
 --
 ALTER TABLE `ps_shop`
-  MODIFY `id_shop` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
-
+  MODIFY `id_shop` int(11) unsigned NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=2;
 --
 -- AUTO_INCREMENT для таблицы `ps_shop_group`
 --
 ALTER TABLE `ps_shop_group`
-  MODIFY `id_shop_group` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
-
+  MODIFY `id_shop_group` int(11) unsigned NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=2;
 --
 -- AUTO_INCREMENT для таблицы `ps_shop_url`
 --
 ALTER TABLE `ps_shop_url`
-  MODIFY `id_shop_url` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
-
+  MODIFY `id_shop_url` int(11) unsigned NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=2;
 --
 -- AUTO_INCREMENT для таблицы `ps_specific_price`
 --
 ALTER TABLE `ps_specific_price`
-  MODIFY `id_specific_price` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=653;
-
+  MODIFY `id_specific_price` int(10) unsigned NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=653;
 --
 -- AUTO_INCREMENT для таблицы `ps_specific_price_priority`
 --
 ALTER TABLE `ps_specific_price_priority`
-  MODIFY `id_specific_price_priority` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
-
+  MODIFY `id_specific_price_priority` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=5;
 --
 -- AUTO_INCREMENT для таблицы `ps_specific_price_rule`
 --
 ALTER TABLE `ps_specific_price_rule`
-  MODIFY `id_specific_price_rule` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
-
+  MODIFY `id_specific_price_rule` int(10) unsigned NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=3;
 --
 -- AUTO_INCREMENT для таблицы `ps_specific_price_rule_condition`
 --
 ALTER TABLE `ps_specific_price_rule_condition`
-  MODIFY `id_specific_price_rule_condition` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
-
+  MODIFY `id_specific_price_rule_condition` int(11) unsigned NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=5;
 --
 -- AUTO_INCREMENT для таблицы `ps_specific_price_rule_condition_group`
 --
 ALTER TABLE `ps_specific_price_rule_condition_group`
-  MODIFY `id_specific_price_rule_condition_group` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
-
+  MODIFY `id_specific_price_rule_condition_group` int(11) unsigned NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=5;
 --
 -- AUTO_INCREMENT для таблицы `ps_state`
 --
 ALTER TABLE `ps_state`
-  MODIFY `id_state` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=338;
-
+  MODIFY `id_state` int(10) unsigned NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=338;
 --
 -- AUTO_INCREMENT для таблицы `ps_statssearch`
 --
 ALTER TABLE `ps_statssearch`
-  MODIFY `id_statssearch` int(10) UNSIGNED NOT NULL AUTO_INCREMENT;
-
+  MODIFY `id_statssearch` int(10) unsigned NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=5;
 --
 -- AUTO_INCREMENT для таблицы `ps_stock`
 --
 ALTER TABLE `ps_stock`
-  MODIFY `id_stock` int(11) UNSIGNED NOT NULL AUTO_INCREMENT;
-
+  MODIFY `id_stock` int(11) unsigned NOT NULL AUTO_INCREMENT;
 --
 -- AUTO_INCREMENT для таблицы `ps_stock_available`
 --
 ALTER TABLE `ps_stock_available`
-  MODIFY `id_stock_available` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=560;
-
+  MODIFY `id_stock_available` int(11) unsigned NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=560;
 --
 -- AUTO_INCREMENT для таблицы `ps_stock_mvt`
 --
 ALTER TABLE `ps_stock_mvt`
-  MODIFY `id_stock_mvt` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT;
-
+  MODIFY `id_stock_mvt` bigint(20) unsigned NOT NULL AUTO_INCREMENT;
 --
 -- AUTO_INCREMENT для таблицы `ps_stock_mvt_reason`
 --
 ALTER TABLE `ps_stock_mvt_reason`
-  MODIFY `id_stock_mvt_reason` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
-
+  MODIFY `id_stock_mvt_reason` int(11) unsigned NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=9;
 --
 -- AUTO_INCREMENT для таблицы `ps_store`
 --
 ALTER TABLE `ps_store`
-  MODIFY `id_store` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
-
+  MODIFY `id_store` int(10) unsigned NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=6;
 --
 -- AUTO_INCREMENT для таблицы `ps_supplier`
 --
 ALTER TABLE `ps_supplier`
-  MODIFY `id_supplier` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
-
+  MODIFY `id_supplier` int(10) unsigned NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=2;
 --
 -- AUTO_INCREMENT для таблицы `ps_supply_order`
 --
 ALTER TABLE `ps_supply_order`
-  MODIFY `id_supply_order` int(11) UNSIGNED NOT NULL AUTO_INCREMENT;
-
+  MODIFY `id_supply_order` int(11) unsigned NOT NULL AUTO_INCREMENT;
 --
 -- AUTO_INCREMENT для таблицы `ps_supply_order_detail`
 --
 ALTER TABLE `ps_supply_order_detail`
-  MODIFY `id_supply_order_detail` int(11) UNSIGNED NOT NULL AUTO_INCREMENT;
-
+  MODIFY `id_supply_order_detail` int(11) unsigned NOT NULL AUTO_INCREMENT;
 --
 -- AUTO_INCREMENT для таблицы `ps_supply_order_history`
 --
 ALTER TABLE `ps_supply_order_history`
-  MODIFY `id_supply_order_history` int(11) UNSIGNED NOT NULL AUTO_INCREMENT;
-
+  MODIFY `id_supply_order_history` int(11) unsigned NOT NULL AUTO_INCREMENT;
 --
 -- AUTO_INCREMENT для таблицы `ps_supply_order_receipt_history`
 --
 ALTER TABLE `ps_supply_order_receipt_history`
-  MODIFY `id_supply_order_receipt_history` int(11) UNSIGNED NOT NULL AUTO_INCREMENT;
-
+  MODIFY `id_supply_order_receipt_history` int(11) unsigned NOT NULL AUTO_INCREMENT;
 --
 -- AUTO_INCREMENT для таблицы `ps_supply_order_state`
 --
 ALTER TABLE `ps_supply_order_state`
-  MODIFY `id_supply_order_state` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
-
+  MODIFY `id_supply_order_state` int(11) unsigned NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=7;
 --
 -- AUTO_INCREMENT для таблицы `ps_tab`
 --
 ALTER TABLE `ps_tab`
-  MODIFY `id_tab` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=105;
-
+  MODIFY `id_tab` int(10) unsigned NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=105;
 --
 -- AUTO_INCREMENT для таблицы `ps_tab_module_preference`
 --
 ALTER TABLE `ps_tab_module_preference`
   MODIFY `id_tab_module_preference` int(11) NOT NULL AUTO_INCREMENT;
-
 --
 -- AUTO_INCREMENT для таблицы `ps_tag`
 --
 ALTER TABLE `ps_tag`
-  MODIFY `id_tag` int(10) UNSIGNED NOT NULL AUTO_INCREMENT;
-
+  MODIFY `id_tag` int(10) unsigned NOT NULL AUTO_INCREMENT;
 --
 -- AUTO_INCREMENT для таблицы `ps_tax`
 --
 ALTER TABLE `ps_tax`
-  MODIFY `id_tax` int(10) UNSIGNED NOT NULL AUTO_INCREMENT;
-
+  MODIFY `id_tax` int(10) unsigned NOT NULL AUTO_INCREMENT;
 --
 -- AUTO_INCREMENT для таблицы `ps_tax_rule`
 --
 ALTER TABLE `ps_tax_rule`
   MODIFY `id_tax_rule` int(11) NOT NULL AUTO_INCREMENT;
-
 --
 -- AUTO_INCREMENT для таблицы `ps_tax_rules_group`
 --
 ALTER TABLE `ps_tax_rules_group`
   MODIFY `id_tax_rules_group` int(11) NOT NULL AUTO_INCREMENT;
-
 --
 -- AUTO_INCREMENT для таблицы `ps_theme`
 --
 ALTER TABLE `ps_theme`
-  MODIFY `id_theme` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
-
+  MODIFY `id_theme` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=3;
 --
 -- AUTO_INCREMENT для таблицы `ps_themeconfigurator`
 --
 ALTER TABLE `ps_themeconfigurator`
-  MODIFY `id_item` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
-
+  MODIFY `id_item` int(10) unsigned NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=6;
 --
 -- AUTO_INCREMENT для таблицы `ps_theme_meta`
 --
 ALTER TABLE `ps_theme_meta`
-  MODIFY `id_theme_meta` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=72;
-
+  MODIFY `id_theme_meta` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=72;
 --
 -- AUTO_INCREMENT для таблицы `ps_timezone`
 --
 ALTER TABLE `ps_timezone`
-  MODIFY `id_timezone` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=561;
-
+  MODIFY `id_timezone` int(10) unsigned NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=561;
 --
 -- AUTO_INCREMENT для таблицы `ps_warehouse`
 --
 ALTER TABLE `ps_warehouse`
-  MODIFY `id_warehouse` int(11) UNSIGNED NOT NULL AUTO_INCREMENT;
-
+  MODIFY `id_warehouse` int(11) unsigned NOT NULL AUTO_INCREMENT;
 --
 -- AUTO_INCREMENT для таблицы `ps_warehouse_product_location`
 --
 ALTER TABLE `ps_warehouse_product_location`
-  MODIFY `id_warehouse_product_location` int(11) UNSIGNED NOT NULL AUTO_INCREMENT;
-
+  MODIFY `id_warehouse_product_location` int(11) unsigned NOT NULL AUTO_INCREMENT;
 --
 -- AUTO_INCREMENT для таблицы `ps_webservice_account`
 --
 ALTER TABLE `ps_webservice_account`
   MODIFY `id_webservice_account` int(11) NOT NULL AUTO_INCREMENT;
-
 --
 -- AUTO_INCREMENT для таблицы `ps_webservice_permission`
 --
 ALTER TABLE `ps_webservice_permission`
   MODIFY `id_webservice_permission` int(11) NOT NULL AUTO_INCREMENT;
-
 --
 -- AUTO_INCREMENT для таблицы `ps_web_browser`
 --
 ALTER TABLE `ps_web_browser`
-  MODIFY `id_web_browser` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
-
+  MODIFY `id_web_browser` int(10) unsigned NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=12;
 --
 -- AUTO_INCREMENT для таблицы `ps_zone`
 --
 ALTER TABLE `ps_zone`
-  MODIFY `id_zone` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
-COMMIT;
-
+  MODIFY `id_zone` int(10) unsigned NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=9;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
