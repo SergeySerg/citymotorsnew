@@ -1,0 +1,45 @@
+#bonorder {
+	display: none;
+	padding: 30px;
+}
+
+#bonorder sup {
+	color: red;
+	font-weight: bold;
+}
+
+#bonorder label {
+	font-size: 14px;
+	display: block;
+	padding-bottom: 5px;
+	text-align: left;
+}
+
+#bonorder .quickbuy_errors,
+#bonorder .quickbuy_success {
+	margin: 0 15px;
+	display: none;
+	padding: 10px;
+	line-height: 1.5;
+}
+
+.btn-bonorder {
+	padding: 12px 30px;
+	margin: 20px;
+	font-size: 15px;
+	color: #fff;
+	display: inline-block;
+}
+
+.btn-bonorder:hover {
+	color: #fff;
+}
+
+.bonorder_send.button.button-small {
+	padding: 7px 12px;
+}
+
+.bon_order_success.alert.alert-success {
+	margin: 0;
+
+}
