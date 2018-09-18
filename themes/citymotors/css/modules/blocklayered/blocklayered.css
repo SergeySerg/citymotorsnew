@@ -1,6 +1,6 @@
 #enabled_filters {
   margin: 0 0 10px 0;
-  background: #eee;
+  background: #add3;
   padding: 5px; }
 
 #enabled_filters .layered_subtitle {
@@ -160,8 +160,10 @@
   max-height: 200px;
   overflow-x: auto; }
 
-.layered_filter {
-  border-bottom: 1px solid #eee; }
+.layered_filter,
+.layered_price {
+  border-bottom: 1px solid #eee;
+  padding: 5px 15px; }
   .layered_filter label {
     font-weight: normal; }
   .layered_filter layered_subtitle {

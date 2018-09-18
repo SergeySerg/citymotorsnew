@@ -26,7 +26,7 @@
 	<a href="{$link->getPageLink('contact', true)|escape:'html':'UTF-8'}" title="{l s='Contact us' mod='blockcontact'}">{l s='Contact us' mod='blockcontact'}</a>
 </div> *}
 {if $telnumber}
-	<div id="phones" class="col-sm-12 col-md-4">
+	<div id="phones" class="col-xs-12 col-sm-4 col-md-4">
 		<ul class="phone_list">
 			<li><a href="tel:{$telnumber}" class="phone_item">{$telnumber}</a></li>
 			<li><a href="tel:{$telnumber2}" class="phone_item">{$telnumber2}</a></li>

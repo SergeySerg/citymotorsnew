@@ -16,6 +16,10 @@ div.home_categories li{
     width:18%;
     transition: all ease .5s;
 }
+@media (max-width: 767px) {
+    div.home_categories li{
+        margin: 20px 3% 20px 0;
+        width: 47%;}}
 div.home_categories li:nth-child(5n){
     margin-right: 0;
 }

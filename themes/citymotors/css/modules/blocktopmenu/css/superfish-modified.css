@@ -5,6 +5,17 @@
   width: 200%;
   margin-left: -50%;
   background-color: #add;}
+  @media (max-width: 767px) {
+    .sf-contener {
+      width: 100%;
+      margin-left: 0;
+      background-color: inherit;}
+    .sf-menu {
+      width: 100%;}
+    .sf-menu > li > a {
+      font: 600 16px/18px "Open Sans", sans-serif;
+      border-bottom: 1px solid #428bca; }
+    }
 
 .sf-menu,
 .sf-menu * {
@@ -24,7 +35,9 @@
   overflow: hidden;}
   @media (max-width: 767px) {
     .sf-menu {
-      display: none; } }
+      display: none; }
+      .sf-menu {
+        width: 100%;} }
 
 .sf-menu ul {
   position: absolute;
@@ -75,7 +88,18 @@
     /* border-bottom: 3px solid #428bca;  */
     transition: all ease .3s;
   }
-  .sf-menu > li.sfHover > a,
+  @media (max-width: 1200px) {
+    .sf-menu > li > a {
+      font: 600 13px/18px "Open Sans", sans-serif;
+      padding: 15px 8px; }}
+  @media (max-width: 991px) {
+    .sf-menu > li > a {
+      font: 600 11px/18px "Open Sans", sans-serif;
+      padding: 15px 5px; }}
+      @media (max-width: 991px){
+        .sf-menu > li > a {
+            font: 600 14px/18px "Open Sans", sans-serif;}}
+    .sf-menu > li.sfHover > a,
   .sf-menu > li > a:hover, .sf-menu > li.sfHoverForce > a {
     background: #428bca;
     border-bottom-color: #add;
