@@ -5706,7 +5706,8 @@ body {
   height: 100%;
   line-height: 18px;
   font-size: 13px;
-  color: #777; }
+  color: #777;
+  overflow-x: hidden;  }
   body.content_only {
     background: none;
     min-width: 0px;
@@ -5716,8 +5717,7 @@ textarea {
   resize: none; }
 
 #header {
-  z-index: 5003;
-  overflow: hidden; }
+  z-index: 5003;}
 
 .columns-container {
   background: #fff; }
@@ -6070,18 +6070,19 @@ span.exclusive {
 .btn.button-minus {
   font-size: 14px;
   line-height: 14px;
-  color: #c0c0c0;
-  text-shadow: 1px -1px rgba(0, 0, 0, 0.05);
+  color: #add;
+  text-shadow: none;
   padding: 0;
   border: 1px solid;
-  border-color: #dedcdc #c1bfbf #b5b4b4 #dad8d8;
+  border-color: #add;
   -moz-border-radius: 0;
   -webkit-border-radius: 0;
-  border-radius: 0; }
+  border-radius: 50%;}
   .btn.button-plus span,
   .btn.button-minus span {
     display: block;
-    border: 1px solid #fff;
+    border: 1px solid #add;
+    border-radius: 50%;
     vertical-align: middle;
     width: 25px;
     height: 25px;
@@ -6097,11 +6098,11 @@ span.exclusive {
     filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#FFFFFFFF', endColorstr='#FFFBFBFB', GradientType=0); }
   .btn.button-plus:hover,
   .btn.button-minus:hover {
-    color: #333; }
+    color: #fff; }
     .btn.button-plus:hover span,
     .btn.button-minus:hover span {
       filter: none;
-      background: #f6f6f6; }
+      background: #add; }
 
 .button.exclusive-medium {
   font-size: 17px;
@@ -6512,7 +6513,7 @@ table.table_block td {
   margin-bottom: 30px; }
   @media (max-width: 767px) {
     .block {
-      margin-bottom: 0px; } }
+      margin-bottom: 5px; } }
   @media (max-width: 767px) {
     .block .block_content {
       margin-bottom: 20px; } }
@@ -8627,11 +8628,34 @@ div.star.star_hover:after {
 .ui-widget-content{
   border: none !important;
 }
+.b1c-submit, .b1c {
+  width: auto !important;
+  font: 700 17px/21px Arial, Helvetica, sans-serif !important;
+  color: #add !important;
+  border: 2px solid #add !important;
+  background: #fff !important;
+  padding: 10px 15px !important;
+  outline: none;
+  transition: all ease .3s !important;}
+.b1c-submit:hover, .b1c:hover {
+  color: #fff !important;
+  background: #add !important;
+  transition: all ease .3s !important;}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    /* display: none; <- Crashes Chrome on hover */
+    -webkit-appearance: none;
+    margin: 0; /* <-- Apparently some margin are still there even though it's hidden */
+}
 @media (max-width: 991px) {
   #footer .toggle-footer{
     display: block !important;}}
 @media (max-width: 767px) {
   #left_column{
-    margin-bottom: 10px;}}
+    margin-bottom: 10px;}
+  .b1c-submit, .b1c{
+    width: 100% !important;}
+  }
 /*END new styles */
 /*# sourceMappingURL=global.css.map */
