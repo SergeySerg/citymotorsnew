@@ -224,8 +224,8 @@
 {if isset($opc_config.payment_radio_buttons) && $opc_config.payment_radio_buttons}
 
 <div class="confirm_button_div">
-    <input type="button" class="confirm_button" title="{l s='I confirm my order' mod='onepagecheckout'}"
-           value="&raquo;  {l s='I confirm my order' mod='onepagecheckout'}  &laquo;"
+    <input type="button" class="buy_product" title="{l s='I confirm my order' mod='onepagecheckout'}"
+           value="{l s='I confirm my order' mod='onepagecheckout'}"
            onclick="paymentModuleConfirm();"/>
 </div>
 

@@ -15,8 +15,8 @@
 
         {if !isset($isVirtualCart) || !$isVirtualCart}
         <h3 id="choose_delivery"
-            {if $singleCarrier}style="display:none;"{/if}>{l s='Choose your delivery method' mod='onepagecheckout'}</h1>
-            {/if}
+            {if $singleCarrier}style="display:none;"{/if}>{l s='Choose your delivery method' mod='onepagecheckout'}</h3>
+        {/if}
 
             <div id="opc_delivery_methods" class="opc-main-block">
                 <div id="opc_delivery_methods-overlay" class="opc-overlay" style="display: none;"></div>

@@ -193,14 +193,14 @@
 {capture name=delivery_address_block}
 
     <fieldset id="opc_delivery_address" style="display: {if (isset($guestInformations) && $guestInformations.use_another_invoice_address) OR (!isset($guestInformations) && $def_different_billing == 1) OR !$invoice_first}block{else}none{/if}">
-        <h3>
+        {* <h3>
             <span id="dlv_label" class="{if ($isLogged && !$isGuest)}logged-l{else}new-l{/if}">{l s='Delivery & Personal information' mod='onepagecheckout'}</span><span id="new_label" class="{if ($isLogged && !$isGuest)}logged-l{else}new-l{/if}">{if $invoice_first}{l s='Delivery & Personal information' mod='onepagecheckout'}{else}{l s='New customer - account & address' mod='onepagecheckout'}{/if}</span>
-        </h3>
+        </h3> *}
 
         {if !$invoice_first}{$smarty.capture.account_block}{/if}
 
 
-        <div class="address-type-header delivery">{l s='Delivery address' mod='onepagecheckout'}
+        {* <div class="address-type-header delivery">{l s='Delivery address' mod='onepagecheckout'} *}
         {*<div id="dlv_addresses_div"*}
              {*style="float: right;{if !isset($addresses) || $addresses|@count == 0}display:none;{elseif $addresses|@count == 1 AND $addresses[0].id_address==$cart->id_address_delivery}display:none;{else}display:block;{/if}">*}
             {*<span style="font-size: 0.7em;">{l s='Choose another address' mod='onepagecheckout'}:</span>*}
@@ -216,7 +216,7 @@
                 {*{/if}*}
             {*</select>*}
         {*</div>*}
-        </div>
+        {* </div> *}
 
 
 
@@ -373,7 +373,7 @@
         </p>
 
         <p class="text" {if !isset($opc_config.phone_mobile_delivery) || !$opc_config.phone_mobile_delivery}style="display: none;"{/if}>
-            <label for="phone_mobile">{l s='Mobile phone' mod='onepagecheckout'}<sup>&nbsp;&nbsp;</sup></label>
+            <label for="phone_mobile">{l s='Mobile phone' mod='onepagecheckout'}<sup>*</sup></label>
             <input type="text" class="text" name="phone_mobile" id="phone_mobile"
                    value="{if isset($guestInformations) && isset($guestInformations.phone_mobile) &&  $guestInformations.phone_mobile}{$guestInformations.phone_mobile}{else}{if $isVirtualCart && true} {/if}{/if}"/>{if isset($opc_config.validation_checkboxes) && $opc_config.validation_checkboxes}
             <span class="validity valid_blank"></span>{/if}{if isset($opc_config.sample_values) && $opc_config.sample_values}
@@ -636,10 +636,10 @@
 
 
 <div id="opc_new_account" class="opc-main-block">
-<div id="opc_new_account-overlay" class="opc-overlay" style="display: none;"></div>
+{* <div id="opc_new_account-overlay" class="opc-overlay" style="display: none;"></div>
 
 {$smarty.capture.login_block}
-
+ *}
 <div id="opc_account_form">
 <form action="#" method="post" id="new_account_form" class="std">
 

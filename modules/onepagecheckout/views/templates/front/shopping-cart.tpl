@@ -124,7 +124,7 @@
     {/if}
 <div id="order-detail-content" class="table_block{if isset($addClass)}{$addClass}{/if}">
 <table id="cart_summary" class="std">
-<thead>
+{* <thead>
 <tr>
     <th class="cart_product first_item">{l s='Product' mod='onepagecheckout'}</th>
     <th class="cart_description item">{l s='Description' mod='onepagecheckout'}</th>
@@ -132,9 +132,9 @@
     <th class="cart_unit item">{l s='Unit price' mod='onepagecheckout'}</th>
     <th class="cart_quantity item">{l s='Qty' mod='onepagecheckout'}</th>
     <th class="cart_total last_item">{l s='Total' mod='onepagecheckout'}</th>
-    {*<th class="cart_delete last_item">&nbsp;</th>*}
+    <th class="cart_delete last_item">&nbsp;</th>
 </tr>
-</thead>
+</thead> *}
 <tbody>
     {foreach $products as $product}
         {assign var='productId' value=$product.id_product}
@@ -259,53 +259,55 @@
     {/if}
 <div id="tfoot_static_underlay" class="sticky_underlay"></div>
 <tfoot id="tfoot_static">
-<tr class="cart_voucher_block">
-    <td colspan="{$colspan+1}" id="cart_voucher" class="cart_voucher">
-        {if $voucherAllowed}
-            {if isset($errors_discount) && $errors_discount}
-                <ul class="error">
-                    {foreach $errors_discount as $k=>$error}
-                        <li>{$error|escape:'htmlall':'UTF-8'}</li>
-                    {/foreach}
-                </ul>
+{if $voucherAllowed || $show_option_allow_separate_package}
+    <tr class="cart_voucher_block">
+        <td colspan="{$colspan+1}" id="cart_voucher" class="cart_voucher">
+            {if $voucherAllowed}
+                {if isset($errors_discount) && $errors_discount}
+                    <ul class="error">
+                        {foreach $errors_discount as $k=>$error}
+                            <li>{$error|escape:'htmlall':'UTF-8'}</li>
+                        {/foreach}
+                    </ul>
+                {/if}
+                <div id="opc_voucher_errors" class="perm-error" style="display: none"></div>
+                <form action="{if $opc}{$link->getPageLink('order-opc.php', true)|escape:'htmlall':'UTF-8'}{else}{$link->getPageLink('order.php', true)|escape:'htmlall':'UTF-8'}{/if}"
+                    method="post" id="voucher">
+                    <fieldset>
+                        <h4><label for="discount_name">{l s='Vouchers' mod='onepagecheckout'}</label></h4>
+
+                        <input type="text" class="discount_name" id="discount_name" name="discount_name"
+                            value="{if isset($discount_name) && $discount_name}{$discount_name}{/if}"/>
+
+                        <input type="hidden" name="submitDiscount"/><input type="submit"
+                                                                        name="submitAddDiscount"
+                                                                        value="{l s='OK' mod='onepagecheckout'}"
+                                                                        class="button"/>
+                        {if $displayVouchers}
+                            <br />
+                            <h4 class="title_offers">{l s='Take advantage of our offers:' mod='onepagecheckout'}</h4>
+
+                            <div id="display_cart_vouchers">
+                                {foreach $displayVouchers as $voucher}
+                                    {if $voucher.code != ''}
+                                        <span onclick="$('#discount_name').val('{$voucher.code}');return false;"
+                                            class="voucher_name_opc">{$voucher.code|escape:'html':'UTF-8'}</span> - {/if}{$voucher.name|escape:'html':'UTF-8'}<br />
+                                {/foreach}
+                            </div>
+                        {/if}
+                    </fieldset>
+                </form>
             {/if}
-            <div id="opc_voucher_errors" class="perm-error" style="display: none"></div>
-            <form action="{if $opc}{$link->getPageLink('order-opc.php', true)|escape:'htmlall':'UTF-8'}{else}{$link->getPageLink('order.php', true)|escape:'htmlall':'UTF-8'}{/if}"
-                  method="post" id="voucher">
-                <fieldset>
-                    <h4><label for="discount_name">{l s='Vouchers' mod='onepagecheckout'}</label></h4>
-
-                    <input type="text" class="discount_name" id="discount_name" name="discount_name"
-                           value="{if isset($discount_name) && $discount_name}{$discount_name}{/if}"/>
-
-                    <input type="hidden" name="submitDiscount"/><input type="submit"
-                                                                       name="submitAddDiscount"
-                                                                       value="{l s='OK' mod='onepagecheckout'}"
-                                                                       class="button"/>
-                    {if $displayVouchers}
-                        <br />
-                        <h4 class="title_offers">{l s='Take advantage of our offers:' mod='onepagecheckout'}</h4>
-
-                        <div id="display_cart_vouchers">
-                            {foreach $displayVouchers as $voucher}
-                                {if $voucher.code != ''}
-                                    <span onclick="$('#discount_name').val('{$voucher.code}');return false;"
-                                          class="voucher_name_opc">{$voucher.code|escape:'html':'UTF-8'}</span> - {/if}{$voucher.name|escape:'html':'UTF-8'}<br />
-                            {/foreach}
-                        </div>
-                    {/if}
-                </fieldset>
-            </form>
-        {/if}
-        {if $show_option_allow_separate_package}
-            <p style="margin-top: 10px">
-                <input type="checkbox" name="allow_seperated_package" id="allow_seperated_package" {if $cart->allow_seperated_package}checked="checked"{/if} autocomplete="off"/>
-                <label for="allow_seperated_package">{l s='Send available products first' mod='onepagecheckout'}</label>
-            </p>
-        {/if}
-    </td>
-</tr>
-{if $use_taxes}
+            {if $show_option_allow_separate_package}
+                <p style="margin-top: 10px">
+                    <input type="checkbox" name="allow_seperated_package" id="allow_seperated_package" {if $cart->allow_seperated_package}checked="checked"{/if} autocomplete="off"/>
+                    <label for="allow_seperated_package">{l s='Send available products first' mod='onepagecheckout'}</label>
+                </p>
+            {/if}
+        </td>
+    </tr>
+{/if}
+{* {if $use_taxes}
     {if $priceDisplay}
         <tr class="cart_total_products summary-line">
             <td colspan="{$colspan|intval}">{if $display_tax_label}{l s='Total products (tax excl.):' mod='onepagecheckout'}{else}{l s='Total products:' mod='onepagecheckout'}{/if}</td>
@@ -322,7 +324,7 @@
         <td colspan="{$colspan|intval}">{l s='Total products:' mod='onepagecheckout'}</td>
         <td class="price" id="total_product">{displayPrice price=$total_products}</td>
     </tr>
-{/if}
+{/if} *}
 <tr class="cart_total_voucher summary-line" {if $total_discounts == 0}style="display:none"{/if}>
     <td colspan="{$colspan|intval}">
         {if $use_taxes && $display_tax_label}
@@ -360,7 +362,7 @@
         {/if}
     </td>
 </tr>
-{if $total_shipping_tax_exc <= 0 && !isset($virtualCart)}
+{* {if $total_shipping_tax_exc <= 0 && !isset($virtualCart)}
     <tr class="cart_total_delivery summary-line">
         <td colspan="{$colspan|intval}">{l s='Shipping:' mod='onepagecheckout'}</td>
         <td class="price" id="total_shipping">{l s='Free Shipping!' mod='onepagecheckout'}</td>
@@ -384,7 +386,7 @@
             <td class="price" id="total_shipping">{displayPrice price=$total_shipping_tax_exc}</td>
         </tr>
     {/if}
-{/if}
+{/if} *}
 {if $use_taxes}
     <tr class="cart_tax_exc_price summary-line">
         <td colspan="{$colspan|intval}">{l s='Total (tax excl.):' mod='onepagecheckout'}</td>
@@ -396,7 +398,7 @@
     </tr>
 {/if}
 <tr class="cart_final_price summary-line">
-    <td colspan="{$colspan|intval}">{l s='Total:' mod='onepagecheckout'}</td>
+    <td colspan="{$colspan-1|intval}">{l s='Total:' mod='onepagecheckout'}</td>
         <td class="price total_price_container" id="total_price_container">
             {if $use_taxes}
             <span id="total_price">{displayPrice price=$total_price}</span>
