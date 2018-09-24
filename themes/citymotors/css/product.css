@@ -1055,17 +1055,6 @@ Quick View Styles
 .ie8 .box-security {
   filter: none; }
 /* new styles */
-.buy_product {
-  font: 700 17px/21px Arial, Helvetica, sans-serif;
-  color: #fbca50;
-  border: 2px solid #fbca50;
-  background: #fff;
-  padding: 10px 15px;
-  transition: all ease .3s;}
-  .buy_product:hover {
-    color: #fff;
-    background: #fbca50;
-    transition: all ease .3s;}
 
 .box-cart-bottom > div{
   display: inline-block;

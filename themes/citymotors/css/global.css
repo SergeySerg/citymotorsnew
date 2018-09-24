@@ -1654,7 +1654,7 @@ textarea.input-lg, .input-group-lg > textarea.form-control,
   border-color: #ccc; }
   .btn-default:hover, .btn-default:focus, .btn-default:active, .btn-default.active {
     color: #333;
-    background-color: #ebebeb;
+    background-color: #add3;
     border-color: #adadad; }
   .open .btn-default.dropdown-toggle {
     color: #333;
@@ -8606,6 +8606,34 @@ div.star.star_hover:after {
   cursor: pointer; }
 
 /* new styles */
+.buy_product,
+#header .cart_block .cart-buttons a.buy_product {
+  font: 700 17px/21px Arial, Helvetica, sans-serif;
+  color: #fbca50;
+  border: 2px solid #fbca50;
+  background: #fff;
+  padding: 10px 15px;
+  transition: all ease .3s;}
+  .buy_product:hover,
+  #header .cart_block .cart-buttons a.buy_product:hover {
+    color: #fff;
+    background: #fbca50;
+    border-color: #fbca50;
+    transition: all ease .3s;}
+
+.buy_product_marine {
+  font: 700 17px/21px Arial, Helvetica, sans-serif;
+  color: #add;
+  border: 2px solid #add;
+  background: #fff;
+  padding: 10px 15px;
+  transition: all ease .3s;}
+  .buy_product_marine:hover {
+    color: #fff;
+    background: #add;
+    border-color: #add;
+    transition: all ease .3s;}
+
 .information{
   font-size: 16px;
   line-height: 20px;
@@ -8627,6 +8655,49 @@ div.star.star_hover:after {
 }
 .ui-widget-content{
   border: none !important;
+}
+.b1c-form{
+  z-index: 9999 !important;
+}
+.b1c-bg{
+  z-index: 9999 !important;
+  top: 0 !important;
+}
+.b1c-tl {
+  background: #add !important;
+  font-size: 18px !important;
+  font-weight: normal !important;
+  border: none !important;
+  border-bottom: solid #428bca !important;
+  text-align: center;
+  padding: 8px 5px;
+  margin: -10px -10px 0 !important;
+}
+.b1c-description {
+  margin: 8px 8px 10px !important;
+  text-align: center;
+}
+.b1c-caption {
+  display: none;
+}
+.b1c-txt {
+  background: #add3 !important;
+  padding: 5px !important;
+}
+.b1c-form select {
+  background: #add3 !important;
+  padding: 5px !important;
+  width: calc(100% - 15px) !important;
+  color: #4b5362 !important;
+}
+.b1c-submit-area {
+  border-top: none !important;
+  background: #fff !important;
+}
+div.b1c-close {
+  position: absolute;
+  right: -10px;
+  top: -10px;
 }
 .b1c-submit, .b1c {
   width: auto !important;

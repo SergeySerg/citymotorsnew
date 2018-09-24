@@ -63,7 +63,7 @@
 										<a class="cart-images" href="{$link->getProductLink($product.id_product, $product.link_rewrite, $product.category)|escape:'html':'UTF-8'}" title="{$product.name|escape:'html':'UTF-8'}"><img src="{$link->getImageLink($product.link_rewrite, $product.id_image, 'cart_default')}" alt="{$product.name|escape:'html':'UTF-8'}" /></a>
 										<div class="cart-info">
 											<div class="product-name">
-												<span class="quantity-formated"><span class="quantity">{$product.cart_quantity}</span>&nbsp;x&nbsp;</span><a class="cart_block_product_name" href="{$link->getProductLink($product, $product.link_rewrite, $product.category, null, null, $product.id_shop, $product.id_product_attribute)|escape:'html':'UTF-8'}" title="{$product.name|escape:'html':'UTF-8'}">{$product.name|truncate:13:'...'|escape:'html':'UTF-8'}</a>
+												<span class="quantity-formated"><span class="quantity">{$product.cart_quantity}</span>&nbsp;x&nbsp;</span><a class="cart_block_product_name" href="{$link->getProductLink($product, $product.link_rewrite, $product.category, null, null, $product.id_shop, $product.id_product_attribute)|escape:'html':'UTF-8'}" title="{$product.name|escape:'html':'UTF-8'}">{$product.name|truncate:40:'...'|escape:'html':'UTF-8'}</a>
 											</div>
 											{if isset($product.attributes_small)}
 												<div class="product-atributes">
@@ -144,7 +144,7 @@
 						{/if}
 						{assign var='free_ship' value=count($cart->getDeliveryAddressesWithoutCarriers(true, $errors))}
 						<div class="cart-prices">
-							<div class="cart-prices-line first-line">
+							{* <div class="cart-prices-line first-line">
 								<span class="price cart_block_shipping_cost ajax_cart_shipping_cost{if !($page_name == 'order-opc') && $shipping_cost_float == 0 && (!$cart_qties || $cart->isVirtualCart() || !isset($cart->id_address_delivery) || !$cart->id_address_delivery || $free_ship)} unvisible{/if}">
 									{if $shipping_cost_float == 0}
 										 {if !($page_name == 'order-opc') && (!isset($cart->id_address_delivery) || !$cart->id_address_delivery)}{l s='To be determined' mod='blockcart'}{else}{l s='Free shipping!' mod='blockcart'}{/if}
@@ -155,7 +155,7 @@
 								<span{if !($page_name == 'order-opc') && $shipping_cost_float == 0 && (!$cart_qties || $cart->isVirtualCart() || !isset($cart->id_address_delivery) || !$cart->id_address_delivery || $free_ship)} class="unvisible"{/if}>
 									{l s='Shipping' mod='blockcart'}
 								</span>
-							</div>
+							</div> *}
 							{if $show_wrapping}
 								<div class="cart-prices-line">
 									{assign var='cart_flag' value='Cart::ONLY_WRAPPING'|constant}
@@ -190,9 +190,10 @@
 							{/if}
 						</div>
 						<p class="cart-buttons">
-							<a id="button_order_cart" class="btn btn-default button button-small" href="{$link->getPageLink("$order_process", true)|escape:"html":"UTF-8"}" title="{l s='Check out' mod='blockcart'}" rel="nofollow">
+							<a id="button_order_cart" class="btn btn-default buy_product" href="{$link->getPageLink("$order_process", true)|escape:"html":"UTF-8"}" title="{l s='Check out' mod='blockcart'}" rel="nofollow">
 								<span>
-									{l s='Check out' mod='blockcart'}<i class="icon-chevron-right right"></i>
+									{l s='Check out' mod='blockcart'}
+									{* <i class="icon-chevron-right right"></i> *}
 								</span>
 							</a>
 						</p>
@@ -208,7 +209,7 @@
 {if !$PS_CATALOG_MODE && $active_overlay == 1}
 	<div id="layer_cart">
 		<div class="clearfix">
-			<div class="layer_cart_product col-xs-12 col-md-6">
+			<div class="layer_cart_product col-xs-12">
 				<span class="cross" title="{l s='Close window' mod='blockcart'}"></span>
 				<span class="title">
 					<i class="icon-check"></i>{l s='Product successfully added to your shopping cart' mod='blockcart'}
@@ -228,7 +229,7 @@
 					</div>
 				</div>
 			</div>
-			<div class="layer_cart_cart col-xs-12 col-md-6">
+			<div class="layer_cart_cart col-xs-12">
 				<span class="title">
 					<!-- Plural Case [both cases are needed because page may be updated in Javascript] -->
 					<span class="ajax_cart_product_txt_s {if $cart_qties < 2} unvisible{/if}">
@@ -318,14 +319,16 @@
 					</span>
 				</div>
 				<div class="button-container">
-					<span class="continue btn btn-default button exclusive-medium" title="{l s='Continue shopping' mod='blockcart'}">
+					<span class="continue btn btn-default buy_product_marine" title="{l s='Continue shopping' mod='blockcart'}">
 						<span>
-							<i class="icon-chevron-left left"></i>{l s='Continue shopping' mod='blockcart'}
+							{* <i class="icon-chevron-left left"></i> *}
+							{l s='Continue shopping' mod='blockcart'}
 						</span>
 					</span>
-					<a class="btn btn-default button button-medium"	href="{$link->getPageLink("$order_process", true)|escape:"html":"UTF-8"}" title="{l s='Proceed to checkout' mod='blockcart'}" rel="nofollow">
+					<a class="btn btn-default buy_product" href="{$link->getPageLink("$order_process", true)|escape:"html":"UTF-8"}" title="{l s='Proceed to checkout' mod='blockcart'}" rel="nofollow">
 						<span>
-							{l s='Proceed to checkout' mod='blockcart'}<i class="icon-chevron-right right"></i>
+							{l s='Proceed to checkout' mod='blockcart'}
+							{* <i class="icon-chevron-right right"></i> *}
 						</span>
 					</a>
 				</div>
