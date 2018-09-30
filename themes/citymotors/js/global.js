@@ -251,11 +251,11 @@ function bindGrid()
 	var view = $.totalStorage('display');
 
 	if (!view && (typeof displayList != 'undefined') && displayList)
-		view = 'list';
+		view = 'grid';
 
-	if (view && view != 'grid')
-		display(view);
-	else
+	// if (view && view != 'grid')
+	// 	display(view);
+	// else
 		$('.display').find('li#grid').addClass('selected');
 
 	$(document).on('click', '#grid', function(e){
